@@ -102,16 +102,95 @@ for char in characters{
 
 //Exercise: Conditions
 //1-  A school has following rules for grading system: a. Below 45 - F b. 45 to 60 – C c. 60 to 80 - B d. Above 80 - A Write a code block that lets you enter a certain score and displays the corresponding grade in the console.
-
-let score = 88
-switch score {
-case 0..<45:
-    print("F")
-case 45..<60 :
-    print("C")
-case 60..<80 :
-    print("B")
-default:
-    print("A")
+print("input score:")
+let optionalString: String? = readLine()
+if let string1=optionalString, let score = Int(string1){
+    switch score{
+    case 0..<45:
+        print("F")
+    case 45..<60 :
+        print("C")
+    case 60..<80 :
+        print("B")
+    default:
+        print("A")
+    }
 }
 //2-  Write a code block to enter the length and breadth of a rectangle. Based on your inputs print “Rectangle” is the values are different or “Square” is they are the same.
+print("input length:")
+let length: String? = readLine()
+print("input breadth:")
+let  breadth: String? = readLine()
+
+if let length1=length, let breadth1 = breadth{
+    if (length1==breadth1){
+        print("Square")
+    }else{
+        print("Rectangle")
+    }
+}
+
+//Exercise: Swift Dictionary and Tuples
+//1-  Create a dictionary of type [Int:String] where the key will contain an integer value i.e userId for every User and the value will contain the names of the corresponding users.
+var user = [Int:String]()
+//2-  Initialize the dictionary with 3 different key/value pairs of your choice.
+var someDict:[Int:String] = [1:"One", 2:"Two", 3:"Three"]
+var dic2=[String:String]()
+var dic3=[Bool:Bool]()
+//3-  Iterate over the contents of the dictionary to print out the key and the corresponding value for each entry.
+for (item) in someDict.enumerated() {
+    print("\(item.element.value): \(item.element.key)")
+}
+//4-  Print only the keys to the console.
+var dictKeys = [Int](someDict.keys)
+for (key) in dictKeys {
+    print("\(key)")
+}
+
+//5-  Update the value of a key in the dictionary
+if let oldValue = someDict.updateValue("Nine", forKey:3) {
+    print("The old value of \(oldValue) was replaced with a new one.")
+}
+for (item) in someDict.enumerated() {
+    print("\(item.element.value): \(item.element.key)")
+}
+//6-  Create a datatype called MyTuple using the typealias feature of swift. It should be a tuple containing 2 Strings (String , String).
+
+typealias Age = (month: Int, year: Int)
+let baby : Age = (4, 0)
+//7-  Declare and initialize a tuple with any values of your choice.
+var student = ("John", "Smith")
+//8-  Print both values of the tuple individually in the console.
+print(baby)
+print (student)
+
+
+//Exercise: Swift Optionals
+//1-  let optvar : Int = nil  // Correct the error in this line of code.
+let optvar : Int? = nil //add optionals question mark
+
+//2-  let unwrapme : String? = nil let unwrappedValue : String = unwrapme! The code snippet shown above will crash. Rewrite it with Optional Binding.
+
+let unwrapme : String? = nil
+if let string =  unwrapme {
+    print (string)
+}
+
+//3 - Declare any optional variable of any type with the Optional keyword.
+let someVal:Double?
+someVal = 5.6324
+
+
+//4
+//Print the value of value1 to the console. If it contains nil use assign defaultValue to it.
+var value1 : Int?
+var defaultValue : Int = 8
+if value1 == nil {
+    let unwrappedName = value1 ?? defaultValue
+    print(unwrappedName)
+}
+//5 Rewrite this piece of code using 2 guard statements.
+
+If let name = txtname.text {
+    
+If let address = txtaddress.text { sendToServer(name , address) } else{ print(“No address provided”) } } else { print(“No name provided”) }
