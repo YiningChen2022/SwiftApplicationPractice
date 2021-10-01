@@ -190,7 +190,30 @@ if value1 == nil {
     print(unwrappedName)
 }
 //5 Rewrite this piece of code using 2 guard statements.
-
+/*
 If let name = txtname.text {
+    If let address = txtaddress.text {
+        sendToServer(name , address)
+        
+    } else{ print(“No address provided”)
+        
+    }
     
-If let address = txtaddress.text { sendToServer(name , address) } else{ print(“No address provided”) } } else { print(“No name provided”) }
+} else {
+    print(“No name provided”)
+    
+}
+ */
+
+
+/*guard let name = txtname.text else{
+    print(“No name provided”)
+}
+    guard let address = txtaddress.text else {
+        print(“No address provided”)
+    }
+sendToServer(name , address)
+
+}*/
+    
+
