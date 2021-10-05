@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ED2E79215B7C676F8E5D4D0 /* Pods_NEUBlogIdea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD6C3CD3AECE8E181393C88 /* Pods_NEUBlogIdea.framework */; };
+		8CCC26CB198125EF27679609 /* Pods_NEUBlogIdea_NEUBlogIdeaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1E38EAFC3FBC5F0F181B8F /* Pods_NEUBlogIdea_NEUBlogIdeaUITests.framework */; };
 		E832B5B5270BB3D500864C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5B4270BB3D500864C85 /* AppDelegate.swift */; };
 		E832B5B7270BB3D500864C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5B6270BB3D500864C85 /* SceneDelegate.swift */; };
 		E832B5B9270BB3D500864C85 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5B8270BB3D500864C85 /* HomeViewController.swift */; };
@@ -26,6 +28,7 @@
 		E832B604270BCF9300864C85 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B603270BCF9300864C85 /* DataBaseManager.swift */; };
 		E832B606270BCFC800864C85 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B605270BCFC800864C85 /* AuthManager.swift */; };
 		E832B608270BCFD500864C85 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B607270BCFD500864C85 /* StorageManager.swift */; };
+		EE93DAB2AB36EDCFCFDD018A /* Pods_NEUBlogIdeaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E817D3374D41BE5E1A1A4290 /* Pods_NEUBlogIdeaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F1E38EAFC3FBC5F0F181B8F /* Pods_NEUBlogIdea_NEUBlogIdeaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEUBlogIdea_NEUBlogIdeaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		513D4A97B1BA2F99719F1DEA /* Pods-NEUBlogIdeaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUBlogIdeaTests.debug.xcconfig"; path = "Target Support Files/Pods-NEUBlogIdeaTests/Pods-NEUBlogIdeaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		943CF5A591312F620B3131EA /* Pods-NEUBlogIdea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUBlogIdea.debug.xcconfig"; path = "Target Support Files/Pods-NEUBlogIdea/Pods-NEUBlogIdea.debug.xcconfig"; sourceTree = "<group>"; };
+		ABC1B3DBB79F48AD961CFC4B /* Pods-NEUBlogIdea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUBlogIdea.release.xcconfig"; path = "Target Support Files/Pods-NEUBlogIdea/Pods-NEUBlogIdea.release.xcconfig"; sourceTree = "<group>"; };
+		B02E196FED6E92596A1F8348 /* Pods-NEUBlogIdea-NEUBlogIdeaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUBlogIdea-NEUBlogIdeaUITests.release.xcconfig"; path = "Target Support Files/Pods-NEUBlogIdea-NEUBlogIdeaUITests/Pods-NEUBlogIdea-NEUBlogIdeaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B4D782F0BD1F04935C408531 /* Pods-NEUBlogIdeaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUBlogIdeaTests.release.xcconfig"; path = "Target Support Files/Pods-NEUBlogIdeaTests/Pods-NEUBlogIdeaTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAD6C3CD3AECE8E181393C88 /* Pods_NEUBlogIdea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEUBlogIdea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6F7831E724FEE6CCD6A8F8 /* Pods-NEUBlogIdea-NEUBlogIdeaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUBlogIdea-NEUBlogIdeaUITests.debug.xcconfig"; path = "Target Support Files/Pods-NEUBlogIdea-NEUBlogIdeaUITests/Pods-NEUBlogIdea-NEUBlogIdeaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E817D3374D41BE5E1A1A4290 /* Pods_NEUBlogIdeaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEUBlogIdeaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E832B5B1270BB3D500864C85 /* NEUBlogIdea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEUBlogIdea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E832B5B4270BB3D500864C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E832B5B6270BB3D500864C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E832B5E6270BB52B00864C85 /* StoreKit.framework in Frameworks */,
+				7ED2E79215B7C676F8E5D4D0 /* Pods_NEUBlogIdea.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE93DAB2AB36EDCFCFDD018A /* Pods_NEUBlogIdeaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +105,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCC26CB198125EF27679609 /* Pods_NEUBlogIdea_NEUBlogIdeaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27714633ABA4C54D9EE1CED1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				943CF5A591312F620B3131EA /* Pods-NEUBlogIdea.debug.xcconfig */,
+				ABC1B3DBB79F48AD961CFC4B /* Pods-NEUBlogIdea.release.xcconfig */,
+				DE6F7831E724FEE6CCD6A8F8 /* Pods-NEUBlogIdea-NEUBlogIdeaUITests.debug.xcconfig */,
+				B02E196FED6E92596A1F8348 /* Pods-NEUBlogIdea-NEUBlogIdeaUITests.release.xcconfig */,
+				513D4A97B1BA2F99719F1DEA /* Pods-NEUBlogIdeaTests.debug.xcconfig */,
+				B4D782F0BD1F04935C408531 /* Pods-NEUBlogIdeaTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E832B5A8270BB3D500864C85 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +134,7 @@
 				E832B5D4270BB3D700864C85 /* NEUBlogIdeaUITests */,
 				E832B5B2270BB3D500864C85 /* Products */,
 				E832B5E4270BB52B00864C85 /* Frameworks */,
+				27714633ABA4C54D9EE1CED1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				E832B5E5270BB52B00864C85 /* StoreKit.framework */,
+				CAD6C3CD3AECE8E181393C88 /* Pods_NEUBlogIdea.framework */,
+				4F1E38EAFC3FBC5F0F181B8F /* Pods_NEUBlogIdea_NEUBlogIdeaUITests.framework */,
+				E817D3374D41BE5E1A1A4290 /* Pods_NEUBlogIdeaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E832B5DB270BB3D700864C85 /* Build configuration list for PBXNativeTarget "NEUBlogIdea" */;
 			buildPhases = (
+				4644E5AEB018443081443498 /* [CP] Check Pods Manifest.lock */,
 				E832B5AD270BB3D500864C85 /* Sources */,
 				E832B5AE270BB3D500864C85 /* Frameworks */,
 				E832B5AF270BB3D500864C85 /* Resources */,
+				B36D3D34D3620ABCC9B05F78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E832B5DE270BB3D700864C85 /* Build configuration list for PBXNativeTarget "NEUBlogIdeaTests" */;
 			buildPhases = (
+				22704B7EF7F049B8B272267B /* [CP] Check Pods Manifest.lock */,
 				E832B5C3270BB3D700864C85 /* Sources */,
 				E832B5C4270BB3D700864C85 /* Frameworks */,
 				E832B5C5270BB3D700864C85 /* Resources */,
@@ -272,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E832B5E1270BB3D700864C85 /* Build configuration list for PBXNativeTarget "NEUBlogIdeaUITests" */;
 			buildPhases = (
+				04FD87588D30E384B6215E8D /* [CP] Check Pods Manifest.lock */,
 				E832B5CD270BB3D700864C85 /* Sources */,
 				E832B5CE270BB3D700864C85 /* Frameworks */,
 				E832B5CF270BB3D700864C85 /* Resources */,
+				B71392F799B69875F7934E3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,6 +392,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04FD87588D30E384B6215E8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NEUBlogIdea-NEUBlogIdeaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22704B7EF7F049B8B272267B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NEUBlogIdeaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4644E5AEB018443081443498 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NEUBlogIdea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B36D3D34D3620ABCC9B05F78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NEUBlogIdea/Pods-NEUBlogIdea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NEUBlogIdea/Pods-NEUBlogIdea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NEUBlogIdea/Pods-NEUBlogIdea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B71392F799B69875F7934E3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NEUBlogIdea-NEUBlogIdeaUITests/Pods-NEUBlogIdea-NEUBlogIdeaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NEUBlogIdea-NEUBlogIdeaUITests/Pods-NEUBlogIdea-NEUBlogIdeaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NEUBlogIdea-NEUBlogIdeaUITests/Pods-NEUBlogIdea-NEUBlogIdeaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E832B5AD270BB3D500864C85 /* Sources */ = {
@@ -538,6 +679,7 @@
 		};
 		E832B5DC270BB3D700864C85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 943CF5A591312F620B3131EA /* Pods-NEUBlogIdea.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,6 +708,7 @@
 		};
 		E832B5DD270BB3D700864C85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABC1B3DBB79F48AD961CFC4B /* Pods-NEUBlogIdea.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -594,6 +737,7 @@
 		};
 		E832B5DF270BB3D700864C85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513D4A97B1BA2F99719F1DEA /* Pods-NEUBlogIdeaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -618,6 +762,7 @@
 		};
 		E832B5E0270BB3D700864C85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D782F0BD1F04935C408531 /* Pods-NEUBlogIdeaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -642,6 +787,7 @@
 		};
 		E832B5E2270BB3D700864C85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6F7831E724FEE6CCD6A8F8 /* Pods-NEUBlogIdea-NEUBlogIdeaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -664,6 +810,7 @@
 		};
 		E832B5E3270BB3D700864C85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B02E196FED6E92596A1F8348 /* Pods-NEUBlogIdea-NEUBlogIdeaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
