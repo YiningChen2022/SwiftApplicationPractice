@@ -174,13 +174,9 @@
 		E832B5E9270BB9EC00864C85 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E832B5B8270BB3D500864C85 /* HomeViewController.swift */,
-				E832B5EC270BBD1B00864C85 /* ProfileViewController.swift */,
-				E832B5EF270BBD9500864C85 /* TabBarViewController.swift */,
-				E832B5F1270BBDC600864C85 /* SigninViewController.swift */,
-				E832B5F3270BBDDD00864C85 /* SignUpViewController.swift */,
-				E832B5F5270BBDF100864C85 /* ViewPostController.swift */,
-				E832B5F7270BBE0C00864C85 /* CreateNewPostViewController.swift */,
+				E832B60B270BD2A300864C85 /* Posts */,
+				E832B609270BD26E00864C85 /* Core Tabs */,
+				E832B60A270BD28F00864C85 /* Auth */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +200,34 @@
 				E832B5B6270BB3D500864C85 /* SceneDelegate.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E832B609270BD26E00864C85 /* Core Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				E832B5B8270BB3D500864C85 /* HomeViewController.swift */,
+				E832B5EC270BBD1B00864C85 /* ProfileViewController.swift */,
+				E832B5EF270BBD9500864C85 /* TabBarViewController.swift */,
+			);
+			path = "Core Tabs";
+			sourceTree = "<group>";
+		};
+		E832B60A270BD28F00864C85 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E832B5F1270BBDC600864C85 /* SigninViewController.swift */,
+				E832B5F3270BBDDD00864C85 /* SignUpViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E832B60B270BD2A300864C85 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				E832B5F5270BBDF100864C85 /* ViewPostController.swift */,
+				E832B5F7270BBE0C00864C85 /* CreateNewPostViewController.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

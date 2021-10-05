@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let  vc=HomeViewController();
+            //TODO: uPDATE vc TO a sign in vc if not signed in
+            let  vc=TabBarViewController();
             window.rootViewController=vc;
             self.window=window
             
