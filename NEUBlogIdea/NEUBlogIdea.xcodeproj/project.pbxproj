@@ -22,6 +22,10 @@
 		E832B5F4270BBDDD00864C85 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5F3270BBDDD00864C85 /* SignUpViewController.swift */; };
 		E832B5F6270BBDF100864C85 /* ViewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5F5270BBDF100864C85 /* ViewPostController.swift */; };
 		E832B5F8270BBE0C00864C85 /* CreateNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5F7270BBE0C00864C85 /* CreateNewPostViewController.swift */; };
+		E832B602270BCF6A00864C85 /* IAPManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B601270BCF6A00864C85 /* IAPManagers.swift */; };
+		E832B604270BCF9300864C85 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B603270BCF9300864C85 /* DataBaseManager.swift */; };
+		E832B606270BCFC800864C85 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B605270BCFC800864C85 /* AuthManager.swift */; };
+		E832B608270BCFD500864C85 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B607270BCFD500864C85 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		E832B5F3270BBDDD00864C85 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E832B5F5270BBDF100864C85 /* ViewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostController.swift; sourceTree = "<group>"; };
 		E832B5F7270BBE0C00864C85 /* CreateNewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPostViewController.swift; sourceTree = "<group>"; };
+		E832B601270BCF6A00864C85 /* IAPManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IAPManagers.swift; path = ../../../../../IAPManagers.swift; sourceTree = "<group>"; };
+		E832B603270BCF9300864C85 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataBaseManager.swift; path = ../../../../../DataBaseManager.swift; sourceTree = "<group>"; };
+		E832B605270BCFC800864C85 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = ../../../../../AuthManager.swift; sourceTree = "<group>"; };
+		E832B607270BCFD500864C85 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = ../../../../../StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +188,10 @@
 		E832B5EA270BB9FB00864C85 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E832B601270BCF6A00864C85 /* IAPManagers.swift */,
+				E832B603270BCF9300864C85 /* DataBaseManager.swift */,
+				E832B605270BCFC800864C85 /* AuthManager.swift */,
+				E832B607270BCFD500864C85 /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -325,14 +337,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E832B5F6270BBDF100864C85 /* ViewPostController.swift in Sources */,
+				E832B606270BCFC800864C85 /* AuthManager.swift in Sources */,
 				E832B5B9270BB3D500864C85 /* HomeViewController.swift in Sources */,
 				E832B5F4270BBDDD00864C85 /* SignUpViewController.swift in Sources */,
 				E832B5B5270BB3D500864C85 /* AppDelegate.swift in Sources */,
 				E832B5F2270BBDC600864C85 /* SigninViewController.swift in Sources */,
 				E832B5F8270BBE0C00864C85 /* CreateNewPostViewController.swift in Sources */,
+				E832B602270BCF6A00864C85 /* IAPManagers.swift in Sources */,
 				E832B5ED270BBD1B00864C85 /* ProfileViewController.swift in Sources */,
 				E832B5F0270BBD9500864C85 /* TabBarViewController.swift in Sources */,
 				E832B5B7270BB3D500864C85 /* SceneDelegate.swift in Sources */,
+				E832B604270BCF9300864C85 /* DataBaseManager.swift in Sources */,
+				E832B608270BCFD500864C85 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +523,6 @@
 				INFOPLIST_FILE = NEUBlogIdea/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -536,7 +551,6 @@
 				INFOPLIST_FILE = NEUBlogIdea/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
