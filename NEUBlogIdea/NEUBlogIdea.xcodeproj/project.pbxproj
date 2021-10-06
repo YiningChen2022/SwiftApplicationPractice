@@ -31,6 +31,7 @@
 		E87B1155270CB3C600D42770 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1154270CB3C600D42770 /* StorageManager.swift */; };
 		E87B1157270CBBDF00D42770 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1156270CBBDF00D42770 /* User.swift */; };
 		E87B115B270CBC0700D42770 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B115A270CBC0700D42770 /* BlogPost.swift */; };
+		E87B115E270E002100D42770 /* PayWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B115D270E002100D42770 /* PayWallViewController.swift */; };
 		EE93DAB2AB36EDCFCFDD018A /* Pods_NEUBlogIdeaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E817D3374D41BE5E1A1A4290 /* Pods_NEUBlogIdeaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		E87B1154270CB3C600D42770 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E87B1156270CBBDF00D42770 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E87B115A270CBC0700D42770 /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		E87B115D270E002100D42770 /* PayWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewController.swift; sourceTree = "<group>"; };
+		E87B1160270E04A700D42770 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,7 @@
 		E832B5E9270BB9EC00864C85 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E87B115C270E000700D42770 /* Other */,
 				E832B60B270BD2A300864C85 /* Posts */,
 				E832B609270BD26E00864C85 /* Core Tabs */,
 				E832B60A270BD28F00864C85 /* Auth */,
@@ -238,6 +242,7 @@
 				E832B5B8270BB3D500864C85 /* HomeViewController.swift */,
 				E832B5EC270BBD1B00864C85 /* ProfileViewController.swift */,
 				E832B5EF270BBD9500864C85 /* TabBarViewController.swift */,
+				E87B1160270E04A700D42770 /* Configuration.storekit */,
 			);
 			path = "Core Tabs";
 			sourceTree = "<group>";
@@ -269,6 +274,14 @@
 				E87B1154270CB3C600D42770 /* StorageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E87B115C270E000700D42770 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E87B115D270E002100D42770 /* PayWallViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +538,7 @@
 				E832B5F0270BBD9500864C85 /* TabBarViewController.swift in Sources */,
 				E832B5B7270BB3D500864C85 /* SceneDelegate.swift in Sources */,
 				E87B1155270CB3C600D42770 /* StorageManager.swift in Sources */,
+				E87B115E270E002100D42770 /* PayWallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
