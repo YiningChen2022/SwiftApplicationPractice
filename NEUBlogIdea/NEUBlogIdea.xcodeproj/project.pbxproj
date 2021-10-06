@@ -32,6 +32,8 @@
 		E87B1157270CBBDF00D42770 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1156270CBBDF00D42770 /* User.swift */; };
 		E87B115B270CBC0700D42770 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B115A270CBC0700D42770 /* BlogPost.swift */; };
 		E87B115E270E002100D42770 /* PayWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B115D270E002100D42770 /* PayWallViewController.swift */; };
+		E87B1162270E07DC00D42770 /* PayWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1161270E07DC00D42770 /* PayWallHeaderView.swift */; };
+		E87B1164270E09A800D42770 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1163270E09A800D42770 /* Extensions.swift */; };
 		EE93DAB2AB36EDCFCFDD018A /* Pods_NEUBlogIdeaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E817D3374D41BE5E1A1A4290 /* Pods_NEUBlogIdeaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		E87B115A270CBC0700D42770 /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
 		E87B115D270E002100D42770 /* PayWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewController.swift; sourceTree = "<group>"; };
 		E87B1160270E04A700D42770 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		E87B1161270E07DC00D42770 /* PayWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallHeaderView.swift; sourceTree = "<group>"; };
+		E87B1163270E09A800D42770 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				E832B5BF270BB3D700864C85 /* LaunchScreen.storyboard */,
+				E87B1161270E07DC00D42770 /* PayWallHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				E832B5BD270BB3D700864C85 /* Assets.xcassets */,
 				E832B5B4270BB3D500864C85 /* AppDelegate.swift */,
 				E832B5B6270BB3D500864C85 /* SceneDelegate.swift */,
+				E87B1163270E09A800D42770 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -524,10 +530,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E87B115B270CBC0700D42770 /* BlogPost.swift in Sources */,
+				E87B1164270E09A800D42770 /* Extensions.swift in Sources */,
 				E832B5F6270BBDF100864C85 /* ViewPostController.swift in Sources */,
 				E87B1153270CB32A00D42770 /* AuthManager.swift in Sources */,
 				E87B1151270CB31D00D42770 /* DatabaseManager.swift in Sources */,
 				E832B5B9270BB3D500864C85 /* HomeViewController.swift in Sources */,
+				E87B1162270E07DC00D42770 /* PayWallHeaderView.swift in Sources */,
 				E832B5F4270BBDDD00864C85 /* SignUpViewController.swift in Sources */,
 				E832B5B5270BB3D500864C85 /* AppDelegate.swift in Sources */,
 				E87B1157270CBBDF00D42770 /* User.swift in Sources */,

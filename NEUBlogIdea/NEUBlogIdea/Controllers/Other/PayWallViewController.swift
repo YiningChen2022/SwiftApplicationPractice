@@ -9,14 +9,9 @@ import UIKit
 
 class PayWallViewController: UITabBarController {
     //title
-    
+    private let header = PayWallHeaderView()
     //Header image
-    private let headerImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "crown.fill"))
-        imageView.tintColor = .white
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+
     //pricing and product info
     //CTA Button
     //Term of services
@@ -24,7 +19,17 @@ class PayWallViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubview(header)
+        setUpCloseButton()
         
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        header.frame = CGRect(x:0,
+                              y:view.safeAreaInsets.top,
+                              width: view.width,
+                              height: view.height/3.2
+        )
     }
     private func setUpCloseButton(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(
