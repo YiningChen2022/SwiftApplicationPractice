@@ -24,6 +24,7 @@
 		E832B5F4270BBDDD00864C85 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5F3270BBDDD00864C85 /* SignUpViewController.swift */; };
 		E832B5F6270BBDF100864C85 /* ViewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5F5270BBDF100864C85 /* ViewPostController.swift */; };
 		E832B5F8270BBE0C00864C85 /* CreateNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832B5F7270BBE0C00864C85 /* CreateNewPostViewController.swift */; };
+		E83C4EC3270F418000920B7B /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = E83C4EC2270F418000920B7B /* StoreKitTestCertificate.cer */; };
 		E87B114C270CB0B600D42770 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E87B114B270CB0B600D42770 /* GoogleService-Info.plist */; };
 		E87B114F270CB30B00D42770 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B114E270CB30B00D42770 /* IAPManager.swift */; };
 		E87B1151270CB31D00D42770 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1150270CB31D00D42770 /* DatabaseManager.swift */; };
@@ -84,6 +85,7 @@
 		E832B5F3270BBDDD00864C85 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E832B5F5270BBDF100864C85 /* ViewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostController.swift; sourceTree = "<group>"; };
 		E832B5F7270BBE0C00864C85 /* CreateNewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPostViewController.swift; sourceTree = "<group>"; };
+		E83C4EC2270F418000920B7B /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		E87B114B270CB0B600D42770 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E87B114E270CB30B00D42770 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		E87B1150270CB31D00D42770 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				E832B5EC270BBD1B00864C85 /* ProfileViewController.swift */,
 				E832B5EF270BBD9500864C85 /* TabBarViewController.swift */,
 				E87B1160270E04A700D42770 /* Configuration.storekit */,
+				E83C4EC2270F418000920B7B /* StoreKitTestCertificate.cer */,
 			);
 			path = "Core Tabs";
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				E832B5C1270BB3D700864C85 /* LaunchScreen.storyboard in Resources */,
 				E832B5BE270BB3D700864C85 /* Assets.xcassets in Resources */,
 				E87B114C270CB0B600D42770 /* GoogleService-Info.plist in Resources */,
+				E83C4EC3270F418000920B7B /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,6 +4,7 @@
 //
 //  Created by Yining Chen on 10/4/21.
 //
+import Purchases
 import Firebase
 import UIKit
 
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        Purchases.configure(withAPIKey:"rwVwKAAEfBNMGkcTmUVdGewdadkuGthl")
         return true
     }
 

@@ -93,6 +93,7 @@ class PayWallViewController: UITabBarController {
     }
     @objc private func didTapSubscribe(){
         
+        
     }
     @objc private func didTaprestore(){
         
