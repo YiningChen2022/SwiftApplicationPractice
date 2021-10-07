@@ -112,7 +112,35 @@ print(employee is ClubMember)
 print(customer is ClubMember)
 
 
-//Exercise: Swift OptionalsAsk the user their name, take an input using command line.
+//Exercise: Swift Optionals
+//Ask the user their name, take an input using command line.
 //If no input was provided print ‘Welcome Anonymous User’
 //If the input is all numbers print ‘Welcome Code Name ’ followed by the number
 //Otherwise print ‘Welcome ’ followed by the String entered
+
+let name: String? = readLine()
+let num=Int(name!)
+
+if name==nil{
+    print("Welcome Anonymous User")
+}else if num != nil{
+    print("Welcome Code Name \(num!)")
+}else{
+    print("Welcome \(name!)")
+}
+
+
+//Exercise: Swift Extension
+//Create a function called ‘calculate’ as an extension of Int data type.
+//‘calculate’ should return the square of an integer and the sum of all numbers from 1 to that number (inclusive)
+//Use number range
+//Eg.Input: 5
+//Output: square:25, sum:15
+extension Int{
+    var square: Int{return self*self}
+    var sum: Int{
+        for p in self{
+            
+        }
+    }
+}
