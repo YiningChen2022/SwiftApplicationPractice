@@ -137,10 +137,23 @@ if name==nil{
 //Eg.Input: 5
 //Output: square:25, sum:15
 extension Int{
-    var square: Int{return self*self}
-    var sum: Int{
-        for p in self{
-            
+    mutating func square() {
+          self = self * self
+      }
+    func sum(){
+        var n=self
+        var sum=0
+        while n>0{
+            print(n)
+            sum+=n
+            n-=1
         }
+        self=sum
     }
 }
+var someint=5
+someint.square()
+print(someint)
+var someint2=5
+someint2.sum()
+print(someint2)
