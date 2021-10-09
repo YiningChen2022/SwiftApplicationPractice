@@ -162,14 +162,14 @@ print(someint2)
 //b.  Color() – This should print the color of the vehicle
 //2.  Define a class Car which adopt to Vehicle and provide the actual implementation.
 
-protocol Vehicle{
-    var model
-    var color
-    func Model(){
-        
-    }
-    func Color(){
-        
-    }
+
+protocol Vehicle {
+    static func Model()
+    static func Color()
+    
+}
+class Car : Vehicle{
+    static func Model(){}
+    static func Color(){}
     
 }
