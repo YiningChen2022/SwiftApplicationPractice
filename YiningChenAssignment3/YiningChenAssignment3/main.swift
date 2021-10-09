@@ -140,11 +140,10 @@ extension Int{
     mutating func square() {
           self = self * self
       }
-    func sum(){
+    mutating func sum(){
         var n=self
         var sum=0
         while n>0{
-            print(n)
             sum+=n
             n-=1
         }
@@ -157,3 +156,20 @@ print(someint)
 var someint2=5
 someint2.sum()
 print(someint2)
+//Exercise: Protocols
+//1.  Define a protocol Vehicle, inside this protocol define the following functions:
+//a.  Model() – This should print the model name
+//b.  Color() – This should print the color of the vehicle
+//2.  Define a class Car which adopt to Vehicle and provide the actual implementation.
+
+protocol Vehicle{
+    var model
+    var color
+    func Model(){
+        
+    }
+    func Color(){
+        
+    }
+    
+}
