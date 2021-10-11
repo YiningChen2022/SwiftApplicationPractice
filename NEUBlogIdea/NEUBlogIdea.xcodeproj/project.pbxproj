@@ -36,6 +36,7 @@
 		E87B1162270E07DC00D42770 /* PayWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1161270E07DC00D42770 /* PayWallHeaderView.swift */; };
 		E87B1164270E09A800D42770 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1163270E09A800D42770 /* Extensions.swift */; };
 		E87B1166270E135B00D42770 /* PayWallDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B1165270E135B00D42770 /* PayWallDescriptionView.swift */; };
+		E8C1B6F62714DE1300355CD9 /* SigninHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C1B6F52714DE1300355CD9 /* SigninHeaderView.swift */; };
 		EE93DAB2AB36EDCFCFDD018A /* Pods_NEUBlogIdeaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E817D3374D41BE5E1A1A4290 /* Pods_NEUBlogIdeaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		E87B1161270E07DC00D42770 /* PayWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallHeaderView.swift; sourceTree = "<group>"; };
 		E87B1163270E09A800D42770 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E87B1165270E135B00D42770 /* PayWallDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallDescriptionView.swift; sourceTree = "<group>"; };
+		E8C1B6F52714DE1300355CD9 /* SigninHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				E832B5BF270BB3D700864C85 /* LaunchScreen.storyboard */,
 				E87B1161270E07DC00D42770 /* PayWallHeaderView.swift */,
 				E87B1165270E135B00D42770 /* PayWallDescriptionView.swift */,
+				E8C1B6F52714DE1300355CD9 /* SigninHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				E832B5ED270BBD1B00864C85 /* ProfileViewController.swift in Sources */,
 				E832B5F0270BBD9500864C85 /* TabBarViewController.swift in Sources */,
 				E832B5B7270BB3D500864C85 /* SceneDelegate.swift in Sources */,
+				E8C1B6F62714DE1300355CD9 /* SigninHeaderView.swift in Sources */,
 				E87B1155270CB3C600D42770 /* StorageManager.swift in Sources */,
 				E87B115E270E002100D42770 /* PayWallViewController.swift in Sources */,
 			);
