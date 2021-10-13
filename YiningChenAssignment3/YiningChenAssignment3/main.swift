@@ -121,7 +121,10 @@ print(customer is ClubMember)
 let name: String? = readLine()
 let num=Int(name!)
 
-if name==nil{
+
+if num != nil{
+   print("Welcome Code Name \(num!)")
+}else if 
     print("Welcome Anonymous User")
 }else if num != nil{
     print("Welcome Code Name \(num!)")
