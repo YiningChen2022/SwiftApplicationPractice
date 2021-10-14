@@ -20,7 +20,7 @@ final class DatabaseManager{
     public func getAllPosts( completion: @escaping([BlogPost])-> Void){
      
     }
-    public func gePosts(for user:User, completion: @escaping([BlogPost])-> Void){
+    public func getPosts(for user:User, completion: @escaping([BlogPost])-> Void){
      
     }
     public func insert(user: User, completion: @escaping(Bool)-> Void){
@@ -36,4 +36,22 @@ final class DatabaseManager{
             }
      
     }
+    public func getUser( email:String, completion:@escaping (User?)->Void){
+        let ref = email.replacingOccurrences(of: ".", with: "_").replacingOccurrences(of: "@", with: "_")
+        database.collection("Users")
+            .document(ref).getDocument{
+                snapshot,error in
+                guard let data = snapshot?.data() as?[String: String],
+                      let name = data["name"],
+                      error==nil
+                else{
+                    return
+                }
+                var ref=data["profile_photo"]
+                let user = User(name:name, email:email, profilePictureRef: ref)
+                completion(user)
+                
+            }
+    }
+    
 }
