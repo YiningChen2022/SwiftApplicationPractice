@@ -104,6 +104,9 @@ class InterviewDirecrtory {
 
 //Testing
 let list1=InterviewDirecrtory(interviewList:Array())
+list1.addInterviewerProfile(name:"JasonJason", salary: 100000)
+list1.addInterviewerProfile(name:"MaryMary", salary:120000)
+list1.toString()
 /*let manager = Admin(userEmailId: "hello@gmail.com", password: "password")
 print("Manager or Admin Email?:")
 let email : String? = readLine()
