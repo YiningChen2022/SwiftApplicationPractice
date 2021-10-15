@@ -139,6 +139,9 @@ class Interview {
     public func setInterviewer(Interviewer: Interviewer){
         self.interviewer=Interviewer
     }
+    public func getuid()->Int{
+        return uid
+    }
     
     public func toString()->String {
         return "\(uid) \(interviewer.uniqueId) \(interviewer.name) + \(status)";
@@ -152,19 +155,30 @@ class InterviewsDirecrtory {
     init(interviewsList:Array<Interview>){
         self.interviewsList = []
     }
-    public func addInterviews(status:String, interviewer:Interviewer){
-        let currentinterview = Interview(status: status, interviewer: interviewer)
-        interviewsList.append( currentinterview )
-        
+    public func addInterviews(Interview :Interview){
+        interviewsList.append( Interview )
     }
-  /*  public func deleteInterciewerProfile(Interview:Interview){
+    public func getinterview (Id:Int)->Interview{
+        var inter:Interview?
+        for interview in interviewsList{
+            if interview.getuid()==Id{
+                inter = interview
+            }
+        }
+        return inter!
+    }
+    
+
+    public func deleteInterciew(Id: Int){
                 for (index, value) in interviewsList.enumerated() {
-                    if value.getInterviewer().==Interview.getInterviewer(){
+                    if value.uid==Id {
                         interviewsList.remove(at: index)
                     }
             }
     }
-   */
+    
+    
+    
     public func toString(interviewer:Interviewer){
         for interview in interviewsList {
             if interview.getInterviewer().getUniqueId()==interviewer.getUniqueId(){
@@ -195,14 +209,24 @@ list1.addInterviewerProfile(interviewer: person2 )
 list1.addInterviewerProfile(interviewer: person3)
 list1.addInterviewerProfile(interviewer: person4)
 let interviewlist = InterviewsDirecrtory(interviewsList: Array())
-interviewlist.addInterviews(status: "Processing", interviewer: person1)
-interviewlist.addInterviews(status: "Processing", interviewer: person1)
-interviewlist.addInterviews(status: "Processing", interviewer: person2)
-interviewlist.addInterviews(status: "Processing", interviewer: person2)
-interviewlist.addInterviews(status: "Processing", interviewer: person3)
-interviewlist.addInterviews(status: "Processing", interviewer: person3)
-interviewlist.addInterviews(status: "Processing", interviewer: person3)
-interviewlist.addInterviews(status: "Processing", interviewer: person4)
+
+
+let Int1=Interview(status: "Processing", interviewer: person1)
+let Int2=Interview(status: "Processing", interviewer: person1)
+let Int3=Interview(status: "Processing", interviewer: person2)
+let Int4=Interview(status: "Processing", interviewer: person2)
+let Int5=Interview(status: "Processing", interviewer: person3)
+let Int6=Interview(status: "Processing", interviewer: person3)
+let Int7=Interview(status: "Processing", interviewer: person3)
+let Int8=Interview(status: "Processing", interviewer: person4)
+interviewlist.addInterviews(Interview: Int1)
+interviewlist.addInterviews(Interview: Int2)
+interviewlist.addInterviews(Interview: Int3)
+interviewlist.addInterviews(Interview: Int4)
+interviewlist.addInterviews(Interview: Int5)
+interviewlist.addInterviews(Interview: Int6)
+interviewlist.addInterviews(Interview: Int7)
+interviewlist.addInterviews(Interview: Int8)
 interviewlist.toString()
 /*let manager = Admin(userEmailId: "hello@gmail.com", password: "password")
 print("Manager or Admin Email?:")
@@ -271,6 +295,13 @@ case "4":
         interviewlist.toString(interviewer: current)
         
     }else if selected1=="C"||selected1=="c"{
+       let newinterview = Interview(status: "Processing", interviewer: current)
+        interviewlist.addInterviews(Interview: newinterview)
+        let id = newinterview.getuid()
+        interviewlist.getinterview(Id: id).setStatus(status: "Complete")
+        interviewlist.toString(interviewer: current)
+        interviewlist.deleteInterciew(Id: id)
+        interviewlist.toString(interviewer: current)
         
     }else {
         print("input invalid")
