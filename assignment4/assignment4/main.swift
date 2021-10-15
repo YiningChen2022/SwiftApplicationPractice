@@ -12,6 +12,8 @@ import Foundation
 
 
 //A. Get Started: Admin or Account manager 1. User email id  2. Password
+/*------------------------------------------------------------------
+--------------------------------------------------------------------*/
 class Admin {
   var  userEmailId: String
   var  password: String
@@ -39,7 +41,8 @@ class Admin {
     //2. Delete Interviewer profile
     //3. Update Interviewer profile
     //4. View All Profiles
-
+/*------------------------------------------------------------------
+--------------------------------------------------------------------*/
 class Interviewer{
     var name: String
     var uniqueId:UUID
@@ -73,7 +76,8 @@ class Interviewer{
               return "\(uniqueId) \(name) \(salary!)";
           }
 }
-
+/*------------------------------------------------------------------
+--------------------------------------------------------------------*/
 class InterviewerDirecrtory {
     var interviewList: [Interviewer]
     init(interviewList:Array<Interviewer>){
@@ -89,16 +93,9 @@ class InterviewerDirecrtory {
         }
         return curr!
     }
-
-    
-    
-    
-
-    
 //1. Add Interviewer profile - Name, Unique id, Salary (default salary is nil )
-    public func addInterviewerProfile(name: String, salary: Int?){
-        let Interviewer = Interviewer(name: name,salary: salary!)
-        interviewList.append(Interviewer)
+    public func addInterviewerProfile(interviewer: Interviewer){
+        interviewList.append(interviewer)
     }
     public func deleteInterciewerProfile(uniqueId: String){
                 for (index, value) in interviewList.enumerated() {
@@ -113,13 +110,22 @@ class InterviewerDirecrtory {
     }
 }
 }
-
+/*------------------------------------------------------------------
+--------------------------------------------------------------------*/
 class Interview {
+    static var nextUid:Int = 0
+    static func generateUid() -> Int {
+         nextUid+=1
+        return nextUid
+    }
     var status:String
     var interviewer: Interviewer
+    let uid: Int
+  
     init(status: String, interviewer:Interviewer){
         self.interviewer=interviewer
         self.status=status
+        self.uid = Interview.generateUid()
     }
     public func getStatus()->String{
         return status
@@ -127,24 +133,77 @@ class Interview {
     public func setStatus(status: String){
         self.status=status
     }
+    public func getInterviewer()->Interviewer{
+        return interviewer
+    }
+    public func setInterviewer(Interviewer: Interviewer){
+        self.interviewer=Interviewer
+    }
+    
+    public func toString()->String {
+        return "\(uid) \(interviewer.uniqueId) \(interviewer.name) + \(status)";
+          }
 }
 
-
+/*------------------------------------------------------------------
+--------------------------------------------------------------------*/
 class InterviewsDirecrtory {
     var interviewsList: [Interview]
     init(interviewsList:Array<Interview>){
         self.interviewsList = []
     }
+    public func addInterviews(status:String, interviewer:Interviewer){
+        let currentinterview = Interview(status: status, interviewer: interviewer)
+        interviewsList.append( currentinterview )
+        
+    }
+  /*  public func deleteInterciewerProfile(Interview:Interview){
+                for (index, value) in interviewsList.enumerated() {
+                    if value.getInterviewer().==Interview.getInterviewer(){
+                        interviewsList.remove(at: index)
+                    }
+            }
+    }
+   */
+    public func toString(interviewer:Interviewer){
+        for interview in interviewsList {
+            if interview.getInterviewer().getUniqueId()==interviewer.getUniqueId(){
+                print (interview.toString())
+            }
+    }
+    }
+        public func toString(){
+            for interview in interviewsList {
+               
+                    print (interview.toString())
+                }
+        }
+        
+
 }
     
-
+/*------------------------------------------------------------------
+--------------------------------------------------------------------*/
 //Testing
+let person1 = Interviewer(name:"JasonJason", salary: 100000)
+let person2 = Interviewer(name:"MaryMary", salary:120000)
+let person3 = Interviewer(name:"AmyAmy", salary:110000)
+let person4 = Interviewer(name:"JennyJenny", salary:110000)
 let list1=InterviewerDirecrtory(interviewList:Array())
-list1.addInterviewerProfile(name:"JasonJason", salary: 100000)
-list1.addInterviewerProfile(name:"MaryMary", salary:120000)
-list1.addInterviewerProfile(name:"AmyAmy", salary:110000)
-list1.addInterviewerProfile(name:"JennyJenny", salary:110000)
-
+list1.addInterviewerProfile(interviewer: person1 )
+list1.addInterviewerProfile(interviewer: person2 )
+list1.addInterviewerProfile(interviewer: person3)
+list1.addInterviewerProfile(interviewer: person4)
+let interviewlist = InterviewsDirecrtory(interviewsList: Array())
+interviewlist.addInterviews(status: "Processing", interviewer: person1)
+interviewlist.addInterviews(status: "Processing", interviewer: person1)
+interviewlist.addInterviews(status: "Processing", interviewer: person2)
+interviewlist.addInterviews(status: "Processing", interviewer: person2)
+interviewlist.addInterviews(status: "Processing", interviewer: person3)
+interviewlist.addInterviews(status: "Processing", interviewer: person3)
+interviewlist.addInterviews(status: "Processing", interviewer: person3)
+interviewlist.addInterviews(status: "Processing", interviewer: person4)
+interviewlist.toString()
 /*let manager = Admin(userEmailId: "hello@gmail.com", password: "password")
 print("Manager or Admin Email?:")
 let email : String? = readLine()
@@ -167,8 +226,8 @@ case "1":
     let name : String? = readLine()
     print("please enter interviewer's salary")
     let salary : String? = readLine()
-    _ = Interviewer(name: name!, salary: Int(salary!)!)
-    list1.addInterviewerProfile(name: name!, salary: Int(salary!)!)
+    let curr = Interviewer(name: name!, salary: Int(salary!)!)
+    list1.addInterviewerProfile(interviewer: curr)
 case "2":
     print("\(list1.toString())")
     print("please enter the UniqueId to Delete interviewer:")
@@ -202,23 +261,26 @@ case "4":
     let current=list1.getInterviewer(uniqueId: selectedInterviewer!)
     print("select options below")
     print("A. Scheduled Interviews ")
-    print("B. All Interviews")
+    print("B. All Interviews for this user ")
     print("C. Add Interviews")
 
     let selected1 : String? = readLine()
-    switch selected1!{
-    case "A":
-        print("input invalided")
-    case "B":
-        print("input invalided")
-    case "C":
-        print("input invalided")
-    default:
-        print("input invalided")
-    
-    
+    if selected1=="A"||selected1=="a"{
+        interviewlist.toString()
+    }else if selected1=="B"||selected1=="b"{
+        interviewlist.toString(interviewer: current)
+        
+    }else if selected1=="C"||selected1=="c"{
+        
+    }else {
+        print("input invalid")
+        
+        
+    }
+        
+     
 default:
-    print("input invalided")
+    print("input invalid")
 }
         
    
