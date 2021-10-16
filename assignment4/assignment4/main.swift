@@ -47,7 +47,7 @@ class Interviewer{
     var name: String
     var uniqueId:UUID
     var salary:Int?=nil
-    init(name: String, salary:Int){
+    init(name: String, salary:Int?){
         self.name=name
         self.uniqueId=UUID()
         self.salary=salary
@@ -73,8 +73,12 @@ class Interviewer{
         self.salary=salary
     }
     public func toString()->String {
-              return "\(uniqueId) \(name) \(salary!)";
-          }
+        if self.salary==nil{
+            return "Id: \(uniqueId) name:  \(name) Salary: default"
+        }else{
+            return "Id: \(uniqueId) name:  \(name) Salary \(salary!)"
+        }
+    }
 }
 /*------------------------------------------------------------------
 --------------------------------------------------------------------*/
@@ -208,7 +212,7 @@ class InterviewsDirecrtory {
 /*------------------------------------------------------------------
 --------------------------------------------------------------------*/
 //Testing
-let person1 = Interviewer(name:"JasonJason", salary: 100000)
+let person1 = Interviewer(name:"JasonJason", salary: nil)
 let person2 = Interviewer(name:"MaryMary", salary:120000)
 let person3 = Interviewer(name:"AmyAmy", salary:110000)
 let person4 = Interviewer(name:"JennyJenny", salary:110000)
@@ -266,8 +270,13 @@ case "1":
     let name : String? = readLine()
     print("please enter interviewer's salary")
     let salary : String? = readLine()
-    let curr = Interviewer(name: name!, salary: Int(salary!)!)
-    list1.addInterviewerProfile(interviewer: curr)
+    if salary==""{
+        let curr = Interviewer(name: name!, salary:nil)
+        list1.addInterviewerProfile(interviewer: curr)
+    }else{
+        let curr = Interviewer(name: name!, salary: Int(salary!)!)
+        list1.addInterviewerProfile(interviewer: curr)
+    }
     print("Person Added")
     list1.toString()
 case "2":
@@ -289,10 +298,16 @@ case "3":
         print("please enter updated name")
         let updateName: String? = readLine()
         current.setName(name: updateName!)
-    }else{
+    }else if ans=="N"{
         print("please enter updated salary")
         let updatesalary: String? = readLine()
-        current.setName(name: updatesalary!)
+        if updatesalary==""{
+            current.setSalary(salary: nil)
+        }else {
+            current.setSalary(salary: Int(updatesalary!))
+        }
+    }else {
+        print("Wrong input")
     }
     print("---------------Interviewer Updated----------------------")
     print("\(list1.toString())")
@@ -316,9 +331,8 @@ case "4":
         let count = interviewlist.countInterviews(interviewer: current)
         if count>=6{
             print("warning! Scheduled Interviews exceed 6")
-        }else{
-            
-     
+        }
+        
         //1. Add a new Interview in Scheduled Interview List
        let newinterview = Interview(status: "Processing", interviewer: current)
         interviewlist.addInterviews(Interview: newinterview)
@@ -331,13 +345,12 @@ case "4":
         interviewlist.deleteInterciew(Id: id)
         print("---------------Display all Interciews after remove----------------------")
         interviewlist.toString(interviewer: current)
-        }
+        
     }else {
         print("input invalid")
         
         
     }
-        
      
 default:
     print("input invalid")
