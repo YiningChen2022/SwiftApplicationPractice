@@ -222,6 +222,10 @@ let interviewlist = InterviewsDirecrtory(interviewsList: Array())
 
 let Int1=Interview(status: "Processing", interviewer: person1)
 let Int2=Interview(status: "Processing", interviewer: person1)
+let Int9=Interview(status: "Processing", interviewer: person1)
+let Int10=Interview(status: "Processing", interviewer: person1)
+let Int11=Interview(status: "Processing", interviewer: person1)
+let Int12=Interview(status: "Processing", interviewer: person1)
 let Int3=Interview(status: "Processing", interviewer: person2)
 let Int4=Interview(status: "Processing", interviewer: person2)
 let Int5=Interview(status: "Processing", interviewer: person3)
@@ -236,15 +240,18 @@ interviewlist.addInterviews(Interview: Int5)
 interviewlist.addInterviews(Interview: Int6)
 interviewlist.addInterviews(Interview: Int7)
 interviewlist.addInterviews(Interview: Int8)
-interviewlist.toString()
-/*let manager = Admin(userEmailId: "hello@gmail.com", password: "password")
+interviewlist.addInterviews(Interview: Int9)
+interviewlist.addInterviews(Interview: Int10)
+interviewlist.addInterviews(Interview: Int11)
+interviewlist.addInterviews(Interview: Int12)
+let manager = Admin(userEmailId: "hello@gmail.com", password: "password")
 print("Manager or Admin Email?:")
 let email : String? = readLine()
 print("Please enter Password")
 let password : String? = readLine()
 
 if manager.userEmailId==email && manager.password==password {
- */
+ 
     print("select options below")
     print("1. Add Interviewer profile")
     print("2. Delete Interviewer profile")
@@ -261,6 +268,8 @@ case "1":
     let salary : String? = readLine()
     let curr = Interviewer(name: name!, salary: Int(salary!)!)
     list1.addInterviewerProfile(interviewer: curr)
+    print("Person Added")
+    list1.toString()
 case "2":
     print("\(list1.toString())")
     print("please enter the UniqueId to Delete interviewer:")
@@ -304,7 +313,7 @@ case "4":
         interviewlist.toString(interviewer: current)
         
     }else if selected1=="C"||selected1=="c"{
-        var count = interviewlist.countInterviews(interviewer: current)
+        let count = interviewlist.countInterviews(interviewer: current)
         if count>=6{
             print("warning! Scheduled Interviews exceed 6")
         }else{
@@ -334,8 +343,9 @@ default:
     print("input invalid")
 }
         
-   
-//}
+}else {
+    print("wrong email or password")
+}
 
 
     
