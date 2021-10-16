@@ -176,6 +176,15 @@ class InterviewsDirecrtory {
                     }
             }
     }
+    public func countInterviews(interviewer:Interviewer)->Int{
+        var count:Int=0
+        for interview in interviewsList {
+            if interview.getInterviewer().getUniqueId()==interviewer.getUniqueId(){
+                count+=1
+            }
+        }
+        return count
+    }
     
     
     
@@ -295,14 +304,25 @@ case "4":
         interviewlist.toString(interviewer: current)
         
     }else if selected1=="C"||selected1=="c"{
+        var count = interviewlist.countInterviews(interviewer: current)
+        if count>=6{
+            print("warning! Scheduled Interviews exceed 6")
+        }else{
+            
+     
+        //1. Add a new Interview in Scheduled Interview List
        let newinterview = Interview(status: "Processing", interviewer: current)
         interviewlist.addInterviews(Interview: newinterview)
         let id = newinterview.getuid()
+        //2. Update the status of Scheduled Interview to Completed
         interviewlist.getinterview(Id: id).setStatus(status: "Complete")
+        //3. Display all the Interviews
+        print("---------------Display all Interciews before remove----------------------")
         interviewlist.toString(interviewer: current)
         interviewlist.deleteInterciew(Id: id)
+        print("---------------Display all Interciews after remove----------------------")
         interviewlist.toString(interviewer: current)
-        
+        }
     }else {
         print("input invalid")
         
