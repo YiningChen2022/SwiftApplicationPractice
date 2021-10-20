@@ -66,6 +66,27 @@ class CompanyDirecrtory {
     init(companyList:Array<Company>){
         self.companyList = []
     }
+    public func addCompany(Company:Company){
+        companyList.append(Company)
+    }
+    public func DeleteCompany(id:Int){
+        for (index, value) in companyList.enumerated() {
+            if value.id==id {
+                companyList.remove(at: index)
+            }
+            
+        }
+    }
+    public func UpdateCompany (id:Int,name:String?, headquarter: String?, email:String?){
+        for (index, value) in companyList.enumerated() {
+            if value.id==id {
+                companyList.remove(at: index)
+                company
+            }
+            
+        }
+    }
+    
 }
 
 
@@ -156,11 +177,15 @@ class Stock{
     var  lastTradePrice: Double
     var  financialRating: Int
     var  Category: Category
-    init(name : String,lastTradePrice: Double ,financialRating: Int ,Category: Category) {
+    init(name : String,lastTradePrice: Double ,financialRating: Int ,category: Category,company:Company) {
+        self.Category=category
         self.id=Stock.generateUid()
         self.name=name
         self.lastTradePrice=lastTradePrice
         self.financialRating=financialRating
+        self.company=company
     }
 }
+var company1 = Company(name: "Google", symbol: "google", headquarter: "Mountain View", email: "google@gmail.com")
+CompanyDirecrtory.
 
