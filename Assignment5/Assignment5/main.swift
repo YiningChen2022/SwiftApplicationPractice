@@ -361,6 +361,43 @@ class StockDirecrtory {
             print ( stock.toString())
         }
     }
+    public func searchByCompany(CompanyName:String){
+        for   stock in stockList {
+            if stock.company.getName() == CompanyName{
+                print(stock.toString())
+            }
+        }
+
+    }
+    public func searchByCategory(categoryName: String){
+        for   stock in stockList {
+            if stock.category.getName() == categoryName{
+                print(stock.toString())
+            }
+        }
+    }
+    public func searchByName(name: String){
+        for   stock in stockList {
+            if stock.getName() == name{
+                print(stock.toString())
+            }
+        }
+    }
+    public func searchByFinancialRating(financialRating: Int){
+        for   stock in stockList {
+            if stock.getfinancialRating() >= financialRating{
+                print(stock.toString())
+            }
+        }
+    }
+    public func searchByLastTradePrice(lastTradePrice: Double){
+        for   stock in stockList {
+            if stock.getlastTradePrice()>= financialRating{
+                print(stock.toString())
+            }
+        }
+    }
+
 }
 
     
