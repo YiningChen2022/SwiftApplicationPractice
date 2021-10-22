@@ -94,12 +94,8 @@ class CompanyDirecrtory {
     public func toString(){
         for company in companyList {
             print (company.toString())
-            
         }
-        
     }
-    
-  
 }
 
 
@@ -232,9 +228,38 @@ class Category{
     public func toString ()->String{
         return "Catagory:\(id) \(name)"
     }
+}
+
+class CategoryDirecrtory {
+    var catagoryList: [Category]
+    init(catagoryList:Array<Category>){
+        self.catagoryList = []
+    }
+    public func addCategory(Category:Category){
+        catagoryList.append(Category)
+    }
     
-    
-    
+    public func DeleteCategory(id:Int){
+        for (index, value) in catagoryList.enumerated() {
+            if value.id==id {
+                catagoryList.remove(at: index)
+            }
+            
+        }
+    }
+    public func UpdateCategory (id:Int,name: String){
+        for (index, value) in catagoryList.enumerated() {
+            if value.id==id {
+                value.setName(name: name)
+            }
+            
+        }
+    }
+    public func toString(){
+        for   catagory in catagoryList {
+            print ( catagory.toString())
+        }
+    }
 }
 
 class Stock{
@@ -248,19 +273,101 @@ class Stock{
     var  company: Company
     var  lastTradePrice: Double
     var  financialRating: Int
-    var  Category: Category
+    var  category: Category
     init(name : String,lastTradePrice: Double ,financialRating: Int ,category: Category,company:Company) {
-        self.Category=category
+        self.category=category
         self.id=Stock.generateUid()
         self.name=name
         self.lastTradePrice=lastTradePrice
         self.financialRating=financialRating
         self.company=company
     }
+    public func getId()->Int {
+        return id
+    }
+    public func getName()->String {
+        return name
+    }
+    public func setName(name :String){
+        self.name=name
+    }
+    public func getCompany()->Company {
+        return company
+    }
+    public func setCompany(company :Company){
+        self.company=company
+    }
+    public func getlastTradePrice()->Double {
+        return  lastTradePrice
+    }
+    public func setlastTradePrice(lastTradePrice :Double){
+        self.lastTradePrice=lastTradePrice
+    }
+    public func getfinancialRating()->Int {
+        return financialRating
+    }
+    public func setfinancialRating(financialRating:Int){
+        self.financialRating=financialRating
+    }
+    public func getCategory()->Category {
+        return category
+    }
+    public func setCategory(category:Category){
+        self.category=category
+    }
+    
+    
+    public func toString ()->String{
+        return "Stock:\(id) \(name) CompanyInfo: \(company.toString())  LastTradePrice:\(lastTradePrice) financialRating: \(financialRating) Category:\(category) "
+    }
+}
+class StockDirecrtory {
+    var stockList: [Stock]
+    init(stockList:Array<Stock>){
+        self.stockList = []
+    }
+    public func addStock(Stock:Stock){
+        stockList.append(Stock)
+    }
+    
+    public func DeleteStock(id:Int){
+        for (index, value) in stockList.enumerated() {
+            if value.id==id {
+                stockList.remove(at: index)
+            }
+            
+        }
+    }
+    public func UpdateStock (id:Int,company:Company?,lastTradePrice:Double?,financialRating:Int?, Category:Category?){
+        for (index, value) in stockList.enumerated() {
+            if value.id==id {
+                if company != nil {
+                    value.setCompany(company: company!)
+                }
+                if lastTradePrice != nil {
+                    value.setlastTradePrice(lastTradePrice:lastTradePrice!)
+                }
+                if  financialRating != nil {
+                    value.setfinancialRating(financialRating: financialRating!)
+                }
+                if  Category != nil {
+                    value.setCategory(category: Category!)
+                }
+            }
+        }
+    }
+    public func toString(){
+        for   stock in stockList {
+            print ( stock.toString())
+        }
+    }
 }
 
+    
+    
 
-print("--------------------Testing------------------")
+
+print("--------------------Testing Company------------------")
 let testcompanylist = CompanyDirecrtory(companyList: Array())
 print("--------------------Adding companies-----------")
 var company1 = Company(name: "Google", symbol: "GOOGL", headquarter: "Mountain View", email: "google@gmail.com")
@@ -279,3 +386,53 @@ testcompanylist.toString()
 print("--------------------Delete Company-----------")
 testcompanylist.DeleteCompany(id: 4)
 testcompanylist.toString()
+
+
+print("-----------------------------------------------------")
+
+print("--------------------Testing Customer------------------")
+let testcustomerlist = CustomerDirecrtory(customerList: Array())
+print("--------------------Adding customers-----------")
+var customer1 = Customer(firstName: "James", lastName: "James", address: "123 st", contactDetails: "618-111-1111", emailID: "James@gmail.com")
+var customer2 = Customer(firstName: "Robert", lastName: "Robert", address: "234 st", contactDetails: "618-222-2222", emailID: "Robert@gmail.com")
+var customer3 = Customer(firstName: "Mary", lastName: "Mary", address: "345 st", contactDetails: "618-333-3333", emailID: "mary@gmail.com")
+var customer4 = Customer(firstName: "Patricia", lastName: "Patricia", address: "456 st", contactDetails: "618-444-4444", emailID: "Patricia@gmail.com")
+print("--------------------view all customers-----------")
+testcustomerlist.addCustomer(Customer: customer1)
+testcustomerlist.addCustomer(Customer: customer2)
+testcustomerlist.addCustomer(Customer: customer3)
+testcustomerlist.addCustomer(Customer: customer4)
+testcustomerlist.toString()
+print("-------------------customer update-----------")
+
+testcustomerlist.UpdateCustomer(id: 1, firstName: nil, lastName: "Bound", address: nil, contactDetails: nil, emailId: nil)
+testcustomerlist.toString()
+print("--------------------Delete Company-----------")
+testcustomerlist.DeleteCustomer(id: 1)
+testcustomerlist.toString()
+
+
+
+
+print("-----------------------------------------------------")
+
+print("--------------------Testing Categroy------------------")
+let testCategorylist = CategoryDirecrtory(catagoryList: Array())
+print("--------------------Adding Categroy-----------")
+var category1=Category(name: "Energy")
+var category2=Category(name: "Materials")
+var category3=Category(name: "Industrials")
+var category4=Category(name: "Utilities")
+testCategorylist.addCategory(Category: category1)
+testCategorylist.addCategory(Category: category2)
+testCategorylist.addCategory(Category: category3)
+testCategorylist.addCategory(Category: category4)
+
+print("--------------------view all Categroy-----------")
+testCategorylist.toString()
+print("-------------------Categroy update-----------")
+testCategorylist.UpdateCategory(id: 1, name: "energy")
+testCategorylist.toString()
+print("--------------------Delete Company-----------")
+testCategorylist.DeleteCategory(id: 1)
+testCategorylist.toString()
