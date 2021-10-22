@@ -392,7 +392,7 @@ class StockDirecrtory {
     }
     public func searchByLastTradePrice(lastTradePrice: Double){
         for   stock in stockList {
-            if stock.getlastTradePrice()>= financialRating{
+            if stock.getlastTradePrice() >= lastTradePrice{
                 print(stock.toString())
             }
         }
@@ -468,7 +468,7 @@ testCategorylist.toString()
 print("-------------------Categroy update--------------")
 testCategorylist.UpdateCategory(id: 1, name: "energy")
 testCategorylist.toString()
-print("--------------------Delete Company--------------")
+print("--------------------Delete Categroy--------------")
 testCategorylist.DeleteCategory(id: 1)
 testCategorylist.toString()
 
@@ -478,18 +478,28 @@ print("--------------------------------------------------")
 
 print("--------------------Testing stock--------------")
 let teststocklist = StockDirecrtory(stockList: Array())
-print("--------------------Adding Categroy---------------")
+print("--------------------Adding stock---------------")
 var stock1=Stock(name: "AAPL", lastTradePrice: 149.06, financialRating: 9, category: category2, company: company2)
-var stock2=Stock(name: "GOOGL", lastTradePrice:2740.44, financialRating: 9, category: category1, company: company1)
-var stock3=Stock(name: "AMAZ", lastTradePrice: 3355.67, financialRating: 9, category: category3, company: company3)
+var stock2=Stock(name: "GOOGL", lastTradePrice:2740.44, financialRating: 8, category: category1, company: company1)
+var stock3=Stock(name: "AMAZ", lastTradePrice: 3355.67, financialRating: 7, category: category3, company: company3)
 teststocklist.addStock(Stock: stock1)
 teststocklist.addStock(Stock: stock2)
 teststocklist.addStock(Stock: stock3)
-print("--------------------view all Categroy-----------")
+print("--------------------view allstock-----------")
 teststocklist.toString()
-print("-------------------Categroy update--------------")
+print("-------------------stock update--------------")
 teststocklist.UpdateStock(id: 1, company: nil, lastTradePrice: 160.00, financialRating: nil, Category: nil)
 teststocklist.toString()
-print("--------------------Delete Company--------------")
+
+print("--------------------searchByCategory--------------")
+teststocklist.searchByCategory(categoryName: "Consumer Services")
+print("--------------------searchByName--------------")
+teststocklist.searchByName(name: "AAPL")
+print("--------------------searchByFinancialRating--------------")
+teststocklist.searchByFinancialRating(financialRating: 8)
+print("--------------------searchByLastTradePrice--------------")
+teststocklist.searchByLastTradePrice(lastTradePrice:1000.00)
+
+print("--------------------Delete stock--------------")
 teststocklist.DeleteStock(id: 1)
 teststocklist.toString()
