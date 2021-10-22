@@ -71,10 +71,15 @@ class CompanyDirecrtory {
         for (index, value) in companyList.enumerated() {
             if value.id==id {
                 companyList.remove(at: index)
+                
             }
+            
         }
     }
     public func UpdateCompany (id:Int,symbol:String?, headquarter: String?, email:String?){
+        if  symbol == "" || headquarter == "" || email == ""{
+            print("invalid input ")
+        }else{
              for (index, value) in companyList.enumerated() {
                  if value.id==id {
                      if symbol != nil {
@@ -90,6 +95,7 @@ class CompanyDirecrtory {
                  }
                  
              }
+        }
          }
     public func toString(){
         for company in companyList {
@@ -174,6 +180,9 @@ class CustomerDirecrtory {
         }
     }
     public func UpdateCustomer (id:Int,firstName: String?, lastName:String?, address:String?, contactDetails: String?, emailId:String?){
+        if (firstName == "" || lastName == "" || address=="" || contactDetails == "" || emailId == ""){
+            print("invalid input")
+        }else {
         for (index, value) in customerList.enumerated() {
             if value.id==id {
                 if firstName != nil {
@@ -193,6 +202,7 @@ class CustomerDirecrtory {
                 }
             }
             
+        }
         }
     }
     public func toString(){
@@ -248,11 +258,15 @@ class CategoryDirecrtory {
         }
     }
     public func UpdateCategory (id:Int,name: String){
+        if name == "" {
+            print("please input name")
+        }else {
         for (index, value) in catagoryList.enumerated() {
             if value.id==id {
                 value.setName(name: name)
             }
             
+        }
         }
     }
     public func toString(){
@@ -339,21 +353,23 @@ class StockDirecrtory {
         }
     }
     public func UpdateStock (id:Int,company:Company?,lastTradePrice:Double?,financialRating:Int?, Category:Category?){
+       
         for (index, value) in stockList.enumerated() {
             if value.id==id {
                 if company != nil {
                     value.setCompany(company: company!)
                 }
-                if lastTradePrice != nil {
+                if lastTradePrice != nil && lastTradePrice!>0.00 {
                     value.setlastTradePrice(lastTradePrice:lastTradePrice!)
                 }
-                if  financialRating != nil {
+                if  financialRating != nil && financialRating!>0 && financialRating!<10  {
                     value.setfinancialRating(financialRating: financialRating!)
                 }
                 if  Category != nil {
                     value.setCategory(category: Category!)
                 }
             }
+        
         }
     }
     public func toString(){
@@ -370,30 +386,49 @@ class StockDirecrtory {
 
     }
     public func searchByCategory(categoryName: String){
-        for   stock in stockList {
-            if stock.category.getName() == categoryName{
-                print(stock.toString())
+        if categoryName == "" {
+            print("please input valid value")
+        }else{
+            for   stock in stockList {
+                if stock.category.getName() == categoryName{
+                    print(stock.toString())
+                }
             }
         }
+     
     }
     public func searchByName(name: String){
-        for   stock in stockList {
-            if stock.getName() == name{
-                print(stock.toString())
+        if name == "" {
+            print("please input valid value")
+        }else{
+            for   stock in stockList {
+                if stock.getName() == name{
+                    print(stock.toString())
+                }
             }
+            
         }
     }
     public func searchByFinancialRating(financialRating: Int){
-        for   stock in stockList {
-            if stock.getfinancialRating() >= financialRating{
-                print(stock.toString())
+        if financialRating>10 || financialRating<0 {
+            print("please input valid value")
+        }else{
+            for   stock in stockList {
+                if stock.getfinancialRating() >= financialRating{
+                    print(stock.toString())
+                }
             }
+       
         }
     }
     public func searchByLastTradePrice(lastTradePrice: Double){
-        for   stock in stockList {
-            if stock.getlastTradePrice() >= lastTradePrice{
-                print(stock.toString())
+        if lastTradePrice<0.00 {
+            print("please input valid value")
+        }else{
+            for   stock in stockList {
+                if stock.getlastTradePrice() >= lastTradePrice{
+                    print(stock.toString())
+                }
             }
         }
     }
@@ -491,13 +526,13 @@ print("-------------------stock update--------------")
 teststocklist.UpdateStock(id: 1, company: nil, lastTradePrice: 160.00, financialRating: nil, Category: nil)
 teststocklist.toString()
 
-print("--------------------searchByCategory--------------")
+print("--------------------searchByCategory: Consumer Services--------------")
 teststocklist.searchByCategory(categoryName: "Consumer Services")
-print("--------------------searchByName--------------")
+print("--------------------searchByName:AAPL --------------")
 teststocklist.searchByName(name: "AAPL")
-print("--------------------searchByFinancialRating--------------")
+print("--------------------searchByFinancialRating >= 8--------------")
 teststocklist.searchByFinancialRating(financialRating: 8)
-print("--------------------searchByLastTradePrice--------------")
+print("--------------------searchByLastTradePrice>=1000--------------")
 teststocklist.searchByLastTradePrice(lastTradePrice:1000.00)
 
 print("--------------------Delete stock--------------")
