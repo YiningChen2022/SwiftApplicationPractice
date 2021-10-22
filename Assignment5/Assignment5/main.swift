@@ -7,8 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
 
 class Company {
     static var nextUid:Int = 0
@@ -74,19 +72,34 @@ class CompanyDirecrtory {
             if value.id==id {
                 companyList.remove(at: index)
             }
-            
         }
     }
-    public func UpdateCompany (id:Int,name:String?, headquarter: String?, email:String?){
-        for (index, value) in companyList.enumerated() {
-            if value.id==id {
-                companyList.remove(at: index)
-                company
-            }
+    public func UpdateCompany (id:Int,symbol:String?, headquarter: String?, email:String?){
+             for (index, value) in companyList.enumerated() {
+                 if value.id==id {
+                     if symbol != nil {
+                         value.setSymbol(symbol: symbol!)
+                     }
+                     if  headquarter != nil {
+                         value.setHeadquarter(headquarter: headquarter!)
+                     }
+                     if  email != nil {
+                         value.setEmail(email: email!)
+                     }
+                     
+                 }
+                 
+             }
+         }
+    public func toString(){
+        for company in companyList {
+            print (company.toString())
             
         }
+        
     }
     
+  
 }
 
 
@@ -143,11 +156,55 @@ class Customer {
     public func setEmailID(emailID :String){
         self.emailID=emailID
     }
+    public func toString ()->String{
+        return "Customer:\(id) \(firstName) \(lastName) \(address) \(contactDetails) \(emailID)"
+    }
 }
 class CustomerDirecrtory {
     var customerList: [Customer]
     init(customerList:Array<Customer>){
         self.customerList = []
+    }
+    public func addCustomer(Customer:Customer){
+        customerList.append(Customer)
+    }
+    
+    public func DeleteCustomer(id:Int){
+        for (index, value) in customerList.enumerated() {
+            if value.id==id {
+                customerList.remove(at: index)
+            }
+            
+        }
+    }
+    public func UpdateCustomer (id:Int,firstName: String?, lastName:String?, address:String?, contactDetails: String?, emailId:String?){
+        for (index, value) in customerList.enumerated() {
+            if value.id==id {
+                if firstName != nil {
+                    value.setFirstName(firstName: firstName!)
+                }
+                if  lastName != nil {
+                    value.setLastName(lastName: lastName!)
+                }
+                if  address != nil {
+                    value.setAddress(address: address!)
+                }
+                if  contactDetails != nil {
+                    value.setContactDetails(contactDetails: contactDetails!)
+                }
+                if  emailId != nil {
+                    value.setEmailID(emailID: emailId!)
+                }
+            }
+            
+        }
+    }
+    public func toString(){
+        for customer in customerList {
+            print (customer.toString())
+            
+        }
+        
     }
 }
 
@@ -163,6 +220,21 @@ class Category{
         self.id=Category.generateUid()
         self.name=name
     }
+    public func getId()->Int {
+        return id
+    }
+    public func getName()->String {
+        return name
+    }
+    public func setName(name :String){
+        self.name=name
+    }
+    public func toString ()->String{
+        return "Catagory:\(id) \(name)"
+    }
+    
+    
+    
 }
 
 class Stock{
@@ -186,6 +258,24 @@ class Stock{
         self.company=company
     }
 }
-var company1 = Company(name: "Google", symbol: "google", headquarter: "Mountain View", email: "google@gmail.com")
-CompanyDirecrtory.
 
+
+print("--------------------Testing------------------")
+let testcompanylist = CompanyDirecrtory(companyList: Array())
+print("--------------------Adding companies-----------")
+var company1 = Company(name: "Google", symbol: "GOOGL", headquarter: "Mountain View", email: "google@gmail.com")
+var company2 = Company(name: "Apple", symbol: "AAPL", headquarter: "Mountain View", email: "apple@apple.com")
+var company3 = Company(name: "Amazon", symbol: "AMZN", headquarter: "seattle ", email: "amazon@amazon.com")
+var company4 = Company(name: "FaceBook", symbol: "FB", headquarter: "Menlo Park,CA", email: "facebook@facebook.com")
+print("--------------------view all companies-----------")
+testcompanylist.addCompany(Company: company1)
+testcompanylist.addCompany(Company: company2)
+testcompanylist.addCompany(Company: company3)
+testcompanylist.addCompany(Company: company4)
+testcompanylist.toString()
+print("-------------------update Company-----------")
+testcompanylist.UpdateCompany(id: 4, symbol: "FBupdated", headquarter: "Menlo Park,CA updated", email: nil)
+testcompanylist.toString()
+print("--------------------Delete Company-----------")
+testcompanylist.DeleteCompany(id: 4)
+testcompanylist.toString()
