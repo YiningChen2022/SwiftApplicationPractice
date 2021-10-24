@@ -8,444 +8,6 @@
 import Foundation
 
 
-class Company {
-    static var nextUid:Int = 0
-    static func generateUid() -> Int {
-         nextUid+=1
-        return nextUid
-    }
-    let id: Int
-    var  name : String
-    var  symbol : String
-    var  headquarter: String
-    var  email: String
-    init(name : String,symbol : String,headquarter: String, email: String) {
-        self.name=name
-        self.symbol=symbol
-        self.headquarter=headquarter
-        self.email=email
-        self.id=Company.generateUid()
-       
-    }
-    public func getid()->Int{
-        return id
-    }
-    public func getName()->String {
-        return name
-    }
-    public func setName(name :String){
-        self.name=name
-    }
-    public func getSymbol()->String {
-        return symbol
-    }
-    public func setSymbol(symbol:String){
-        self.symbol=symbol
-    }
-    public func getHeadquarter()->String {
-        return headquarter
-    }
-    public func setHeadquarter(headquarter:String){
-        self.headquarter=headquarter
-    }
-    public func getEmail()->String {
-        return email
-    }
-    public func setEmail(email :String){
-        self.email=email
-    }
-    public func toString ()->String{
-        return "Company:\(id) \(name) \(symbol) \(headquarter) \(email)"
-    }
-}
-
-class CompanyDirecrtory {
-    var companyList: [Company]
-    init(companyList:Array<Company>){
-        self.companyList = []
-    }
-    public func addCompany(Company:Company){
-        companyList.append(Company)
-    }
-    public func DeleteCompany(id:Int){
-        for (index, value) in companyList.enumerated() {
-            if value.id==id {
-                companyList.remove(at: index)
-                
-            }
-            
-        }
-    }
-    public func UpdateCompany (id:Int,symbol:String?, headquarter: String?, email:String?){
-        if  symbol == "" || headquarter == "" || email == ""{
-            print("invalid input ")
-        }else{
-             for (index, value) in companyList.enumerated() {
-                 if value.id==id {
-                     if symbol != nil {
-                         value.setSymbol(symbol: symbol!)
-                     }
-                     if  headquarter != nil {
-                         value.setHeadquarter(headquarter: headquarter!)
-                     }
-                     if  email != nil {
-                         value.setEmail(email: email!)
-                     }
-                     
-                 }
-                 
-             }
-        }
-         }
-    public func toString(){
-        for company in companyList {
-            print (company.toString())
-        }
-    }
-}
-
-
-class Customer {
-    static var nextUid:Int = 0
-    static func generateUid() -> Int {
-         nextUid+=1
-        return nextUid
-    }
-    let id: Int
-    var  firstName : String
-    var  lastName: String
-    var address: String
-    var contactDetails: String
-    var  emailID: String
-    init(  firstName : String, lastName: String, address: String, contactDetails: String,emailID: String) {
-        self.id=Customer.generateUid()
-        self.firstName=firstName
-        self.lastName=lastName
-        self.address=address
-        self.contactDetails=contactDetails
-        self.emailID=emailID
-    }
-    public func getid()->Int{
-        return id
-    }
-    public func getFirstName()->String {
-        return firstName
-    }
-    public func setFirstName(firstName :String){
-        self.firstName=firstName
-    }
-    public func getLastName()->String {
-        return lastName
-    }
-    public func setLastName(lastName :String){
-        self.lastName=lastName
-    }
-    public func getAddress()->String {
-        return address
-    }
-    public func setAddress(address :String){
-        self.address=address
-    }
-    public func getContactDetails()->String {
-        return contactDetails
-    }
-    public func setContactDetails(contactDetails :String){
-        self.contactDetails=contactDetails
-    }
-    public func getEmailID()->String {
-        return emailID
-    }
-    public func setEmailID(emailID :String){
-        self.emailID=emailID
-    }
-    public func toString ()->String{
-        return "Customer:\(id) \(firstName) \(lastName) \(address) \(contactDetails) \(emailID)"
-    }
-}
-class CustomerDirecrtory {
-    var customerList: [Customer]
-    init(customerList:Array<Customer>){
-        self.customerList = []
-    }
-    public func addCustomer(Customer:Customer){
-        customerList.append(Customer)
-    }
-    
-    public func DeleteCustomer(id:Int){
-        for (index, value) in customerList.enumerated() {
-            if value.id==id {
-                customerList.remove(at: index)
-            }
-            
-        }
-    }
-    public func getCustomer(id:Int)->Customer?{
-        var curr: Customer?
-        for (_, value) in customerList.enumerated() {
-            if value.id==id {
-                curr=value
-            }
-        }
-       return curr
-    }
-    public func UpdateCustomer (id:Int,firstName: String?, lastName:String?, address:String?, contactDetails: String?, emailId:String?){
-       
-        for (index, value) in customerList.enumerated() {
-            if value.id==id {
-                if firstName != nil && firstName != "" {
-                    value.setFirstName(firstName: firstName!)
-                }
-                if  lastName != nil && lastName != ""{
-                    value.setLastName(lastName: lastName!)
-                }
-                if  address != nil && address != "" {
-                    value.setAddress(address: address!)
-                }
-                if  contactDetails != nil && contactDetails != "" {
-                    value.setContactDetails(contactDetails: contactDetails!)
-                }
-                if  emailId != nil && emailId != ""{
-                    value.setEmailID(emailID: emailId!)
-                }
-            }
-            
-        
-        }
-    }
-    public func toString(){
-        for customer in customerList {
-            print (customer.toString())
-            
-        }
-        
-    }
-}
-
-class Category{
-    static var nextUid:Int = 0
-    static func generateUid() -> Int {
-         nextUid+=1
-        return nextUid
-    }
-    var id:Int
-    var name: String
-    init(name: String){
-        self.id=Category.generateUid()
-        self.name=name
-    }
-    public func getId()->Int {
-        return id
-    }
-    public func getName()->String {
-        return name
-    }
-    public func setName(name :String){
-        self.name=name
-    }
-    public func toString ()->String{
-        return "Catagory:\(id) \(name)"
-    }
-}
-
-class CategoryDirecrtory {
-    var catagoryList: [Category]
-    init(catagoryList:Array<Category>){
-        self.catagoryList = []
-    }
-    public func addCategory(Category:Category){
-        catagoryList.append(Category)
-    }
-    
-    public func DeleteCategory(id:Int){
-        for (index, value) in catagoryList.enumerated() {
-            if value.id==id {
-                catagoryList.remove(at: index)
-            }
-            
-        }
-    }
-    public func UpdateCategory (id:Int,name: String){
-        if name == "" {
-            print("please input name")
-        }else {
-        for (index, value) in catagoryList.enumerated() {
-            if value.id==id {
-                value.setName(name: name)
-            }
-            
-        }
-        }
-    }
-    public func toString(){
-        for   catagory in catagoryList {
-            print ( catagory.toString())
-        }
-    }
-}
-
-class Stock{
-    static var nextUid:Int = 0
-    static func generateUid() -> Int {
-         nextUid+=1
-        return nextUid
-    }
-    var  id: Int
-    var  name : String
-    var  company: Company
-    var  lastTradePrice: Double
-    var  financialRating: Int
-    var  category: Category
-    init(name : String,lastTradePrice: Double ,financialRating: Int ,category: Category,company:Company) {
-        self.category=category
-        self.id=Stock.generateUid()
-        self.name=name
-        self.lastTradePrice=lastTradePrice
-        self.financialRating=financialRating
-        self.company=company
-    }
-    public func getId()->Int {
-        return id
-    }
-    public func getName()->String {
-        return name
-    }
-    public func setName(name :String){
-        self.name=name
-    }
-    public func getCompany()->Company {
-        return company
-    }
-    public func setCompany(company :Company){
-        self.company=company
-    }
-    public func getlastTradePrice()->Double {
-        return  lastTradePrice
-    }
-    public func setlastTradePrice(lastTradePrice :Double){
-        self.lastTradePrice=lastTradePrice
-    }
-    public func getfinancialRating()->Int {
-        return financialRating
-    }
-    public func setfinancialRating(financialRating:Int){
-        self.financialRating=financialRating
-    }
-    public func getCategory()->Category {
-        return category
-    }
-    public func setCategory(category:Category){
-        self.category=category
-    }
-    
-    
-    public func toString ()->String{
-        return "Stock:\(id) \(name) CompanyInfo: \(company.toString())  LastTradePrice:\(lastTradePrice) financialRating: \(financialRating) Category:\(category) "
-    }
-}
-class StockDirecrtory {
-    var stockList: [Stock]
-    init(stockList:Array<Stock>){
-        self.stockList = []
-    }
-    public func addStock(Stock:Stock){
-        stockList.append(Stock)
-    }
-    
-    public func DeleteStock(id:Int){
-        for (index, value) in stockList.enumerated() {
-            if value.id==id {
-                stockList.remove(at: index)
-            }
-            
-        }
-    }
-    public func UpdateStock (id:Int,company:Company?,lastTradePrice:Double?,financialRating:Int?, Category:Category?){
-       
-        for (index, value) in stockList.enumerated() {
-            if value.id==id {
-                if company != nil {
-                    value.setCompany(company: company!)
-                }
-                if lastTradePrice != nil && lastTradePrice!>0.00 {
-                    value.setlastTradePrice(lastTradePrice:lastTradePrice!)
-                }
-                if  financialRating != nil && financialRating!>0 && financialRating!<10  {
-                    value.setfinancialRating(financialRating: financialRating!)
-                }
-                if  Category != nil {
-                    value.setCategory(category: Category!)
-                }
-            }
-        
-        }
-    }
-    public func toString(){
-        for   stock in stockList {
-            print ( stock.toString())
-        }
-    }
-    public func searchByCompany(CompanyName:String){
-        for   stock in stockList {
-            if stock.company.getName() == CompanyName{
-                print(stock.toString())
-            }
-        }
-
-    }
-    public func searchByCategory(categoryName: String){
-        if categoryName == "" {
-            print("please input valid value")
-        }else{
-            for   stock in stockList {
-                if stock.category.getName() == categoryName{
-                    print(stock.toString())
-                }
-            }
-        }
-     
-    }
-    public func searchByName(name: String){
-        if name == "" {
-            print("please input valid value")
-        }else{
-            for   stock in stockList {
-                if stock.getName() == name{
-                    print(stock.toString())
-                }
-            }
-            
-        }
-    }
-    public func searchByFinancialRating(financialRating: Int){
-        if financialRating>10 || financialRating<0 {
-            print("please input valid value")
-        }else{
-            for   stock in stockList {
-                if stock.getfinancialRating() >= financialRating{
-                    print(stock.toString())
-                }
-            }
-       
-        }
-    }
-    public func searchByLastTradePrice(lastTradePrice: Double){
-        if lastTradePrice<0.00 {
-            print("please input valid value")
-        }else{
-            for   stock in stockList {
-                if stock.getlastTradePrice() >= lastTradePrice{
-                    print(stock.toString())
-                }
-            }
-        }
-    }
-
-}
-
-    
-    
-
-
 print("--------------------Testing Company------------------")
 let testcompanylist = CompanyDirecrtory(companyList: Array())
 print("--------------------Adding companies-----------")
@@ -547,7 +109,7 @@ print("3.manage category")
 print("4.manage stock")
 let selected : String? = readLine()
 switch selected!{
-case "1":
+case "1"://manage customer
     print("Select options :")
     print("1.add coustomer")
     print("2.update customer")
@@ -625,13 +187,153 @@ case "1":
     default:
         print("input invalid")
     }
-case "2":
-case "3":
-case "4":
+case "2"://mamage company
+    print("Select options :")
+    print("1.add company")
+    print("2.update company")
+    print("3.Delete company")
+    print("4.View All company")
 
-degau
+    let selected : String? = readLine()
+    switch selected!{
+    case "1":
+        print("Enter company Name: ")
+        let name : String? = readLine()
+        print("Enter company Symbol: ")
+        let symbol : String? = readLine()
+        print("Enter  company Headquarter: ")
+        let headquarter: String? = readLine()
+        print("Enter  company email: ")
+        let email : String? = readLine()
+       
+        if (name != "" && symbol != "" && headquarter != "" && email != "" ){
+            let company5=Company(name: name!, symbol: symbol!, headquarter: headquarter!, email: email!)
+            testcompanylist.addCompany(Company: company5)
+            print("--------------------company added---------------")
+            testcompanylist.toString()
+        }else{
+            print("input invalied")
+        }
+    case "2":
+        testcompanylist.toString()
+        print("Select company id:")
+        let  companyid: String? = readLine()
+        if companyid != nil && companyid != ""{
+            let  companyid1 = Int(companyid!)
+            let curr=testcompanylist.getCompany(id:companyid1!)
+            if curr != nil {
+                print("updated Symbol: (enter empty to skip)")
+                let updateSymbol : String? = readLine()
+                print("updated Headquarter: (enter empty to skip)")
+                let updateHeadquarter : String? = readLine()
+                print("updated Email: (enter empty to skip)")
+                let updateEmail : String? = readLine()
+                testcompanylist.UpdateCompany(id: curr!.id, symbol:updateSymbol! , headquarter: updateHeadquarter!, email: updateEmail!)
+                print("--------------------Company updated ---------------")
+                 testcompanylist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+    case "3":
+        testcompanylist.toString()
+        print("Select company id to delete:")
+        let  companyid: String? = readLine()
+        if companyid != nil && companyid != ""{
+            let  companyid1 = Int(companyid!)
+            let curr=testcompanylist.getCompany(id: companyid1!)
+            if curr != nil {
+                testcompanylist.DeleteCompany(id: curr!.id)
+                print("--------------------company Deleted ---------------")
+                 testcompanylist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+        
+    case "4":
+        testcustomerlist.toString()
+    default:
+        print("input invalid")
+    }
+    
+case "3"://manage category
+    print("Select options :")
+    print("1.add  category")
+    print("2.update  category")
+    print("3.Delete  category")
+    print("4.View All  category")
 
+    let selected : String? = readLine()
+    switch selected!{
+    case "1":
+        print("Enter  category Name: ")
+        let name : String? = readLine()
 
+       
+        if (name != "" ){
+            let category5 = Category(name: name!)
+            testCategorylist.addCategory(Category: category5)
+     
+            print("--------------------Category added---------------")
+            testCategorylist.toString()
+        }else{
+            print("input invalied")
+        }
+    case "2":
+        testCategorylist.toString()
+        print("Select Category id:")
+        let  categoryid: String? = readLine()
+        if categoryid != nil && categoryid != ""{
+            let  categoryid1 = Int(categoryid!)
+            let curr = testCategorylist.getCategory(id: categoryid1!)
+            if curr != nil {
+                print("updated Name")
+                let name : String? = readLine()
+                      testCategorylist.UpdateCategory(id: curr!.id, name: name!)
+
+                print("--------------------Category updated ---------------")
+                 testCategorylist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+    case "3":
+        testCategorylist.toString()
+        print("Select Category id to delete:")
+        let  Categoryid: String? = readLine()
+        if Categoryid != nil && Categoryid != ""{
+            let  Categoryid1 = Int(Categoryid!)
+            let curr=testCategorylist.getCategory(id: Categoryid1!)
+            if curr != nil {
+                testCategorylist.DeleteCategory(id: curr!.id)
+                print("--------------------Category Deleted ---------------")
+                testCategorylist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+        
+    case "4":
+        testCategorylist.toString()
+    default:
+        print("input invalid")
+    }
+    
+//case "4":
+
+default:
+    print("input invalid")
+
+}
 
     
 
