@@ -378,7 +378,7 @@ case "4":
                 print("user Not founded")
             }
         }else {
-            print("Invalid input")
+            print("stock Id not found")
         }
         
     case "4":
@@ -395,7 +395,10 @@ case "4":
             print("Select company id:")
             testcompanylist.toString()
             let companyid : String? = readLine()
-            teststocklist.searchByCompany(Companyid: Int(companyid!)!)
+            if companyid != "" {
+                teststocklist.searchByCompany(Companyid: Int(companyid!)!)
+            }
+           
         case "2":
             print("Select category id:")
             testCategorylist.toString()

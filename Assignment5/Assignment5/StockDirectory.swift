@@ -65,7 +65,9 @@ class StockDirecrtory {
             if stock.company.getid() == Companyid{
                 print(stock.toString())
             }
+            
         }
+        
 
     }
     public func searchByCategory(categoryid: Int){
