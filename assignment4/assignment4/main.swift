@@ -250,7 +250,7 @@ interviewlist.addInterviews(Interview: Int11)
 interviewlist.addInterviews(Interview: Int12)
 let manager = Admin(userEmailId: "hello@gmail.com", password: "password")
 print("Manager or Admin Email?:")
-let email : String? = readLine()
+\
 print("Please enter Password")
 let password : String? = readLine()
 

@@ -179,30 +179,37 @@ class CustomerDirecrtory {
             
         }
     }
+    public func getCustomer(id:Int)->Customer?{
+        var curr: Customer?
+        for (_, value) in customerList.enumerated() {
+            if value.id==id {
+                curr=value
+            }
+        }
+       return curr
+    }
     public func UpdateCustomer (id:Int,firstName: String?, lastName:String?, address:String?, contactDetails: String?, emailId:String?){
-        if (firstName == "" || lastName == "" || address=="" || contactDetails == "" || emailId == ""){
-            print("invalid input")
-        }else {
+       
         for (index, value) in customerList.enumerated() {
             if value.id==id {
-                if firstName != nil {
+                if firstName != nil && firstName != "" {
                     value.setFirstName(firstName: firstName!)
                 }
-                if  lastName != nil {
+                if  lastName != nil && lastName != ""{
                     value.setLastName(lastName: lastName!)
                 }
-                if  address != nil {
+                if  address != nil && address != "" {
                     value.setAddress(address: address!)
                 }
-                if  contactDetails != nil {
+                if  contactDetails != nil && contactDetails != "" {
                     value.setContactDetails(contactDetails: contactDetails!)
                 }
-                if  emailId != nil {
+                if  emailId != nil && emailId != ""{
                     value.setEmailID(emailID: emailId!)
                 }
             }
             
-        }
+        
         }
     }
     public func toString(){
@@ -474,14 +481,7 @@ testcustomerlist.addCustomer(Customer: customer1)
 testcustomerlist.addCustomer(Customer: customer2)
 testcustomerlist.addCustomer(Customer: customer3)
 testcustomerlist.addCustomer(Customer: customer4)
-testcustomerlist.toString()
-print("-------------------customer update-----------")
 
-testcustomerlist.UpdateCustomer(id: 1, firstName: nil, lastName: "Bound", address: nil, contactDetails: nil, emailId: nil)
-testcustomerlist.toString()
-print("--------------------Delete Company-----------")
-testcustomerlist.DeleteCustomer(id: 1)
-testcustomerlist.toString()
 
 
 print("--------------------------------------------------")
@@ -538,3 +538,100 @@ teststocklist.searchByLastTradePrice(lastTradePrice:1000.00)
 print("--------------------Delete stock--------------")
 teststocklist.DeleteStock(id: 1)
 teststocklist.toString()
+
+
+print("Select options  :")
+print("1.manage customer")
+print("2.mamage company")
+print("3.manage category")
+print("4.manage stock")
+let selected : String? = readLine()
+switch selected!{
+case "1":
+    print("Select options :")
+    print("1.add coustomer")
+    print("2.update customer")
+    print("3.Delete Customer")
+    print("4.View All Customer")
+
+    let selected : String? = readLine()
+    switch selected!{
+    case "1":
+        print("Enter Customer first Name: ")
+        let firstName : String? = readLine()
+        print("Enter Customer Last Name: ")
+        let lastName : String? = readLine()
+        print("Enter Customer Address: ")
+        let Address : String? = readLine()
+        print("Enter Customer Contact details: ")
+        let Contactdetails : String? = readLine()
+        print("Enter Customer Email: ")
+        let email: String? = readLine()
+        if (firstName != "" && lastName != "" && Address != "" && Contactdetails != "" && email != ""){
+            let customer5 = Customer(firstName: firstName!, lastName: lastName!, address: Address!, contactDetails: Contactdetails!, emailID: email!)
+            testcustomerlist.addCustomer(Customer: customer5)
+            print("--------------------customer added---------------")
+             testcustomerlist.toString()
+        }else{
+            print("input invalied")
+        }
+    case "2":
+        testcustomerlist.toString()
+        print("Select customer id:")
+        let  customerid: String? = readLine()
+        if customerid != nil && customerid != ""{
+            let  customerid1 = Int(customerid!)
+            let curr=testcustomerlist.getCustomer(id: customerid1!)
+            if curr != nil {
+                print("updated First Name: (enter empty to skip)")
+                let updatefirst : String? = readLine()
+                print("updated Last Name: (enter empty to skip)")
+                let updateLast : String? = readLine()
+                print("updated Address: (enter empty to skip)")
+                let updateAddress : String? = readLine()
+                print("updated Contact Detail: (enter empty to skip)")
+                let updateContactDetail : String? = readLine()
+                print("updated EmailId: (enter empty to skip)")
+                let updateEmailId : String? = readLine()
+                testcustomerlist.UpdateCustomer(id: curr!.id, firstName: updatefirst, lastName: updateLast, address: updateAddress, contactDetails: updateContactDetail, emailId: updateEmailId)
+                print("--------------------customer updated ---------------")
+                 testcustomerlist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+    case "3":
+        testcustomerlist.toString()
+        print("Select customer id to delete:")
+        let  customerid: String? = readLine()
+        if customerid != nil && customerid != ""{
+            let  customerid1 = Int(customerid!)
+            let curr=testcustomerlist.getCustomer(id: customerid1!)
+            if curr != nil {
+                testcustomerlist.DeleteCustomer(id: curr!.id)
+                print("--------------------customer Deleted ---------------")
+                 testcustomerlist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+        
+    case "4":
+        testcustomerlist.toString()
+    default:
+        print("input invalid")
+    }
+case "2":
+case "3":
+case "4":
+
+degau
+
+
+
+    
+
