@@ -7,38 +7,28 @@
 
 import Foundation
 
-
-print("--------------------Testing Company------------------")
+//add company
 let testcompanylist = CompanyDirecrtory(companyList: Array())
-print("--------------------Adding companies-----------")
+
 var company1 = Company(name: "Google", symbol: "GOOGL", headquarter: "Mountain View", email: "google@gmail.com")
 var company2 = Company(name: "Apple", symbol: "AAPL", headquarter: "Mountain View", email: "apple@apple.com")
 var company3 = Company(name: "Amazon", symbol: "AMZN", headquarter: "seattle ", email: "amazon@amazon.com")
 var company4 = Company(name: "FaceBook", symbol: "FB", headquarter: "Menlo Park,CA", email: "facebook@facebook.com")
-print("--------------------view all companies-----------")
 testcompanylist.addCompany(Company: company1)
 testcompanylist.addCompany(Company: company2)
 testcompanylist.addCompany(Company: company3)
 testcompanylist.addCompany(Company: company4)
-testcompanylist.toString()
-print("-------------------update Company-----------")
-testcompanylist.UpdateCompany(id: 4, symbol: "FBupdated", headquarter: "Menlo Park,CA updated", email: nil)
-testcompanylist.toString()
-print("--------------------Delete Company-----------")
-testcompanylist.DeleteCompany(id: 4)
-testcompanylist.toString()
 
 
-print("-----------------------------------------------------")
 
-print("--------------------Testing Customer------------------")
+//add customer
 let testcustomerlist = CustomerDirecrtory(customerList: Array())
-print("--------------------Adding customers-----------")
+
 var customer1 = Customer(firstName: "James", lastName: "James", address: "123 st", contactDetails: "618-111-1111", emailID: "James@gmail.com")
 var customer2 = Customer(firstName: "Robert", lastName: "Robert", address: "234 st", contactDetails: "618-222-2222", emailID: "Robert@gmail.com")
 var customer3 = Customer(firstName: "Mary", lastName: "Mary", address: "345 st", contactDetails: "618-333-3333", emailID: "mary@gmail.com")
 var customer4 = Customer(firstName: "Patricia", lastName: "Patricia", address: "456 st", contactDetails: "618-444-4444", emailID: "Patricia@gmail.com")
-print("--------------------view all customers-----------")
+
 testcustomerlist.addCustomer(Customer: customer1)
 testcustomerlist.addCustomer(Customer: customer2)
 testcustomerlist.addCustomer(Customer: customer3)
@@ -46,11 +36,9 @@ testcustomerlist.addCustomer(Customer: customer4)
 
 
 
-print("--------------------------------------------------")
-
-print("--------------------Testing Categroy--------------")
+//add category
 let testCategorylist = CategoryDirecrtory(catagoryList: Array())
-print("--------------------Adding Categroy---------------")
+
 var category1=Category(name: "Class C")
 var category2=Category(name: "Technology")
 var category3=Category(name: "Consumer Services")
@@ -60,33 +48,18 @@ testCategorylist.addCategory(Category: category2)
 testCategorylist.addCategory(Category: category3)
 testCategorylist.addCategory(Category: category4)
 
-print("--------------------view all Categroy-----------")
-testCategorylist.toString()
-print("-------------------Categroy update--------------")
-testCategorylist.UpdateCategory(id: 1, name: "energy")
-testCategorylist.toString()
-print("--------------------Delete Categroy--------------")
-testCategorylist.DeleteCategory(id: 1)
-testCategorylist.toString()
 
 
 
-print("--------------------------------------------------")
-
-print("--------------------Testing stock--------------")
+//add stock
 let teststocklist = StockDirecrtory(stockList: Array())
-print("--------------------Adding stock---------------")
+
 var stock1=Stock(name: "AAPL", lastTradePrice: 149.06, financialRating: 9, category: category2, company: company2)
 var stock2=Stock(name: "GOOGL", lastTradePrice:2740.44, financialRating: 8, category: category1, company: company1)
 var stock3=Stock(name: "AMAZ", lastTradePrice: 3355.67, financialRating: 7, category: category3, company: company3)
 teststocklist.addStock(Stock: stock1)
 teststocklist.addStock(Stock: stock2)
 teststocklist.addStock(Stock: stock3)
-print("--------------------view allstock-----------")
-teststocklist.toString()
-print("-------------------stock update--------------")
-teststocklist.UpdateStock(id: 1, company: nil, lastTradePrice: 160.00, financialRating: nil, Category: nil)
-teststocklist.toString()
 
 
 teststocklist.searchByName(name: "AAPL")
@@ -94,10 +67,6 @@ print("--------------------searchByFinancialRating >= 8--------------")
 teststocklist.searchByFinancialRating(financialRating: 8)
 print("--------------------searchByLastTradePrice>=1000--------------")
 teststocklist.searchByLastTradePrice(lastTradePrice:1000.00)
-
-print("--------------------Delete stock--------------")
-teststocklist.DeleteStock(id: 1)
-teststocklist.toString()
 
 
 print("Select options  :")
@@ -348,20 +317,18 @@ case "4":
         print("Select  stock Category: ")
         testCategorylist.toString()
         let currentcategoryid : String? = readLine()
-           
-      
-        
-        
-         if (name != "" && lastTradePrice != "" && FinancialRating != "" && currentcompanyid != "" && currentcategoryid != "" &&   currentcategoryid != nil && currentcompanyid  != nil){
-             let  currentcompanyid1 = Int(currentcompanyid!)
-             let currcompany=testcompanylist.getCompany(id:currentcompanyid1!)
-             let  currentcategoryid1 = Int(currentcategoryid!)
-             let currcategory=testCategorylist.getCategory(id:currentcategoryid1!)
-             let stock5 = Stock(name: name!, lastTradePrice: Double(lastTradePrice!)!, financialRating: Int(FinancialRating!)!, category:currcategory! , company: currcompany!)
-             teststocklist.addStock(Stock: stock5)
-         
-            print("--------------------Stock added---------------")
-            teststocklist.toString()
+         if (name != "" && lastTradePrice != "" && FinancialRating != ""  && currentcompanyid != "" && currentcategoryid != "" &&   Int(currentcategoryid!) != nil && Int(currentcompanyid!) != nil && Int(FinancialRating!)  != nil && Double(lastTradePrice!) != nil ){
+             
+             let currcompany=testcompanylist.getCompany(id:Int(currentcompanyid!)!)
+             let currcategory=testCategorylist.getCategory(id:Int(currentcategoryid!)!)
+             if (currcompany != nil && currcategory != nil && Int(FinancialRating!)! <= 10 &&  Int(FinancialRating!)!>=1){
+                 let stock5 = Stock(name: name!, lastTradePrice: Double(lastTradePrice!)!, financialRating: Int(FinancialRating!)!, category:currcategory! , company: currcompany!)
+                 teststocklist.addStock(Stock: stock5)
+                 print("--------------------Stock added---------------")
+                 teststocklist.toString()
+             }else{
+                 print("invalid input")
+             }
         }else{
             print("input invalied")
         }
@@ -372,8 +339,6 @@ case "4":
         if stockid != nil && stockid != ""{
             let curr = teststocklist.getStock(id:Int(stockid!)!)
             if curr != nil {
-                print("updated Name ->enter empty to skip")
-                let name : String? = readLine()
                 print("updated Company id ->enter empty to skip")
                 testcompanylist.toString()
                 let Companyid : String? = readLine()
@@ -384,19 +349,21 @@ case "4":
                 print("updated Catagory->enter empty to skip")
                 testCategorylist.toString()
                 let Categoryid : String? = readLine()
-                if (name != "" && lasttradeprice != "" && financialRating != "" && Companyid != "" && Categoryid != "" &&  Companyid != nil && Categoryid  != nil){
-                    let currcompany=testcompanylist.getCompany(id:Int(Companyid!)!)
-                    let currcategory=testCategorylist.getCategory(id:Int(Categoryid!)!)
-                    teststocklist.UpdateStock(id: curr!.id, company: currcompany , lastTradePrice: Double(lasttradeprice!)!, financialRating: Int(financialRating!)!, Category: currcategory)
+                let currcompany:Company?
+                let currcategory: Category?
+              //  if (Int(Companyid!) != nil  ){
+                    currcompany=testcompanylist.getCompany(id:Int(Companyid!)!)
+               // } else if (Int(Categoryid!) != nil ){
+                    currcategory=testCategorylist.getCategory(id:Int(Categoryid!)!)
+                //}
+                teststocklist.UpdateStock(id: curr!.id, company: currcompany , lastTradePrice: Double(lasttradeprice!), financialRating: Int(financialRating!), Category: currcategory)
                 print("--------------------stock updated ---------------")
                  teststocklist.toString()
-            }else{
-                print("stock Not founded")
             }
-        }else {
-            print("Invalid input")
+        }else{
+            print("stock not found")
         }
-        }
+           
     case "3":
         teststocklist.toString()
         print("Select stock id to delete:")
