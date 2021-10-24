@@ -88,9 +88,7 @@ print("-------------------stock update--------------")
 teststocklist.UpdateStock(id: 1, company: nil, lastTradePrice: 160.00, financialRating: nil, Category: nil)
 teststocklist.toString()
 
-print("--------------------searchByCategory: Consumer Services--------------")
-teststocklist.searchByCategory(categoryName: "Consumer Services")
-print("--------------------searchByName:AAPL --------------")
+
 teststocklist.searchByName(name: "AAPL")
 print("--------------------searchByFinancialRating >= 8--------------")
 teststocklist.searchByFinancialRating(financialRating: 8)
@@ -328,8 +326,138 @@ case "3"://manage category
         print("input invalid")
     }
     
-//case "4":
+case "4":
+    print("Select options :")
+    print("1.add  stocks")
+    print("2.update  stocks")
+    print("3.Delete  stocks")
+    print("4.View All  stocks")
 
+    let selected : String? = readLine()
+    switch selected!{
+    case "1":
+        print("Enter stock Name: ")
+        let name : String? = readLine()
+        print("Enter stock Comapny: ")
+        testcompanylist.toString()
+        let currentcompanyid : String? = readLine()
+        print("Enter last Trade Price")
+        let lastTradePrice : String? = readLine()
+        print("Enter Financial Rating")
+        let FinancialRating : String? = readLine()
+        print("Select  stock Category: ")
+        testCategorylist.toString()
+        let currentcategoryid : String? = readLine()
+           
+      
+        
+        
+         if (name != "" && lastTradePrice != "" && FinancialRating != "" && currentcompanyid != "" && currentcategoryid != "" &&   currentcategoryid != nil && currentcompanyid  != nil){
+             let  currentcompanyid1 = Int(currentcompanyid!)
+             let currcompany=testcompanylist.getCompany(id:currentcompanyid1!)
+             let  currentcategoryid1 = Int(currentcategoryid!)
+             let currcategory=testCategorylist.getCategory(id:currentcategoryid1!)
+             let stock5 = Stock(name: name!, lastTradePrice: Double(lastTradePrice!)!, financialRating: Int(FinancialRating!)!, category:currcategory! , company: currcompany!)
+             teststocklist.addStock(Stock: stock5)
+         
+            print("--------------------Stock added---------------")
+            teststocklist.toString()
+        }else{
+            print("input invalied")
+        }
+    case "2":
+        teststocklist.toString()
+        print("Select stock id:")
+        let  stockid: String? = readLine()
+        if stockid != nil && stockid != ""{
+            let curr = teststocklist.getStock(id:Int(stockid!)!)
+            if curr != nil {
+                print("updated Name ->enter empty to skip")
+                let name : String? = readLine()
+                print("updated Company id ->enter empty to skip")
+                testcompanylist.toString()
+                let Companyid : String? = readLine()
+                print("updated LastTradePrice->enter empty to skip")
+                let lasttradeprice: String? = readLine()
+                print("updated Financial Rating->enter empty to skip")
+                let financialRating : String? = readLine()
+                print("updated Catagory->enter empty to skip")
+                testCategorylist.toString()
+                let Categoryid : String? = readLine()
+                if (name != "" && lasttradeprice != "" && financialRating != "" && Companyid != "" && Categoryid != "" &&  Companyid != nil && Categoryid  != nil){
+                    let currcompany=testcompanylist.getCompany(id:Int(Companyid!)!)
+                    let currcategory=testCategorylist.getCategory(id:Int(Categoryid!)!)
+                    teststocklist.UpdateStock(id: curr!.id, company: currcompany , lastTradePrice: Double(lasttradeprice!)!, financialRating: Int(financialRating!)!, Category: currcategory)
+                print("--------------------stock updated ---------------")
+                 teststocklist.toString()
+            }else{
+                print("stock Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+        }
+    case "3":
+        teststocklist.toString()
+        print("Select stock id to delete:")
+        let  stockid: String? = readLine()
+        if stockid != nil && stockid != ""{
+            let curr=teststocklist.getStock(id: Int(stockid!)!)
+            if curr != nil {
+                teststocklist.DeleteStock(id: curr!.id)
+                print("--------------------srock Deleted ---------------")
+                teststocklist.toString()
+            }else{
+                print("user Not founded")
+            }
+        }else {
+            print("Invalid input")
+        }
+        
+    case "4":
+        teststocklist.toString()
+        print("Select options :")
+        print("1.Search by Company")
+        print("2.Search by Category")
+        print("3.search by Name")
+        print("4.search by financial Rating ")
+        print("5.search by Last trade price ")
+        let selected : String? = readLine()
+        switch selected!{
+        case "1":
+            print("Select company id:")
+            testcompanylist.toString()
+            let companyid : String? = readLine()
+            teststocklist.searchByCompany(Companyid: Int(companyid!)!)
+        case "2":
+            print("Select category id:")
+            testCategorylist.toString()
+            let categoryid : String? = readLine()
+            teststocklist.searchByCategory(categoryid: Int(categoryid!)!)
+            
+        case "3":
+            print("Select Name:")
+            teststocklist.toString()
+            let stockName : String? = readLine()
+            teststocklist.searchByName(name: stockName!)
+            
+        case "4":
+            print("input financial rating minimum:")
+            let financialrating : String? = readLine()
+            teststocklist.searchByFinancialRating(financialRating: Int(financialrating!)!)
+            
+        case "5":
+            print("input last trade in price minimum :")
+            let last : String? = readLine()
+            teststocklist.searchByLastTradePrice(lastTradePrice: Double(last!)!)
+        default:
+            print("input invalid")
+        }
+        
+    default:
+        print("input invalid")
+    }
+    
 default:
     print("input invalid")
 

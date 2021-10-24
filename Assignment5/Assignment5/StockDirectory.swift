@@ -13,6 +13,16 @@ class StockDirecrtory {
     init(stockList:Array<Stock>){
         self.stockList = []
     }
+    public func getStock(id:Int)->Stock?{
+        var curr: Stock?
+        for (_, value) in stockList.enumerated() {
+            if value.id==id {
+                curr=value
+            }
+        }
+       return curr
+    }
+    
     public func addStock(Stock:Stock){
         stockList.append(Stock)
     }
@@ -50,23 +60,19 @@ class StockDirecrtory {
             print ( stock.toString())
         }
     }
-    public func searchByCompany(CompanyName:String){
+    public func searchByCompany(Companyid :Int){
         for   stock in stockList {
-            if stock.company.getName() == CompanyName{
+            if stock.company.getid() == Companyid{
                 print(stock.toString())
             }
         }
 
     }
-    public func searchByCategory(categoryName: String){
-        if categoryName == "" {
-            print("please input valid value")
-        }else{
+    public func searchByCategory(categoryid: Int){
             for   stock in stockList {
-                if stock.category.getName() == categoryName{
+                if stock.category.getId() == categoryid{
                     print(stock.toString())
                 }
-            }
         }
      
     }
