@@ -109,12 +109,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     @objc private func didTapProfilePhoto(){
         
-        guard let myEmail = UserDefaults.standard.string(forKey: "email") else {
+     /*   guard let myEmail = UserDefaults.standard.string(forKey: "email") else {
             myEmail==currentEmail else{
                 return
             }
         }
-       
+       */
                                                          
                                                          
         let picker = UIImagePickerController()
