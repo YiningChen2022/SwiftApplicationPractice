@@ -87,7 +87,7 @@ class applicationViewController: UITabBarController{
         DispatchQueue.main.async {
             let vc = ManageCustomerViewController()
             vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated:true)
+            self.present(vc, animated:false)
             
         }
     }
@@ -95,15 +95,14 @@ class applicationViewController: UITabBarController{
         DispatchQueue.main.async {
             let vc = ManageCompanyViewController()
             vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated:true)
-            
+            self.present(vc, animated:false)
         }
     }
     @objc func didTapCategory(){
         DispatchQueue.main.async {
             let vc = ManageategoryViewController()
             vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated:true)
+            self.present(vc, animated:false)
             
         }
     }
@@ -111,7 +110,7 @@ class applicationViewController: UITabBarController{
         DispatchQueue.main.async {
             let vc = ManageStockViewController()
             vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated:true)
+            self.present(vc, animated:false)
             
         }
     }

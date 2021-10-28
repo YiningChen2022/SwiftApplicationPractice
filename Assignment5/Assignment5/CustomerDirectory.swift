@@ -23,6 +23,13 @@ class CustomerDirecrtory {
             
         }
     }
+    public func getsize ()->Int{
+        var count=0;
+        for _ in customerList{
+            count+=1;
+        }
+        return count
+    }
     public func getCustomer(id:Int)->Customer?{
         var curr: Customer?
         for (_, value) in customerList.enumerated() {
@@ -61,6 +68,14 @@ class CustomerDirecrtory {
             print (customer.toString())
             
         }
+        
+    }
+    public func toString()->Array<String>{
+        var str:Array<String>=[]
+        for customer in customerList {
+            str.append(customer.toString())
+        }
+        return str
         
     }
 }

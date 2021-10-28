@@ -23,6 +23,7 @@
 		E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF0272B2C4200AED145 /* CustomerDirectory.swift */; };
 		E83FABF3272B2C4600AED145 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF2272B2C4600AED145 /* Stock.swift */; };
 		E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF4272B2C4900AED145 /* StockDirectory.swift */; };
+		E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABFB272B64D900AED145 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E83FABF0272B2C4200AED145 /* CustomerDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDirectory.swift; path = ../../../Assignment5/Assignment5/CustomerDirectory.swift; sourceTree = "<group>"; };
 		E83FABF2272B2C4600AED145 /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stock.swift; path = ../../../Assignment5/Assignment5/Stock.swift; sourceTree = "<group>"; };
 		E83FABF4272B2C4900AED145 /* StockDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
+		E83FABFB272B64D900AED145 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,7 @@
 		E83FABE4272B2BAD00AED145 /* Core Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */,
+				E83FABFA272B5DCB00AED145 /* Manage Company */,
 				E83FABE0272B28B300AED145 /* ManageStockViewController.swift */,
 				E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */,
 				E83FABE2272B28CC00AED145 /* ManageCategoryViewController.swift */,
@@ -111,6 +113,15 @@
 				E83FABF2272B2C4600AED145 /* Stock.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E83FABFA272B5DCB00AED145 /* Manage Company */ = {
+			isa = PBXGroup;
+			children = (
+				E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */,
+				E83FABFB272B64D900AED145 /* AddViewController.swift */,
+			);
+			path = "Manage Company";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */,
 				E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */,
 				E83FABEB272B2C3400AED145 /* Company.swift in Sources */,
+				E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */,
 				E83FABF3272B2C4600AED145 /* Stock.swift in Sources */,
 				E83FABDD2729EF4200AED145 /* ManageCustomerViewController.swift in Sources */,
 				E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */,
