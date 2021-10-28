@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 
 class AddViewController: UITabBarController{
+   
+    //back button
+    private let backButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("<Back", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+
     
     //FN field
     private let fnField: UITextField = {
@@ -17,7 +27,7 @@ class AddViewController: UITabBarController{
         field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
         field.leftViewMode = .always
         field.placeholder="First Name"
-        field.backgroundColor = .gray
+        field.backgroundColor = .lightGray
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         return field
@@ -30,7 +40,7 @@ class AddViewController: UITabBarController{
         field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
         field.leftViewMode = .always
         field.placeholder="last Name"
-        field.backgroundColor = .gray
+        field.backgroundColor = .lightGray
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         return field
@@ -46,7 +56,7 @@ class AddViewController: UITabBarController{
         field.placeholder="Email Id "
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
-        field.backgroundColor = .gray
+        field.backgroundColor = .lightGray
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         return field
@@ -60,7 +70,7 @@ class AddViewController: UITabBarController{
         field.placeholder="Contact Detail  "
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
-        field.backgroundColor = .gray
+        field.backgroundColor =  .lightGray
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         return field
@@ -74,7 +84,7 @@ class AddViewController: UITabBarController{
         field.placeholder="Address"
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
-        field.backgroundColor = .gray
+        field.backgroundColor =  .lightGray
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         return field
@@ -92,37 +102,67 @@ class AddViewController: UITabBarController{
         super.viewDidLoad()
         title = "add Customer"
         view.backgroundColor = .white
-    
+        view.addSubview(backButton)
         view.addSubview(emailField)
-            view.addSubview(fnField)
-            view.addSubview(lnField)
-            view.addSubview(contactField)
-            view.addSubview(addressField)
-            view.addSubview(AddButton)
 
-        
-        AddButton.addTarget(self, action:#selector(didTapSignUp),for: .touchUpInside)
+        view.addSubview(fnField)
+        view.addSubview(lnField)
+        view.addSubview(contactField)
+        view.addSubview(addressField)
+        view.addSubview(AddButton)
+
+        backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
+        AddButton.addTarget(self, action:#selector(didTapAddCustomer),for: .touchUpInside)
      
     
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-   
-        fnField.frame = CGRect(x:20, y:50, width:100,height:50)
-        lnField.frame = CGRect(x:20, y:60, width:100,height:50)
-        contactField.frame = CGRect(x:20, y:70, width:100,height:50)
-        addressField.frame = CGRect(x:20, y:800, width:100,height:50)
+        
+       
+    
+        fnField.frame = CGRect(x:60, y:100, width:200,height:30)
+        lnField.frame = CGRect(x:60, y:150, width:200,height:30)
+        addressField.frame = CGRect(x:60, y:200, width:200,height:30)
+        contactField.frame = CGRect(x:60, y:250, width:200,height:30)
+        emailField.frame = CGRect(x:60, y:300, width:200,height:30)
+        AddButton.frame = CGRect(x:60, y:350, width:200,height:30)
+        backButton.frame=CGRect(x:60,y:400,width:100,height:25)
        
     }
-    @objc func didTapSignUp(){
-       /* guard let email=emailField.text, !email.isEmpty,
-              let password=passwordField.text, !password.isEmpty,
-              let name=nameField.text, !name.isEmpty else{
+    @objc func didTapAddCustomer(){
+        guard let email=emailField.text, !email.isEmpty,
+              let firstName=fnField.text, !firstName.isEmpty,
+              let lastName=lnField.text, !lastName.isEmpty,
+              let contact=contactField.text,!contact.isEmpty,
+              let address = addressField.text,!address.isEmpty
+        else{
                   return
               }
+        let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
+        var customermanage = ManageCustomerViewController()
+        customermanage.testcustomerlist.customerList.append(customer)
+                    DispatchQueue.main.async {
+                      
+                        let vc = ManageCustomerViewController()
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated:true)
+                    }
+         
+        }
     
-    */
     
-}
+
+    @objc private func didTapback(){
+        DispatchQueue.main.async {
+         
+            let signInVC=ManageCustomerViewController();
+          
+            let navVC = UINavigationController(rootViewController: signInVC)
+          
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: false, completion: nil)
+        }
+    }
 
 }
