@@ -67,6 +67,9 @@ class applicationViewController: UITabBarController{
         view.addSubview(manageCustomerButton)
         view.addSubview(manageCompanyButton)
         manageCustomerButton.addTarget(self, action:#selector(didTapCustomer),for: .touchUpInside)
+        manageCompanyButton.addTarget(self, action:#selector(didTapComapny),for: .touchUpInside)
+        manageStockButton.addTarget(self, action:#selector(didTapStock),for: .touchUpInside)
+        manageCategoryButton.addTarget(self, action:#selector(didTapCategory),for: .touchUpInside)
         
         
     }
@@ -83,6 +86,30 @@ class applicationViewController: UITabBarController{
     @objc func didTapCustomer(){
         DispatchQueue.main.async {
             let vc = ManageCustomerViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
+            
+        }
+    }
+    @objc func didTapComapny(){
+        DispatchQueue.main.async {
+            let vc = ManageCompanyViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
+            
+        }
+    }
+    @objc func didTapCategory(){
+        DispatchQueue.main.async {
+            let vc = ManageategoryViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated:true)
+            
+        }
+    }
+    @objc func didTapStock(){
+        DispatchQueue.main.async {
+            let vc = ManageStockViewController()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated:true)
             
