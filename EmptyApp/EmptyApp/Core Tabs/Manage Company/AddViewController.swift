@@ -140,7 +140,7 @@ class AddViewController: UITabBarController{
                   return
               }
         let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
-        var customermanage = ManageCustomerViewController()
+        var customermanage = AppDelegate()
         customermanage.testcustomerlist.customerList.append(customer)
                     DispatchQueue.main.async {
                       

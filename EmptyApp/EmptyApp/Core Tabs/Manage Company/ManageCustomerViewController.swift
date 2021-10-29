@@ -11,9 +11,7 @@ import UIKit
 
 class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-
-     let testcustomerlist = CustomerDirecrtory(customerList: Array())
-
+    var customer=CustomerManager()
     private let tableView: UITableView={
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -78,14 +76,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
          setUpTable()
         
 
-        let customer1 = Customer(firstName: "James", lastName: "James", address: "123 st", contactDetails: "618-111-1111", emailID: "James@gmail.com")
-        let customer2 = Customer(firstName: "Robert", lastName: "Robert", address: "234 st", contactDetails: "618-222-2222", emailID: "Robert@gmail.com")
-        let customer3 = Customer(firstName: "Mary", lastName: "Mary", address: "345 st", contactDetails: "618-333-3333", emailID: "mary@gmail.com")
-        let customer4 = Customer(firstName: "Patricia", lastName: "Patricia", address: "456 st", contactDetails: "618-444-4444", emailID: "Patricia@gmail.com")
-        testcustomerlist.addCustomer(Customer: customer1)
-        testcustomerlist.addCustomer(Customer: customer2)
-        testcustomerlist.addCustomer(Customer: customer3)
-        testcustomerlist.addCustomer(Customer: customer4)
+     
   
         backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
         addCustomerButton.addTarget(self, action:#selector(didTapadd),for: .touchUpInside)
@@ -175,11 +166,11 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
 
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-          return (testcustomerlist.getsize())
+        return (ManagerCustomer.getsize())
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-          cell.textLabel?.text = testcustomerlist.toString()[indexPath.row]
+       cell.textLabel?.text = managerCustomer.testcustomerlist.toString()[indexPath.row]
           return (cell)
       }
 

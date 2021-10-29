@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let testcompanylist = CompanyDirecrtory(companyList: Array())
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,7 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
             window.makeKeyAndVisible()
         }
- 
+       
+        var company1 = Company(name: "Google", symbol: "GOOGL", headquarter: "Mountain View", email: "google@gmail.com")
+        var company2 = Company(name: "Apple", symbol: "AAPL", headquarter: "Mountain View", email: "apple@apple.com")
+        var company3 = Company(name: "Amazon", symbol: "AMZN", headquarter: "seattle ", email: "amazon@amazon.com")
+        var company4 = Company(name: "FaceBook", symbol: "FB", headquarter: "Menlo Park,CA", email: "facebook@facebook.com")
+        testcompanylist.addCompany(Company: company1)
+        testcompanylist.addCompany(Company: company2)
+        testcompanylist.addCompany(Company: company3)
+        testcompanylist.addCompany(Company: company4)
+
 
         return true
     }

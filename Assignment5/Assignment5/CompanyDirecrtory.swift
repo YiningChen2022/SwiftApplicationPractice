@@ -23,6 +23,7 @@ class CompanyDirecrtory {
             
         }
     }
+
     public func getCompany(id:Int)->Company?{
         var curr: Company?
         for (_, value) in companyList.enumerated() {

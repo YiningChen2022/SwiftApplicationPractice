@@ -7,13 +7,24 @@
 
 import Foundation
 class CustomerDirecrtory {
-    var customerList: [Customer]
+    public var customerList: [Customer]
     init(customerList:Array<Customer>){
         self.customerList = []
+    }
+    public static func listofCustomer()->Array<Customer>{
+        
+        var customer1 = Customer(firstName: "James", lastName: "James", address: "123 st", contactDetails: "618-111-1111", emailID: "James@gmail.com")
+        var customer2 = Customer(firstName: "Robert", lastName: "Robert", address: "234 st", contactDetails: "618-222-2222", emailID: "Robert@gmail.com")
+        var customer3 = Customer(firstName: "Mary", lastName: "Mary", address: "345 st", contactDetails: "618-333-3333", emailID: "mary@gmail.com")
+        var customer4 = Customer(firstName: "Patricia", lastName: "Patricia", address: "456 st", contactDetails: "618-444-4444", emailID: "Patricia@gmail.com")
+        customerlist.append(customer1)
+        
+       
     }
     public func addCustomer(Customer:Customer){
         customerList.append(Customer)
     }
+    
     
     public func DeleteCustomer(id:Int){
         for (index, value) in customerList.enumerated() {
