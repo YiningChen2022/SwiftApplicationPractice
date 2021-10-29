@@ -11,7 +11,8 @@ import UIKit
 
 class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    var customer=CustomerManager()
+    var customer=AppDelegate()
+   
     private let tableView: UITableView={
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -74,7 +75,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         view.addSubview(deleteCustomerButton)
   
          setUpTable()
-        
+         
 
      
   
@@ -166,11 +167,11 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
 
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-        return (ManagerCustomer.getsize())
+        return (customer.testcustomerlist.getsize())
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = managerCustomer.testcustomerlist.toString()[indexPath.row]
+       cell.textLabel?.text = customer.testcustomerlist.toString()[indexPath.row]
           return (cell)
       }
 

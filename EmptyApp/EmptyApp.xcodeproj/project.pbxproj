@@ -24,7 +24,7 @@
 		E83FABF3272B2C4600AED145 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF2272B2C4600AED145 /* Stock.swift */; };
 		E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF4272B2C4900AED145 /* StockDirectory.swift */; };
 		E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABFB272B64D900AED145 /* AddViewController.swift */; };
-		E83FAC01272B75E300AED145 /* ManagerCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FAC00272B75E300AED145 /* ManagerCustomer.swift */; };
+		E83FAC01272B75E300AED145 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FAC00272B75E300AED145 /* CustomerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 		E83FABF2272B2C4600AED145 /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stock.swift; path = ../../../Assignment5/Assignment5/Stock.swift; sourceTree = "<group>"; };
 		E83FABF4272B2C4900AED145 /* StockDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
 		E83FABFB272B64D900AED145 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		E83FAC00272B75E300AED145 /* ManagerCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerCustomer.swift; sourceTree = "<group>"; };
+		E83FAC00272B75E300AED145 /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 		E83FABFF272B6EE100AED145 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E83FAC00272B75E300AED145 /* ManagerCustomer.swift */,
+				E83FAC00272B75E300AED145 /* CustomerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */,
 				E83FABEF272B2C3D00AED145 /* Customer.swift in Sources */,
 				E83FABE9272B2C3100AED145 /* CategoryDirectory.swift in Sources */,
-				E83FAC01272B75E300AED145 /* ManagerCustomer.swift in Sources */,
+				E83FAC01272B75E300AED145 /* CustomerManager.swift in Sources */,
 				E83FABE1272B28B300AED145 /* ManageStockViewController.swift in Sources */,
 				E83FABE7272B2C2B00AED145 /* Category.swift in Sources */,
 			);
