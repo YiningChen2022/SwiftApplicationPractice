@@ -89,12 +89,10 @@ class DeleteCustomerViewController :
         DispatchQueue.main.async {
          
             let signInVC=ManageCustomerViewController();
-
           
-            let navVC = UINavigationController(rootViewController: signInVC)
-          
-            navVC.modalPresentationStyle = .fullScreen
-            self.present(navVC, animated: false, completion: nil)
+         
+            signInVC.modalPresentationStyle = .fullScreen
+            self.present( signInVC, animated: true, completion: nil)
         }
     }
   

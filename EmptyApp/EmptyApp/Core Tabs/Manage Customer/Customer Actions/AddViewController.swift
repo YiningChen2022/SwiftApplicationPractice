@@ -141,7 +141,7 @@ class AddViewController: UITabBarController{
         let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
         
         applicationViewController.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
-        print( applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
+     
 
                     DispatchQueue.main.async {
                       
@@ -151,18 +151,17 @@ class AddViewController: UITabBarController{
                     }
          
         }
-    
-    
+
 
     @objc private func didTapback(){
+     
         DispatchQueue.main.async {
          
             let signInVC=ManageCustomerViewController();
           
-            let navVC = UINavigationController(rootViewController: signInVC)
-          
-            navVC.modalPresentationStyle = .fullScreen
-            self.present(navVC, animated: false, completion: nil)
+         
+            signInVC.modalPresentationStyle = .fullScreen
+            self.present( signInVC, animated: true, completion: nil)
         }
     }
 

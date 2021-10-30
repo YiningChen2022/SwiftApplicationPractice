@@ -9,22 +9,16 @@
 import Foundation
 import UIKit
 
-class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ManageCustomerViewController : UIViewController{
 
-   
-    private let tableView: UITableView={
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
-    
+
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
-        tableView.frame=view.bounds
+
         
     }
     //back button
-    private let backButton: UIButton = {
+    private let backButton1: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemBlue
         button.setTitle("<Back", for: .normal )
@@ -77,56 +71,35 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(backButton)
+        view.addSubview(backButton1)
         view.addSubview(addCustomerButton)
         view.addSubview(updateCustomerButton)
         view.addSubview(deleteCustomerButton)
         view.addSubview(ViewCustomerButton)
-         setUpTable()
+  
          
-     
+         backButton1.frame=CGRect(x:20,y:40,width:100,height:25)
+         addCustomerButton.frame=CGRect(x: 70, y: 120, width: 200, height: 50)
+         updateCustomerButton.frame=CGRect(x: 70, y: 200, width: 200, height: 50)
+         deleteCustomerButton.frame=CGRect(x: 70, y: 280, width: 200, height: 50)
+         ViewCustomerButton.frame=CGRect(x:70,y:360, width: 200, height: 50)
+
      
   
-        backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
+        backButton1.addTarget(self, action:#selector(didTapback1),for: .touchUpInside)
         addCustomerButton.addTarget(self, action:#selector(didTapadd),for: .touchUpInside)
         updateCustomerButton.addTarget(self, action:#selector(didTapUpdate),for: .touchUpInside)
         deleteCustomerButton.addTarget(self, action:#selector(didTapDelete),for: .touchUpInside)
          ViewCustomerButton.addTarget(self, action:#selector(didTapView),for: .touchUpInside)
     }
-    private func setUpTable(){
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        setUpTableHeader()
-        
-        
-    }
-    private func setUpTableHeader(){
-        let headerView = UIView(frame:CGRect(x:0,y:0,width:500, height: 300))
-        headerView.backgroundColor = .white
-        headerView.isUserInteractionEnabled=true
-        headerView.clipsToBounds=true
-        tableView.tableHeaderView=headerView
-        
-        backButton.frame=CGRect(x:20,y:40,width:100,height:25)
-    
-        addCustomerButton.frame=CGRect(x: 80, y: 100, width: 150, height: 25)
-        updateCustomerButton.frame=CGRect(x: 80, y: 150, width: 150, height: 25)
-        deleteCustomerButton.frame=CGRect(x: 80, y: 200, width: 150, height: 25)
-        ViewCustomerButton.frame=CGRect(x:80,y:250, width: 150, height: 25)
+  
 
-        headerView.addSubview(backButton)
-        headerView.addSubview(addCustomerButton)
-        headerView.addSubview(updateCustomerButton)
-        headerView.addSubview(deleteCustomerButton)
-        headerView.addSubview(ViewCustomerButton)
-
-    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    @objc private func didTapback(){
+    @objc private func didTapback1(){
         DispatchQueue.main.async {
          
             let signInVC=applicationViewController();
@@ -181,16 +154,6 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         }
     }
 
-    //Table View
-    func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-        
-        return (applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
-      }
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-      
-          let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
-          return (cell)
-      }
+  
 
 }

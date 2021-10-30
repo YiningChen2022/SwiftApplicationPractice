@@ -131,7 +131,6 @@
 				153402AB1F939BDB00324E7D /* Assets.xcassets */,
 				153402AD1F939BDB00324E7D /* LaunchScreen.storyboard */,
 				153402B01F939BDB00324E7D /* Info.plist */,
-				E83FABDA2729E53A00AED145 /* applicationViewController.swift */,
 			);
 			path = EmptyApp;
 			sourceTree = "<group>";
@@ -214,6 +213,7 @@
 		E83FABE4272B2BAD00AED145 /* Core Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				E83FABDA2729E53A00AED145 /* applicationViewController.swift */,
 				E800FE9F272D02CC009186E7 /* Manage Stock */,
 				E800FE9E272D0293009186E7 /* Manage Category */,
 				E800FE9C272D0255009186E7 /* Manage Customer */,
