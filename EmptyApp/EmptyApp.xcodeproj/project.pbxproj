@@ -32,7 +32,7 @@
 		E800FEC6272D0572009186E7 /* CompanyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC5272D0572009186E7 /* CompanyManager.swift */; };
 		E800FEC8272D057D009186E7 /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC7272D057D009186E7 /* StockManager.swift */; };
 		E800FECA272D058C009186E7 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC9272D058C009186E7 /* CategoryManager.swift */; };
-		E800FECC272DC192009186E7 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FECB272DC192009186E7 /* test.swift */; };
+		E800FECC272DC192009186E7 /* ManagerCustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FECB272DC192009186E7 /* ManagerCustomerView.swift */; };
 		E800FECE272DC965009186E7 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FECD272DC965009186E7 /* test2.swift */; };
 		E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDA2729E53A00AED145 /* applicationViewController.swift */; };
 		E83FABDD2729EF4200AED145 /* ManageCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */; };
@@ -79,7 +79,7 @@
 		E800FEC5272D0572009186E7 /* CompanyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyManager.swift; sourceTree = "<group>"; };
 		E800FEC7272D057D009186E7 /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
 		E800FEC9272D058C009186E7 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
-		E800FECB272DC192009186E7 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		E800FECB272DC192009186E7 /* ManagerCustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerCustomerView.swift; sourceTree = "<group>"; };
 		E800FECD272DC965009186E7 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		E83FABDA2729E53A00AED145 /* applicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applicationViewController.swift; sourceTree = "<group>"; };
 		E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCustomerViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +135,6 @@
 				153402AB1F939BDB00324E7D /* Assets.xcassets */,
 				153402AD1F939BDB00324E7D /* LaunchScreen.storyboard */,
 				153402B01F939BDB00324E7D /* Info.plist */,
-				E800FECB272DC192009186E7 /* test.swift */,
 				E800FECD272DC965009186E7 /* test2.swift */,
 			);
 			path = EmptyApp;
@@ -144,6 +143,7 @@
 		E800FE9C272D0255009186E7 /* Manage Customer */ = {
 			isa = PBXGroup;
 			children = (
+				E800FECB272DC192009186E7 /* ManagerCustomerView.swift */,
 				E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */,
 				E800FEA1272D031A009186E7 /* Customer Actions */,
 			);
@@ -352,7 +352,7 @@
 				E83FABF3272B2C4600AED145 /* Stock.swift in Sources */,
 				E83FABDD2729EF4200AED145 /* ManageCustomerViewController.swift in Sources */,
 				E800FE94272CE46A009186E7 /* DeleteCustomerViewController.swift in Sources */,
-				E800FECC272DC192009186E7 /* test.swift in Sources */,
+				E800FECC272DC192009186E7 /* ManagerCustomerView.swift in Sources */,
 				E800FEC4272D0553009186E7 /* UpdateCompanyViewController.swift in Sources */,
 				E800FEA6272D039E009186E7 /* AddCategoryViewController.swift in Sources */,
 				E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */,

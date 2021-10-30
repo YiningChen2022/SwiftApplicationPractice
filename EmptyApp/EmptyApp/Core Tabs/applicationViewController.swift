@@ -74,8 +74,6 @@ class applicationViewController: UIViewController{
         manageCompanyButton.addTarget(self, action:#selector(didTapComapny),for: .touchUpInside)
         manageStockButton.addTarget(self, action:#selector(didTapStock),for: .touchUpInside)
         manageCategoryButton.addTarget(self, action:#selector(didTapCategory),for: .touchUpInside)
-     
-        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

@@ -10,8 +10,8 @@ import Foundation
 
 import UIKit
 
-class test2: UIView{
-
+class test2: UIWindow{
+   
     //header
     private let label: UILabel = {
         let label = UILabel()
@@ -23,16 +23,19 @@ class test2: UIView{
         return label
     }()
     
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
   
+        self.addSubview(label)
+
+        return true
+    }
    
     
-    override init (frame : CGRect) {
-        super.init(frame : frame)
-        self.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
-        self.addSubview(label)
-      
-      
-         
+
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     func updateData(title:String){
         //self.label.text = title
@@ -40,8 +43,5 @@ class test2: UIView{
      
      
     
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+ 
 }
