@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class applicationViewController: UITabBarController{
+class applicationViewController: UIViewController{
     struct GlobalVariable{
         public static var customerlist=CustomerManager()
         public static var selected=0
