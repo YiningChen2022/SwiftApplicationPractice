@@ -31,30 +31,49 @@ while !end {
         let emailid : String? = readLine()
         print("Input Password id")
         let password : String? = readLine()
-        let Admin1 = Admin(userEmailId: emailid!, password: password!)
-        Adminlist.addAdminProfile(admin: Admin1)
-        print("-----------------------admin added-------------------")
-        Adminlist.toString()
+        if emailid != "" && password != ""{
+            let Admin1 = Admin(userEmailId: emailid!, password: password!)
+            Adminlist.addAdminProfile(admin: Admin1)
+            print("-----------------------admin added-------------------")
+            Adminlist.toString()
+        }else {
+            print("please input valid email and/or password")
+        }
+       
     case "2":
+        print("-----list of all Admin----")
         Adminlist.toString()
         print("select user id: ")
         let userid : String? = readLine()
-        let curr=Adminlist.getAdmin(Id: Int(userid!)!)
-        print("update Name (enter empty to skip): ")
-        let updatename : String? = readLine()
-        print("update password (enter empty to skip): ")
-        let updatepassword : String? = readLine()
-        Adminlist.updateAdminProfile(admin: curr, password: updatepassword!, email: updatename!)
-        print("-----------------------admin updated -------------------")
-        Adminlist.toString()
+        if Int(userid!) != nil{
+            let curr=Adminlist.getAdmin(Id: Int(userid!)!)
+            if curr != nil{
+                print("update Name (enter empty to skip): ")
+                let updatename : String? = readLine()
+                print("update password (enter empty to skip): ")
+                let updatepassword : String? = readLine()
+                Adminlist.updateAdminProfile(admin: curr!, password: updatepassword!, email: updatename!)
+                print("-----------------------admin updated -------------------")
+                Adminlist.toString()
+            }else{
+                print ("could not find this id")
+            }
+        }else{
+            print("please input valid id")
+        }
+       
+        
     case "3":
         Adminlist.toString()
         print("select user id to delete: ")
         let userid : String? = readLine()
-        let curr=Adminlist.getAdmin(Id: Int(userid!)!)
-        Adminlist.deleteAdminProfile(Id: Int(userid!)!)
-        print("-----------------------admin deleted -------------------")
-        Adminlist.toString()
+        if Adminlist.deleteAdminProfile(Id: Int(userid!)!){
+            print("-----------------------admin deleted -------------------")
+            Adminlist.toString()
+        }else{
+            print("Admin not found")
+        }
+       
     case "4":
         Adminlist.toString()
     case "5":
@@ -65,7 +84,7 @@ while !end {
         if (Adminlist.validAdmin(email: userid!, password: userpssword!)){
             managerAccount()
         }else {
-            print("wroong email or password")
+            print("wrong email or password")
         }
       
     case "6":
@@ -91,45 +110,66 @@ public func managerAccount (){
             let name : String? = readLine()
             print("Input Salary or enter empty for default")
             let salary  : String? = readLine()
-            let interviewer1 = Interviewer(name: name!, salary: Int(salary!))
-            InterviewerList.addInterviewerProfile(interviewer: interviewer1)
-            print("-----------------------Interviewer added-------------------")
-            InterviewerList.toString()
+            if (name != ""){
+                let interviewer1 = Interviewer(name: name!, salary: Int(salary!))
+                InterviewerList.addInterviewerProfile(interviewer: interviewer1)
+                print("-----------------------Interviewer added-------------------")
+                InterviewerList.toString()
+            }else{
+                print("please input name")
+                
+            }
+           
+      
         case "2":
             InterviewerList.toString()
             print("select interviewer id: ")
             let userid : String? = readLine()
-            let curr=InterviewerList.getInterviewer(uniqueId: userid!)
-            print("update Name (enter empty to skip): ")
-            let updatename : String? = readLine()
-            print("update salary (enter empty to skip): ")
-            let updateSalary : String? = readLine()
+            let curr = InterviewerList.getInterviewer(uniqueId: userid!)
             
-            InterviewerList.updateInterviewerProfile(Interviewer:curr , Name: updatename!, Salary: Int(updateSalary!))
-            print("-----------------------Interviewer Updated-------------------")
-            InterviewerList.toString()
+            if (curr != nil){
+                print("update Name (enter empty to skip): ")
+                let updatename : String? = readLine()
+                print("update salary (enter empty to skip): ")
+                let updateSalary : String? = readLine()
+                InterviewerList.updateInterviewerProfile(Interviewer:curr! , Name: updatename!, Salary: Int(updateSalary!))
+                print("-----------------------Interviewer Updated-------------------")
+                InterviewerList.toString()
+            }else{
+                print("can not find the interviewer")
+            }
+            
         case "3":
             InterviewerList.toString()
             print("select Interview id to delete: ")
             let userid : String? = readLine()
            
-            InterviewerList.deleteInterciewerProfile(uniqueId: userid!)
+            if (InterviewerList.deleteInterciewerProfile(uniqueId: userid!)){
+                print("----------------------Interviewer deleted -------------------")
+                InterviewerList.toString()
+            }else {
+                print("interviewer not found")
+            }
           
-            print("----------------------Interviewer deleted -------------------")
-            InterviewerList.toString()
+            
         case "4":
             print("----------------------All Interviewer -------------------")
             InterviewerList.toString()
-            print("---- Select User to view particular Interviewer;s profile ---")
-            print("Interviewer id:")
-            let userid : String? = readLine()
-           
-            if (InterviewerList.validInterviewer(Id: userid!)){
-                let person=InterviewerList.getInterviewer(uniqueId: userid!)
-                managerInterview(Interviewer: person)
-                
-            }else {
-                print("wroong email or password")
+            if InterviewerList.countInterviewers() == 0{
+                print("please create interviewer first")
+            }else{
+                print("---- Select User to view particular Interviewers profile ---")
+                print("Interviewer id:")
+                let userid : String? = readLine()
+               
+                if (InterviewerList.validInterviewer(Id: userid!)){
+                    let person=InterviewerList.getInterviewer(uniqueId: userid!)
+                    managerInterview(Interviewer: person!)
+                    
+                }else {
+                    print("wrong email or password")
+                    
+                }
             }
           
             
@@ -155,41 +195,63 @@ private func managerInterview(Interviewer:Interviewer){
         case "1":
             let count=InterviewList.countInterviews(interviewer: Interviewer)
             print(count)
-            if (count>6){
+            if (count>=6){
                 print("alert limited has been reached")
             }else {
                 print("Interview status:")
                 let status : String? = readLine()
-                let interview = Interview(status: status!, interviewer: Interviewer)
-                InterviewList.addInterviews(Interview: interview)
-            print("-----------------------Interview added-------------------")
-            InterviewList.toString()
+                if (status == ""){
+                    print("please input valid status")
+                }else{
+                    let interview = Interview(status: status!, interviewer: Interviewer)
+                    InterviewList.addInterviews(Interview: interview)
+                print("-----------------------Interview added-------------------")
+                InterviewList.toString()
+                }
+                
             }
         case "2":
             InterviewList.toString()
             print("select interview id: ")
             let userid : String? = readLine()
-            let curr=InterviewList.getinterview(Id: Int(userid!)!)
-            print("update Status:")
-            let update : String? = readLine()
-            InterviewList.updateInterview(Interview: curr, Status: update!)
-            print("-----------------------Interview Updated-------------------")
-            InterviewList.toString()
+            if (Int(userid!) != nil){
+                let curr=InterviewList.getinterview(Id: Int(userid!)!)
+                if (curr == nil){
+                    print("could not find interview")
+                }else{
+                    print("update Status(enter empty to skip) :")
+                    let update : String? = readLine()
+                    InterviewList.updateInterview(Interview: curr!, Status: update!)
+                    print("-----------------------Interview Updated-------------------")
+                    InterviewList.toString()
+                }
+                
+            }else {
+                print("interview id not found")
+            }
+          
         case "3":
             InterviewList.toString()
             print("select Interview to delete: ")
             let userid : String? = readLine()
-        
-            InterviewList.deleteInterciew(Id: Int(userid!)!)
-          
-            print("----------------------Interview deleted -------------------")
-            InterviewList.toString()
+            if (Int(userid!) != nil){
+                if (InterviewList.deleteInterciew(Id: Int(userid!)!)){
+                    print("----------------------Interview deleted -------------------")
+                    InterviewList.toString()
+                }else {
+                    print("Interview not found ")
+                }
+            }else{
+                print("Interview not found")
+            }
+            
         case "4":
             print("----------------------All Interviews of that interviewer -------------------")
             InterviewList.toString(interviewer: Interviewer)
             
         case "5":
             end=true
+     
         default:
             print("invalid input")
         }

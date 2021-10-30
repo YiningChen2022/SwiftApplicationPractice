@@ -12,14 +12,14 @@ class AdminDirecrtory {
         self.AdminList = []
     }
     
-    public func getAdmin(Id:Int)->Admin{
+    public func getAdmin(Id:Int)->Admin?{
         var curr:Admin?
         for admin in AdminList{
             if admin.getId() == (Id){
                 curr=admin
             }
         }
-        return curr!
+        return curr
     }
 
     public func addAdminProfile(admin:Admin){
@@ -33,12 +33,14 @@ class AdminDirecrtory {
             admin.setUserEmailId(userEmailId: email)
         }
     }
-    public func deleteAdminProfile(Id: Int){
+    public func deleteAdminProfile(Id: Int)->Bool{
                 for (index, value) in AdminList.enumerated() {
                     if value.uid==(Id) {
                         AdminList.remove(at: index)
+                        return true
                     }
             }
+        return false 
     }
     public func validAdmin(email:String, password:String)->Bool{
         for admin in AdminList {

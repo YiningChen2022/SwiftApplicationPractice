@@ -14,23 +14,25 @@ class InterviewsDirecrtory {
     public func addInterviews(Interview :Interview){
         interviewsList.append( Interview )
     }
-    public func getinterview (Id:Int)->Interview{
+    public func getinterview (Id:Int)->Interview?{
         var inter:Interview?
         for interview in interviewsList{
             if interview.getuid()==Id{
                 inter = interview
             }
         }
-        return inter!
+        return inter
     }
     
 
-    public func deleteInterciew(Id: Int){
+    public func deleteInterciew(Id: Int)->Bool{
                 for (index, value) in interviewsList.enumerated() {
                     if value.uid==Id {
                         interviewsList.remove(at: index)
+                        return true
                     }
             }
+        return false
     }
     public func countInterviews(interviewer:Interviewer)->Int{
         var count:Int=0
