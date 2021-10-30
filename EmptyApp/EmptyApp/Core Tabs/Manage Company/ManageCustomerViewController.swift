@@ -59,7 +59,16 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         button.setTitleColor(.white, for: .normal)
         return button
     }()
+    // View all customer
+    private let ViewCustomerButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("View all Customer", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
     
+
 
     
     
@@ -73,9 +82,9 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         view.addSubview(addCustomerButton)
         view.addSubview(updateCustomerButton)
         view.addSubview(deleteCustomerButton)
-  
+        view.addSubview(ViewCustomerButton)
          setUpTable()
-         customer.signup()
+         print(customer.testcustomerlist.getsize())
 
      
   
@@ -83,7 +92,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         addCustomerButton.addTarget(self, action:#selector(didTapadd),for: .touchUpInside)
         updateCustomerButton.addTarget(self, action:#selector(didTapUpdate),for: .touchUpInside)
         deleteCustomerButton.addTarget(self, action:#selector(didTapDelete),for: .touchUpInside)
-
+         ViewCustomerButton.addTarget(self, action:#selector(didTapView),for: .touchUpInside)
     }
     private func setUpTable(){
         view.addSubview(tableView)
@@ -111,6 +120,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         headerView.addSubview(addCustomerButton)
         headerView.addSubview(updateCustomerButton)
         headerView.addSubview(deleteCustomerButton)
+        headerView.addSubview(ViewCustomerButton)
 
     }
 
@@ -133,8 +143,6 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         DispatchQueue.main.async {
          
             let addVC=AddViewController();
-
-          
             let navVC = UINavigationController(rootViewController: addVC)
           
             navVC.modalPresentationStyle = .fullScreen
@@ -154,6 +162,18 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         }
     }
     @objc private func didTapDelete(){
+        DispatchQueue.main.async {
+         
+            let signInVC=applicationViewController();
+
+          
+            let navVC = UINavigationController(rootViewController: signInVC)
+          
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: false, completion: nil)
+        }
+    }
+    @objc private func didTapView(){
         DispatchQueue.main.async {
          
             let signInVC=applicationViewController();
