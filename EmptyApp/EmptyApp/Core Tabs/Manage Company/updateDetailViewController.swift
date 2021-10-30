@@ -13,7 +13,15 @@ class UpdateDetailViewController: UITabBarController{
     //back button
    static var id = applicationViewController.GlobalVariable.selected
     static var currentCustomer=applicationViewController.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: id)
- 
+    private let label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.text = "if no change, leave it empty"
+        return label
+    }()
+    
     private let backButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemBlue
@@ -110,6 +118,7 @@ class UpdateDetailViewController: UITabBarController{
         super.viewDidLoad()
         title = "Update Customer"
         view.backgroundColor = .white
+        view.addSubview(label)
         view.addSubview(backButton)
         view.addSubview(emailField)
 
@@ -118,6 +127,7 @@ class UpdateDetailViewController: UITabBarController{
         view.addSubview(contactField)
         view.addSubview(addressField)
         view.addSubview(AddButton)
+        
       
         backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
         AddButton.addTarget(self, action:#selector(didTapAddCustomer),for: .touchUpInside)
@@ -128,7 +138,8 @@ class UpdateDetailViewController: UITabBarController{
         super.viewDidLayoutSubviews()
         
        
-    
+
+        label.frame = CGRect(x:60, y:50, width:200,height:30)
         fnField.frame = CGRect(x:60, y:100, width:200,height:30)
         lnField.frame = CGRect(x:60, y:150, width:200,height:30)
         addressField.frame = CGRect(x:60, y:200, width:200,height:30)
@@ -139,16 +150,15 @@ class UpdateDetailViewController: UITabBarController{
        
     }
     @objc func didTapAddCustomer(){
-        guard let email=emailField.text, !email.isEmpty,
-              let firstName=fnField.text, !firstName.isEmpty,
-              let lastName=lnField.text, !lastName.isEmpty,
-              let contact=contactField.text,!contact.isEmpty,
-              let address = addressField.text,!address.isEmpty
+        guard let email=emailField.text,
+              let firstName=fnField.text,
+              let lastName=lnField.text,
+              let contact=contactField.text,
+              let address = addressField.text
         else{
                   return
               }
-        let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
-        
+   
         applicationViewController.GlobalVariable.customerlist.testcustomerlist.UpdateCustomer(id: applicationViewController.GlobalVariable.selected, firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailId: email)
         print( applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
 

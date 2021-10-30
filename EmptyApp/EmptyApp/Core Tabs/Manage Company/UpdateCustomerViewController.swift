@@ -115,7 +115,7 @@ class UpdateCustomerViewController :
          let selected = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
         let id=Int(selected.split(separator: " ")[0])!
         applicationViewController.GlobalVariable.selected=id
-        print(applicationViewController.GlobalVariable.selected)
+        //print(applicationViewController.GlobalVariable.selected)
      DispatchQueue.main.async {
             
             
