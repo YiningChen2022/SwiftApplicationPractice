@@ -11,7 +11,7 @@ class CustomerDirecrtory {
     init(customerList:Array<Customer>){
         self.customerList = []
     }
- 
+
     public func addCustomer(Customer:Customer){
         customerList.append(Customer)
     }

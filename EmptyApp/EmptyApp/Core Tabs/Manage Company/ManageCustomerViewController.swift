@@ -11,7 +11,7 @@ import UIKit
 
 class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    var customer=AppDelegate()
+    var customer=CustomerManager()
    
     private let tableView: UITableView={
         let tableView = UITableView()
@@ -68,14 +68,14 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
      override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-  
+        
         view.addSubview(backButton)
         view.addSubview(addCustomerButton)
         view.addSubview(updateCustomerButton)
         view.addSubview(deleteCustomerButton)
   
          setUpTable()
-         
+         customer.signup()
 
      
   
@@ -90,6 +90,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
         tableView.delegate = self
         tableView.dataSource = self
         setUpTableHeader()
+        
         
     }
     private func setUpTableHeader(){
@@ -167,9 +168,11 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
 
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
+        
         return (customer.testcustomerlist.getsize())
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+      
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
        cell.textLabel?.text = customer.testcustomerlist.toString()[indexPath.row]
           return (cell)

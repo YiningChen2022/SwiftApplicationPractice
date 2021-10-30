@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class AddViewController: UITabBarController{
-    var customermanage = AppDelegate()
+    
     //back button
     private let backButton: UIButton = {
         let button = UIButton()
@@ -110,7 +110,7 @@ class AddViewController: UITabBarController{
         view.addSubview(contactField)
         view.addSubview(addressField)
         view.addSubview(AddButton)
-
+      
         backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
         AddButton.addTarget(self, action:#selector(didTapAddCustomer),for: .touchUpInside)
      
@@ -141,7 +141,7 @@ class AddViewController: UITabBarController{
               }
         let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
        
-        customermanage.testcustomerlist.customerList.append(customer)
+        //customermanage.testcustomerlist.customerList.append(customer)
                     DispatchQueue.main.async {
                       
                         let vc = ManageCustomerViewController()
