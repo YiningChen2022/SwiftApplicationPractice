@@ -13,23 +13,96 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.backgroundColor = UIColor.white
-            window.rootViewController = applicationViewController()
+            window.rootViewController = UIViewController()
       
             window.makeKeyAndVisible()
-     
+            viewDidLoad()
         }
-   
-        
+
         return true
     }
- 
+    //header
+    private let label: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x:70,y:60,width: 200,height: 50)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.text = "Welcome!"
+        return label
+    }()
+    
+  
+    // manageCustomer
+    private let manageCustomerButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x:70, y:120, width:200,height:50)
+        button.backgroundColor = .systemBlue
+        button.setTitle("Manage Custmer", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+    
+    //manageCompany
+    private let manageCompanyButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x:70, y:200, width:200,height:50)
+        button.backgroundColor = .systemBlue
+        button.setTitle("Manage Company", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+    
+    //manageStock
+    private let manageStockButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Manage Stock", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.frame = CGRect(x:70, y:360, width:200,height:50)
+        return button
+    }()
+    
+    //manageCategory
+    private let manageCategoryButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x:70, y:280, width:200,height:50)
+        button.backgroundColor = .systemBlue
+        button.setTitle("Manage Category", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+    
 
+    
+    public func viewDidLoad()
+    {
+   
+        window?.addSubview(test())
+        window?.removeFromSuperview()
+    }
+    
+    extension UIWindow {
+        func dismiss() {
+            isHidden = true
 
+            if #available(iOS 13, *) {
+                windowScene = nil
+            }
+        }
+    }
+    // Detect key window
+    let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+
+    // Dismiss key window (if any)
+    keyWindow?.dismiss()
+  
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

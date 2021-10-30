@@ -43,13 +43,14 @@ class ManageStockViewController : UITabBarController  {
 
     }
     @objc private func didTapback(){
-        DispatchQueue.main.async {
+      /*  DispatchQueue.main.async {
          
             let signInVC=applicationViewController();
             let navVC = UINavigationController(rootViewController: signInVC)
             navVC.modalPresentationStyle = .fullScreen
             self.present(navVC, animated: true, completion: nil)
         }
+       */
     }
     
 

@@ -14,8 +14,6 @@ class ManageCustomerViewController : UIViewController{
 
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
-
-        
     }
     //back button
     private let backButton1: UIButton = {
@@ -86,21 +84,21 @@ class ManageCustomerViewController : UIViewController{
 
      
   
-        backButton1.addTarget(self, action:#selector(didTapback1),for: .touchUpInside)
-        addCustomerButton.addTarget(self, action:#selector(didTapadd),for: .touchUpInside)
+       // backButton1.addTarget(self, action:#selector(didTapback1),for: .touchUpInside)
+     /*   addCustomerButton.addTarget(self, action:#selector(didTapadd),for: .touchUpInside)
         updateCustomerButton.addTarget(self, action:#selector(didTapUpdate),for: .touchUpInside)
         deleteCustomerButton.addTarget(self, action:#selector(didTapDelete),for: .touchUpInside)
          ViewCustomerButton.addTarget(self, action:#selector(didTapView),for: .touchUpInside)
-    }
+    }*/
   
 
  
 
-    override func didReceiveMemoryWarning() {
+   /* override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     @objc private func didTapback1(){
-        DispatchQueue.main.async {
+        /*DispatchQueue.main.async {
          
             let signInVC=applicationViewController();
 
@@ -108,9 +106,10 @@ class ManageCustomerViewController : UIViewController{
             let navVC = UINavigationController(rootViewController: signInVC)
           
             navVC.modalPresentationStyle = .fullScreen
-            self.present(navVC, animated: false, completion: nil)
+            self.present(navVC, animated: false, completion: nil)*/
         }
     }
+    
     @objc private func didTapadd(){
         DispatchQueue.main.async {
          
@@ -153,7 +152,7 @@ class ManageCustomerViewController : UIViewController{
             self.present(navVC, animated: false, completion: nil)
         }
     }
-
-  
-
+}
+    */
+}
 }
