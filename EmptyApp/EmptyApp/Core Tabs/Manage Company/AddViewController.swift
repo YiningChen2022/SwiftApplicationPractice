@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class AddViewController: UITabBarController{
-    let customerm=CustomerManager()
     //back button
     private let backButton: UIButton = {
         let button = UIButton()
@@ -141,10 +140,9 @@ class AddViewController: UITabBarController{
               }
         let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
         
-        customerm.testcustomerlist.addCustomer(Customer: customer)
-        print(customerm.testcustomerlist.getsize())
+        applicationViewController.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
+        print( applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
 
-        print(customer.toString())
                     DispatchQueue.main.async {
                       
                         let vc = ManageCustomerViewController()

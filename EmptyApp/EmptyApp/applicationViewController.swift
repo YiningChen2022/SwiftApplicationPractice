@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class applicationViewController: UITabBarController{
-
+    struct GlobalVariable{
+        public static var customerlist=CustomerManager()
+     }
+   
     //header
     private let label: UILabel = {
         let label = UILabel()

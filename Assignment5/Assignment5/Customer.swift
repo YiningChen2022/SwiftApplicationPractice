@@ -61,6 +61,6 @@ class Customer {
         self.emailID=emailID
     }
     public func toString ()->String{
-        return "Customer:\(id) \(firstName) \(lastName) \(address) \(contactDetails) \(emailID)"
+        return "\(id)  FirstName: \(firstName)  LastName: \(lastName)"
     }
 }

@@ -1,15 +1,15 @@
 //
-//  ManageCustomerViewController.swift
+//  ViewAllCustomerViewController.swift
 //  EmptyApp
 //
-//  Created by Yining Chen on 10/27/21.
+//  Created by Yining Chen on 10/29/21.
 //  Copyright © 2021 rab. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
 
    
     private let tableView: UITableView={
