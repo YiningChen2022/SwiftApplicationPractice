@@ -1,5 +1,5 @@
 //
-//  ViewAllCustomerViewController.swift
+//  UpdateCustomerViewController.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 10/29/21.
@@ -7,9 +7,10 @@
 //
 
 import Foundation
-import UIKit
 
-class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
+import UIKit
+class UpdateCustomerViewController :
+    UIViewController,UITableViewDelegate,UITableViewDataSource {
 
    
     private let tableView: UITableView={
@@ -33,25 +34,31 @@ class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITab
     }()
 
     
- 
-
     
-    
-
+     //header
+     private let label: UILabel = {
+         let label = UILabel()
+         label.textAlignment = .center
+         label.numberOfLines = 0
+         label.font = .systemFont(ofSize: 20, weight: .medium)
+         label.text = "Select customer to update"
+         return label
+     }()
+     
     
      override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         view.addSubview(backButton)
+   
 
          setUpTable()
          
      
-     
   
         backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
-     
+        
     }
     private func setUpTable(){
         view.addSubview(tableView)
@@ -62,15 +69,18 @@ class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITab
         
     }
     private func setUpTableHeader(){
-        let headerView = UIView(frame:CGRect(x:0,y:0,width:500, height: 200))
+        let headerView = UIView(frame:CGRect(x:0,y:0,width:500, height: 300))
         headerView.backgroundColor = .white
         headerView.isUserInteractionEnabled=true
         headerView.clipsToBounds=true
         tableView.tableHeaderView=headerView
         
         backButton.frame=CGRect(x:20,y:40,width:100,height:25)
+        label.frame=CGRect(x: 60, y: 80, width: 200, height: 200)
         headerView.addSubview(backButton)
-      
+        headerView.addSubview(label)
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,5 +111,26 @@ class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITab
        cell.textLabel?.text = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
           return (cell)
       }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+         let selected = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+        let id=Int(selected.split(separator: " ")[0])!
+        applicationViewController.GlobalVariable.selected=id
+        print(applicationViewController.GlobalVariable.selected)
+     DispatchQueue.main.async {
+            
+            
+            let signInVC=UpdateDetailViewController();
 
+          
+            let navVC = UINavigationController(rootViewController: signInVC)
+          
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: false, completion: nil)
+        }
+       
+        
+   
+        }
+
+   
 }

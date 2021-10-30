@@ -151,7 +151,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
     @objc private func didTapUpdate(){
         DispatchQueue.main.async {
          
-            let signInVC=applicationViewController();
+            let signInVC=UpdateCustomerViewController();
 
           
             let navVC = UINavigationController(rootViewController: signInVC)
@@ -171,7 +171,7 @@ class ManageCustomerViewController : UIViewController,UITableViewDelegate,UITabl
     @objc private func didTapView(){
         DispatchQueue.main.async {
          
-            let signInVC=applicationViewController();
+            let signInVC=ViewAllCustomerViewController();
 
           
             let navVC = UINavigationController(rootViewController: signInVC)

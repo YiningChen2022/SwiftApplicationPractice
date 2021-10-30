@@ -88,7 +88,7 @@ class DeleteCustomerViewController :
     @objc private func didTapback(){
         DispatchQueue.main.async {
          
-            let signInVC=applicationViewController();
+            let signInVC=ManageCustomerViewController();
 
           
             let navVC = UINavigationController(rootViewController: signInVC)

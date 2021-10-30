@@ -12,6 +12,8 @@
 		153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 153402AD1F939BDB00324E7D /* LaunchScreen.storyboard */; };
 		E800FE94272CE46A009186E7 /* DeleteCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE93272CE46A009186E7 /* DeleteCustomerViewController.swift */; };
 		E800FE96272CEE43009186E7 /* ViewAllCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */; };
+		E800FE98272CF005009186E7 /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */; };
+		E800FE9A272CF0D7009186E7 /* updateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */; };
 		E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDA2729E53A00AED145 /* applicationViewController.swift */; };
 		E83FABDD2729EF4200AED145 /* ManageCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */; };
 		E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */; };
@@ -37,6 +39,8 @@
 		153402B01F939BDB00324E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E800FE93272CE46A009186E7 /* DeleteCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomerViewController.swift; sourceTree = "<group>"; };
 		E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllCustomerViewController.swift; sourceTree = "<group>"; };
+		E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
+		E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDetailViewController.swift; sourceTree = "<group>"; };
 		E83FABDA2729E53A00AED145 /* applicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applicationViewController.swift; sourceTree = "<group>"; };
 		E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCustomerViewController.swift; sourceTree = "<group>"; };
 		E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCompanyViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				E83FABFB272B64D900AED145 /* AddViewController.swift */,
 				E800FE93272CE46A009186E7 /* DeleteCustomerViewController.swift */,
 				E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */,
+				E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */,
+				E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */,
 			);
 			path = "Manage Company";
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 				E83FABED272B2C3900AED145 /* CompanyDirecrtory.swift in Sources */,
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,
 				E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */,
+				E800FE98272CF005009186E7 /* UpdateCustomerViewController.swift in Sources */,
 				E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */,
 				E83FABEB272B2C3400AED145 /* Company.swift in Sources */,
 				E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */,
@@ -224,6 +231,7 @@
 				E800FE94272CE46A009186E7 /* DeleteCustomerViewController.swift in Sources */,
 				E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */,
 				E83FABE3272B28CC00AED145 /* ManageCategoryViewController.swift in Sources */,
+				E800FE9A272CF0D7009186E7 /* updateDetailViewController.swift in Sources */,
 				E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */,
 				E83FABEF272B2C3D00AED145 /* Customer.swift in Sources */,
 				E83FABE9272B2C3100AED145 /* CategoryDirectory.swift in Sources */,
