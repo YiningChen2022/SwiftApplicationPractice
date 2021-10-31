@@ -7,3 +7,7 @@
 //
 
 import Foundation
+final class CategoryManager{
+    public let testCategorylist = CategoryDirecrtory(catagoryList: Array())
+    
+}

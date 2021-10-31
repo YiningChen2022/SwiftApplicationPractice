@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     struct GlobalVariable{
         public static var customerlist=CustomerManager()
+        
         public static var selected=0
      }
    

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+final class StockManager{
+    public let testStocklist = StockDirecrtory(stockList: Array())
+    
+}

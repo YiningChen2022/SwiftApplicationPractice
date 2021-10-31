@@ -138,6 +138,7 @@
 		153402A31F939BDA00324E7D /* EmptyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E88328C7272E3E0100E86E6F /* Controller */,
 				E83FABFF272B6EE100AED145 /* Managers */,
 				E83FABE5272B2BEA00AED145 /* Models */,
 				E83FABE4272B2BAD00AED145 /* Core Tabs */,
@@ -154,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				E800FECB272DC192009186E7 /* ManagerCustomerView.swift */,
-				E88328C7272E3E0100E86E6F /* Controller */,
 				E800FEA1272D031A009186E7 /* Customer Actions */,
 			);
 			path = "Manage Customer";
@@ -229,7 +229,6 @@
 		E83FABE4272B2BAD00AED145 /* Core Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				E83FABDA2729E53A00AED145 /* applicationViewController.swift */,
 				E800FE9F272D02CC009186E7 /* Manage Stock */,
 				E800FE9E272D0293009186E7 /* Manage Category */,
 				E800FE9C272D0255009186E7 /* Manage Customer */,
@@ -256,7 +255,6 @@
 		E83FABFA272B5DCB00AED145 /* Manage Company */ = {
 			isa = PBXGroup;
 			children = (
-				E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */,
 				E800FEB8272D04A1009186E7 /* Company Actions */,
 			);
 			path = "Manage Company";
@@ -276,6 +274,8 @@
 		E88328C7272E3E0100E86E6F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E83FABDA2729E53A00AED145 /* applicationViewController.swift */,
+				E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */,
 				E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */,
 				E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */,
 				E83FABFB272B64D900AED145 /* AddViewController.swift */,

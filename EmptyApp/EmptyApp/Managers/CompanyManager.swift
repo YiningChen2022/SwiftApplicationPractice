@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+final class CompanyManager{
+    public let testCompanylist = CompanyDirecrtory(companyList:  Array())
+    
+}
