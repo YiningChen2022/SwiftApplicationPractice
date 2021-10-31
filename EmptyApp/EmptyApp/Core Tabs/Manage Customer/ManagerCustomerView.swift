@@ -12,7 +12,7 @@ import UIKit
 
 class ManagerCustomerView: UIView{
  
-    
+     
  
 
     
@@ -45,7 +45,7 @@ class ManagerCustomerView: UIView{
         button.frame=CGRect(x: 70, y: 280, width: 200, height: 50)
         button.backgroundColor = .systemBlue
         button.addTarget(self, action:#selector(didTapDeleteCustomer),for: .touchUpInside)
-        button.setTitle("deleteCustomer", for: .normal )
+        button.setTitle("Delete Customer", for: .normal )
         button.setTitleColor(.white, for: .normal)
         return button
     }()
@@ -115,8 +115,10 @@ class ManagerCustomerView: UIView{
     }
     
     @objc func closeWindow(sender : UIButton) {
-        let parentWin:UIView = sender.superview!;
-        parentWin.removeFromSuperview()
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
    }
 
 

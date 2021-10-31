@@ -57,8 +57,9 @@ class ViewCustomerUIView: UIView, UITableViewDelegate, UITableViewDataSource {
   
     
     @objc func closeWindow(sender : UIButton) {
-        let parentWin:UIView = sender.superview!;
-        parentWin.removeFromSuperview()
+        let nextview=ManagerCustomerView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
    }
 
 }

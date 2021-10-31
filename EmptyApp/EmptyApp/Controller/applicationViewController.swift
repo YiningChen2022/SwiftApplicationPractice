@@ -99,20 +99,10 @@ class applicationViewController: UIViewController{
         }
     }
     @objc func didTapCategory(){
-        DispatchQueue.main.async {
-            let vc = ManageategoryViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated:false)
-            
-        }
+    
     }
     @objc func didTapStock(){
-        DispatchQueue.main.async {
-            let vc = ManageStockViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated:false)
-            
-        }
+       
     }
  
 

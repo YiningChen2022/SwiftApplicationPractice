@@ -23,16 +23,7 @@ class UpdateDetailCustomerUIView :
          label.frame = CGRect(x:60, y:50, width:200,height:30)
          return label
      }()
-    //back button
-    private let backButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemBlue
-        button.setTitle("<Back", for: .normal )
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action:#selector(closeWindow),for: .touchUpInside)
-        button.frame=CGRect(x:60,y:400,width:100,height:25)
-        return button
-    }()
+
 
     //FN field
     private let fnField: UITextField = {
@@ -126,7 +117,6 @@ class UpdateDetailCustomerUIView :
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
         backgroundColor = .systemGray
         self.backgroundColor = .systemGray
-        self.addSubview(backButton)
         self.addSubview(label)
         self.addSubview(emailField)
         self.addSubview(fnField)
@@ -141,11 +131,7 @@ class UpdateDetailCustomerUIView :
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    @objc func closeWindow(sender : UIButton) {
-        let parentWin:UIView = sender.superview!;
-        parentWin.removeFromSuperview()
-        
-   }
+
     @objc func didTapAddCustomer(){
         guard let email=emailField.text,
               let firstName=fnField.text,

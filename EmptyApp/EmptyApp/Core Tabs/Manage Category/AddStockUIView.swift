@@ -1,5 +1,5 @@
 //
-//  UpdateStockUIView.swift
+//  AddStockUIView.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 10/31/21.
