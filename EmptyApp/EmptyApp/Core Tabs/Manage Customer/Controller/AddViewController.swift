@@ -140,7 +140,7 @@ class AddViewController: UITabBarController{
               }
         let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
         
-        applicationViewController.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
+        AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
      
 
                     DispatchQueue.main.async {

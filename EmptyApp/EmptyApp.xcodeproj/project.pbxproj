@@ -49,6 +49,10 @@
 		E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF4272B2C4900AED145 /* StockDirectory.swift */; };
 		E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABFB272B64D900AED145 /* AddViewController.swift */; };
 		E83FAC01272B75E300AED145 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FAC00272B75E300AED145 /* CustomerManager.swift */; };
+		E88328C9272E3E4200E86E6F /* AddCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328C8272E3E4200E86E6F /* AddCustomerUIView.swift */; };
+		E88328CB272E41EC00E86E6F /* UpdateCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328CA272E41EC00E86E6F /* UpdateCustomerUIView.swift */; };
+		E88328CD272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328CC272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift */; };
+		E88328CF272E420C00E86E6F /* ViewCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328CE272E420C00E86E6F /* ViewCustomerUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +100,10 @@
 		E83FABF4272B2C4900AED145 /* StockDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
 		E83FABFB272B64D900AED145 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E83FAC00272B75E300AED145 /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
+		E88328C8272E3E4200E86E6F /* AddCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerUIView.swift; sourceTree = "<group>"; };
+		E88328CA272E41EC00E86E6F /* UpdateCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerUIView.swift; sourceTree = "<group>"; };
+		E88328CC272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomerUIVeiw.swift; sourceTree = "<group>"; };
+		E88328CE272E420C00E86E6F /* ViewCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				E800FECB272DC192009186E7 /* ManagerCustomerView.swift */,
-				E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */,
+				E88328C7272E3E0100E86E6F /* Controller */,
 				E800FEA1272D031A009186E7 /* Customer Actions */,
 			);
 			path = "Manage Customer";
@@ -171,11 +179,10 @@
 		E800FEA1272D031A009186E7 /* Customer Actions */ = {
 			isa = PBXGroup;
 			children = (
-				E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */,
-				E83FABFB272B64D900AED145 /* AddViewController.swift */,
-				E800FE93272CE46A009186E7 /* DeleteCustomerViewController.swift */,
-				E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */,
-				E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */,
+				E88328C8272E3E4200E86E6F /* AddCustomerUIView.swift */,
+				E88328CA272E41EC00E86E6F /* UpdateCustomerUIView.swift */,
+				E88328CC272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift */,
+				E88328CE272E420C00E86E6F /* ViewCustomerUIView.swift */,
 			);
 			path = "Customer Actions";
 			sourceTree = "<group>";
@@ -263,6 +270,19 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		E88328C7272E3E0100E86E6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */,
+				E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */,
+				E83FABFB272B64D900AED145 /* AddViewController.swift */,
+				E800FE93272CE46A009186E7 /* DeleteCustomerViewController.swift */,
+				E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */,
+				E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +362,7 @@
 				E800FEB3272D045C009186E7 /* DeleteStockViewController.swift in Sources */,
 				E800FEA8272D03C0009186E7 /* ViewAllCategoryViewController.swift in Sources */,
 				E800FE98272CF005009186E7 /* UpdateCustomerViewController.swift in Sources */,
+				E88328CB272E41EC00E86E6F /* UpdateCustomerUIView.swift in Sources */,
 				E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */,
 				E800FECE272DC965009186E7 /* test2.swift in Sources */,
 				E800FEBA272D04C6009186E7 /* updateDetailCompanyViewController.swift in Sources */,
@@ -358,10 +379,13 @@
 				E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */,
 				E800FEA4272D0383009186E7 /* updateDetailCategoryViewController.swift in Sources */,
 				E83FABE3272B28CC00AED145 /* ManageCategoryViewController.swift in Sources */,
+				E88328C9272E3E4200E86E6F /* AddCustomerUIView.swift in Sources */,
+				E88328CF272E420C00E86E6F /* ViewCustomerUIView.swift in Sources */,
 				E800FE9A272CF0D7009186E7 /* updateDetailViewController.swift in Sources */,
 				E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */,
 				E800FEAA272D03D2009186E7 /* DeleteCategoryViewController.swift in Sources */,
 				E83FABEF272B2C3D00AED145 /* Customer.swift in Sources */,
+				E88328CD272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift in Sources */,
 				E800FEB1272D044C009186E7 /* AddStockViewController.swift in Sources */,
 				E800FEB5272D046D009186E7 /* ViewAllStockViewController.swift in Sources */,
 				E800FEBC272D04DB009186E7 /* AddCompanyViewController.swift in Sources */,

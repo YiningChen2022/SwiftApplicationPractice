@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     struct GlobalVariable{
         public static var customerlist=CustomerManager()
-        public static var window: UIWindow?
+        public static var selected=0
      }
    
 
@@ -99,13 +99,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     @objc func didTapCustomer(sender: UIButton){
-
-   
-        
         window?.addSubview(ManagerCustomerView())
         window?.bringSubviewToFront(ManagerCustomerView())
-        //window?.bringSubviewToFront(ManagerCustomerView())
-      
+
     }
     public func viewDidLoad()
     {

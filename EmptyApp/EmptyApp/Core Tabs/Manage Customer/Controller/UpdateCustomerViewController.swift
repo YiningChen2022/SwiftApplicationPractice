@@ -1,5 +1,5 @@
 //
-//  DeleteCustomerViewController.swift
+//  UpdateCustomerViewController.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 10/29/21.
@@ -7,8 +7,9 @@
 //
 
 import Foundation
+
 import UIKit
-class DeleteCustomerViewController :
+class UpdateCustomerViewController :
     UIViewController,UITableViewDelegate,UITableViewDataSource {
 
    
@@ -40,7 +41,7 @@ class DeleteCustomerViewController :
          label.textAlignment = .center
          label.numberOfLines = 0
          label.font = .systemFont(ofSize: 20, weight: .medium)
-         label.text = "Select customer to delete"
+         label.text = "Select customer to update"
          return label
      }()
      
@@ -82,9 +83,7 @@ class DeleteCustomerViewController :
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+   
     @objc private func didTapback(){
         DispatchQueue.main.async {
          
@@ -100,42 +99,34 @@ class DeleteCustomerViewController :
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
-        return (applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
+        return (AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+       cell.textLabel?.text = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
           return (cell)
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-         let selected = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+         let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
         let id=Int(selected.split(separator: " ")[0])!
-     
-        let alert = UIAlertController(title: "Are you sure?", message: "Delete this Customer", preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.delete(Id:id); DispatchQueue.main.async {
+        AppDelegate.GlobalVariable.selected=id
+        //print(applicationViewController.GlobalVariable.selected)
+     DispatchQueue.main.async {
             
             
-            let signInVC=ManageCustomerViewController();
+            let signInVC=UpdateDetailViewController();
 
           
             let navVC = UINavigationController(rootViewController: signInVC)
           
             navVC.modalPresentationStyle = .fullScreen
             self.present(navVC, animated: false, completion: nil)
-        }} ))
-       
-        
-     
-        self.present(alert, animated: true)
-       
         }
-    public func delete(Id:Int){
-        applicationViewController.GlobalVariable.customerlist.testcustomerlist.DeleteCustomer(id: Id)
+       
         
-    }
-  
+   
+        }
+
    
 }

@@ -13,17 +13,13 @@ import UIKit
 class ManagerCustomerView: UIView{
  
     
-    struct GlobalVariable{
-        public static var customerlist=CustomerManager()
-        public static var selected=0
-     }
-   
+ 
 
     
     //back button
     private let backButton1: UIButton = {
         let button = UIButton()
-        button.frame=CGRect.init(x: 0.0, y:0.0, width:200.0, height:50.0)
+        button.frame=CGRect.init(x:20,y:40,width:100,height:25)
         button.addTarget(self, action:#selector(closeWindow),for: .touchUpInside)
         button.backgroundColor = .systemBlue
         button.setTitle("<Back", for: .normal )
@@ -37,6 +33,7 @@ class ManagerCustomerView: UIView{
     private let addCustomerButton: UIButton = {
         let button = UIButton()
         button.frame=CGRect(x: 70, y: 120, width: 200, height: 50)
+        button.addTarget(self, action:#selector(didTapaddCustomer),for: .touchUpInside)
         button.backgroundColor = .systemBlue
         button.setTitle("Add Customer", for: .normal )
         button.setTitleColor(.white, for: .normal)
@@ -47,6 +44,7 @@ class ManagerCustomerView: UIView{
         let button = UIButton()
         button.frame=CGRect(x: 70, y: 280, width: 200, height: 50)
         button.backgroundColor = .systemBlue
+        button.addTarget(self, action:#selector(didTapDeleteCustomer),for: .touchUpInside)
         button.setTitle("deleteCustomer", for: .normal )
         button.setTitleColor(.white, for: .normal)
         return button
@@ -57,6 +55,7 @@ class ManagerCustomerView: UIView{
         let button = UIButton()
         button.frame=CGRect(x: 70, y: 200, width: 200, height: 50)
         button.backgroundColor = .systemBlue
+        button.addTarget(self, action:#selector(didTapUpdateCustomer),for: .touchUpInside)
         button.setTitle("Update Customer", for: .normal )
         button.setTitleColor(.white, for: .normal)
         return button
@@ -67,6 +66,7 @@ class ManagerCustomerView: UIView{
         button.backgroundColor = .systemBlue
         button.setTitle("View all Customer", for: .normal )
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didTapViewCustomer),for: .touchUpInside)
         button.frame=CGRect(x:70,y:360, width: 200, height: 50)
        
         return button
@@ -87,17 +87,36 @@ class ManagerCustomerView: UIView{
     }
     
      
-    @objc private func didTapback(_ sender: UIButton){
-        backButton1.removeFromSuperview()
-        updateCustomerButton.removeFromSuperview()
-        ViewCustomerButton.removeFromSuperview()
-        deleteCustomerButton.removeFromSuperview()
-        addCustomerButton.removeFromSuperview()
+    @objc private func didTapaddCustomer (sender: UIButton){
+        let nextview=AddCustomerUIView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+    }
+    @objc private func didTapUpdateCustomer (sender: UIButton){
+        let nextview=AddCustomerUIView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+    }
+    @objc private func didTapDeleteCustomer (sender: UIButton){
+        let nextview=DeleteCustomerUIView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+    }
+    
+    
+    @objc private func didTapViewCustomer (sender: UIButton){
+        let nextview=AddCustomerUIView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
     }
     
     @objc func closeWindow(sender : UIButton) {
-  let parentWin:UIView = sender.superview!;
-  parentWin.removeFromSuperview()
+        let parentWin:UIView = sender.superview!;
+        parentWin.removeFromSuperview()
    }
 
 

@@ -11,8 +11,8 @@ import UIKit
 
 class UpdateDetailViewController: UITabBarController{
     //back button
-   static var id = applicationViewController.GlobalVariable.selected
-    static var currentCustomer=applicationViewController.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: id)
+   static var id = AppDelegate.GlobalVariable.selected
+    static var currentCustomer=AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: id)
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -159,8 +159,8 @@ class UpdateDetailViewController: UITabBarController{
                   return
               }
    
-        applicationViewController.GlobalVariable.customerlist.testcustomerlist.UpdateCustomer(id: applicationViewController.GlobalVariable.selected, firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailId: email)
-        print( applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
+        AppDelegate.GlobalVariable.customerlist.testcustomerlist.UpdateCustomer(id: AppDelegate.GlobalVariable.selected, firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailId: email)
+        print( AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
 
                     DispatchQueue.main.async {
                       

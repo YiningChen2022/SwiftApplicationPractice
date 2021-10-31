@@ -1,5 +1,5 @@
 //
-//  ViewAllCustomerViewController.swift
+//  DeleteCustomerViewController.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 10/29/21.
@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-
-class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
+class DeleteCustomerViewController :
+    UIViewController,UITableViewDelegate,UITableViewDataSource {
 
    
     private let tableView: UITableView={
@@ -33,25 +33,31 @@ class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITab
     }()
 
     
- 
-
     
-    
-
+     //header
+     private let label: UILabel = {
+         let label = UILabel()
+         label.textAlignment = .center
+         label.numberOfLines = 0
+         label.font = .systemFont(ofSize: 20, weight: .medium)
+         label.text = "Select customer to delete"
+         return label
+     }()
+     
     
      override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         view.addSubview(backButton)
+   
 
          setUpTable()
          
      
-     
   
         backButton.addTarget(self, action:#selector(didTapback),for: .touchUpInside)
-     
+        
     }
     private func setUpTable(){
         view.addSubview(tableView)
@@ -62,15 +68,18 @@ class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITab
         
     }
     private func setUpTableHeader(){
-        let headerView = UIView(frame:CGRect(x:0,y:0,width:500, height: 200))
+        let headerView = UIView(frame:CGRect(x:0,y:0,width:500, height: 300))
         headerView.backgroundColor = .white
         headerView.isUserInteractionEnabled=true
         headerView.clipsToBounds=true
         tableView.tableHeaderView=headerView
         
         backButton.frame=CGRect(x:20,y:40,width:100,height:25)
+        label.frame=CGRect(x: 60, y: 80, width: 200, height: 200)
         headerView.addSubview(backButton)
-      
+        headerView.addSubview(label)
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,13 +100,42 @@ class ViewAllCustomerViewController : UIViewController,UITableViewDelegate,UITab
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
-        return (applicationViewController.GlobalVariable.customerlist.testcustomerlist.getsize())
+        return (AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = applicationViewController.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+       cell.textLabel?.text = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
           return (cell)
       }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+         let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+        let id=Int(selected.split(separator: " ")[0])!
+     
+        let alert = UIAlertController(title: "Are you sure?", message: "Delete this Customer", preferredStyle: .alert)
 
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.delete(Id:id); DispatchQueue.main.async {
+            
+            
+            let signInVC=ManageCustomerViewController();
+
+          
+            let navVC = UINavigationController(rootViewController: signInVC)
+          
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: false, completion: nil)
+        }} ))
+       
+        
+     
+        self.present(alert, animated: true)
+       
+        }
+    public func delete(Id:Int){
+        AppDelegate.GlobalVariable.customerlist.testcustomerlist.DeleteCustomer(id: Id)
+        
+    }
+  
+   
 }
