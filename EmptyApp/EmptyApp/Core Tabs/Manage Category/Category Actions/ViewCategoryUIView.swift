@@ -1,5 +1,5 @@
 //
-//  DeleteCategoryUIView.swift
+//  ViewCategoryUIView.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 10/31/21.
