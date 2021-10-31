@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         public static var selectedCategory=0
         public static var selectedStock=0
         public static var selectedCompany=0
+        public static var selectedCompanytoSearch=0
+        public static var selectedCategorySearch=0 
      }
    
 

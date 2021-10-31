@@ -76,23 +76,45 @@ class StockDirecrtory {
         return str
         
     }
-    public func searchByCompany(Companyid :Int){
+    public func searchByCompany(Companyid :Int)->Array<String>{
+        var str:Array<String>=[]
         for   stock in stockList {
             if stock.company.getid() == Companyid{
-                print(stock.toString())
+                str.append(stock.toString())
             }
             
         }
         
-
+        return str
     }
-    public func searchByCategory(categoryid: Int){
+    public func searchCompanygetsize (Companyid :Int)->Int{
+        var count=0;
+        for stock in stockList{
+            if stock.company.getid() == Companyid{
+            count+=1;
+                
+            }
+        }
+        return count
+    }
+    public func searchCategorygetsize (categoryid: Int)->Int{
+        var count=0;
+        for stock in stockList{
+            if stock.category.getId() == categoryid{
+            count+=1;
+
+            }
+        }
+        return count
+    }
+    public func searchByCategory(categoryid: Int)->Array<String>{
+        var str:Array<String>=[]
             for   stock in stockList {
                 if stock.category.getId() == categoryid{
-                    print(stock.toString())
+                    str.append(stock.toString())
                 }
         }
-     
+        return str
     }
     public func searchByName(name: String){
         if name == "" {
