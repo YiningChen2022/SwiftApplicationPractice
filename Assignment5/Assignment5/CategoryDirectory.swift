@@ -44,6 +44,22 @@ class CategoryDirecrtory {
         }
         }
     }
+    
+    public func getsize ()->Int{
+        var count=0;
+        for _ in catagoryList{
+            count+=1;
+        }
+        return count
+    }
+    public func toString()->Array<String>{
+        var str:Array<String>=[]
+        for category in catagoryList {
+            str.append(category.toString())
+        }
+        return str
+        
+    }
     public func toString(){
         for   catagory in catagoryList {
             print ( catagory.toString())

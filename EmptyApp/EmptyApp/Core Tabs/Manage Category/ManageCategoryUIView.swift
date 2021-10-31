@@ -88,19 +88,19 @@ class ManagerCategoryUIView: UIView{
     
      
     @objc private func didTapaddCategory (sender: UIButton){
-        let nextview=AddCustomerUIView()
+        let nextview=AddCategoryUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 
     }
     @objc private func didTapUpdateCategory (sender: UIButton){
-        let nextview=UpdateCustomerUIView()
+        let nextview=UpdateCategoryUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 
     }
     @objc private func didTapDeleteCategory (sender: UIButton){
-        let nextview=DeleteCustomerUIView()
+        let nextview=DeleteCategoryUIView ()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 
@@ -108,7 +108,7 @@ class ManagerCategoryUIView: UIView{
     
     
     @objc private func didTapViewCategory (sender: UIButton){
-        let nextview=ViewCustomerUIView()
+        let nextview=ViewCategoryUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 
