@@ -242,6 +242,7 @@
 		E83FABE5272B2BEA00AED145 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E83FABF2272B2C4600AED145 /* Stock.swift */,
 				E83FABF4272B2C4900AED145 /* StockDirectory.swift */,
 				E83FABE6272B2C2B00AED145 /* Category.swift */,
 				E83FABE8272B2C3100AED145 /* CategoryDirectory.swift */,
@@ -249,7 +250,6 @@
 				E83FABEC272B2C3900AED145 /* CompanyDirecrtory.swift */,
 				E83FABEE272B2C3D00AED145 /* Customer.swift */,
 				E83FABF0272B2C4200AED145 /* CustomerDirectory.swift */,
-				E83FABF2272B2C4600AED145 /* Stock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

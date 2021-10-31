@@ -88,13 +88,13 @@ class ManagerStockUIView: UIView{
 
        }
        @objc private func didTapUpdateStock (sender: UIButton){
-           let nextview=UpdateCategoryUIView()
+           let nextview=UpdateStockUIView()
            self.addSubview(nextview)
            self.bringSubviewToFront(nextview)
 
        }
        @objc private func didTapDeleteStock (sender: UIButton){
-           let nextview=DeleteCategoryUIView ()
+           let nextview=DeleteStockUIView ()
            self.addSubview(nextview)
            self.bringSubviewToFront(nextview)
 
@@ -102,7 +102,7 @@ class ManagerStockUIView: UIView{
        
        
        @objc private func didTapViewStock(sender: UIButton){
-           let nextview=ViewCategoryUIView()
+           let nextview=ViewStockUIView()
            self.addSubview(nextview)
            self.bringSubviewToFront(nextview)
 

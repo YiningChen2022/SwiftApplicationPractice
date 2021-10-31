@@ -146,8 +146,8 @@ required init?(coder: NSCoder) {
 
 @objc func didTapAddStock(sender : UIButton){
     guard let name=nameField.text, !name.isEmpty,
-          let lastTrade=lasttradeField.text, !lastTrade.isEmpty,
-          let Fincial=FinancialRatingField.text, !Fincial.isEmpty,
+          let lastTrade=lasttradeField.text, !lastTrade.isEmpty, Double(lastTrade) != nil,
+          let Fincial=FinancialRatingField.text, !Fincial.isEmpty, Int(lastTrade) != nil,
           selectedCompanyid != 0,
           selectedCategoryid != 0
     else{

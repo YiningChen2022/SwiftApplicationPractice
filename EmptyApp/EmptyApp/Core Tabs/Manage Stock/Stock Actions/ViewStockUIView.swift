@@ -44,12 +44,12 @@ class ViewStockUIView: UIView, UITableViewDelegate, UITableViewDataSource {
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
-        return (AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
+        return (AppDelegate.GlobalVariable.stocklist.testStocklist.getsize())
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+       cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
           return (cell)
       }
     
@@ -57,7 +57,7 @@ class ViewStockUIView: UIView, UITableViewDelegate, UITableViewDataSource {
   
     
     @objc func closeWindow(sender : UIButton) {
-        let nextview=ManagerCustomerView()
+        let nextview=ManagerStockUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
    }

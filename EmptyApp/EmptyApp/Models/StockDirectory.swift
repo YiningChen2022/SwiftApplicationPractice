@@ -35,6 +35,13 @@ class StockDirecrtory {
             
         }
     }
+    public func getsize ()->Int{
+        var count=0;
+        for _ in stockList{
+            count+=1;
+        }
+        return count
+    }
     public func UpdateStock (id:Int,company:Company?,lastTradePrice:Double?,financialRating:Int?, Category:Category?){
        
         for (index, value) in stockList.enumerated() {
@@ -59,6 +66,15 @@ class StockDirecrtory {
         for   stock in stockList {
             print ( stock.toString())
         }
+    }
+    
+    public func toString()->Array<String>{
+        var str:Array<String>=[]
+        for stock in stockList {
+            str.append(stock.toString())
+        }
+        return str
+        
     }
     public func searchByCompany(Companyid :Int){
         for   stock in stockList {
