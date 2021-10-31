@@ -82,7 +82,7 @@ class ManagerStockUIView: UIView{
        
         
        @objc private func didTapaddStock (sender: UIButton){
-           let nextview=AddCategoryUIView()
+           let nextview=AddStockUIView()
            self.addSubview(nextview)
            self.bringSubviewToFront(nextview)
 

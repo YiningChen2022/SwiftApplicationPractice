@@ -25,6 +25,8 @@ private let backButton: UIButton = {
     button.frame=CGRect.init(x:20,y:40,width:100,height:25)
     return button
 }()
+    
+    
 
 
 //FN field
@@ -67,30 +69,71 @@ private let FinancialRatingField: UITextField = {
     field.backgroundColor = .lightGray
     field.layer.cornerRadius=8
     field.layer.masksToBounds=true
-    field.frame = CGRect(x:60, y:300, width:200,height:30)
+    field.frame = CGRect(x:60, y:200, width:200,height:30)
     return field
 }()
+
+    
+    //header
+    private let labelCompany: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x:25,y:230 ,width: 200,height: 20)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 10, weight: .medium)
+        label.text = "Choose Company"
+        return label
+    }()
+    //header
+    private let labelCategory: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x:25,y:360 ,width: 200,height: 20)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 10, weight: .medium)
+        label.text = "Choose Category"
+        return label
+    }()
+
 
 //sign in button
 private let AddButton: UIButton = {
     let button = UIButton()
     button.backgroundColor = .systemGreen
-    button.setTitle("Add customer", for: .normal )
+    button.setTitle("Add Stock", for: .normal )
     button.setTitleColor(.white, for: .normal)
-    button.frame = CGRect(x:60, y:350, width:200,height:30)
+    button.frame = CGRect(x:60, y:500, width:200,height:30)
     button.addTarget(self, action:#selector(didTapAddStock),for: .touchUpInside)
     return button
 }()
 
 override init (frame : CGRect) {
     super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-    backgroundColor = .white
+    backgroundColor = .systemRed
     addSubview(nameField)
     addSubview(lasttradeField)
     addSubview(FinancialRatingField)
     addSubview(backButton)
     addSubview(AddButton)
-
+    addSubview(labelCompany)
+    addSubview(labelCategory)
+    tableViewCategory = UITableView(frame: CGRect(x: 60, y:380, width: 200, height:100))
+    tableViewCategory.register(UITableViewCell.self,
+                             forCellReuseIdentifier: "cellCate")
+    tableViewCategory.dataSource = self
+    tableViewCategory.delegate = self
+    
+    addSubview(tableViewCategory)
+    tableViewCategory.backgroundColor = .systemYellow
+    
+    
+    tableViewCompany = UITableView(frame: CGRect(x: 60, y:250, width: 200, height:100))
+    tableViewCompany.register(UITableViewCell.self,
+                             forCellReuseIdentifier: "cellCom")
+    tableViewCompany.dataSource = self
+    tableViewCompany.delegate = self
+    addSubview(tableViewCompany)
+    tableViewCompany.backgroundColor = .systemBlue
 }
 
 required init?(coder: NSCoder) {
@@ -101,19 +144,21 @@ required init?(coder: NSCoder) {
 
 
 
-@objc func didTapAddCustomer(sender : UIButton){
-    guard let email=emailField.text, !email.isEmpty,
-          let firstName=fnField.text, !firstName.isEmpty,
-          let lastName=lnField.text, !lastName.isEmpty,
-          let contact=contactField.text,!contact.isEmpty,
-          let address = addressField.text,!address.isEmpty
+@objc func didTapAddStock(sender : UIButton){
+    guard let name=nameField.text, !name.isEmpty,
+          let lastTrade=lasttradeField.text, !lastTrade.isEmpty,
+          let Fincial=FinancialRatingField.text, !Fincial.isEmpty,
+          selectedCompanyid != 0,
+          selectedCategoryid != 0
     else{
               return
           }
-    let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
-    
-    AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
-    print(customer.toString())
+    let currcate=AppDelegate.GlobalVariable.categorylist.testCategorylist.getCategory(id: selectedCategoryid)
+    let currcomp = AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: selectedCompanyid)
+    let Stock = Stock(name: name, lastTradePrice: Double(lastTrade)!, financialRating: Int(Fincial)!, category: currcate! , company: currcomp!)
+    AppDelegate.GlobalVariable.stocklist.testStocklist.addStock(Stock: Stock)
+
+    print(Stock.toString())
     let parentWin:UIView = sender.superview!;
     parentWin.removeFromSuperview()
 
@@ -121,21 +166,36 @@ required init?(coder: NSCoder) {
     
 
     //Table View
-    func tableViewCompany(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-        
+    func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
+        if (tableView == tableViewCompany){
+            return AppDelegate.GlobalVariable.companylist.testCompanylist.getsize()
+        }else{
         return (AppDelegate.GlobalVariable.categorylist.testCategorylist.getsize())
       }
-   func tableViewCompany(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-      
-          let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-          return (cell)
+    }
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+       if (tableView == self.tableViewCompany){
+           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cellCom")
+           cell.textLabel?.text = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+           return (cell)
+       }else{
+           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+           cell.textLabel?.text = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
+           return (cell)
+       }
+        
       }
-    func tableViewCompany(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-        selectedCategoryid=Int(selected.split(separator: " ")[0])!
-      print("selected ")
-     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        if (tableView == self.tableViewCompany){
+            let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+            selectedCompanyid=Int(selected.split(separator: " ")[0])!
+            print(selectedCompanyid)
+        }else{
+            let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
+            selectedCategoryid=Int(selected.split(separator: " ")[0])!
+            print(selectedCategoryid)
+        }
+    
     }
     
     
