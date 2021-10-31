@@ -24,10 +24,10 @@
 		E800FEB3272D045C009186E7 /* DeleteStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB2272D045C009186E7 /* DeleteStockViewController.swift */; };
 		E800FEB5272D046D009186E7 /* ViewAllStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB4272D046D009186E7 /* ViewAllStockViewController.swift */; };
 		E800FEB7272D048D009186E7 /* updateStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB6272D048D009186E7 /* updateStockViewController.swift */; };
-		E800FEBA272D04C6009186E7 /* updateDetailCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB9272D04C6009186E7 /* updateDetailCompanyViewController.swift */; };
-		E800FEBC272D04DB009186E7 /* AddCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEBB272D04DB009186E7 /* AddCompanyViewController.swift */; };
-		E800FEBF272D04FB009186E7 /* DeleteCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEBE272D04FB009186E7 /* DeleteCompanyViewController.swift */; };
-		E800FEC2272D0522009186E7 /* ViewAllCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC1272D0522009186E7 /* ViewAllCompanyViewController.swift */; };
+		E800FEBA272D04C6009186E7 /* updateDetailCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB9272D04C6009186E7 /* updateDetailCompanyUIView.swift */; };
+		E800FEBC272D04DB009186E7 /* AddCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEBB272D04DB009186E7 /* AddCompanyUIView.swift */; };
+		E800FEBF272D04FB009186E7 /* DeleteCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEBE272D04FB009186E7 /* DeleteCompanyUIView.swift */; };
+		E800FEC2272D0522009186E7 /* ViewAllCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC1272D0522009186E7 /* ViewAllCompanyUIView.swift */; };
 		E800FEC4272D0553009186E7 /* UpdateCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC3272D0553009186E7 /* UpdateCompanyViewController.swift */; };
 		E800FEC6272D0572009186E7 /* CompanyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC5272D0572009186E7 /* CompanyManager.swift */; };
 		E800FEC8272D057D009186E7 /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC7272D057D009186E7 /* StockManager.swift */; };
@@ -76,10 +76,10 @@
 		E800FEB2272D045C009186E7 /* DeleteStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockViewController.swift; sourceTree = "<group>"; };
 		E800FEB4272D046D009186E7 /* ViewAllStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllStockViewController.swift; sourceTree = "<group>"; };
 		E800FEB6272D048D009186E7 /* updateStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateStockViewController.swift; sourceTree = "<group>"; };
-		E800FEB9272D04C6009186E7 /* updateDetailCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDetailCompanyViewController.swift; sourceTree = "<group>"; };
-		E800FEBB272D04DB009186E7 /* AddCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewController.swift; sourceTree = "<group>"; };
-		E800FEBE272D04FB009186E7 /* DeleteCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCompanyViewController.swift; sourceTree = "<group>"; };
-		E800FEC1272D0522009186E7 /* ViewAllCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllCompanyViewController.swift; sourceTree = "<group>"; };
+		E800FEB9272D04C6009186E7 /* updateDetailCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDetailCompanyUIView.swift; sourceTree = "<group>"; };
+		E800FEBB272D04DB009186E7 /* AddCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyUIView.swift; sourceTree = "<group>"; };
+		E800FEBE272D04FB009186E7 /* DeleteCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCompanyUIView.swift; sourceTree = "<group>"; };
+		E800FEC1272D0522009186E7 /* ViewAllCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllCompanyUIView.swift; sourceTree = "<group>"; };
 		E800FEC3272D0553009186E7 /* UpdateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCompanyViewController.swift; sourceTree = "<group>"; };
 		E800FEC5272D0572009186E7 /* CompanyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyManager.swift; sourceTree = "<group>"; };
 		E800FEC7272D057D009186E7 /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
@@ -217,10 +217,10 @@
 		E800FEB8272D04A1009186E7 /* Company Actions */ = {
 			isa = PBXGroup;
 			children = (
-				E800FEB9272D04C6009186E7 /* updateDetailCompanyViewController.swift */,
-				E800FEBB272D04DB009186E7 /* AddCompanyViewController.swift */,
-				E800FEBE272D04FB009186E7 /* DeleteCompanyViewController.swift */,
-				E800FEC1272D0522009186E7 /* ViewAllCompanyViewController.swift */,
+				E800FEB9272D04C6009186E7 /* updateDetailCompanyUIView.swift */,
+				E800FEBB272D04DB009186E7 /* AddCompanyUIView.swift */,
+				E800FEBE272D04FB009186E7 /* DeleteCompanyUIView.swift */,
+				E800FEC1272D0522009186E7 /* ViewAllCompanyUIView.swift */,
 				E800FEC3272D0553009186E7 /* UpdateCompanyViewController.swift */,
 			);
 			path = "Company Actions";
@@ -368,7 +368,7 @@
 				E88328CB272E41EC00E86E6F /* UpdateCustomerUIView.swift in Sources */,
 				E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */,
 				E800FECE272DC965009186E7 /* test2.swift in Sources */,
-				E800FEBA272D04C6009186E7 /* updateDetailCompanyViewController.swift in Sources */,
+				E800FEBA272D04C6009186E7 /* updateDetailCompanyUIView.swift in Sources */,
 				E88328D2272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift in Sources */,
 				E800FEC6272D0572009186E7 /* CompanyManager.swift in Sources */,
 				E800FEC8272D057D009186E7 /* StockManager.swift in Sources */,
@@ -392,15 +392,15 @@
 				E88328CD272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift in Sources */,
 				E800FEB1272D044C009186E7 /* AddStockViewController.swift in Sources */,
 				E800FEB5272D046D009186E7 /* ViewAllStockViewController.swift in Sources */,
-				E800FEBC272D04DB009186E7 /* AddCompanyViewController.swift in Sources */,
+				E800FEBC272D04DB009186E7 /* AddCompanyUIView.swift in Sources */,
 				E800FEAC272D03F7009186E7 /* UpdateCategoryViewController.swift in Sources */,
 				E83FABE9272B2C3100AED145 /* CategoryDirectory.swift in Sources */,
 				E83FAC01272B75E300AED145 /* CustomerManager.swift in Sources */,
 				E800FECA272D058C009186E7 /* CategoryManager.swift in Sources */,
-				E800FEBF272D04FB009186E7 /* DeleteCompanyViewController.swift in Sources */,
+				E800FEBF272D04FB009186E7 /* DeleteCompanyUIView.swift in Sources */,
 				E800FE96272CEE43009186E7 /* ViewAllCustomerViewController.swift in Sources */,
 				E83FABE1272B28B300AED145 /* ManageStockViewController.swift in Sources */,
-				E800FEC2272D0522009186E7 /* ViewAllCompanyViewController.swift in Sources */,
+				E800FEC2272D0522009186E7 /* ViewAllCompanyUIView.swift in Sources */,
 				E800FEB7272D048D009186E7 /* updateStockViewController.swift in Sources */,
 				E83FABE7272B2C2B00AED145 /* Category.swift in Sources */,
 			);
