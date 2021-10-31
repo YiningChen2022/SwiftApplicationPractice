@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 class UpdateDetailStockUIView :UIView, UITableViewDelegate, UITableViewDataSource{
-    static var id = AppDelegate.GlobalVariable.selected
-     static var currentCustomer=AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: id)
-    
+    static var id = AppDelegate.GlobalVariable.selectedStock
+   
     
     var tableViewCompany:UITableView!
     var tableViewCategory:UITableView!
@@ -26,11 +25,12 @@ private let nameField: UITextField = {
     let field=UITextField()
     field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
     field.leftViewMode = .always
-    field.placeholder="Name"
+    field.placeholder=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)?.name
     field.backgroundColor = .lightGray
     field.layer.cornerRadius=8
     field.layer.masksToBounds=true
     field.frame = CGRect(x:60, y:100, width:200,height:30)
+    field.isEnabled=false
     return field
 }()
 
@@ -132,20 +132,22 @@ private let AddButton: UIButton = {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func didTapUpdateCustomer(){
-        guard let name=nameField.text,
+    @objc func didTapUpdateStock(){
+        guard
               let lastTrade=lasttradeField.text,  Double(lastTrade) != nil,
-              let Fincial=FinancialRatingField.text,  Int(lastTrade) != nil,
+              let Fincial=FinancialRatingField.text,  Int(lastTrade) != nil
               
         else{
                   return
               }
-   
-        AppDelegate.GlobalVariable.customerlist.testcustomerlist.UpdateCustomer(id: AppDelegate.GlobalVariable.selected, firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailId: email)
-        print( AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
-
+        let company = AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: selectedCompanyid)
+        
+        let category = AppDelegate.GlobalVariable.categorylist.testCategorylist.getCategory(id: selectedCategoryid)
+        AppDelegate.GlobalVariable.stocklist.testStocklist.UpdateStock(id: AppDelegate.GlobalVariable.selectedStock, company:company , lastTradePrice: Double(lastTrade), financialRating: Int(Fincial), Category: category)
+        
+     
                     DispatchQueue.main.async {
-                        let nextview=ManagerCustomerView()
+                        let nextview=ManagerStockUIView()
                         self.addSubview(nextview)
                         self.bringSubviewToFront(nextview)
                     }
@@ -177,11 +179,11 @@ private let AddButton: UIButton = {
         if (tableView == self.tableViewCompany){
             let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
             selectedCompanyid=Int(selected.split(separator: " ")[0])!
-            print(selectedCompanyid)
+            
         }else{
             let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
             selectedCategoryid=Int(selected.split(separator: " ")[0])!
-            print(selectedCategoryid)
+            
         }
     
     }

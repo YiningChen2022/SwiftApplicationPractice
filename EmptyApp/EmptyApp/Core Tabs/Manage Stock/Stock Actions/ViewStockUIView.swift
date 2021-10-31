@@ -20,19 +20,74 @@ class ViewStockUIView: UIView, UITableViewDelegate, UITableViewDataSource {
         button.frame=CGRect.init(x:20,y:40,width:100,height:25)
         return button
     }()
+    
+    private let SeachByCompanyButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Search By Company", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didTapSearchCompany),for: .touchUpInside)
+        button.frame=CGRect.init(x:40,y:320,width:250,height:25)
+        return button
+    }()
+    private let SeachByCategoryButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Search By Category", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didTapSearchCategory),for: .touchUpInside)
+        button.frame=CGRect.init(x:40,y:360,width:250,height:25)
+        return button
+    }()
+    private let SeachByNameButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Search By Name", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didTapSearchName),for: .touchUpInside)
+        button.frame=CGRect.init(x:40,y:400,width:250,height:25)
+        return button
+    }()
+    private let SeachByFinancialRating: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Search By FinancialRating", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didTapSearchFincial),for: .touchUpInside)
+        button.frame=CGRect.init(x:40,y:440,width:250,height:25)
+        return button
+    }()
+    private let SeachBytrade: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Search By Last trade Price", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didTapSearchtrade),for: .touchUpInside)
+        button.frame=CGRect.init(x:40,y:480,width:250,height:25)
+        return button
+    }()
+
+
 
 
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
         self.backgroundColor = .white
         self.addSubview(backButton)
-        tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:500))
+        tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:200))
         tableView.backgroundColor = .white
         tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "AnimalCell")
         tableView.dataSource = self
         tableView.delegate = self
         self.addSubview(tableView)
+        addSubview(SeachBytrade)
+        addSubview(SeachByCompanyButton)
+        addSubview(SeachByNameButton)
+        addSubview(SeachByCategoryButton)
+        addSubview(SeachByFinancialRating)
+
+        
         
       
     }
@@ -61,7 +116,34 @@ class ViewStockUIView: UIView, UITableViewDelegate, UITableViewDataSource {
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
    }
+    @objc func didTapSearchCompany(sender : UIButton) {
+        let nextview=SearchByCompanyUIView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+   }
+    
+    @objc func didTapSearchCategory(sender : UIButton) {
+        let nextview=SearchByCategory()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+   }
 
+    @objc func didTapSearchName(sender : UIButton) {
+        let nextview=SearchByName()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+   }
+    @objc func didTapSearchFincial(sender : UIButton) {
+        let nextview=SearchByFinancialRating()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+   }
+    @objc func didTapSearchtrade(sender : UIButton) {
+        let nextview=SearchByTrade()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+   }
+    
 }
 
 
