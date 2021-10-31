@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     struct GlobalVariable{
         public static var customerlist=CustomerManager()
-        
+        public static var stocklist=StockManager()
+        public static var companylist=CompanyManager()
+        public static var categorylist=CategoryManager()
         public static var selected=0
      }
    
@@ -104,12 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.bringSubviewToFront(ManagerCustomerView())
 
     }
-    public func viewDidLoad()
-    {
-   
-    
-    }
-   
+
  
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
