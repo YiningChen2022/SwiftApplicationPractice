@@ -53,6 +53,7 @@
 		E88328CB272E41EC00E86E6F /* UpdateCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328CA272E41EC00E86E6F /* UpdateCustomerUIView.swift */; };
 		E88328CD272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328CC272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift */; };
 		E88328CF272E420C00E86E6F /* ViewCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328CE272E420C00E86E6F /* ViewCustomerUIView.swift */; };
+		E88328D2272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328D1272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		E88328CA272E41EC00E86E6F /* UpdateCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerUIView.swift; sourceTree = "<group>"; };
 		E88328CC272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCustomerUIVeiw.swift; sourceTree = "<group>"; };
 		E88328CE272E420C00E86E6F /* ViewCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerUIView.swift; sourceTree = "<group>"; };
+		E88328D1272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailCustomerUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				E88328CA272E41EC00E86E6F /* UpdateCustomerUIView.swift */,
 				E88328CC272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift */,
 				E88328CE272E420C00E86E6F /* ViewCustomerUIView.swift */,
+				E88328D1272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift */,
 			);
 			path = "Customer Actions";
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */,
 				E800FECE272DC965009186E7 /* test2.swift in Sources */,
 				E800FEBA272D04C6009186E7 /* updateDetailCompanyViewController.swift in Sources */,
+				E88328D2272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift in Sources */,
 				E800FEC6272D0572009186E7 /* CompanyManager.swift in Sources */,
 				E800FEC8272D057D009186E7 /* StockManager.swift in Sources */,
 				E83FABEB272B2C3400AED145 /* Company.swift in Sources */,

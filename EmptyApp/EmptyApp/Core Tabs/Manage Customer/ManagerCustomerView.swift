@@ -94,7 +94,7 @@ class ManagerCustomerView: UIView{
 
     }
     @objc private func didTapUpdateCustomer (sender: UIButton){
-        let nextview=AddCustomerUIView()
+        let nextview=UpdateCustomerUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 
@@ -108,7 +108,7 @@ class ManagerCustomerView: UIView{
     
     
     @objc private func didTapViewCustomer (sender: UIButton){
-        let nextview=AddCustomerUIView()
+        let nextview=ViewCustomerUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 
