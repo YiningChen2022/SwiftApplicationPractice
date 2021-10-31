@@ -53,6 +53,6 @@ class Company {
         self.email=email
     }
     public func toString ()->String{
-        return "Company:\(id) \(name) \(symbol) \(headquarter) \(email)"
+        return "\(id) \(name) \(symbol) \(headquarter) \(email)"
     }
 }

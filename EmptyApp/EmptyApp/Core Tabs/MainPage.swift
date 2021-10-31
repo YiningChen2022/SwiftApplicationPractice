@@ -44,7 +44,7 @@ private let manageCompanyButton: UIButton = {
     button.backgroundColor = .systemBlue
     button.setTitle("Manage Company", for: .normal )
     button.setTitleColor(.white, for: .normal)
-
+    button.addTarget(self, action:#selector(didTapCompany),for: .touchUpInside)
     return button
 }()
 
@@ -83,18 +83,20 @@ private let manageCategoryButton: UIButton = {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
-@objc func didTapCustomer(sender: UIButton){
+    @objc func didTapCustomer(sender: UIButton){
     window?.addSubview(ManagerCustomerView())
     window?.bringSubviewToFront(ManagerCustomerView())
-
-}
-
-@objc func didTapCategory(sender: UIButton){
+        
+    }
+    @objc func didTapCategory(sender: UIButton){
     window?.addSubview(ManagerCategoryUIView())
     window?.bringSubviewToFront(ManagerCustomerView())
+        
+    }
+    @objc func didTapCompany(sender: UIButton){
+        window?.addSubview(ManagerCompanyView())
+        window?.bringSubviewToFront(ManagerCompanyView())
 
-}
+    }
 }
 

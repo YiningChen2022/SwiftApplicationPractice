@@ -52,6 +52,23 @@ class CompanyDirecrtory {
              }
         
          }
+    
+    public func getsize ()->Int{
+        var count=0;
+        for _ in companyList{
+            count+=1;
+        }
+        return count
+    }
+    
+    public func toString()->Array<String>{
+        var str:Array<String>=[]
+        for company in companyList {
+            str.append(company.toString())
+        }
+        return str
+        
+    }
     public func toString(){
         for company in companyList {
             print (company.toString())
