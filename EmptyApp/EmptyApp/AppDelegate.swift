@@ -24,17 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
-            window.backgroundColor = UIColor.white
+            window.backgroundColor = .systemYellow
             window.rootViewController = UIViewController()
             //window.rootViewController = applicationViewController()
       
             window.makeKeyAndVisible()
+        
             window.addSubview(manageCustomerButton)
             window.addSubview(label)
             window.addSubview(manageCompanyButton)
             window.addSubview(manageStockButton)
             window.addSubview(manageCategoryButton)
-            
+            window.isUserInteractionEnabled = true
             //viewDidLoad()
                  }
 
@@ -98,11 +99,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     @objc func didTapCustomer(sender: UIButton){
-        manageCustomerButton.removeFromSuperview()
-        manageStockButton.removeFromSuperview()
-        manageCategoryButton.removeFromSuperview()
-        manageCompanyButton.removeFromSuperview()
+
+   
+        
         window?.addSubview(ManagerCustomerView())
+        window?.bringSubviewToFront(ManagerCustomerView())
+        //window?.bringSubviewToFront(ManagerCustomerView())
       
     }
     public func viewDidLoad()

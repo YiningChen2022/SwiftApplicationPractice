@@ -12,7 +12,7 @@ import UIKit
 
 class ManagerCustomerView: UIView{
  
-
+    
     struct GlobalVariable{
         public static var customerlist=CustomerManager()
         public static var selected=0
@@ -23,10 +23,12 @@ class ManagerCustomerView: UIView{
     //back button
     private let backButton1: UIButton = {
         let button = UIButton()
-        button.frame=CGRect(x:20,y:40,width:100,height:25)
+        button.frame=CGRect.init(x: 0.0, y:0.0, width:200.0, height:50.0)
+        button.addTarget(self, action:#selector(closeWindow),for: .touchUpInside)
         button.backgroundColor = .systemBlue
         button.setTitle("<Back", for: .normal )
         button.setTitleColor(.white, for: .normal)
+        button.isUserInteractionEnabled = true
         return button
     }()
 
@@ -66,23 +68,18 @@ class ManagerCustomerView: UIView{
         button.setTitle("View all Customer", for: .normal )
         button.setTitleColor(.white, for: .normal)
         button.frame=CGRect(x:70,y:360, width: 200, height: 50)
+       
         return button
     }()
     override init (frame : CGRect) {
-        super.init(frame : frame)
-        //self.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
-        /*AppDelegate.GlobalVariable.window?.addSubview(label)
-        AppDelegate.GlobalVariable.window?.addSubview(manageCategoryButton)
-        AppDelegate.GlobalVariable.window?.addSubview(manageStockButton)
-        AppDelegate.GlobalVariable.window?.addSubview(manageCustomerButton)
-        AppDelegate.GlobalVariable.window?.addSubview(manageCompanyButton)
-   */
-        self.addSubview(backButton1)
-        self.addSubview(updateCustomerButton)
-        self.addSubview(ViewCustomerButton)
-        self.addSubview(deleteCustomerButton)
-        self.addSubview(addCustomerButton)
-         
+        super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
+        backgroundColor = .systemRed
+        addSubview(backButton1)
+        addSubview(updateCustomerButton)
+        addSubview(ViewCustomerButton)
+        addSubview(deleteCustomerButton)
+        addSubview(addCustomerButton)
+  
     }
     
     required init?(coder: NSCoder) {
@@ -90,10 +87,18 @@ class ManagerCustomerView: UIView{
     }
     
      
+    @objc private func didTapback(_ sender: UIButton){
+        backButton1.removeFromSuperview()
+        updateCustomerButton.removeFromSuperview()
+        ViewCustomerButton.removeFromSuperview()
+        deleteCustomerButton.removeFromSuperview()
+        addCustomerButton.removeFromSuperview()
+    }
     
-    
- 
-
+    @objc func closeWindow(sender : UIButton) {
+  let parentWin:UIView = sender.superview!;
+  parentWin.removeFromSuperview()
+   }
 
 
 }
