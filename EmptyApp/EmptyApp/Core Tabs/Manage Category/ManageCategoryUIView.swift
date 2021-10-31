@@ -73,7 +73,7 @@ class ManagerCategoryUIView: UIView{
     }()
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        backgroundColor = .systemRed
+        backgroundColor = .white
         addSubview(backButton1)
         addSubview(updateCategoryButton)
         addSubview(ViewCategoryButton)

@@ -55,6 +55,7 @@ private let manageStockButton: UIButton = {
     button.setTitle("Manage Stock", for: .normal )
     button.setTitleColor(.white, for: .normal)
     button.frame = CGRect(x:70, y:360, width:200,height:50)
+    button.addTarget(self, action:#selector(didTapStock),for: .touchUpInside)
     return button
 }()
 
@@ -71,7 +72,7 @@ private let manageCategoryButton: UIButton = {
 }()
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        backgroundColor = .systemRed
+        backgroundColor = .white
         self.addSubview(manageCustomerButton)
         self.addSubview(label)
         self.addSubview(manageCompanyButton)
@@ -95,6 +96,11 @@ private let manageCategoryButton: UIButton = {
     }
     @objc func didTapCompany(sender: UIButton){
         window?.addSubview(ManagerCompanyView())
+        window?.bringSubviewToFront(ManagerCompanyView())
+
+    }
+    @objc func didTapStock(sender: UIButton){
+        window?.addSubview(ManagerStockUIView())
         window?.bringSubviewToFront(ManagerCompanyView())
 
     }

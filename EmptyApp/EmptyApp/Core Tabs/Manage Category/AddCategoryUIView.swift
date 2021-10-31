@@ -79,7 +79,7 @@ class AddCategoryUIView: UIView{
 
         }
     @objc func closeWindow(sender : UIButton) {
-        let nextview=ManagerCustomerView()
+        let nextview=ManagerCategoryUIView()
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
 

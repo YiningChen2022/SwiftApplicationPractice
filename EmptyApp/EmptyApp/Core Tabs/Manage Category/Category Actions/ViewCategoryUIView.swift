@@ -25,10 +25,10 @@ class ViewCategoryUIView :UIView, UITableViewDelegate, UITableViewDataSource{
 
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        self.backgroundColor = .systemYellow
+        backgroundColor = .white
         self.addSubview(backButton)
         tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:500))
-        tableView.backgroundColor = .systemGray
+        tableView.backgroundColor = .white
         tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "AnimalCell")
         tableView.dataSource = self

@@ -31,7 +31,7 @@ class UpdateDetailCustomerUIView :
         field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
         field.leftViewMode = .always
         field.placeholder="First Name"
-        field.backgroundColor = .lightGray
+        field.backgroundColor = .white
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         field.frame = CGRect(x:60, y:100, width:200,height:30)

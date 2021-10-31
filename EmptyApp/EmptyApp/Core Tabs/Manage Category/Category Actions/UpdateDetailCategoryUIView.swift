@@ -59,8 +59,8 @@ class UpdateDetailCategoryUIView :UIView{
 
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        backgroundColor = .systemGray
-        self.backgroundColor = .systemGray
+       
+        backgroundColor = .white
         self.addSubview(label)
         self.addSubview(NameField)
         self.addSubview(AddButton)
