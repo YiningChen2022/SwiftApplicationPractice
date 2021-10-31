@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 class ManagerStockUIView: UIView{
+    //home button
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
+    
+
     
        //back button
        private let backButton1: UIButton = {
@@ -73,6 +85,7 @@ class ManagerStockUIView: UIView{
            addSubview(ViewStockButton)
            addSubview(deleteStockButton)
            addSubview(addStockButton)
+           addSubview(homeButton)
      
        }
        
@@ -115,6 +128,12 @@ class ManagerStockUIView: UIView{
 
       }
 
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+   }
 
    }
 

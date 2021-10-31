@@ -11,6 +11,22 @@ import UIKit
 class  SearchByCategory :UIView, UITableViewDelegate, UITableViewDataSource{
     
     var tableView:UITableView!
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
+    
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+   }
     //back button
     private let backButton: UIButton = {
         let button = UIButton()
@@ -34,6 +50,7 @@ class  SearchByCategory :UIView, UITableViewDelegate, UITableViewDataSource{
         self.addSubview(tableView)
         self.addSubview(backButton)
         backgroundColor = .white
+        addSubview(homeButton)
      
     }
     

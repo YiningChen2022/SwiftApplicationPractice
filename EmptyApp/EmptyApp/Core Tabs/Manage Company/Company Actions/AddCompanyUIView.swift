@@ -21,7 +21,22 @@ class AddCompanyUIView: UIView {
         button.frame=CGRect.init(x:20,y:40,width:100,height:25)
         return button
     }()
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
+    
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
 
+   }
     
     //FN field
     private let NameField: UITextField = {
@@ -102,6 +117,7 @@ class AddCompanyUIView: UIView {
         addSubview(EmailField)
         addSubview(backButton)
         addSubview(AddButton)
+        addSubview(homeButton)
   
     }
     

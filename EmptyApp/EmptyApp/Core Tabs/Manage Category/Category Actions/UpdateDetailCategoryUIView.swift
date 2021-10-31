@@ -15,7 +15,22 @@ class UpdateDetailCategoryUIView :UIView{
     static var id = AppDelegate.GlobalVariable.selectedCategory
     static var currentCustomer=AppDelegate.GlobalVariable.categorylist.testCategorylist.getCategory(id: id)
     
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
     
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+   }
      private let label: UILabel = {
          let label = UILabel()
          label.textAlignment = .center
@@ -64,6 +79,7 @@ class UpdateDetailCategoryUIView :UIView{
         self.addSubview(label)
         self.addSubview(NameField)
         self.addSubview(AddButton)
+        addSubview(homeButton)
         
    
     }

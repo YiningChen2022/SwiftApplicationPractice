@@ -116,40 +116,75 @@ class StockDirecrtory {
         }
         return str
     }
-    public func searchByName(name: String){
+    
+    
+    public func searchNamegetsize (name: String)->Int{
+        var count=0;
+        for stock in stockList{
+            if stock.getName() == name{
+            count+=1;
+
+            }
+        }
+        return count
+    }
+    public func searchByName(name: String)->Array<String>{
+        var str:Array<String>=[]
         if name == "" {
             print("please input valid value")
         }else{
             for   stock in stockList {
                 if stock.getName() == name{
-                    print(stock.toString())
+                    str.append(stock.toString())
                 }
             }
-            
         }
+        return str
     }
-    public func searchByFinancialRating(financialRating: Int){
+    public func searchFinancialgetsize (financialRating: Int)->Int{
+        var count=0;
+        for stock in stockList{
+            if stock.getfinancialRating() == financialRating{
+            count+=1;
+
+            }
+        }
+        return count
+    }
+    public func searchByFinancialRating(financialRating: Int)->Array<String>{
+        var str:Array<String>=[]
         if financialRating>10 || financialRating<0 {
             print("please input valid value")
         }else{
             for   stock in stockList {
                 if stock.getfinancialRating() >= financialRating{
-                    print(stock.toString())
+                    str.append(stock.toString())
                 }
             }
-       
         }
+        return str
     }
-    public func searchByLastTradePrice(lastTradePrice: Double){
+    public func searchByLastTradePrice(lastTradePrice: Double)->Array<String>{
+        var str:Array<String>=[]
         if lastTradePrice<0.00 {
             print("please input valid value")
         }else{
             for   stock in stockList {
                 if stock.getlastTradePrice() >= lastTradePrice{
-                    print(stock.toString())
+                    str.append(stock.toString())
                 }
             }
         }
+        return str
     }
+    public func searchtradegetsize (lastTradePrice: Double)->Int{
+        var count=0;
+        for stock in stockList{
+            if stock.getlastTradePrice() == lastTradePrice{
+            count+=1;
 
+            }
+        }
+        return count
+    }
 }

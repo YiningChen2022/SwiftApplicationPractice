@@ -15,6 +15,22 @@ class AddStockUIView: UIView, UITableViewDelegate, UITableViewDataSource{
     var tableViewCategory:UITableView!
     var selectedCompanyid=0
     var selectedCategoryid=0
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
+    
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+   }
 //back button
 private let backButton: UIButton = {
     let button = UIButton()
@@ -117,6 +133,7 @@ override init (frame : CGRect) {
     addSubview(AddButton)
     addSubview(labelCompany)
     addSubview(labelCategory)
+    addSubview(homeButton)
     tableViewCategory = UITableView(frame: CGRect(x: 60, y:380, width: 200, height:100))
     tableViewCategory.register(UITableViewCell.self,
                              forCellReuseIdentifier: "cellCate")

@@ -13,7 +13,22 @@ class UpdateDetailCustomerUIView :
     static var id = AppDelegate.GlobalVariable.selected
      static var currentCustomer=AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: id)
     
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
     
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+   }
      private let label: UILabel = {
          let label = UILabel()
          label.textAlignment = .center
@@ -124,6 +139,7 @@ class UpdateDetailCustomerUIView :
         self.addSubview(contactField)
         self.addSubview(addressField)
         self.addSubview(AddButton)
+        addSubview(homeButton)
         
    
     }

@@ -11,7 +11,22 @@ import UIKit
 
 class ManagerCompanyView: UIView{
  
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
     
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+
+   }
     //back button
     private let backButton1: UIButton = {
         let button = UIButton()
@@ -75,6 +90,7 @@ class ManagerCompanyView: UIView{
         addSubview(ViewCompanyButton)
         addSubview(deleteCompanyButton)
         addSubview(addCompanyButton)
+        addSubview(homeButton)
   
     }
     

@@ -19,7 +19,22 @@ class UpdateDetailStockUIView :UIView, UITableViewDelegate, UITableViewDataSourc
 
     
 
+    private let homeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("Home", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(gotoHome),for: .touchUpInside)
+        button.frame=CGRect.init(x:250,y:40,width:50,height:25)
+        return button
+    }()
+    
+    @objc func gotoHome(sender : UIButton) {
+        let nextview=MainPage()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
 
+   }
 //FN field
 private let nameField: UITextField = {
     let field=UITextField()
@@ -108,6 +123,7 @@ private let AddButton: UIButton = {
         addSubview(AddButton)
         addSubview(labelCompany)
         addSubview(labelCategory)
+        addSubview(homeButton)
         tableViewCategory = UITableView(frame: CGRect(x: 60, y:380, width: 200, height:100))
         tableViewCategory.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "cellCate")
