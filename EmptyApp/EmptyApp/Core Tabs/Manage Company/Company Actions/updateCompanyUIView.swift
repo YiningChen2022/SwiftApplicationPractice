@@ -50,21 +50,32 @@ class UpdateCompanyUIView: UIView, UITableViewDelegate,UITableViewDataSource {
          label.text = "Select Company to update"
          return label
      }()
-
+    private let selectButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("select this company", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(didtapselect ),for: .touchUpInside)
+        button.frame=CGRect.init(x:60,y:500,width:200,height:25)
+        return button
+    }()
+    
+    
      
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        backgroundColor = .white
+        backgroundColor = .systemGray
         self.addSubview(backButton)
         self.addSubview(label)
-        tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:500))
-        tableView.backgroundColor = .white
+        tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:300))
+        tableView.backgroundColor = .systemYellow
         tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "AnimalCell")
         tableView.dataSource = self
         tableView.delegate = self
         self.addSubview(tableView)
         addSubview(homeButton)
+        addSubview(selectButton)
    
     }
     
@@ -90,15 +101,7 @@ class UpdateCompanyUIView: UIView, UITableViewDelegate,UITableViewDataSource {
         let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
         let id=Int(selected.split(separator: " ")[0])!
         AppDelegate.GlobalVariable.selectedCompany=id
-        //print(applicationViewController.GlobalVariable.selected)
-     DispatchQueue.main.async {
-         let nextview=UpdateDetailCompanyUIView()
-         self.addSubview(nextview)
-         self.bringSubviewToFront(nextview)
-        }
-       
-        
-   
+    
         }
     
     
@@ -107,5 +110,10 @@ class UpdateCompanyUIView: UIView, UITableViewDelegate,UITableViewDataSource {
         self.addSubview(nextview)
         self.bringSubviewToFront(nextview)
    }
-
+    
+    @objc func didtapselect (sender : UIButton) {
+        let nextview=UpdateDetailCompanyUIView()
+        self.addSubview(nextview)
+        self.bringSubviewToFront(nextview)
+   }
 }

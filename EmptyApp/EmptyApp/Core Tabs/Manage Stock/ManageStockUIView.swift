@@ -101,7 +101,7 @@ class ManagerStockUIView: UIView{
 
        }
        @objc private func didTapUpdateStock (sender: UIButton){
-           let nextview=UpdateCategoryUIView()
+           let nextview=UpdateStockUIView()
            self.addSubview(nextview)
            self.bringSubviewToFront(nextview)
 

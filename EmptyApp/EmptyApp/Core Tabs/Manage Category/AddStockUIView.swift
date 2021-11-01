@@ -125,7 +125,7 @@ private let AddButton: UIButton = {
 
 override init (frame : CGRect) {
     super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-    backgroundColor = .systemRed
+    backgroundColor = .white
     addSubview(nameField)
     addSubview(lasttradeField)
     addSubview(FinancialRatingField)
@@ -141,7 +141,7 @@ override init (frame : CGRect) {
     tableViewCategory.delegate = self
     
     addSubview(tableViewCategory)
-    tableViewCategory.backgroundColor = .systemYellow
+    tableViewCategory.backgroundColor = .white
     
     
     tableViewCompany = UITableView(frame: CGRect(x: 60, y:250, width: 200, height:100))
@@ -150,7 +150,7 @@ override init (frame : CGRect) {
     tableViewCompany.dataSource = self
     tableViewCompany.delegate = self
     addSubview(tableViewCompany)
-    tableViewCompany.backgroundColor = .systemBlue
+    tableViewCompany.backgroundColor = .white
 }
 
 required init?(coder: NSCoder) {
@@ -163,8 +163,8 @@ required init?(coder: NSCoder) {
 
 @objc func didTapAddStock(sender : UIButton){
     guard let name=nameField.text, !name.isEmpty,
-          let lastTrade=lasttradeField.text, !lastTrade.isEmpty, Double(lastTrade) != nil,
-          let Fincial=FinancialRatingField.text, !Fincial.isEmpty, Int(lastTrade) != nil,
+          let lastTrade=lasttradeField.text, !lastTrade.isEmpty, Double(lastTrade) != nil ,Double(lastTrade)!>=0,
+          let Fincial=FinancialRatingField.text, !Fincial.isEmpty, Int(Fincial) != nil,Int(Fincial)!>=1 , Int(Fincial)!<11,
           selectedCompanyid != 0,
           selectedCategoryid != 0
     else{

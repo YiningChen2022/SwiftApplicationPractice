@@ -46,12 +46,11 @@ class UpdateDetailCustomerUIView :
         field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
         field.leftViewMode = .always
         field.placeholder="First Name"
-        field.backgroundColor = .white
+        field.backgroundColor = .lightGray
         field.layer.cornerRadius=8
         field.layer.masksToBounds=true
         field.frame = CGRect(x:60, y:100, width:200,height:30)
-        print(currentCustomer!.toString())
-        
+    
         return field
        
     }()
@@ -130,8 +129,8 @@ class UpdateDetailCustomerUIView :
 
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        backgroundColor = .systemGray
-        self.backgroundColor = .systemGray
+
+        self.backgroundColor = .white 
         self.addSubview(label)
         self.addSubview(emailField)
         self.addSubview(fnField)
@@ -159,13 +158,20 @@ class UpdateDetailCustomerUIView :
               }
    
         AppDelegate.GlobalVariable.customerlist.testcustomerlist.UpdateCustomer(id: AppDelegate.GlobalVariable.selected, firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailId: email)
-        print( AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
 
-                    DispatchQueue.main.async {
-                        let nextview=ManagerCustomerView()
-                        self.addSubview(nextview)
-                        self.bringSubviewToFront(nextview)
-                    }
+        let alert = UIAlertController(title: "Are you sure?", message: "update this Customer", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+            let nextview=ManagerCustomerView()
+            self.addSubview(nextview)
+            self.bringSubviewToFront(nextview)
+       }
+        } ))
+        if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+        }
+        }
+        
          
         }
     

@@ -162,11 +162,20 @@ private let AddButton: UIButton = {
         AppDelegate.GlobalVariable.stocklist.testStocklist.UpdateStock(id: AppDelegate.GlobalVariable.selectedStock, company:company , lastTradePrice: Double(lastTrade), financialRating: Int(Fincial), Category: category)
         
      
-                    DispatchQueue.main.async {
-                        let nextview=ManagerStockUIView()
-                        self.addSubview(nextview)
-                        self.bringSubviewToFront(nextview)
-                    }
+        let alert = UIAlertController(title: "Are you sure?", message: "update this Stock", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+            let nextview=ManagerStockUIView()
+            self.addSubview(nextview)
+            self.bringSubviewToFront(nextview)
+       }
+        } ))
+        if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+        }
+        }
+             
+        
          
         }
     

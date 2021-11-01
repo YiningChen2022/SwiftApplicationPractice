@@ -14,7 +14,7 @@
 		E800FE96272CEE43009186E7 /* ViewAllCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */; };
 		E800FE98272CF005009186E7 /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */; };
 		E800FE9A272CF0D7009186E7 /* updateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */; };
-		E800FEBA272D04C6009186E7 /* updateDetailCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB9272D04C6009186E7 /* updateDetailCompanyUIView.swift */; };
+		E800FEBA272D04C6009186E7 /* updateCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEB9272D04C6009186E7 /* updateCompanyUIView.swift */; };
 		E800FEBC272D04DB009186E7 /* AddCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEBB272D04DB009186E7 /* AddCompanyUIView.swift */; };
 		E800FEBF272D04FB009186E7 /* DeleteCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEBE272D04FB009186E7 /* DeleteCompanyUIView.swift */; };
 		E800FEC2272D0522009186E7 /* ViewAllCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800FEC1272D0522009186E7 /* ViewAllCompanyUIView.swift */; };
@@ -58,7 +58,7 @@
 		E88328E8272E642F00E86E6F /* DeleteStockUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328E7272E642F00E86E6F /* DeleteStockUIView.swift */; };
 		E88328EA272E643F00E86E6F /* ViewStockUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328E9272E643F00E86E6F /* ViewStockUIView.swift */; };
 		E88328EC272E646C00E86E6F /* UpdateDetailStockUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328EB272E646C00E86E6F /* UpdateDetailStockUIView.swift */; };
-		E88328EF272E64A000E86E6F /* UpdateCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328EE272E64A000E86E6F /* UpdateCompanyUIView.swift */; };
+		E88328EF272E64A000E86E6F /* UpdateCompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328EE272E64A000E86E6F /* UpdateCompanyDetailView.swift */; };
 		E88328F1272E64B900E86E6F /* ManageCompanyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328F0272E64B900E86E6F /* ManageCompanyUIView.swift */; };
 		E88328F3272E652C00E86E6F /* ManageCategoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328F2272E652C00E86E6F /* ManageCategoryUIView.swift */; };
 		E88328F5272E690700E86E6F /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328F4272E690700E86E6F /* MainPage.swift */; };
@@ -74,7 +74,7 @@
 		E800FE95272CEE43009186E7 /* ViewAllCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllCustomerViewController.swift; sourceTree = "<group>"; };
 		E800FE97272CF005009186E7 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
 		E800FE99272CF0D7009186E7 /* updateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDetailViewController.swift; sourceTree = "<group>"; };
-		E800FEB9272D04C6009186E7 /* updateDetailCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateDetailCompanyUIView.swift; sourceTree = "<group>"; };
+		E800FEB9272D04C6009186E7 /* updateCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateCompanyUIView.swift; sourceTree = "<group>"; };
 		E800FEBB272D04DB009186E7 /* AddCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyUIView.swift; sourceTree = "<group>"; };
 		E800FEBE272D04FB009186E7 /* DeleteCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCompanyUIView.swift; sourceTree = "<group>"; };
 		E800FEC1272D0522009186E7 /* ViewAllCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllCompanyUIView.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		E88328E7272E642F00E86E6F /* DeleteStockUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockUIView.swift; sourceTree = "<group>"; };
 		E88328E9272E643F00E86E6F /* ViewStockUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStockUIView.swift; sourceTree = "<group>"; };
 		E88328EB272E646C00E86E6F /* UpdateDetailStockUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailStockUIView.swift; sourceTree = "<group>"; };
-		E88328EE272E64A000E86E6F /* UpdateCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCompanyUIView.swift; sourceTree = "<group>"; };
+		E88328EE272E64A000E86E6F /* UpdateCompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCompanyDetailView.swift; sourceTree = "<group>"; };
 		E88328F0272E64B900E86E6F /* ManageCompanyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCompanyUIView.swift; sourceTree = "<group>"; };
 		E88328F2272E652C00E86E6F /* ManageCategoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoryUIView.swift; sourceTree = "<group>"; };
 		E88328F4272E690700E86E6F /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
@@ -233,11 +233,11 @@
 		E800FEB8272D04A1009186E7 /* Company Actions */ = {
 			isa = PBXGroup;
 			children = (
-				E800FEB9272D04C6009186E7 /* updateDetailCompanyUIView.swift */,
+				E800FEB9272D04C6009186E7 /* updateCompanyUIView.swift */,
 				E800FEBB272D04DB009186E7 /* AddCompanyUIView.swift */,
 				E800FEBE272D04FB009186E7 /* DeleteCompanyUIView.swift */,
 				E800FEC1272D0522009186E7 /* ViewAllCompanyUIView.swift */,
-				E88328EE272E64A000E86E6F /* UpdateCompanyUIView.swift */,
+				E88328EE272E64A000E86E6F /* UpdateCompanyDetailView.swift */,
 			);
 			path = "Company Actions";
 			sourceTree = "<group>";
@@ -402,7 +402,7 @@
 				E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */,
 				E88328DC272E62D200E86E6F /* UpdateDetailCategoryUIView.swift in Sources */,
 				E88328EC272E646C00E86E6F /* UpdateDetailStockUIView.swift in Sources */,
-				E800FEBA272D04C6009186E7 /* updateDetailCompanyUIView.swift in Sources */,
+				E800FEBA272D04C6009186E7 /* updateCompanyUIView.swift in Sources */,
 				E814C75B272F35AE00F8E740 /* Selectedcompany.swift in Sources */,
 				E88328D2272E5A0200E86E6F /* UpdateDetailCustomerUIView.swift in Sources */,
 				E88328E6272E641F00E86E6F /* UpdateStockUIView.swift in Sources */,
@@ -418,7 +418,7 @@
 				E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */,
 				E814C759272F30FD00F8E740 /* SearchByTrade.swift in Sources */,
 				E88328C9272E3E4200E86E6F /* AddCustomerUIView.swift in Sources */,
-				E88328EF272E64A000E86E6F /* UpdateCompanyUIView.swift in Sources */,
+				E88328EF272E64A000E86E6F /* UpdateCompanyDetailView.swift in Sources */,
 				E88328F3272E652C00E86E6F /* ManageCategoryUIView.swift in Sources */,
 				E88328E2272E63CD00E86E6F /* ManageStockUIView.swift in Sources */,
 				E88328CF272E420C00E86E6F /* ViewCustomerUIView.swift in Sources */,

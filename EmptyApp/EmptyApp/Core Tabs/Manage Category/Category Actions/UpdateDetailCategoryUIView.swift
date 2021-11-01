@@ -98,11 +98,19 @@ class UpdateDetailCategoryUIView :UIView{
         AppDelegate.GlobalVariable.categorylist.testCategorylist.UpdateCategory(id: AppDelegate.GlobalVariable.selectedCategory, name: name)
     
 
-                    DispatchQueue.main.async {
-                        let nextview=ManagerCategoryUIView()
-                        self.addSubview(nextview)
-                        self.bringSubviewToFront(nextview)
-                    }
+        let alert = UIAlertController(title: "Are you sure?", message: "update this Category", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+            let nextview=ManagerCategoryUIView()
+            self.addSubview(nextview)
+            self.bringSubviewToFront(nextview)
+       }
+        } ))
+        if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+        }
+        }
+                
          
         }
     

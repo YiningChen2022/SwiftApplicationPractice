@@ -49,7 +49,8 @@ class ViewCustomerUIView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
         self.addSubview(tableView)
-        addSubview(homeButton)
+        self.addSubview(homeButton)
+        
         
       
     }
@@ -74,9 +75,8 @@ class ViewCustomerUIView: UIView, UITableViewDelegate, UITableViewDataSource {
   
     
     @objc func closeWindow(sender : UIButton) {
-        let nextview=ManagerCustomerView()
-        self.addSubview(nextview)
-        self.bringSubviewToFront(nextview)
+        let parentWin:UIView = sender.superview!;
+        parentWin.removeFromSuperview()   
    }
 
 }

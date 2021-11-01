@@ -94,7 +94,7 @@ class ManagerCustomerView: UIView{
         addSubview(ViewCustomerButton)
         addSubview(deleteCustomerButton)
         addSubview(addCustomerButton)
-        addSubview(homeButton)
+        
     }
     
     required init?(coder: NSCoder) {

@@ -107,12 +107,25 @@ class SearchByName :UIView, UITableViewDelegate, UITableViewDataSource {
       
         
         @objc func closeWindow(sender : UIButton) {
-            let nextview=ManagerStockUIView()
-            self.addSubview(nextview)
-            self.bringSubviewToFront(nextview)
+            let alert = UIAlertController(title: "Are you sure?", message: "going back", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+                
+               let nextview=ManagerStockUIView()
+               self.addSubview(nextview)
+               self.bringSubviewToFront(nextview)
+           }
+            } ))
+            if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+            }
+            }
+                    
+             
        }
     
     @objc func didTapSearch(sender : UIButton) {
+        
         self.addSubview(tableView)
         
    }

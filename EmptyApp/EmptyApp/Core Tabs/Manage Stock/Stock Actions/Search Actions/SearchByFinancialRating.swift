@@ -11,8 +11,8 @@ import UIKit
 class   SearchByFinancialRating :UIView, UITableViewDelegate, UITableViewDataSource {
     
         var tableView:UITableView!
-        var name=""
-    
+    var rating=""
+    var rate=0
     private let homeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemBlue
@@ -93,15 +93,22 @@ class   SearchByFinancialRating :UIView, UITableViewDelegate, UITableViewDataSou
 
             //Table View
             func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-              
-                name=nameField.text ?? ""
-       
-                    return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchFinancialgetsize(financialRating:  Int(name) ?? 0))
-              }
+                rating=nameField.text!
+                if ( rating=="" && Int(rating) != nil && Int(rating)! <= 10 && Int(rating)! >= 1){
+                    
+                
+                
+                 rate = Int(rating)!
+                    return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchFinancialgetsize(financialRating: rate))
+                }else {
+                    return 0
+                }
+                
+            }
            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
               
                   let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-               cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.searchByFinancialRating(financialRating:Int(name)!)[indexPath.row]
+               cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.searchByFinancialRating(financialRating:rate)[indexPath.row]
                
                   return (cell)
               }
@@ -110,9 +117,20 @@ class   SearchByFinancialRating :UIView, UITableViewDelegate, UITableViewDataSou
           
             
             @objc func closeWindow(sender : UIButton) {
-                let nextview=ManagerStockUIView()
-                self.addSubview(nextview)
-                self.bringSubviewToFront(nextview)
+                let alert = UIAlertController(title: "Are you sure?", message: "going back", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+                    
+                   let nextview=ManagerStockUIView()
+                   self.addSubview(nextview)
+                   self.bringSubviewToFront(nextview)
+               }
+                } ))
+                if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+                }
+                }
+                      
            }
         
         @objc func didTapSearch(sender : UIButton) {

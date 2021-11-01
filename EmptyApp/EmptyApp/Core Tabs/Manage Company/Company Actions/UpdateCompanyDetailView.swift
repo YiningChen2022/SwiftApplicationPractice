@@ -116,7 +116,7 @@ class UpdateDetailCompanyUIView :
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
        
-        backgroundColor = .white
+        backgroundColor = .systemGray
         addSubview(label)
         addSubview(NameField)
         addSubview(SymbolField)
@@ -144,14 +144,19 @@ class UpdateDetailCompanyUIView :
         
    
         AppDelegate.GlobalVariable.companylist.testCompanylist.UpdateCompany(id: AppDelegate.GlobalVariable.selectedCompany, symbol: symbol, headquarter: headQuarter, email: email)
-            
-       
+        let alert = UIAlertController(title: "Are you sure?", message: "update this Company", preferredStyle: .alert)
 
-                    DispatchQueue.main.async {
-                        let nextview=ManagerCompanyView()
-                        self.addSubview(nextview)
-                        self.bringSubviewToFront(nextview)
-                    }
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+            let nextview=ManagerCompanyView()
+            self.addSubview(nextview)
+            self.bringSubviewToFront(nextview)
+       }
+        } ))
+        if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+        }
+        }
+      
          
         }
     

@@ -40,6 +40,15 @@ class UpdateCustomerUIView: UIView,UITableViewDelegate,UITableViewDataSource {
         return button
     }()
     
+    private let selectButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("<Back", for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action:#selector(closeWindow),for: .touchUpInside)
+        button.frame=CGRect.init(x:20,y:40,width:100,height:25)
+        return button
+    }()
     
      //header
      private let label: UILabel = {
@@ -57,7 +66,7 @@ class UpdateCustomerUIView: UIView,UITableViewDelegate,UITableViewDataSource {
         backgroundColor = .white
         self.addSubview(backButton)
         self.addSubview(label)
-        tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:500))
+        tableView = UITableView(frame: CGRect(x: 0, y:150, width: 350, height:400))
         tableView.backgroundColor = .white
         tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "AnimalCell")
@@ -90,7 +99,6 @@ class UpdateCustomerUIView: UIView,UITableViewDelegate,UITableViewDataSource {
          let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
         let id=Int(selected.split(separator: " ")[0])!
         AppDelegate.GlobalVariable.selected=id
-        //print(applicationViewController.GlobalVariable.selected)
      DispatchQueue.main.async {
          let nextview=UpdateDetailCustomerUIView()
          self.addSubview(nextview)
