@@ -8,10 +8,9 @@
 
 import Foundation
 import UIKit
-class   SearchByFinancialRating :UIView, UITableViewDelegate, UITableViewDataSource {
-    
-        var tableView:UITableView!
-    var rating=""
+class  SearchByFinancialRating :UIView, UITableViewDelegate, UITableViewDataSource {
+    var tableView:UITableView!
+    var name=""
     var rate=0
     private let homeButton: UIButton = {
         let button = UIButton()
@@ -29,116 +28,111 @@ class   SearchByFinancialRating :UIView, UITableViewDelegate, UITableViewDataSou
         self.bringSubviewToFront(nextview)
 
    }
-            //back button
-            private let backButton: UIButton = {
-                let button = UIButton()
-                button.backgroundColor = .systemBlue
-                button.setTitle("<Back", for: .normal )
-                button.setTitleColor(.white, for: .normal)
-                button.addTarget(self, action:#selector(closeWindow),for: .touchUpInside)
-                button.frame=CGRect.init(x:20,y:40,width:100,height:25)
-                return button
-            }()
-            
-        //FN field
-        private let nameField: UITextField = {
-            let field=UITextField()
-            field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
-            field.leftViewMode = .always
-            field.placeholder="1 to 10"
-            field.backgroundColor = .lightGray
-            field.layer.cornerRadius=8
-            field.layer.masksToBounds=true
-            field.frame = CGRect(x:40, y:350, width:250,height:30)
-            return field
+        //back button
+        private let backButton: UIButton = {
+            let button = UIButton()
+            button.backgroundColor = .systemBlue
+            button.setTitle("<Back", for: .normal )
+            button.setTitleColor(.white, for: .normal)
+            button.addTarget(self, action:#selector(closeWindow),for: .touchUpInside)
+            button.frame=CGRect.init(x:20,y:40,width:100,height:25)
+            return button
         }()
-
-            private let SearchButton: UIButton = {
-                let button = UIButton()
-                button.backgroundColor = .systemBlue
-                button.setTitle("Search Financial Rating Above", for: .normal )
-                button.setTitleColor(.white, for: .normal)
-                button.addTarget(self, action:#selector(didTapSearch),for: .touchUpInside)
-                button.frame=CGRect.init(x:40,y:400,width:250,height:30)
-                return button
-            }()
-           
-
-
-
-
-            override init (frame : CGRect) {
-                super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-                self.backgroundColor = .white
-                self.addSubview(backButton)
-                tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:200))
-                tableView.backgroundColor = .white
-                tableView.register(UITableViewCell.self,
-                                         forCellReuseIdentifier: "AnimalCell")
-                tableView.dataSource = self
-                tableView.delegate = self
-                addSubview(homeButton)
-                addSubview(nameField)
-                addSubview(SearchButton)
         
+    //FN field
+    private let nameField: UITextField = {
+        let field=UITextField()
+        field.leftView=UIView(frame: CGRect(x:0,y:0,width:10,height:50))
+        field.leftViewMode = .always
+        field.placeholder="Rating"
+        field.backgroundColor = .lightGray
+        field.layer.cornerRadius=8
+        field.layer.masksToBounds=true
+        field.frame = CGRect(x:40, y:350, width:250,height:30)
+        return field
+    }()
 
-                
-                
-              
-            }
-            
-            required init?(coder: NSCoder) {
-                fatalError("init(coder:) has not been implemented")
-            }
+        private let SearchButton: UIButton = {
+            let button = UIButton()
+            button.backgroundColor = .systemBlue
+            button.setTitle("Search by rate above", for: .normal )
+            button.setTitleColor(.white, for: .normal)
+            button.addTarget(self, action:#selector(didTapSearch),for: .touchUpInside)
+            button.frame=CGRect.init(x:40,y:400,width:250,height:30)
+            return button
+        }()
+       
 
-            //Table View
-            func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-                rating=nameField.text!
-                if ( rating=="" && Int(rating) != nil && Int(rating)! <= 10 && Int(rating)! >= 1){
-                    
-                
-                
-                 rate = Int(rating)!
-                    return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchFinancialgetsize(financialRating: rate))
-                }else {
-                    return 0
-                }
-                
-            }
-           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-              
-                  let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-               cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.searchByFinancialRating(financialRating:rate)[indexPath.row]
-               
-                  return (cell)
-              }
+
+
+
+        override init (frame : CGRect) {
+            super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
+            self.backgroundColor = .white
+            self.addSubview(backButton)
+            tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:200))
+            tableView.backgroundColor = .white
+            tableView.register(UITableViewCell.self,
+                                     forCellReuseIdentifier: "AnimalCell")
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.backgroundColor = .white
+            addSubview(homeButton)
+            addSubview(nameField)
+            addSubview(SearchButton)
+    
+
             
             
           
-            
-            @objc func closeWindow(sender : UIButton) {
-                let alert = UIAlertController(title: "Are you sure?", message: "going back", preferredStyle: .alert)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
 
-                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
-                    
-                   let nextview=ManagerStockUIView()
-                   self.addSubview(nextview)
-                   self.bringSubviewToFront(nextview)
-               }
-                } ))
-                if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
-                }
-                }
-                      
+        //Table View
+        func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
+          
+            name=nameField.text ?? ""
+            rate=Int(name)!
+           
+          
+            return AppDelegate.GlobalVariable.stocklist.testStocklist.searchFinancialgetsize(financialRating:rate)
+          }
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+          
+              let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+           cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.searchByFinancialRating(financialRating: rate)[indexPath.row]
+              return (cell)
+          }
+        
+        
+      
+        
+        @objc func closeWindow(sender : UIButton) {
+            let alert = UIAlertController(title: "Are you sure?", message: "going back", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in DispatchQueue.main.async {
+                
+               let nextview=ManagerStockUIView()
+               self.addSubview(nextview)
+               self.bringSubviewToFront(nextview)
            }
-        
-        @objc func didTapSearch(sender : UIButton) {
-            self.addSubview(tableView)
-            
+            } ))
+            if let viewController = self.window?.rootViewController   {                         viewController.present(alert, animated: true) {
+            }
+            }
+                    
+             
        }
-
+    
+    @objc func didTapSearch(sender : UIButton) {
+        self.addSubview(tableView)
         
+   }
 
-    }
+    
 
+}

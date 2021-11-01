@@ -144,7 +144,7 @@ class StockDirecrtory {
     public func searchFinancialgetsize (financialRating: Int)->Int{
         var count=0;
         for stock in stockList{
-            if stock.getfinancialRating() == financialRating{
+            if stock.getfinancialRating() >= financialRating{
             count+=1;
 
             }
@@ -180,7 +180,7 @@ class StockDirecrtory {
     public func searchtradegetsize (lastTradePrice: Double)->Int{
         var count=0;
         for stock in stockList{
-            if stock.getlastTradePrice() == lastTradePrice{
+            if stock.getlastTradePrice() >= lastTradePrice{
             count+=1;
 
             }
