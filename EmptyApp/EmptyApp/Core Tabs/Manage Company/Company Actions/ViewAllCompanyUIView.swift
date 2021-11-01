@@ -41,7 +41,7 @@ class ViewCompanyUIView: UIView, UITableViewDelegate,UITableViewDataSource {
 
     override init (frame : CGRect) {
         super.init(frame :  CGRect(x:0, y: 0, width: 350, height: 600))
-        self.backgroundColor = .systemYellow
+        self.backgroundColor = .white
         self.addSubview(backButton)
         tableView = UITableView(frame: CGRect(x: 0, y:100, width: 350, height:500))
         tableView.backgroundColor = .white

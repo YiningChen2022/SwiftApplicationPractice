@@ -49,7 +49,7 @@ class DeleteCompanyUIView: UIView,UITableViewDelegate, UITableViewDataSource {
             tableView.delegate = self
             self.addSubview(tableView)
             self.addSubview(backButton)
-            backgroundColor = .systemBlue
+            backgroundColor = .white
             addSubview(homeButton)
             
          
