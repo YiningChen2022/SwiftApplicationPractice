@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppDelegate" customModule="EmptyApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <window contentMode="scaleToFill" resizesToFullScreen="NO" id="juJ-tz-6jn">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -20,34 +20,40 @@
             </connections>
             <point key="canvasLocation" x="133" y="114"/>
         </window>
-        <viewController id="Xlw-lc-eef">
+        <viewController id="Xlw-lc-eef" customClass="ViewController" customModule="EmptyApp" customModuleProvider="target">
             <view key="view" contentMode="scaleToFill" id="ful-pi-ol0">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-EI-sPe">
-                        <rect key="frame" x="169" y="162" width="42" height="19"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWt-ry-C87">
+                        <rect key="frame" x="174" y="334" width="67" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                        <connections>
+                            <action selector="OpenButtonPressed:" destination="Xlw-lc-eef" eventType="touchUpInside" id="h93-Dd-Zk0"/>
+                        </connections>
+                    </button>
                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95m-8r-x4g">
                         <rect key="frame" x="169" y="271" width="97" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWt-ry-C87">
-                        <rect key="frame" x="174" y="334" width="67" height="31"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-EI-sPe">
+                        <rect key="frame" x="120" y="139" width="194" height="51"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                    </button>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="XHA-iY-VXD"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             </view>
+            <connections>
+                <outlet property="welcomeLabel" destination="xgr-EI-sPe" id="a5B-Cr-MuF"/>
+            </connections>
             <point key="canvasLocation" x="928.98550724637687" y="113.83928571428571"/>
         </viewController>
     </objects>
