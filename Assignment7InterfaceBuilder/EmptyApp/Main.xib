@@ -41,18 +41,21 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-EI-sPe">
-                        <rect key="frame" x="120" y="139" width="194" height="51"/>
+                        <rect key="frame" x="174" y="191" width="194" height="51"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYe-fI-e8C">
-                        <rect key="frame" x="0.0" y="461" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <items>
-                            <barButtonItem title="Open" id="3qs-ih-dRd"/>
+                            <barButtonItem title="Customer" id="3qs-ih-dRd"/>
+                            <barButtonItem title="Company" id="DIf-LL-EXj"/>
+                            <barButtonItem title="Category" id="ash-mi-72b"/>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="Qs8-Wb-Goq"/>
+                            <barButtonItem title="Stock" id="HHV-Be-UC4"/>
                             <barButtonItem title="Close" id="FBh-KB-dFp"/>
                         </items>
                     </toolbar>
@@ -65,6 +68,7 @@
             </connections>
             <point key="canvasLocation" x="928.98550724637687" y="113.83928571428571"/>
         </viewController>
+        <barButtonItem title="Item" id="xtA-BN-bEh"/>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
