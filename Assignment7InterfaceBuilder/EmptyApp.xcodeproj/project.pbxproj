@@ -14,6 +14,8 @@
 		E814C7E82731C28F00F8E740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C7E72731C28F00F8E740 /* ViewController.swift */; };
 		E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C7ED2731D51A00F8E740 /* DetailViewController.swift */; };
 		E814C7F92731F0DF00F8E740 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C7F82731F0DF00F8E740 /* CustomButton.swift */; };
+		E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C7FA2731F1CF00F8E740 /* ManageCustomerViewController.swift */; };
+		E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E814C7FD2731F1F700F8E740 /* ManageCustomerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E814C7E72731C28F00F8E740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../ViewController.swift; sourceTree = "<group>"; };
 		E814C7ED2731D51A00F8E740 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E814C7F82731F0DF00F8E740 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E814C7FA2731F1CF00F8E740 /* ManageCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCustomerViewController.swift; sourceTree = "<group>"; };
+		E814C7FD2731F1F700F8E740 /* ManageCustomerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageCustomerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		153402A31F939BDA00324E7D /* EmptyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E814C7FC2731F1D400F8E740 /* Manage Customer */,
 				153402A41F939BDA00324E7D /* AppDelegate.swift */,
 				153402AB1F939BDB00324E7D /* Assets.xcassets */,
 				153402AD1F939BDB00324E7D /* LaunchScreen.storyboard */,
@@ -68,6 +73,15 @@
 				E814C7F82731F0DF00F8E740 /* CustomButton.swift */,
 			);
 			path = EmptyApp;
+			sourceTree = "<group>";
+		};
+		E814C7FC2731F1D400F8E740 /* Manage Customer */ = {
+			isa = PBXGroup;
+			children = (
+				E814C7FA2731F1CF00F8E740 /* ManageCustomerViewController.swift */,
+				E814C7FD2731F1F700F8E740 /* ManageCustomerView.xib */,
+			);
+			path = "Manage Customer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
+				E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */,
 				E814C7E62731878500F8E740 /* Main.xib in Resources */,
 				153402AC1F939BDB00324E7D /* Assets.xcassets in Resources */,
 			);
@@ -144,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E814C7F92731F0DF00F8E740 /* CustomButton.swift in Sources */,
+				E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */,
 				E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */,
 				E814C7E82731C28F00F8E740 /* ViewController.swift in Sources */,
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,

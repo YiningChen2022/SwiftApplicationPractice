@@ -51,7 +51,11 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <items>
-                            <barButtonItem title="Customer" id="3qs-ih-dRd"/>
+                            <barButtonItem title="Customer" id="3qs-ih-dRd">
+                                <connections>
+                                    <action selector="didTapCustomer:" destination="Xlw-lc-eef" id="5pA-Jn-c4R"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Company" id="DIf-LL-EXj"/>
                             <barButtonItem title="Category" id="ash-mi-72b"/>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="Qs8-Wb-Goq"/>
