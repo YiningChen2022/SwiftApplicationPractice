@@ -47,6 +47,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYe-fI-e8C">
+                        <rect key="frame" x="0.0" y="461" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <items>
+                            <barButtonItem title="Open" id="3qs-ih-dRd"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Qs8-Wb-Goq"/>
+                            <barButtonItem title="Close" id="FBh-KB-dFp"/>
+                        </items>
+                    </toolbar>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="XHA-iY-VXD"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
