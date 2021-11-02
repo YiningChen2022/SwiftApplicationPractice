@@ -56,11 +56,24 @@
                                     <action selector="didTapCustomer:" destination="Xlw-lc-eef" id="5pA-Jn-c4R"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Company" id="DIf-LL-EXj"/>
-                            <barButtonItem title="Category" id="ash-mi-72b"/>
-                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Qs8-Wb-Goq"/>
-                            <barButtonItem title="Stock" id="HHV-Be-UC4"/>
-                            <barButtonItem title="Close" id="FBh-KB-dFp"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="kDG-VQ-uAq"/>
+                            <barButtonItem title="Company" id="DIf-LL-EXj">
+                                <connections>
+                                    <action selector="didTapCompany:" destination="Xlw-lc-eef" id="l34-9V-hGp"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="j4I-t2-akb"/>
+                            <barButtonItem title="Category" id="ash-mi-72b">
+                                <connections>
+                                    <action selector="didTapCategory:" destination="Xlw-lc-eef" id="r1L-7x-Iq8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="9Wg-VC-dPY"/>
+                            <barButtonItem title="Stock" id="HHV-Be-UC4">
+                                <connections>
+                                    <action selector="didTapStock:" destination="Xlw-lc-eef" id="hNo-ec-D44"/>
+                                </connections>
+                            </barButtonItem>
                         </items>
                     </toolbar>
                 </subviews>
