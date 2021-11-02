@@ -21,6 +21,7 @@
 		E814C80F2731F69400F8E740 /* ManageStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E814C80E2731F69400F8E740 /* ManageStockView.xib */; };
 		E814C8112731F6AE00F8E740 /* ManageStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C8102731F6AE00F8E740 /* ManageStockViewController.swift */; };
 		E814C8162731F8CC00F8E740 /* ManageCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C8152731F8CC00F8E740 /* ManageCategoryViewController.swift */; };
+		E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E814C8172731F8F700F8E740 /* ManageCategoryView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E814C8132731F78B00F8E740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E814C8142731F78D00F8E740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../ViewController.swift; sourceTree = "<group>"; };
 		E814C8152731F8CC00F8E740 /* ManageCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoryViewController.swift; sourceTree = "<group>"; };
+		E814C8172731F8F700F8E740 /* ManageCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageCategoryView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		E814C8092731F64F00F8E740 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E814C8172731F8F700F8E740 /* ManageCategoryView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E814C8032731F4A800F8E740 /* ManageCompanyView.xib in Resources */,
+				E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */,
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
 				E814C80F2731F69400F8E740 /* ManageStockView.xib in Resources */,
 				E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */,

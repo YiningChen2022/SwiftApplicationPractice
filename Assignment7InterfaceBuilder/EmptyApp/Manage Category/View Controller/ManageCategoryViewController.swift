@@ -17,6 +17,9 @@ class ManageCategoryViewController: UIViewController {
     }
     
 
+    @IBAction func closeWindow(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
