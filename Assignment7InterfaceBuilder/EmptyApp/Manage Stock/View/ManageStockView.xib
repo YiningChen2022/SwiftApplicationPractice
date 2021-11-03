@@ -31,24 +31,36 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Add Stock"/>
+                    <connections>
+                        <action selector="didtapadd:" destination="-1" eventType="touchUpInside" id="Txq-nZ-IXb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsn-a3-pYu">
                     <rect key="frame" x="112" y="249" width="191" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Update Stock"/>
+                    <connections>
+                        <action selector="didtapUpdate:" destination="-1" eventType="touchUpInside" id="N89-UM-h8j"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx3-7Q-z2m">
                     <rect key="frame" x="112" y="302" width="191" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Delete Stock"/>
+                    <connections>
+                        <action selector="didtapdelete:" destination="-1" eventType="touchUpInside" id="rZ5-dt-td9"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O0-ax-CD0">
                     <rect key="frame" x="112" y="361" width="191" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="View All Stock"/>
+                    <connections>
+                        <action selector="didtapView:" destination="-1" eventType="touchUpInside" id="2a8-gu-BMl"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9r-IU-pjB">
                     <rect key="frame" x="170" y="419" width="75" height="32"/>

@@ -64,6 +64,16 @@
 		E8C46AEF27332531007680C0 /* ViewAllCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AEE27332531007680C0 /* ViewAllCategoryView.xib */; };
 		E8C46AF127332E1D007680C0 /* UpdateDetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46AF027332E1D007680C0 /* UpdateDetailCategoryViewController.swift */; };
 		E8C46AF327332E2E007680C0 /* UpdateDetailCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AF227332E2E007680C0 /* UpdateDetailCategoryView.xib */; };
+		E8C46AF527332FE2007680C0 /* AddStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AF427332FE2007680C0 /* AddStockView.xib */; };
+		E8C46AF727332FF4007680C0 /* DeleteStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AF627332FF4007680C0 /* DeleteStockView.xib */; };
+		E8C46AF927333001007680C0 /* UpdateStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AF827333001007680C0 /* UpdateStockView.xib */; };
+		E8C46AFB27333011007680C0 /* ViewAllStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AFA27333011007680C0 /* ViewAllStockView.xib */; };
+		E8C46AFD2733301F007680C0 /* UpdateDetailStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AFC2733301F007680C0 /* UpdateDetailStockView.xib */; };
+		E8C46AFF27333032007680C0 /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46AFE27333032007680C0 /* AddStockViewController.swift */; };
+		E8C46B012733303E007680C0 /* UpdateStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B002733303E007680C0 /* UpdateStockViewController.swift */; };
+		E8C46B0427333057007680C0 /* DeleteStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B0327333057007680C0 /* DeleteStockViewController.swift */; };
+		E8C46B062733306A007680C0 /* UpdateDetailStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B052733306A007680C0 /* UpdateDetailStockViewController.swift */; };
+		E8C46B0827333084007680C0 /* ViewAllStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B0727333084007680C0 /* ViewAllStockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +138,16 @@
 		E8C46AEE27332531007680C0 /* ViewAllCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllCategoryView.xib; sourceTree = "<group>"; };
 		E8C46AF027332E1D007680C0 /* UpdateDetailCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailCategoryViewController.swift; sourceTree = "<group>"; };
 		E8C46AF227332E2E007680C0 /* UpdateDetailCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDetailCategoryView.xib; sourceTree = "<group>"; };
+		E8C46AF427332FE2007680C0 /* AddStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStockView.xib; sourceTree = "<group>"; };
+		E8C46AF627332FF4007680C0 /* DeleteStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteStockView.xib; sourceTree = "<group>"; };
+		E8C46AF827333001007680C0 /* UpdateStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateStockView.xib; sourceTree = "<group>"; };
+		E8C46AFA27333011007680C0 /* ViewAllStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllStockView.xib; sourceTree = "<group>"; };
+		E8C46AFC2733301F007680C0 /* UpdateDetailStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDetailStockView.xib; sourceTree = "<group>"; };
+		E8C46AFE27333032007680C0 /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
+		E8C46B002733303E007680C0 /* UpdateStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStockViewController.swift; sourceTree = "<group>"; };
+		E8C46B0327333057007680C0 /* DeleteStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockViewController.swift; sourceTree = "<group>"; };
+		E8C46B052733306A007680C0 /* UpdateDetailStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailStockViewController.swift; sourceTree = "<group>"; };
+		E8C46B0727333084007680C0 /* ViewAllStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllStockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +316,11 @@
 			isa = PBXGroup;
 			children = (
 				E814C8102731F6AE00F8E740 /* ManageStockViewController.swift */,
+				E8C46AFE27333032007680C0 /* AddStockViewController.swift */,
+				E8C46B002733303E007680C0 /* UpdateStockViewController.swift */,
+				E8C46B0327333057007680C0 /* DeleteStockViewController.swift */,
+				E8C46B052733306A007680C0 /* UpdateDetailStockViewController.swift */,
+				E8C46B0727333084007680C0 /* ViewAllStockViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -304,6 +329,11 @@
 			isa = PBXGroup;
 			children = (
 				E814C80E2731F69400F8E740 /* ManageStockView.xib */,
+				E8C46AF427332FE2007680C0 /* AddStockView.xib */,
+				E8C46AF627332FF4007680C0 /* DeleteStockView.xib */,
+				E8C46AF827333001007680C0 /* UpdateStockView.xib */,
+				E8C46AFA27333011007680C0 /* ViewAllStockView.xib */,
+				E8C46AFC2733301F007680C0 /* UpdateDetailStockView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,6 +438,7 @@
 				E8C46AD127330F62007680C0 /* UpdateCompanyView.xib in Resources */,
 				E814C8032731F4A800F8E740 /* ManageCompanyView.xib in Resources */,
 				E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */,
+				E8C46AF927333001007680C0 /* UpdateStockView.xib in Resources */,
 				E814C81A2732257B00F8E740 /* AddCustomerView.xib in Resources */,
 				E8C46AB32732DC96007680C0 /* UpdateCustomerView.xib in Resources */,
 				E8C46AEF27332531007680C0 /* ViewAllCategoryView.xib in Resources */,
@@ -417,12 +448,16 @@
 				E814C80F2731F69400F8E740 /* ManageStockView.xib in Resources */,
 				E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */,
 				E8C46AD327330F75007680C0 /* UpdateDetailCompanyView.xib in Resources */,
+				E8C46AFD2733301F007680C0 /* UpdateDetailStockView.xib in Resources */,
 				E8C46AB72732DCC2007680C0 /* ViewCustomerView.xib in Resources */,
+				E8C46AF727332FF4007680C0 /* DeleteStockView.xib in Resources */,
 				E8C46AD527330F88007680C0 /* DeleteCompanyView.xib in Resources */,
 				E814C7E62731878500F8E740 /* Main.xib in Resources */,
 				E8C46AF327332E2E007680C0 /* UpdateDetailCategoryView.xib in Resources */,
 				E8C46AE7273322F8007680C0 /* UpdateCategoryView.xib in Resources */,
+				E8C46AF527332FE2007680C0 /* AddStockView.xib in Resources */,
 				E8C46AE3273322D0007680C0 /* AddCategoryView.xib in Resources */,
+				E8C46AFB27333011007680C0 /* ViewAllStockView.xib in Resources */,
 				E8C46ACF27330F4D007680C0 /* AddCompanyView.xib in Resources */,
 				E8C46ABB2732E2DB007680C0 /* DeleteCustomerView.xib in Resources */,
 				153402AC1F939BDB00324E7D /* Assets.xcassets in Resources */,
@@ -438,6 +473,7 @@
 			files = (
 				E8C46AF127332E1D007680C0 /* UpdateDetailCategoryViewController.swift in Sources */,
 				E814C82527322AB900F8E740 /* CategoryDirectory.swift in Sources */,
+				E8C46B0427333057007680C0 /* DeleteStockViewController.swift in Sources */,
 				E8C46ADB2733228C007680C0 /* DeleteCategoryViewController.swift in Sources */,
 				E814C7F92731F0DF00F8E740 /* CustomButton.swift in Sources */,
 				E8C46ACB27330F29007680C0 /* UpdateDetailCompanyViewController.swift in Sources */,
@@ -447,9 +483,12 @@
 				E8C46AB92732DCD3007680C0 /* ViewCustomerViewController.swift in Sources */,
 				E814C8002731F47700F8E740 /* ManageCompanyViewController.swift in Sources */,
 				E8C46AC927330F17007680C0 /* ViewAllCompanyViewController.swift in Sources */,
+				E8C46AFF27333032007680C0 /* AddStockViewController.swift in Sources */,
 				E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */,
 				E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */,
+				E8C46B012733303E007680C0 /* UpdateStockViewController.swift in Sources */,
 				E814C83027322BC400F8E740 /* CustomerManager.swift in Sources */,
+				E8C46B062733306A007680C0 /* UpdateDetailStockViewController.swift in Sources */,
 				E814C7E82731C28F00F8E740 /* ViewController.swift in Sources */,
 				E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */,
 				E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */,
@@ -468,6 +507,7 @@
 				E814C82927322AFD00F8E740 /* CompanyDirectory.swift in Sources */,
 				E8C46AC527330EF8007680C0 /* UpdateCompanyViewController.swift in Sources */,
 				E814C82727322AED00F8E740 /* Company.swift in Sources */,
+				E8C46B0827333084007680C0 /* ViewAllStockViewController.swift in Sources */,
 				E8C46ABD2732E2EC007680C0 /* DeleteCustomerViewController.swift in Sources */,
 				E814C8162731F8CC00F8E740 /* ManageCategoryViewController.swift in Sources */,
 				E814C82327322AA900F8E740 /* Category.swift in Sources */,
