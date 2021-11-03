@@ -55,6 +55,15 @@
 		E8C46AD527330F88007680C0 /* DeleteCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AD427330F88007680C0 /* DeleteCompanyView.xib */; };
 		E8C46AD727330F98007680C0 /* ViewAllCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AD627330F98007680C0 /* ViewAllCompanyView.xib */; };
 		E8C46AD927332270007680C0 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46AD827332270007680C0 /* AddCategoryViewController.swift */; };
+		E8C46ADB2733228C007680C0 /* DeleteCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46ADA2733228C007680C0 /* DeleteCategoryViewController.swift */; };
+		E8C46ADD2733229B007680C0 /* UpdateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46ADC2733229B007680C0 /* UpdateCategoryViewController.swift */; };
+		E8C46ADF273322AB007680C0 /* UpdateDetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46ADE273322AB007680C0 /* UpdateDetailCategoryViewController.swift */; };
+		E8C46AE3273322D0007680C0 /* AddCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AE2273322D0007680C0 /* AddCategoryView.xib */; };
+		E8C46AE5273322E8007680C0 /* DeleteCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AE4273322E8007680C0 /* DeleteCategoryView.xib */; };
+		E8C46AE7273322F8007680C0 /* UpdateCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AE6273322F8007680C0 /* UpdateCategoryView.xib */; };
+		E8C46AE927332307007680C0 /* UpdateCategoryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AE827332307007680C0 /* UpdateCategoryDetailView.xib */; };
+		E8C46AED2733251E007680C0 /* ViewAllCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46AEC2733251E007680C0 /* ViewAllCategoryViewController.swift */; };
+		E8C46AEF27332531007680C0 /* ViewAllCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AEE27332531007680C0 /* ViewAllCategoryView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +119,15 @@
 		E8C46AD427330F88007680C0 /* DeleteCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteCompanyView.xib; sourceTree = "<group>"; };
 		E8C46AD627330F98007680C0 /* ViewAllCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllCompanyView.xib; sourceTree = "<group>"; };
 		E8C46AD827332270007680C0 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		E8C46ADA2733228C007680C0 /* DeleteCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCategoryViewController.swift; sourceTree = "<group>"; };
+		E8C46ADC2733229B007680C0 /* UpdateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCategoryViewController.swift; sourceTree = "<group>"; };
+		E8C46ADE273322AB007680C0 /* UpdateDetailCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailCategoryViewController.swift; sourceTree = "<group>"; };
+		E8C46AE2273322D0007680C0 /* AddCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryView.xib; sourceTree = "<group>"; };
+		E8C46AE4273322E8007680C0 /* DeleteCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteCategoryView.xib; sourceTree = "<group>"; };
+		E8C46AE6273322F8007680C0 /* UpdateCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateCategoryView.xib; sourceTree = "<group>"; };
+		E8C46AE827332307007680C0 /* UpdateCategoryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateCategoryDetailView.xib; sourceTree = "<group>"; };
+		E8C46AEC2733251E007680C0 /* ViewAllCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllCategoryViewController.swift; sourceTree = "<group>"; };
+		E8C46AEE27332531007680C0 /* ViewAllCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllCategoryView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +261,11 @@
 			isa = PBXGroup;
 			children = (
 				E814C8172731F8F700F8E740 /* ManageCategoryView.xib */,
+				E8C46AE2273322D0007680C0 /* AddCategoryView.xib */,
+				E8C46AE4273322E8007680C0 /* DeleteCategoryView.xib */,
+				E8C46AE6273322F8007680C0 /* UpdateCategoryView.xib */,
+				E8C46AE827332307007680C0 /* UpdateCategoryDetailView.xib */,
+				E8C46AEE27332531007680C0 /* ViewAllCategoryView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +275,10 @@
 			children = (
 				E814C8152731F8CC00F8E740 /* ManageCategoryViewController.swift */,
 				E8C46AD827332270007680C0 /* AddCategoryViewController.swift */,
+				E8C46ADA2733228C007680C0 /* DeleteCategoryViewController.swift */,
+				E8C46ADC2733229B007680C0 /* UpdateCategoryViewController.swift */,
+				E8C46ADE273322AB007680C0 /* UpdateDetailCategoryViewController.swift */,
+				E8C46AEC2733251E007680C0 /* ViewAllCategoryViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -383,14 +410,19 @@
 				E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */,
 				E814C81A2732257B00F8E740 /* AddCustomerView.xib in Resources */,
 				E8C46AB32732DC96007680C0 /* UpdateCustomerView.xib in Resources */,
+				E8C46AE927332307007680C0 /* UpdateCategoryDetailView.xib in Resources */,
+				E8C46AEF27332531007680C0 /* ViewAllCategoryView.xib in Resources */,
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
 				E8C46AD727330F98007680C0 /* ViewAllCompanyView.xib in Resources */,
+				E8C46AE5273322E8007680C0 /* DeleteCategoryView.xib in Resources */,
 				E814C80F2731F69400F8E740 /* ManageStockView.xib in Resources */,
 				E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */,
 				E8C46AD327330F75007680C0 /* UpdateDetailCompanyView.xib in Resources */,
 				E8C46AB72732DCC2007680C0 /* ViewCustomerView.xib in Resources */,
 				E8C46AD527330F88007680C0 /* DeleteCompanyView.xib in Resources */,
 				E814C7E62731878500F8E740 /* Main.xib in Resources */,
+				E8C46AE7273322F8007680C0 /* UpdateCategoryView.xib in Resources */,
+				E8C46AE3273322D0007680C0 /* AddCategoryView.xib in Resources */,
 				E8C46ACF27330F4D007680C0 /* AddCompanyView.xib in Resources */,
 				E8C46ABB2732E2DB007680C0 /* DeleteCustomerView.xib in Resources */,
 				153402AC1F939BDB00324E7D /* Assets.xcassets in Resources */,
@@ -405,8 +437,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E814C82527322AB900F8E740 /* CategoryDirectory.swift in Sources */,
+				E8C46ADB2733228C007680C0 /* DeleteCategoryViewController.swift in Sources */,
 				E814C7F92731F0DF00F8E740 /* CustomButton.swift in Sources */,
 				E8C46ACB27330F29007680C0 /* UpdateDetailCompanyViewController.swift in Sources */,
+				E8C46AED2733251E007680C0 /* ViewAllCategoryViewController.swift in Sources */,
 				E8C46AC12732E6CC007680C0 /* UpdateDetailCustomerViewController.swift in Sources */,
 				E8C46AC727330F08007680C0 /* DeleteCompanyViewController.swift in Sources */,
 				E8C46AB92732DCD3007680C0 /* ViewCustomerViewController.swift in Sources */,
@@ -427,7 +461,9 @@
 				E8C46AD927332270007680C0 /* AddCategoryViewController.swift in Sources */,
 				E814C83427322BD700F8E740 /* StockManager.swift in Sources */,
 				E814C82D27322B1B00F8E740 /* CustomerDirectory.swift in Sources */,
+				E8C46ADD2733229B007680C0 /* UpdateCategoryViewController.swift in Sources */,
 				E814C82B27322B0E00F8E740 /* Customer.swift in Sources */,
+				E8C46ADF273322AB007680C0 /* UpdateDetailCategoryViewController.swift in Sources */,
 				E814C83227322BCE00F8E740 /* CompanyManager.swift in Sources */,
 				E814C82927322AFD00F8E740 /* CompanyDirectory.swift in Sources */,
 				E8C46AC527330EF8007680C0 /* UpdateCompanyViewController.swift in Sources */,

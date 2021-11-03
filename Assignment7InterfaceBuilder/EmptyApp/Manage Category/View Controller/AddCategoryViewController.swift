@@ -10,21 +10,40 @@ import UIKit
 
 class AddCategoryViewController: UIViewController {
 
+    @IBOutlet weak var NameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didName(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
-    */
+    
+    @IBAction func CloseWindow(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
+    @IBAction func didTapAddCategory(_ sender: UIButton) {
+        guard let name=NameField.text, !name.isEmpty
+
+        else{
+                  return 
+              }
+        let category = Category(name: name)
+        AppDelegate.GlobalVariable.categorylist.testCategorylist.addCategory(Category: category)
+        dismiss(animated: true, completion: nil)
+
+        
+    }
+    func Alert (){
+        
+        let alertController = UIAlertController(title:"Info",message:"Valid input", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
+    
 }

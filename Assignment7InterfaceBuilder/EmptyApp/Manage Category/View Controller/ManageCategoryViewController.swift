@@ -20,14 +20,33 @@ class ManageCategoryViewController: UIViewController {
     @IBAction func closeWindow(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapAddCate(_ sender: UIButton) {
+        let vc = AddCategoryViewController()
+           self.present(vc, animated: true, completion: nil)
+        
     }
-    */
-
+    
+    @IBAction func didTapViewAll(_ sender: UIButton) {
+        let vc = ViewAllCategoryViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    @IBAction func didTapUpdate(_ sender: UIButton) {
+        let vc = UpdateCategoryViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func didTapDelete(_ sender: UIButton) {
+        let vc = DeleteCategoryViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
 }
