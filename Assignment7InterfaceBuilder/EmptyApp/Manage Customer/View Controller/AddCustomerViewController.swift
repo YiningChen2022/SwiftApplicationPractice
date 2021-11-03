@@ -39,7 +39,7 @@ class AddCustomerViewController: UIViewController {
         else{
                   return
               }
-        let customer = Customer(firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailID: email)
+        let customer = Customer(firstName: fn, lastName: ln, address: addre, contactDetails: contact, emailID: em)
         
         AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
         print(customer.toString())
@@ -47,7 +47,7 @@ class AddCustomerViewController: UIViewController {
         parentWin.removeFromSuperview()
 
         }
-    }
+    
     
     
     

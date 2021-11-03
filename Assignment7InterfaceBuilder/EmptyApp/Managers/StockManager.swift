@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  StockManager.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 11/2/21.
@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+final class StockManager{
+    public let testStocklist = StockDirecrtory(stockList: Array())
+    
+}

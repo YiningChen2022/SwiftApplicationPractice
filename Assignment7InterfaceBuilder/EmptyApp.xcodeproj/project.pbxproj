@@ -28,6 +28,14 @@
 		E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82027322A9D00F8E740 /* StockDirectory.swift */; };
 		E814C82327322AA900F8E740 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82227322AA900F8E740 /* Category.swift */; };
 		E814C82527322AB900F8E740 /* CategoryDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82427322AB900F8E740 /* CategoryDirectory.swift */; };
+		E814C82727322AED00F8E740 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82627322AED00F8E740 /* Company.swift */; };
+		E814C82927322AFD00F8E740 /* CompanyDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82827322AFD00F8E740 /* CompanyDirectory.swift */; };
+		E814C82B27322B0E00F8E740 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82A27322B0E00F8E740 /* Customer.swift */; };
+		E814C82D27322B1B00F8E740 /* CustomerDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82C27322B1B00F8E740 /* CustomerDirectory.swift */; };
+		E814C83027322BC400F8E740 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82F27322BC400F8E740 /* CustomerManager.swift */; };
+		E814C83227322BCE00F8E740 /* CompanyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83127322BCE00F8E740 /* CompanyManager.swift */; };
+		E814C83427322BD700F8E740 /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83327322BD700F8E740 /* StockManager.swift */; };
+		E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83527322BE500F8E740 /* CategoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +64,14 @@
 		E814C82027322A9D00F8E740 /* StockDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
 		E814C82227322AA900F8E740 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E814C82427322AB900F8E740 /* CategoryDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDirectory.swift; sourceTree = "<group>"; };
+		E814C82627322AED00F8E740 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		E814C82827322AFD00F8E740 /* CompanyDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDirectory.swift; sourceTree = "<group>"; };
+		E814C82A27322B0E00F8E740 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		E814C82C27322B1B00F8E740 /* CustomerDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDirectory.swift; sourceTree = "<group>"; };
+		E814C82F27322BC400F8E740 /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
+		E814C83127322BCE00F8E740 /* CompanyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyManager.swift; sourceTree = "<group>"; };
+		E814C83327322BD700F8E740 /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
+		E814C83527322BE500F8E740 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +88,6 @@
 		153402981F939BDA00324E7D = {
 			isa = PBXGroup;
 			children = (
-				E814C81D27322A6600F8E740 /* Models */,
-				E814C8122731F78400F8E740 /* Main Page */,
 				153402A31F939BDA00324E7D /* EmptyApp */,
 				153402A21F939BDA00324E7D /* Products */,
 			);
@@ -90,6 +104,9 @@
 		153402A31F939BDA00324E7D /* EmptyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E814C82E27322BB400F8E740 /* Managers */,
+				E814C8122731F78400F8E740 /* Main Page */,
+				E814C81D27322A6600F8E740 /* Models */,
 				E814C80B2731F66800F8E740 /* Manage Stock */,
 				E814C8082731F63D00F8E740 /* Manage Category */,
 				E814C8012731F47E00F8E740 /* Manage Company */,
@@ -224,8 +241,23 @@
 				E814C82027322A9D00F8E740 /* StockDirectory.swift */,
 				E814C82227322AA900F8E740 /* Category.swift */,
 				E814C82427322AB900F8E740 /* CategoryDirectory.swift */,
+				E814C82627322AED00F8E740 /* Company.swift */,
+				E814C82827322AFD00F8E740 /* CompanyDirectory.swift */,
+				E814C82A27322B0E00F8E740 /* Customer.swift */,
+				E814C82C27322B1B00F8E740 /* CustomerDirectory.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E814C82E27322BB400F8E740 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E814C82F27322BC400F8E740 /* CustomerManager.swift */,
+				E814C83127322BCE00F8E740 /* CompanyManager.swift */,
+				E814C83327322BD700F8E740 /* StockManager.swift */,
+				E814C83527322BE500F8E740 /* CategoryManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,12 +343,20 @@
 				E814C8002731F47700F8E740 /* ManageCompanyViewController.swift in Sources */,
 				E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */,
 				E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */,
+				E814C83027322BC400F8E740 /* CustomerManager.swift in Sources */,
 				E814C7E82731C28F00F8E740 /* ViewController.swift in Sources */,
 				E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */,
+				E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */,
 				E814C8112731F6AE00F8E740 /* ManageStockViewController.swift in Sources */,
 				E814C81C2732259800F8E740 /* AddCustomerViewController.swift in Sources */,
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,
 				E814C81F27322A7C00F8E740 /* Stock.swift in Sources */,
+				E814C83427322BD700F8E740 /* StockManager.swift in Sources */,
+				E814C82D27322B1B00F8E740 /* CustomerDirectory.swift in Sources */,
+				E814C82B27322B0E00F8E740 /* Customer.swift in Sources */,
+				E814C83227322BCE00F8E740 /* CompanyManager.swift in Sources */,
+				E814C82927322AFD00F8E740 /* CompanyDirectory.swift in Sources */,
+				E814C82727322AED00F8E740 /* Company.swift in Sources */,
 				E814C8162731F8CC00F8E740 /* ManageCategoryViewController.swift in Sources */,
 				E814C82327322AA900F8E740 /* Category.swift in Sources */,
 			);
