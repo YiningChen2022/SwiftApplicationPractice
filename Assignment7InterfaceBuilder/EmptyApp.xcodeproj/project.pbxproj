@@ -22,6 +22,12 @@
 		E814C8112731F6AE00F8E740 /* ManageStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C8102731F6AE00F8E740 /* ManageStockViewController.swift */; };
 		E814C8162731F8CC00F8E740 /* ManageCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C8152731F8CC00F8E740 /* ManageCategoryViewController.swift */; };
 		E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E814C8172731F8F700F8E740 /* ManageCategoryView.xib */; };
+		E814C81A2732257B00F8E740 /* AddCustomerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E814C8192732257B00F8E740 /* AddCustomerView.xib */; };
+		E814C81C2732259800F8E740 /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C81B2732259800F8E740 /* AddCustomerViewController.swift */; };
+		E814C81F27322A7C00F8E740 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C81E27322A7C00F8E740 /* Stock.swift */; };
+		E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82027322A9D00F8E740 /* StockDirectory.swift */; };
+		E814C82327322AA900F8E740 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82227322AA900F8E740 /* Category.swift */; };
+		E814C82527322AB900F8E740 /* CategoryDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C82427322AB900F8E740 /* CategoryDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		E814C8142731F78D00F8E740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../ViewController.swift; sourceTree = "<group>"; };
 		E814C8152731F8CC00F8E740 /* ManageCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCategoryViewController.swift; sourceTree = "<group>"; };
 		E814C8172731F8F700F8E740 /* ManageCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageCategoryView.xib; sourceTree = "<group>"; };
+		E814C8192732257B00F8E740 /* AddCustomerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCustomerView.xib; sourceTree = "<group>"; };
+		E814C81B2732259800F8E740 /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
+		E814C81E27322A7C00F8E740 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		E814C82027322A9D00F8E740 /* StockDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
+		E814C82227322AA900F8E740 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E814C82427322AB900F8E740 /* CategoryDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDirectory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 		153402981F939BDA00324E7D = {
 			isa = PBXGroup;
 			children = (
+				E814C81D27322A6600F8E740 /* Models */,
 				E814C8122731F78400F8E740 /* Main Page */,
 				153402A31F939BDA00324E7D /* EmptyApp */,
 				153402A21F939BDA00324E7D /* Products */,
@@ -130,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E814C7FA2731F1CF00F8E740 /* ManageCustomerViewController.swift */,
+				E814C81B2732259800F8E740 /* AddCustomerViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				E814C7FD2731F1F700F8E740 /* ManageCustomerView.xib */,
+				E814C8192732257B00F8E740 /* AddCustomerView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +217,17 @@
 			path = "Main Page";
 			sourceTree = "<group>";
 		};
+		E814C81D27322A6600F8E740 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E814C81E27322A7C00F8E740 /* Stock.swift */,
+				E814C82027322A9D00F8E740 /* StockDirectory.swift */,
+				E814C82227322AA900F8E740 /* Category.swift */,
+				E814C82427322AB900F8E740 /* CategoryDirectory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +290,7 @@
 			files = (
 				E814C8032731F4A800F8E740 /* ManageCompanyView.xib in Resources */,
 				E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */,
+				E814C81A2732257B00F8E740 /* AddCustomerView.xib in Resources */,
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
 				E814C80F2731F69400F8E740 /* ManageStockView.xib in Resources */,
 				E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */,
@@ -279,14 +306,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E814C82527322AB900F8E740 /* CategoryDirectory.swift in Sources */,
 				E814C7F92731F0DF00F8E740 /* CustomButton.swift in Sources */,
 				E814C8002731F47700F8E740 /* ManageCompanyViewController.swift in Sources */,
 				E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */,
 				E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */,
 				E814C7E82731C28F00F8E740 /* ViewController.swift in Sources */,
+				E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */,
 				E814C8112731F6AE00F8E740 /* ManageStockViewController.swift in Sources */,
+				E814C81C2732259800F8E740 /* AddCustomerViewController.swift in Sources */,
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,
+				E814C81F27322A7C00F8E740 /* Stock.swift in Sources */,
 				E814C8162731F8CC00F8E740 /* ManageCategoryViewController.swift in Sources */,
+				E814C82327322AA900F8E740 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

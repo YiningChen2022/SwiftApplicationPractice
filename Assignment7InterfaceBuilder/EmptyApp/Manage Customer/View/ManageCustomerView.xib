@@ -40,18 +40,27 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Update Customer"/>
+                    <connections>
+                        <action selector="DidTapUpdateCustomer:" destination="-1" eventType="touchUpInside" id="fY1-Rp-lDW"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWu-Lu-u28">
                     <rect key="frame" x="93" y="283" width="201" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Delete Customer"/>
+                    <connections>
+                        <action selector="DIdTapDeleteCustomer:" destination="-1" eventType="touchUpInside" id="FPw-do-4eZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0f-jA-dgb">
                     <rect key="frame" x="93" y="345" width="201" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="View All Customer"/>
+                    <connections>
+                        <action selector="DidTapViewAllCustomer:" destination="-1" eventType="touchUpInside" id="rON-lb-56E"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qud-uC-omt">
                     <rect key="frame" x="151" y="419" width="85" height="31"/>

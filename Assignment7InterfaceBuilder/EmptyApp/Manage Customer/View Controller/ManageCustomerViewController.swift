@@ -24,10 +24,20 @@ class ManageCustomerViewController: UIViewController {
     
     
     @IBAction func DidTapAddCustomer(_ sender: UIButton) {
-        
+        let vc = AddCustomerViewController()
+           self.present(vc, animated: true, completion: nil)
         
     }
     
     
-
+    @IBAction func DidTapUpdateCustomer(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func DIdTapDeleteCustomer(_ sender: UIButton) {
+    }
+    
+    @IBAction func DidTapViewAllCustomer(_ sender: UIButton) {
+    }
+    
 }
