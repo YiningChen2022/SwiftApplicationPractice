@@ -20,14 +20,32 @@ class ManageCompanyViewController: UIViewController {
     @IBAction func closeWindow(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+    @IBAction func didTapAddComp(_ sender: UIButton) {
+        let vc = AddCompanyViewController()
+           self.present(vc, animated: true, completion: nil)
+        
     }
-    */
-
+    
+    
+    @IBAction func didTapUpdateCom(_ sender: UIButton) {
+        let vc = UpdateCompanyViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func didTapDeleteComp(_ sender: UIButton) {
+        let vc = DeleteCompanyViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func didTapViewAll(_ sender: UIButton) {
+        let vc = ViewAllCompanyViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    
 }

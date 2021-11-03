@@ -56,10 +56,10 @@ class AddCustomerViewController: UIViewController {
         guard let em=email.text, !em.isEmpty,
               let fn=firstName.text, !fn.isEmpty,
               let ln=lastName.text, !ln.isEmpty,
-              let contact=contactDetail.text,!contact.isEmpty,
+              let contact=contactDetail.text,!contact.isEmpty, Int(contact) != nil,
               let addre = Address.text,!addre.isEmpty
         else{
-                  return
+                  return Alert()
               }
         let customer = Customer(firstName: fn, lastName: ln, address: addre, contactDetails: contact, emailID: em)
         
@@ -69,7 +69,13 @@ class AddCustomerViewController: UIViewController {
         }
   
     
-    
+    func Alert (){
+        
+        let alertController = UIAlertController(title:"Info",message:"Valid input", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
     
 
     @IBAction func CloseWindow(_ sender: UIButton) {

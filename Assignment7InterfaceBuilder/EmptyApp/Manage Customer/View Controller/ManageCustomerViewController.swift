@@ -31,13 +31,20 @@ class ManageCustomerViewController: UIViewController {
     
     
     @IBAction func DidTapUpdateCustomer(_ sender: UIButton) {
+        let vc = UpdateCustomerViewController()
+           self.present(vc, animated: true, completion: nil)
     }
     
     
     @IBAction func DIdTapDeleteCustomer(_ sender: UIButton) {
+        let vc = DeleteCustomerViewController()
+           self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func DidTapViewAllCustomer(_ sender: UIButton) {
+        
+        let vc = ViewCustomerViewController()
+           self.present(vc, animated: true, completion: nil)
     }
     
 }
