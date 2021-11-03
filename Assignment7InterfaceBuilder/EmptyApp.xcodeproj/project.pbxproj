@@ -54,6 +54,7 @@
 		E8C46AD327330F75007680C0 /* UpdateDetailCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AD227330F75007680C0 /* UpdateDetailCompanyView.xib */; };
 		E8C46AD527330F88007680C0 /* DeleteCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AD427330F88007680C0 /* DeleteCompanyView.xib */; };
 		E8C46AD727330F98007680C0 /* ViewAllCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AD627330F98007680C0 /* ViewAllCompanyView.xib */; };
+		E8C46AD927332270007680C0 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46AD827332270007680C0 /* AddCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		E8C46AD227330F75007680C0 /* UpdateDetailCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDetailCompanyView.xib; sourceTree = "<group>"; };
 		E8C46AD427330F88007680C0 /* DeleteCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteCompanyView.xib; sourceTree = "<group>"; };
 		E8C46AD627330F98007680C0 /* ViewAllCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllCompanyView.xib; sourceTree = "<group>"; };
+		E8C46AD827332270007680C0 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				E814C8152731F8CC00F8E740 /* ManageCategoryViewController.swift */,
+				E8C46AD827332270007680C0 /* AddCategoryViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,
 				E814C81F27322A7C00F8E740 /* Stock.swift in Sources */,
 				E8C46AC327330EE0007680C0 /* AddCompanyViewController.swift in Sources */,
+				E8C46AD927332270007680C0 /* AddCategoryViewController.swift in Sources */,
 				E814C83427322BD700F8E740 /* StockManager.swift in Sources */,
 				E814C82D27322B1B00F8E740 /* CustomerDirectory.swift in Sources */,
 				E814C82B27322B0E00F8E740 /* Customer.swift in Sources */,

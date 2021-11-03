@@ -60,9 +60,7 @@ class UpdateDetailCustomerViewController: UIViewController {
         }
 
      
-    
         AppDelegate.GlobalVariable.customerlist.testcustomerlist.UpdateCustomer(id: AppDelegate.GlobalVariable.selected, firstName: firstName, lastName: lastName, address: address, contactDetails: contact, emailId: email)
-
         let vc = ManageCustomerViewController()
            self.present(vc, animated: true, completion: nil)
         
