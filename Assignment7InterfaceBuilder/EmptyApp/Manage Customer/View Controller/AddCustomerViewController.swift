@@ -25,7 +25,9 @@ class AddCustomerViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
+              view.addGestureRecognizer(tapGesture)
+   
         // Do any additional setup after loading the view.
     }
     
@@ -43,18 +45,19 @@ class AddCustomerViewController: UIViewController {
         
         AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
         print(customer.toString())
-        let parentWin:UIView = sender.superview!;
-        parentWin.removeFromSuperview()
-
+        dismiss(animated: true, completion: nil)
         }
     
     
     
-    
-    
-    
-    
-    
+    func tap(gesture: UITapGestureRecognizer) {
+        email.resignFirstResponder()
+        contactDetail.resignFirstResponder()
+        Address.resignFirstResponder()
+        firstName.resignFirstResponder()
+        lastName.resignFirstResponder()
+    }
+
     @IBAction func CloseWindow(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
