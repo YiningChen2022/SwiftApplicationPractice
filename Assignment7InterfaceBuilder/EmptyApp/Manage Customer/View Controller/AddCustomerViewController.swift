@@ -25,13 +25,33 @@ class AddCustomerViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
-              view.addGestureRecognizer(tapGesture)
-   
-        // Do any additional setup after loading the view.
+        
+ 
     }
     
-
+    @IBAction func Done(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    
+    @IBAction func LastNameDone(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    
+    @IBAction func AddressDone(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func ContactDone(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    
+    @IBAction func EmailDone(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
     @IBAction func DidTapAddCustomer(_ sender: UIButton) {
         guard let em=email.text, !em.isEmpty,
               let fn=firstName.text, !fn.isEmpty,
@@ -47,16 +67,10 @@ class AddCustomerViewController: UIViewController {
         print(customer.toString())
         dismiss(animated: true, completion: nil)
         }
+  
     
     
     
-    func tap(gesture: UITapGestureRecognizer) {
-        email.resignFirstResponder()
-        contactDetail.resignFirstResponder()
-        Address.resignFirstResponder()
-        firstName.resignFirstResponder()
-        lastName.resignFirstResponder()
-    }
 
     @IBAction func CloseWindow(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
