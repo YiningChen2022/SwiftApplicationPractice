@@ -8,7 +8,8 @@
 
 import UIKit
 
-class UpdateDetailStockViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UpdateDetailStockViewController: UIViewController{
+//UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var nameField: UITextField!
     
