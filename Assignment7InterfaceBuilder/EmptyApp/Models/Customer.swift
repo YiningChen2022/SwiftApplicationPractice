@@ -19,6 +19,8 @@ class Customer {
     var address: String
     var contactDetails: String
     var  emailID: String
+    var TotalInvestment:Double=0
+    var TotalEarning:Double=0
     init(  firstName : String, lastName: String, address: String, contactDetails: String,emailID: String) {
         self.id=Customer.generateUid()
         self.firstName=firstName
@@ -30,6 +32,7 @@ class Customer {
     public func getid()->Int{
         return id
     }
+    
     public func getFirstName()->String {
         return firstName
     }
@@ -60,7 +63,20 @@ class Customer {
     public func setEmailID(emailID :String){
         self.emailID=emailID
     }
+    public func getTotalInvestment()->Double{
+        return TotalInvestment
+    }
+    public func setTotalInvestment(investment:Double){
+        self.TotalInvestment+=investment
+    }
+    public func getTotalEarning()->Double{
+        return TotalEarning
+    }
+    public func setTotalEarning(Earning:Double){
+        self.TotalEarning+=Earning
+    }
     public func toString ()->String{
         return "\(id) \(firstName) \(lastName) \(contactDetails) \(address) \(emailID) "
     }
+    
 }

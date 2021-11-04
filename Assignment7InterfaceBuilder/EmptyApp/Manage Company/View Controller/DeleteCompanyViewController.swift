@@ -10,12 +10,15 @@ import UIKit
 
 class DeleteCompanyViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
 
+  
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "AnimalCell")
         tableView.dataSource = self
         tableView.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -52,7 +55,6 @@ class DeleteCompanyViewController: UIViewController,UITableViewDelegate, UITable
            
        }
  
-    @IBOutlet weak var tableView: UITableView!
     @IBAction func CloseWindow(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
