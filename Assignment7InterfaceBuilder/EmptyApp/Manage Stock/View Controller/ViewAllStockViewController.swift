@@ -63,10 +63,7 @@ class ViewAllStockViewController: UIViewController,UITableViewDelegate, UITableV
     
     
     
-    
-    
-    
-    
+
     
     
     
