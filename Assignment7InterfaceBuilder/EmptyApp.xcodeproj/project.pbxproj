@@ -45,6 +45,8 @@
 		E860036F2734827600C3AC00 /* SearchByLastTradePriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860036E2734827600C3AC00 /* SearchByLastTradePriceViewController.swift */; };
 		E86003712734829A00C3AC00 /* SearchByFinancialRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86003702734829A00C3AC00 /* SearchByFinancialRatingView.xib */; };
 		E8600373273482B700C3AC00 /* SearchByLastTradePriceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8600372273482B700C3AC00 /* SearchByLastTradePriceView.xib */; };
+		E8600375273484EE00C3AC00 /* CompanySelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8600374273484EE00C3AC00 /* CompanySelectedViewController.swift */; };
+		E86003772734850000C3AC00 /* CompanySelectedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86003762734850000C3AC00 /* CompanySelectedView.xib */; };
 		E8852D1F273437730081E8EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C8132731F78B00F8E740 /* ViewController.swift */; };
 		E8852D21273438030081E8EA /* DeleteCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8852D20273438030081E8EA /* DeleteCompanyView.xib */; };
 		E8C46AB32732DC96007680C0 /* UpdateCustomerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C46AB22732DC96007680C0 /* UpdateCustomerView.xib */; };
@@ -128,6 +130,8 @@
 		E860036E2734827600C3AC00 /* SearchByLastTradePriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLastTradePriceViewController.swift; sourceTree = "<group>"; };
 		E86003702734829A00C3AC00 /* SearchByFinancialRatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchByFinancialRatingView.xib; path = "EmptyApp/Manage Stock/SearchViewController/SearchByFinancialRatingView.xib"; sourceTree = SOURCE_ROOT; };
 		E8600372273482B700C3AC00 /* SearchByLastTradePriceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByLastTradePriceView.xib; sourceTree = "<group>"; };
+		E8600374273484EE00C3AC00 /* CompanySelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectedViewController.swift; sourceTree = "<group>"; };
+		E86003762734850000C3AC00 /* CompanySelectedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CompanySelectedView.xib; path = "EmptyApp/Manage Stock/SearchViewController/CompanySelectedView.xib"; sourceTree = SOURCE_ROOT; };
 		E8852D20273438030081E8EA /* DeleteCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteCompanyView.xib; sourceTree = "<group>"; };
 		E8C46AB22732DC96007680C0 /* UpdateCustomerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateCustomerView.xib; sourceTree = "<group>"; };
 		E8C46AB42732DCB0007680C0 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 				E860035C27347ED400C3AC00 /* SearchByNameView.xib */,
 				E86003702734829A00C3AC00 /* SearchByFinancialRatingView.xib */,
 				E8600372273482B700C3AC00 /* SearchByLastTradePriceView.xib */,
+				E86003762734850000C3AC00 /* CompanySelectedView.xib */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				E860036827347F5300C3AC00 /* SearchByNameViewController.swift */,
 				E860036C2734826300C3AC00 /* SearchByFinancialRatingViewController.swift */,
 				E860036E2734827600C3AC00 /* SearchByLastTradePriceViewController.swift */,
+				E8600374273484EE00C3AC00 /* CompanySelectedViewController.swift */,
 			);
 			path = SearchViewController;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
 				E8C46AD727330F98007680C0 /* ViewAllCompanyView.xib in Resources */,
 				E86003712734829A00C3AC00 /* SearchByFinancialRatingView.xib in Resources */,
+				E86003772734850000C3AC00 /* CompanySelectedView.xib in Resources */,
 				E8C46AE5273322E8007680C0 /* DeleteCategoryView.xib in Resources */,
 				E814C80F2731F69400F8E740 /* ManageStockView.xib in Resources */,
 				E814C7FE2731F1F700F8E740 /* ManageCustomerView.xib in Resources */,
@@ -543,6 +550,7 @@
 				E8C46B062733306A007680C0 /* UpdateDetailStockViewController.swift in Sources */,
 				E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */,
 				E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */,
+				E8600375273484EE00C3AC00 /* CompanySelectedViewController.swift in Sources */,
 				E8C46AB52732DCB0007680C0 /* UpdateCustomerViewController.swift in Sources */,
 				E814C8112731F6AE00F8E740 /* ManageStockViewController.swift in Sources */,
 				E814C81C2732259800F8E740 /* AddCustomerViewController.swift in Sources */,

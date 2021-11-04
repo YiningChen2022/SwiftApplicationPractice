@@ -26,10 +26,19 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vP-sq-AuU">
+                    <rect key="frame" x="161" y="383" width="131" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Close"/>
+                    <connections>
+                        <action selector="CloseWindow:" destination="-1" eventType="touchUpInside" id="4vS-DR-nmD"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="133" y="88"/>
+            <point key="canvasLocation" x="131.8840579710145" y="87.723214285714278"/>
         </view>
     </objects>
     <resources>
