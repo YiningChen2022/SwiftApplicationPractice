@@ -208,7 +208,6 @@ private let AddButton: UIButton = {
         }else{
             let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
             selectedCategoryid=Int(selected.split(separator: " ")[0])!
-            
         }
     
     }

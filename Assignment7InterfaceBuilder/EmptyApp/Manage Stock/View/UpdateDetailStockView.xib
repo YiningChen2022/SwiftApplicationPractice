@@ -14,6 +14,8 @@
                 <outlet property="Ratingfield" destination="rOd-Bb-bJu" id="2c5-xQ-9D3"/>
                 <outlet property="lasttradefield" destination="NDc-oJ-RsP" id="qY1-Rs-3XG"/>
                 <outlet property="nameField" destination="Jx7-Us-vLX" id="bn4-fG-bb6"/>
+                <outlet property="tableView1" destination="tgN-9G-nED" id="Lf1-Jm-c9y"/>
+                <outlet property="tableView2" destination="kL9-T2-rSR" id="h6K-p4-UZM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ET0-VT-U2T"/>
             </connections>
         </placeholder>
@@ -100,6 +102,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Update Stock"/>
+                    <connections>
+                        <action selector="didTapUpdate:" destination="-1" eventType="touchUpInside" id="tT0-UP-PIV"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuM-vQ-0bP">
                     <rect key="frame" x="148" y="668" width="100" height="31"/>

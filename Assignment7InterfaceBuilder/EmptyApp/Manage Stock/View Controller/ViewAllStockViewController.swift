@@ -34,5 +34,40 @@ class ViewAllStockViewController: UIViewController,UITableViewDelegate, UITableV
         dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func didtapsearchComp(_ sender: UIButton) {
+        let vc = SearchByCompanyViewController()
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func didtapsearchcate(_ sender: UIButton) {
+        let vc = SearchByCategoryViewController()
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func didtapseachlastrade(_ sender: UIButton) {
+        let vc = SearchByLastTradePriceViewController()
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didtapsearchname(_ sender: UIButton) {
+        let vc = SearchByNameViewController()
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didtapsearchfinancial(_ sender: UIButton) {
+        let vc = SearchByFinancialRatingViewController()
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
