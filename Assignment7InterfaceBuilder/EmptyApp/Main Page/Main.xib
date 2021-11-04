@@ -50,13 +50,13 @@
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="j4I-t2-akb"/>
                             <barButtonItem title="Category" id="ash-mi-72b">
                                 <connections>
-                                    <action selector="didTapCategory:" destination="Xlw-lc-eef" id="r1L-7x-Iq8"/>
+                                    <action selector="didTapCategory:" destination="Xlw-lc-eef" id="ZBd-aE-bgp"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="9Wg-VC-dPY"/>
                             <barButtonItem title="Stock" id="HHV-Be-UC4">
                                 <connections>
-                                    <action selector="didTapStock:" destination="Xlw-lc-eef" id="hNo-ec-D44"/>
+                                    <action selector="didTapStock:" destination="Xlw-lc-eef" id="nbT-eD-2eV"/>
                                 </connections>
                             </barButtonItem>
                         </items>

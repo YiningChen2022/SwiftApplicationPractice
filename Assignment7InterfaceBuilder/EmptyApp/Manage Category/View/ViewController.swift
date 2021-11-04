@@ -49,4 +49,16 @@ class ViewController: UIViewController{
     }
     
     
+    @IBAction func didTapCategory(_ sender: UIBarButtonItem) {
+        let vc = ManageCategoryViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func didTapStock(_ sender: UIBarButtonItem) {
+        let vc = ManageStockViewController()
+           self.present(vc, animated: true, completion: nil)
+    }
+    
+    
 }
