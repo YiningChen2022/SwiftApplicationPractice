@@ -21,8 +21,21 @@ class ViewCustomerViewController: UIViewController,UITableViewDelegate,UITableVi
        cell.textLabel?.text = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
           return (cell)
       }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+         let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+        let id=Int(selected.split(separator: " ")[0])!
+        AppDelegate.GlobalVariable.selectedOrderid=id
+        DispatchQueue.main.async {
+         let vc = OrderViewController()
+            self.present(vc, animated: true, completion: nil)
+        }
+       
+        
+    }
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

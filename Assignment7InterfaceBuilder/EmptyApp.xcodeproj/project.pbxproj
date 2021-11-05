@@ -35,6 +35,8 @@
 		E814C83227322BCE00F8E740 /* CompanyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83127322BCE00F8E740 /* CompanyManager.swift */; };
 		E814C83427322BD700F8E740 /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83327322BD700F8E740 /* StockManager.swift */; };
 		E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83527322BE500F8E740 /* CategoryManager.swift */; };
+		E85638CA2735B4380039649E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85638C92735B4380039649E /* OrderViewController.swift */; };
+		E85638CC2735B4490039649E /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85638CB2735B4490039649E /* OrderView.xib */; };
 		E860035927347EAA00C3AC00 /* SearchByCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E860035827347EAA00C3AC00 /* SearchByCompanyView.xib */; };
 		E860035B27347EC500C3AC00 /* SearchByCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E860035A27347EC500C3AC00 /* SearchByCategoryView.xib */; };
 		E860036327347F1400C3AC00 /* SearchByCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860036227347F1400C3AC00 /* SearchByCompanyViewController.swift */; };
@@ -126,6 +128,8 @@
 		E814C83127322BCE00F8E740 /* CompanyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyManager.swift; sourceTree = "<group>"; };
 		E814C83327322BD700F8E740 /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
 		E814C83527322BE500F8E740 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
+		E85638C92735B4380039649E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		E85638CB2735B4490039649E /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		E860035827347EAA00C3AC00 /* SearchByCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByCompanyView.xib; sourceTree = "<group>"; };
 		E860035A27347EC500C3AC00 /* SearchByCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByCategoryView.xib; sourceTree = "<group>"; };
 		E860036227347F1400C3AC00 /* SearchByCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCompanyViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 		153402A31F939BDA00324E7D /* EmptyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E85638C62735B3950039649E /* ManageOrder */,
 				E814C82E27322BB400F8E740 /* Managers */,
 				E814C8122731F78400F8E740 /* Main Page */,
 				E814C81D27322A6600F8E740 /* Models */,
@@ -412,6 +417,31 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		E85638C62735B3950039649E /* ManageOrder */ = {
+			isa = PBXGroup;
+			children = (
+				E85638C82735B40E0039649E /* ViewController */,
+				E85638C72735B4080039649E /* View */,
+			);
+			path = ManageOrder;
+			sourceTree = "<group>";
+		};
+		E85638C72735B4080039649E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E85638CB2735B4490039649E /* OrderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E85638C82735B40E0039649E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E85638C92735B4380039649E /* OrderViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		E860035627347E4000C3AC00 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +538,7 @@
 				E8C46AF927333001007680C0 /* UpdateStockView.xib in Resources */,
 				E814C81A2732257B00F8E740 /* AddCustomerView.xib in Resources */,
 				E8C46AB32732DC96007680C0 /* UpdateCustomerView.xib in Resources */,
+				E85638CC2735B4490039649E /* OrderView.xib in Resources */,
 				E860037927348A2E00C3AC00 /* CategorySelectedView.xib in Resources */,
 				E8C46AEF27332531007680C0 /* ViewAllCategoryView.xib in Resources */,
 				E860035B27347EC500C3AC00 /* SearchByCategoryView.xib in Resources */,
@@ -559,6 +590,7 @@
 				E8C46AB92732DCD3007680C0 /* ViewCustomerViewController.swift in Sources */,
 				E860036D2734826300C3AC00 /* SearchByFinancialRatingViewController.swift in Sources */,
 				E814C8002731F47700F8E740 /* ManageCompanyViewController.swift in Sources */,
+				E85638CA2735B4380039649E /* OrderViewController.swift in Sources */,
 				E8C46AC927330F17007680C0 /* ViewAllCompanyViewController.swift in Sources */,
 				E8C46AFF27333032007680C0 /* AddStockViewController.swift in Sources */,
 				E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */,

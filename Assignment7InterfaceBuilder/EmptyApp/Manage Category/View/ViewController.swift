@@ -18,7 +18,7 @@ class ViewController: UIViewController{
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        welcomeLabel.text="change"
+            //welcomeLabel.text="change"
         
     }
     override func didReceiveMemoryWarning() {
@@ -27,10 +27,13 @@ class ViewController: UIViewController{
     @IBAction func OpenButtonPressed(_ sender: UIButton) {
         
         
-        let alertController = UIAlertController(title:"Info",message:"button clicked", preferredStyle:  .alert)
+       /* let alertController = UIAlertController(title:"Info",message:"button clicked", preferredStyle:  .alert)
         let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
+        */
+        let vc = ViewCustomerViewController()
+           self.present(vc, animated: true, completion: nil)
         
    
     }
@@ -58,11 +61,5 @@ class ViewController: UIViewController{
            self.present(vc, animated: true, completion: nil)
     }
     
-    
-    @IBAction func didTapCreateOrder(_ sender: UIButton) {
-        
-        
-    }
-    
-    
+
 }
