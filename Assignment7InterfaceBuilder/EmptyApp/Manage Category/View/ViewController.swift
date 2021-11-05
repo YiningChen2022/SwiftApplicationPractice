@@ -32,9 +32,7 @@ class ViewController: UIViewController{
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
         
-     /*   let vc=DetailViewController(nibName: "DetailView", bundle: nil)
-        vc.modalTransitionStyle = .flipHorizontal
-        self.present(vc,animated: true,completion: nil)*/
+   
     }
     
     @IBAction func didTapCompany(_ sender: UIBarButtonItem) {
@@ -58,6 +56,12 @@ class ViewController: UIViewController{
     @IBAction func didTapStock(_ sender: UIBarButtonItem) {
         let vc = ManageStockViewController()
            self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func didTapCreateOrder(_ sender: UIButton) {
+        
+        
     }
     
     
