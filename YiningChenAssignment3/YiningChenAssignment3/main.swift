@@ -122,17 +122,6 @@ let name: String? = readLine()
 let num=Int(name!)
 
 
-if num != nil{
-   print("Welcome Code Name \(num!)")
-}else if 
-    print("Welcome Anonymous User")
-}else if num != nil{
-    print("Welcome Code Name \(num!)")
-}else{
-    print("Welcome \(name!)")
-}
-
-
 //Exercise: Swift Extension
 //Create a function called ‘calculate’ as an extension of Int data type.
 //‘calculate’ should return the square of an integer and the sum of all numbers from 1 to that number (inclusive)
@@ -167,12 +156,20 @@ print(someint2)
 
 
 protocol Vehicle {
-    static func Model()
-    static func Color()
+     func Model()
+     func Color()
     
 }
 class Car : Vehicle{
-    static func Model(){}
-    static func Color(){}
-    
+     func Model(){
+         print("Model")
+     }
+     func Color(){
+         print("color")
+     }
+
 }
+var a=Car()
+print(a.Model())
+
+

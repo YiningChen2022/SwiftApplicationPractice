@@ -35,8 +35,14 @@
 		E814C83227322BCE00F8E740 /* CompanyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83127322BCE00F8E740 /* CompanyManager.swift */; };
 		E814C83427322BD700F8E740 /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83327322BD700F8E740 /* StockManager.swift */; };
 		E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E814C83527322BE500F8E740 /* CategoryManager.swift */; };
+		E82A4B832735FC4800360953 /* PlaceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A4B822735FC4800360953 /* PlaceOrderViewController.swift */; };
+		E82A4B852735FC6900360953 /* DeleteOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A4B842735FC6900360953 /* DeleteOrderViewController.swift */; };
+		E82A4B872735FC7A00360953 /* ViewAllOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A4B862735FC7A00360953 /* ViewAllOrderViewController.swift */; };
+		E82A4B892735FC9300360953 /* DeleteOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82A4B882735FC9300360953 /* DeleteOrderView.xib */; };
+		E82A4B8B2735FCA900360953 /* ViewAllOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82A4B8A2735FCA900360953 /* ViewAllOrderView.xib */; };
 		E85638CA2735B4380039649E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85638C92735B4380039649E /* OrderViewController.swift */; };
 		E85638CC2735B4490039649E /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85638CB2735B4490039649E /* OrderView.xib */; };
+		E85B12DA27360159000B0F25 /* PlaceOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85B12D927360159000B0F25 /* PlaceOrderView.xib */; };
 		E860035927347EAA00C3AC00 /* SearchByCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E860035827347EAA00C3AC00 /* SearchByCompanyView.xib */; };
 		E860035B27347EC500C3AC00 /* SearchByCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E860035A27347EC500C3AC00 /* SearchByCategoryView.xib */; };
 		E860036327347F1400C3AC00 /* SearchByCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860036227347F1400C3AC00 /* SearchByCompanyViewController.swift */; };
@@ -128,8 +134,14 @@
 		E814C83127322BCE00F8E740 /* CompanyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyManager.swift; sourceTree = "<group>"; };
 		E814C83327322BD700F8E740 /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
 		E814C83527322BE500F8E740 /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
+		E82A4B822735FC4800360953 /* PlaceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewController.swift; sourceTree = "<group>"; };
+		E82A4B842735FC6900360953 /* DeleteOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteOrderViewController.swift; sourceTree = "<group>"; };
+		E82A4B862735FC7A00360953 /* ViewAllOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllOrderViewController.swift; sourceTree = "<group>"; };
+		E82A4B882735FC9300360953 /* DeleteOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteOrderView.xib; sourceTree = "<group>"; };
+		E82A4B8A2735FCA900360953 /* ViewAllOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllOrderView.xib; sourceTree = "<group>"; };
 		E85638C92735B4380039649E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		E85638CB2735B4490039649E /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
+		E85B12D927360159000B0F25 /* PlaceOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceOrderView.xib; sourceTree = "<group>"; };
 		E860035827347EAA00C3AC00 /* SearchByCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByCompanyView.xib; sourceTree = "<group>"; };
 		E860035A27347EC500C3AC00 /* SearchByCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByCategoryView.xib; sourceTree = "<group>"; };
 		E860036227347F1400C3AC00 /* SearchByCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCompanyViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +442,9 @@
 			isa = PBXGroup;
 			children = (
 				E85638CB2735B4490039649E /* OrderView.xib */,
+				E82A4B882735FC9300360953 /* DeleteOrderView.xib */,
+				E82A4B8A2735FCA900360953 /* ViewAllOrderView.xib */,
+				E85B12D927360159000B0F25 /* PlaceOrderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +453,9 @@
 			isa = PBXGroup;
 			children = (
 				E85638C92735B4380039649E /* OrderViewController.swift */,
+				E82A4B822735FC4800360953 /* PlaceOrderViewController.swift */,
+				E82A4B842735FC6900360953 /* DeleteOrderViewController.swift */,
+				E82A4B862735FC7A00360953 /* ViewAllOrderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -544,6 +562,7 @@
 				E860035B27347EC500C3AC00 /* SearchByCategoryView.xib in Resources */,
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
 				E8C46AD727330F98007680C0 /* ViewAllCompanyView.xib in Resources */,
+				E82A4B8B2735FCA900360953 /* ViewAllOrderView.xib in Resources */,
 				E86003712734829A00C3AC00 /* SearchByFinancialRatingView.xib in Resources */,
 				E86003772734850000C3AC00 /* CompanySelectedView.xib in Resources */,
 				E8C46AE5273322E8007680C0 /* DeleteCategoryView.xib in Resources */,
@@ -560,9 +579,11 @@
 				E8C46AE7273322F8007680C0 /* UpdateCategoryView.xib in Resources */,
 				E8C46AF527332FE2007680C0 /* AddStockView.xib in Resources */,
 				E8C46AE3273322D0007680C0 /* AddCategoryView.xib in Resources */,
+				E85B12DA27360159000B0F25 /* PlaceOrderView.xib in Resources */,
 				E8C46AFB27333011007680C0 /* ViewAllStockView.xib in Resources */,
 				E8C46ACF27330F4D007680C0 /* AddCompanyView.xib in Resources */,
 				E8C46ABB2732E2DB007680C0 /* DeleteCustomerView.xib in Resources */,
+				E82A4B892735FC9300360953 /* DeleteOrderView.xib in Resources */,
 				153402AC1F939BDB00324E7D /* Assets.xcassets in Resources */,
 				E8852D21273438030081E8EA /* DeleteCompanyView.xib in Resources */,
 			);
@@ -608,10 +629,12 @@
 				E860038427349CED00C3AC00 /* OrderDirectory.swift in Sources */,
 				E860036327347F1400C3AC00 /* SearchByCompanyViewController.swift in Sources */,
 				E860038A27349F4D00C3AC00 /* SellStockDirectory.swift in Sources */,
+				E82A4B832735FC4800360953 /* PlaceOrderViewController.swift in Sources */,
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,
 				E814C81F27322A7C00F8E740 /* Stock.swift in Sources */,
 				E8C46AC327330EE0007680C0 /* AddCompanyViewController.swift in Sources */,
 				E8C46AD927332270007680C0 /* AddCategoryViewController.swift in Sources */,
+				E82A4B872735FC7A00360953 /* ViewAllOrderViewController.swift in Sources */,
 				E814C83427322BD700F8E740 /* StockManager.swift in Sources */,
 				E814C82D27322B1B00F8E740 /* CustomerDirectory.swift in Sources */,
 				E8C46ADD2733229B007680C0 /* UpdateCategoryViewController.swift in Sources */,
@@ -624,6 +647,7 @@
 				E8C46B0827333084007680C0 /* ViewAllStockViewController.swift in Sources */,
 				E8C46ABD2732E2EC007680C0 /* DeleteCustomerViewController.swift in Sources */,
 				E860038827349E1300C3AC00 /* SellStock.swift in Sources */,
+				E82A4B852735FC6900360953 /* DeleteOrderViewController.swift in Sources */,
 				E814C8162731F8CC00F8E740 /* ManageCategoryViewController.swift in Sources */,
 				E814C82327322AA900F8E740 /* Category.swift in Sources */,
 				E860037D27348F1500C3AC00 /* SearchByNameViewController.swift in Sources */,
