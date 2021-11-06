@@ -18,12 +18,23 @@ class OrderViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func didTapViewOrder(_ sender: UIButton) {
+    }
     
     @IBAction func closeWindow(_ sender: UIButton) {
         
-        
+        dismiss(animated: true, completion: nil)
         
     }
+    
+    @IBAction func didTapDeleteOrder(_ sender: UIButton) {
+    }
+    
+    @IBAction func didTapPlaceOrder(_ sender: UIButton) {
+    }
+    
+    
+    
     
     
     
