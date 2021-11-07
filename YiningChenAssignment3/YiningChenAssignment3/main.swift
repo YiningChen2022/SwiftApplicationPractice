@@ -17,7 +17,6 @@ func getBMI (weight: Int, height: Int)->Double{
     let wightd=Double (weight)
     let heightd=Double (height)
     let BMI=(wightd/heightd/heightd)*10000
-
     return BMI
 }
 print(getBMI(weight: 50,height: 165))

@@ -19,6 +19,8 @@ class OrderViewController: UIViewController {
     }
     
     @IBAction func didTapViewOrder(_ sender: UIButton) {
+        let vc = ViewAllOrderViewController()
+           self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func closeWindow(_ sender: UIButton) {
@@ -28,9 +30,13 @@ class OrderViewController: UIViewController {
     }
     
     @IBAction func didTapDeleteOrder(_ sender: UIButton) {
+        let vc = DeleteOrderViewController()
+           self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func didTapPlaceOrder(_ sender: UIButton) {
+        let vc = PlaceOrderViewController()
+           self.present(vc, animated: true, completion: nil)
     }
     
     
