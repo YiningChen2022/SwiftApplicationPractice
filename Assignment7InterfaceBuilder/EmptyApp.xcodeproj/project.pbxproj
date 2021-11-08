@@ -105,6 +105,7 @@
 		E8E55A9D2739B3AD008201E4 /* ViewOwnedStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55A9C2739B3AD008201E4 /* ViewOwnedStocksViewController.swift */; };
 		E8E55A9F2739BB65008201E4 /* SellStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55A9E2739BB65008201E4 /* SellStockView.xib */; };
 		E8E55AA12739BB76008201E4 /* SellStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA02739BB76008201E4 /* SellStockViewController.swift */; };
+		E8E55AA32739DA89008201E4 /* SellStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA22739DA89008201E4 /* SellStockManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,6 +209,7 @@
 		E8E55A9C2739B3AD008201E4 /* ViewOwnedStocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnedStocksViewController.swift; sourceTree = "<group>"; };
 		E8E55A9E2739BB65008201E4 /* SellStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellStockView.xib; sourceTree = "<group>"; };
 		E8E55AA02739BB76008201E4 /* SellStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockViewController.swift; sourceTree = "<group>"; };
+		E8E55AA22739DA89008201E4 /* SellStockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +438,7 @@
 				E814C83327322BD700F8E740 /* StockManager.swift */,
 				E814C83527322BE500F8E740 /* CategoryManager.swift */,
 				E8E55A9827399913008201E4 /* OrderManager.swift */,
+				E8E55AA22739DA89008201E4 /* SellStockManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				E814C8112731F6AE00F8E740 /* ManageStockViewController.swift in Sources */,
 				E814C81C2732259800F8E740 /* AddCustomerViewController.swift in Sources */,
 				E860038427349CED00C3AC00 /* OrderDirectory.swift in Sources */,
+				E8E55AA32739DA89008201E4 /* SellStockManager.swift in Sources */,
 				E860036327347F1400C3AC00 /* SearchByCompanyViewController.swift in Sources */,
 				E860038A27349F4D00C3AC00 /* SellStockDirectory.swift in Sources */,
 				E82A4B832735FC4800360953 /* PlaceOrderViewController.swift in Sources */,

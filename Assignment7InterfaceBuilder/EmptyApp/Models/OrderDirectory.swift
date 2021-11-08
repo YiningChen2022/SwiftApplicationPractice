@@ -30,7 +30,7 @@ class OrderDirecrtory {
             if value.orderid==id {
                 let price=value.stock.getlastTradePrice()
                 let quant = Double(value.quantity)
-                value.customer.setTotalInvestment(investment: price*quant)
+                value.customer.setTotalInvestment(investment: -price*quant)
                 orderList.remove(at: index)
             }
             
@@ -52,9 +52,9 @@ class OrderDirecrtory {
         var totalprice=0.0
         for order in orderList {
             if (order.getCustomer().getid()==customer.id && order.stock.id==stock.id){
-                let curquantity=order.quantity
-                totalprice+=order.stock.lastTradePrice*Double(curquantity)
-                quantity+=curquantity
+                totalprice+=order.getinvestedmoney()
+                print( totalprice)
+                quantity+=order.quantity
             }
         }
         return totalprice/Double(quantity)

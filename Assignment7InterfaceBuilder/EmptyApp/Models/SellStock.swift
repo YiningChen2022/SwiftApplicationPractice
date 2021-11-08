@@ -20,7 +20,7 @@ class SellStock{
     var  customer: Customer
     var Earning: Double
     var Company: Company
-    init(id: Int,stock: Stock,quantity: Int,customer: Customer, date: Date, Earning:Double, Company:Company) {
+    init(stock: Stock,quantity: Int,customer: Customer, Earning:Double, Company:Company) {
         self.id=Order.generateUid()
         self.stock=stock
         self.quantity = quantity

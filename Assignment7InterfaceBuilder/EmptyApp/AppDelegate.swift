@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          public static var companylist=CompanyManager()
          public static var categorylist=CategoryManager()
          public static var orderlist=OrderManager()
+         public static var SellStocklist=SellStockManager()
+         
          public static var selected=0
          public static var selectedCategory=0
          public static var selectedStock=0

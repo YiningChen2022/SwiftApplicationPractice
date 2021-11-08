@@ -60,7 +60,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
         let investment = (stock?.getlastTradePrice())!*Double(quant)!
     
-        let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!)
+        let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!,tradeinPrice: (stock?.getlastTradePrice())!)
 
         let alert = UIAlertController(title: "Placing Order", message: "you have invested $\(investment)", preferredStyle: .alert)
 
@@ -84,6 +84,9 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     
+    @IBAction func closewindow(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     func Alert (){

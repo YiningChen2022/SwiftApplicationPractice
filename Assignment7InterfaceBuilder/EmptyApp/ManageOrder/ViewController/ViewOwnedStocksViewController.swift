@@ -47,5 +47,8 @@ class ViewOwnedStocksViewController: UIViewController,UITableViewDelegate,UITabl
         }
     
 
- 
+    @IBAction func closewindow(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
