@@ -61,9 +61,14 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         }
         let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
         let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
+        let investment = (stock?.getlastTradePrice())!*Double(quant)!
+        customer?.setTotalInvestment(investment: investment)
         let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!)
         AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order)
-        
+        let alertController = UIAlertController(title:"Order Placed",message:"you have successful invest $\(investment)", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
         DispatchQueue.main.async {
             let vc = OrderViewController()
             self.present(vc, animated: true, completion: nil)
