@@ -10,11 +10,15 @@ import UIKit
 
 class OrderViewController: UIViewController {
 
+    @IBOutlet weak var invest: UILabel!
+    @IBOutlet weak var earning: UILabel!
     @IBOutlet weak var Customerfn: UILabel!
     let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     override func viewDidLoad() {
         super.viewDidLoad()
         Customerfn.text=customer?.getFirstName()
+        earning.text="\(customer!.getTotalEarning())"
+        invest.text="\(customer!.getTotalInvestment())"
         // Do any additional setup after loading the view.
     }
     
@@ -41,6 +45,11 @@ class OrderViewController: UIViewController {
     
     
     
+    @IBAction func didTapViewStock(_ sender: UIButton) {
+        let vc = ViewOwnedStocksViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
     
     
     

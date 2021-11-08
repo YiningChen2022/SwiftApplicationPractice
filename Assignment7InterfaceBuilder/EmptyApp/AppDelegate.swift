@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          public static var selectedTradeSearch=0
          public static var selectedOrderid=0
          public static var orderedStock=0
+         public static var sellStockid=0
       }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

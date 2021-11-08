@@ -66,6 +66,6 @@ class Order{
     
     
     public func toString ()->String{
-        return "Order Id\(orderid) \(stock.getName()) \(date) \(customer.getid())"
+        return "\(orderid) \(stock.getName()) Qty:\(quantity) \(date)"
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
-
+    let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,6 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     
 
     
-    @IBAction func closewindow(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
 
     
     @IBOutlet weak var quantity: UITextField!
@@ -59,23 +56,34 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         guard let quant = quantity.text, !quant.isEmpty, Int(quant) != nil else {
             return Alert()
         }
-        let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
+
         let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
         let investment = (stock?.getlastTradePrice())!*Double(quant)!
-        customer?.setTotalInvestment(investment: investment)
-        let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!)
-        AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order)
-        let alertController = UIAlertController(title:"Order Placed",message:"you have successful invest $\(investment)", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
-        alertController.addAction(OKAction)
-        self.present(alertController,animated:true,completion: nil)
-        DispatchQueue.main.async {
-            let vc = OrderViewController()
-            self.present(vc, animated: true, completion: nil)
-            
-        }
     
+        let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!)
+
+        let alert = UIAlertController(title: "Placing Order", message: "you have invested $\(investment)", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder(order:order,quant:Double(quant)!);DispatchQueue.main.async {
+            let vc = OrderViewController()
+                self.present(vc, animated: true, completion: nil)}}))
+        self.present(alert,animated:true,completion: nil)
+        
+       
     }
+        
+    public func placeOrder(order:Order,quant:Double){
+        
+        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
+        let investment = (stock?.getlastTradePrice())!*quant
+    
+        customer?.setTotalInvestment(investment: investment)
+        AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order)
+        
+    }
+    
+    
     
     
     func Alert (){

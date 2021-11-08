@@ -44,18 +44,9 @@
                     <rect key="frame" x="112" y="592" width="153" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Next Step"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Place an Order"/>
                     <connections>
                         <action selector="didTapPlace:" destination="-1" eventType="touchUpInside" id="iWH-OG-sT6"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN9-Bm-1nM">
-                    <rect key="frame" x="141" y="639" width="82" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Close"/>
-                    <connections>
-                        <action selector="closewindow:" destination="-1" eventType="touchUpInside" id="NbV-OA-6ax"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiE-x2-EbV">

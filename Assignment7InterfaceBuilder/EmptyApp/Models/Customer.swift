@@ -19,8 +19,8 @@ class Customer {
     var address: String
     var contactDetails: String
     var  emailID: String
-    var TotalInvestment:Double=0
-    var TotalEarning:Double=0
+    var TotalInvestment:Double
+    var TotalEarning:Double
     init(  firstName : String, lastName: String, address: String, contactDetails: String,emailID: String) {
         self.id=Customer.generateUid()
         self.firstName=firstName
@@ -28,6 +28,8 @@ class Customer {
         self.address=address
         self.contactDetails=contactDetails
         self.emailID=emailID
+        self.TotalEarning=0.0
+        self.TotalInvestment=0.0
     }
     public func getid()->Int{
         return id
