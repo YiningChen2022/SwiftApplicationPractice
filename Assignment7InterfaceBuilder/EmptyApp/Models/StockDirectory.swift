@@ -76,6 +76,14 @@ class StockDirecrtory {
         return str
         
     }
+    public func toStringShort()->Array<String>{
+        var str:Array<String>=[]
+        for stock in stockList {
+            str.append(stock.toStringShort())
+        }
+        return str
+        
+    }
     public func searchByCompany(Companyid :Int)->Array<String>{
         var str:Array<String>=[]
         for   stock in stockList {

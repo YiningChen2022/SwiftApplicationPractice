@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          public static var stocklist=StockManager()
          public static var companylist=CompanyManager()
          public static var categorylist=CategoryManager()
+         public static var orderlist=OrderManager()
          public static var selected=0
          public static var selectedCategory=0
          public static var selectedStock=0
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          public static var selectedFinacialSearch=0
          public static var selectedTradeSearch=0
          public static var selectedOrderid=0
-         
+         public static var orderedStock=0
       }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -65,4 +65,7 @@ class Stock{
     public func toString ()->String{
         return "\(id) \(name) \(company.name)  \(lastTradePrice) \(financialRating)\(category.name) "
     }
+    public func toStringShort ()->String{
+        return "\(id) \(name) lastTradePrice:\(lastTradePrice)Rating:\(financialRating) "
+    }
 }

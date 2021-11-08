@@ -42,7 +42,6 @@
 		E82A4B8B2735FCA900360953 /* ViewAllOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82A4B8A2735FCA900360953 /* ViewAllOrderView.xib */; };
 		E85638CA2735B4380039649E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85638C92735B4380039649E /* OrderViewController.swift */; };
 		E85638CC2735B4490039649E /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85638CB2735B4490039649E /* OrderView.xib */; };
-		E85B12DA27360159000B0F25 /* PlaceOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85B12D927360159000B0F25 /* PlaceOrderView.xib */; };
 		E860035927347EAA00C3AC00 /* SearchByCompanyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E860035827347EAA00C3AC00 /* SearchByCompanyView.xib */; };
 		E860035B27347EC500C3AC00 /* SearchByCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E860035A27347EC500C3AC00 /* SearchByCategoryView.xib */; };
 		E860036327347F1400C3AC00 /* SearchByCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860036227347F1400C3AC00 /* SearchByCompanyViewController.swift */; };
@@ -100,6 +99,8 @@
 		E8C46B0427333057007680C0 /* DeleteStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B0327333057007680C0 /* DeleteStockViewController.swift */; };
 		E8C46B062733306A007680C0 /* UpdateDetailStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B052733306A007680C0 /* UpdateDetailStockViewController.swift */; };
 		E8C46B0827333084007680C0 /* ViewAllStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C46B0727333084007680C0 /* ViewAllStockViewController.swift */; };
+		E8E55A9327398AB9008201E4 /* PlaceOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55A9227398AB9008201E4 /* PlaceOrderView.xib */; };
+		E8E55A9927399913008201E4 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55A9827399913008201E4 /* OrderManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,7 +142,6 @@
 		E82A4B8A2735FCA900360953 /* ViewAllOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllOrderView.xib; sourceTree = "<group>"; };
 		E85638C92735B4380039649E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		E85638CB2735B4490039649E /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
-		E85B12D927360159000B0F25 /* PlaceOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceOrderView.xib; sourceTree = "<group>"; };
 		E860035827347EAA00C3AC00 /* SearchByCompanyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByCompanyView.xib; sourceTree = "<group>"; };
 		E860035A27347EC500C3AC00 /* SearchByCategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByCategoryView.xib; sourceTree = "<group>"; };
 		E860036227347F1400C3AC00 /* SearchByCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCompanyViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +198,8 @@
 		E8C46B0327333057007680C0 /* DeleteStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStockViewController.swift; sourceTree = "<group>"; };
 		E8C46B052733306A007680C0 /* UpdateDetailStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailStockViewController.swift; sourceTree = "<group>"; };
 		E8C46B0727333084007680C0 /* ViewAllStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllStockViewController.swift; sourceTree = "<group>"; };
+		E8E55A9227398AB9008201E4 /* PlaceOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceOrderView.xib; sourceTree = "<group>"; };
+		E8E55A9827399913008201E4 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +427,7 @@
 				E814C83127322BCE00F8E740 /* CompanyManager.swift */,
 				E814C83327322BD700F8E740 /* StockManager.swift */,
 				E814C83527322BE500F8E740 /* CategoryManager.swift */,
+				E8E55A9827399913008201E4 /* OrderManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -444,7 +447,7 @@
 				E85638CB2735B4490039649E /* OrderView.xib */,
 				E82A4B882735FC9300360953 /* DeleteOrderView.xib */,
 				E82A4B8A2735FCA900360953 /* ViewAllOrderView.xib */,
-				E85B12D927360159000B0F25 /* PlaceOrderView.xib */,
+				E8E55A9227398AB9008201E4 /* PlaceOrderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,9 +456,9 @@
 			isa = PBXGroup;
 			children = (
 				E85638C92735B4380039649E /* OrderViewController.swift */,
-				E82A4B822735FC4800360953 /* PlaceOrderViewController.swift */,
 				E82A4B842735FC6900360953 /* DeleteOrderViewController.swift */,
 				E82A4B862735FC7A00360953 /* ViewAllOrderViewController.swift */,
+				E82A4B822735FC4800360953 /* PlaceOrderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -579,7 +582,7 @@
 				E8C46AE7273322F8007680C0 /* UpdateCategoryView.xib in Resources */,
 				E8C46AF527332FE2007680C0 /* AddStockView.xib in Resources */,
 				E8C46AE3273322D0007680C0 /* AddCategoryView.xib in Resources */,
-				E85B12DA27360159000B0F25 /* PlaceOrderView.xib in Resources */,
+				E8E55A9327398AB9008201E4 /* PlaceOrderView.xib in Resources */,
 				E8C46AFB27333011007680C0 /* ViewAllStockView.xib in Resources */,
 				E8C46ACF27330F4D007680C0 /* AddCompanyView.xib in Resources */,
 				E8C46ABB2732E2DB007680C0 /* DeleteCustomerView.xib in Resources */,
@@ -619,6 +622,7 @@
 				E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */,
 				E8C46B012733303E007680C0 /* UpdateStockViewController.swift in Sources */,
 				E814C83027322BC400F8E740 /* CustomerManager.swift in Sources */,
+				E8E55A9927399913008201E4 /* OrderManager.swift in Sources */,
 				E8C46B062733306A007680C0 /* UpdateDetailStockViewController.swift in Sources */,
 				E814C82127322A9D00F8E740 /* StockDirectory.swift in Sources */,
 				E814C83627322BE500F8E740 /* CategoryManager.swift in Sources */,
