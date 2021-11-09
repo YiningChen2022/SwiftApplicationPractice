@@ -11,6 +11,7 @@ import UIKit
 class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
      var order:Array<Stock> = []
      var quantitylist:Array<Int> = []
+    var tradeinprice: Array<Double> = []
     let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -68,7 +69,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             let id=Int(selected.split(separator: " ")[0])!
             let curstock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)
            order.append(curstock!)
-            
+            tradeinprice.append(Double(curstock!.lastTradePrice))
         
             let cell = tableView.cellForRow(at: i)as! PlaceOrderTableViewCell
             let quant = cell.QuantityField.text
@@ -78,34 +79,32 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             quantitylist.append(Int(quant)!)
 
         }
-  
-        for i in 0...order.count{
+        var investment = 0.0
+        for i in 0..<order.count {
+            investment += order[i].getlastTradePrice() * Double((quantitylist[i]))
             
         }
-  
-        let investment = (stock?.getlastTradePrice())!*Double(quant)!
-    
-        let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!,tradeinPrice: (stock?.getlastTradePrice())!)
+        let order = Order(stock: order, quantity: quantitylist, invested: true, customer: customer!, tradeinPrice: tradeinprice)
 
         let alert = UIAlertController(title: "Placing Order", message: "you have invested $\(investment)", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder(order:order,quant:Double(quant)!);DispatchQueue.main.async {
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder(order1:order);DispatchQueue.main.async {
             let vc = OrderViewController()
                 self.present(vc, animated: true, completion: nil)}}))
         self.present(alert,animated:true,completion: nil)
-      */
+      
        
     }
         
-    public func placeOrder(order:Order,quant:Double){
-        
-   /*     let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
-        let investment = (stock?.getlastTradePrice())!*quant
-    
+    public func placeOrder(order1:Order){
+        var investment = 0.0
+        for i in 0..<order.count {
+            investment += order[i].getlastTradePrice() * Double((quantitylist[i]))
+        }
         customer?.setTotalInvestment(investment: investment)
-        AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order)
-        */
+        AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order1)
+        
     }
     
     

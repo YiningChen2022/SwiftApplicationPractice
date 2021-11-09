@@ -19,8 +19,8 @@ class Order{
     var  date:Date
     var invested: Bool
     var  customer: Customer
-    var tradeinPrice: Double
-    init(stock: Array<Stock>,quantity: Array<Int>,invested: Bool,customer: Customer, tradeinPrice:Double) {
+    var tradeinPrice: Array<Double>
+    init(stock: Array<Stock>,quantity: Array<Int>,invested: Bool,customer: Customer, tradeinPrice:Array<Double>) {
         self.orderid=Order.generateUid()
         self.stock=stock
         self.quantity = quantity
@@ -66,7 +66,7 @@ class Order{
         self.stock=stock
     }
     public func getinvestedmoney()->  Double{
-        return  Double(quantity[0])*tradeinPrice
+        return  Double(quantity[0])*tradeinPrice[0]
     }
     
     
