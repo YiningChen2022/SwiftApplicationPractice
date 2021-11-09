@@ -9,12 +9,13 @@
 import UIKit
 
 class ViewOwnedStocksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self,
-                                 forCellReuseIdentifier: "AnimalCell")
+        let nib = UINib(nibName: "ViewOwnedStockcell", bundle: nil)
+        tableView.register(nib,
+                                 forCellReuseIdentifier: "ownstocks")
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -23,16 +24,22 @@ class ViewOwnedStocksViewController: UIViewController,UITableViewDelegate,UITabl
     
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-        let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
-        print((AppDelegate.GlobalVariable.orderlist.testOrderlist.getsizeofStock(customer: customer!)))
+        
         return (AppDelegate.GlobalVariable.orderlist.testOrderlist.getsizeofStock(customer: customer!))
       }
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-       let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
-          let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.orderlist.testOrderlist.toStringStock(customer: customer!)[indexPath.row]
-          return (cell)
-      }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let cell = tableView.dequeueReusableCell(withIdentifier: "ownstocks") as! ViewOwnedStockTableViewCell
+        let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row]
+        let components = str.components(separatedBy: " ")
+        cell.id.text = components[0]
+        cell.naem.text=components[1]
+        cell.trade.text=components[2]
+        cell.rating.text=components[3]
+        
+        return cell
+        
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
          

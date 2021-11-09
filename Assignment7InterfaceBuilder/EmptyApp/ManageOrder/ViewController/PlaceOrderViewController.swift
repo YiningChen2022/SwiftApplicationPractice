@@ -24,7 +24,6 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         self.tableView.allowsMultipleSelection = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
-        
 
     }
     
@@ -64,7 +63,9 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
 
     @IBAction func didTapPlace(_ sender: UIButton) {
      
-        
+        if tableView.indexPathsForSelectedRows == nil{
+            Alert()
+        }else{
         for i in tableView.indexPathsForSelectedRows! {
             let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[i.row]
             let id=Int(selected.split(separator: " ")[0])!
@@ -91,10 +92,19 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder(order1:order);DispatchQueue.main.async {
+         /*   let vc = OrderViewController()
+            vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true, completion: nil)
+          
+          
+          */
             let vc = OrderViewController()
-                self.present(vc, animated: true, completion: nil)}}))
+            vc.reloadInputViews()
+            self.dismiss(animated: true, completion: nil)
+          
+        }}))
         self.present(alert,animated:true,completion: nil)
-        
+        }
        
     }
         

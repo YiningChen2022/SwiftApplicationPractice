@@ -43,19 +43,29 @@ class OrderDirecrtory {
     public func totalStockQuantityforCustomer(customer: Customer,stock: Stock)->Int{
         var quantity=0
         for order in orderList {
-            if (order.getCustomer().getid()==customer.id && order.stock[0].id==stock.id){
-                quantity+=order.quantity[0]
+            if order.getCustomer().getid()==customer.id{
+                for i in 0..<order.stock.count {
+                    if  order.stock[i].id==stock.id{
+                        quantity+=order.quantity[i]
+                    }
+                }
             }
-                
+            
         }
         return quantity
     }
+
+    
+    
+    
+    
     public func avgforCustomer(customer: Customer,stock: Stock)->Double{
         var quantity=0
         var totalprice=0.0
         for order in orderList {
-            if (order.getCustomer().getid()==customer.id && order.stock[0].id==stock.id){
-                totalprice+=order.getinvestedmoney()
+            if order.getCustomer().getid()==customer.id {
+                
+                totalprice+=order.getinvestedmoney(stock:stock)
 
                 quantity+=order.quantity[0]
             }
@@ -86,7 +96,9 @@ class OrderDirecrtory {
         var res:Array<String>=[]
         for order in orderList {
             if (order.getCustomer().getid()==customer.id){
-                str.append(order.getStock()[0].toStringShort())
+                for i in 0..<order.getStock().count{
+                str.append(order.getStock()[i].toStringShort())
+                }
             }
         }
         for s in str {
@@ -134,7 +146,9 @@ class OrderDirecrtory {
         var res:Array<String>=[]
         for order in orderList {
             if (order.getCustomer().getid()==customer.id){
-                str.append(order.getStock()[0].toStringShort())
+                for i in 0..<order.getStock().count{
+                    str.append(order.getStock()[i].toStringShort())
+                }
             }
         }
         for s in str {

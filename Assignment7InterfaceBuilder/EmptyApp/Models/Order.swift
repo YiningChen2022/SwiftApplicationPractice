@@ -65,8 +65,16 @@ class Order{
     public func setStock(stock:Array<Stock>){
         self.stock=stock
     }
-    public func getinvestedmoney()->  Double{
-        return  Double(quantity[0])*tradeinPrice[0]
+    public func getinvestedmoney(stock:Stock)->  Double{
+        var res=0.0
+        for i in 0..<quantity.count {
+            if self.stock[i].id==stock.id{
+               res = Double(quantity[i])*tradeinPrice[i]
+            }
+            
+        }
+    
+        return res
     }
     
     public func StocktoString(Stocks:Array<Stock>)->  String{
