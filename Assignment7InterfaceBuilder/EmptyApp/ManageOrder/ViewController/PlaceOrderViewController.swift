@@ -13,12 +13,14 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self,
-                                 forCellReuseIdentifier: "AnimalCell")
+        let nib = UINib(nibName: "PlaceOrderCellView", bundle: nil)
+        tableView.register(nib,
+                                 forCellReuseIdentifier: "PlaceOrderTableViewSell")
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
-  
+        self.tableView.allowsMultipleSelection = true
+        self.tableView.allowsMultipleSelectionDuringEditing = true
         
 
     }
@@ -33,12 +35,22 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         
         return (AppDelegate.GlobalVariable.stocklist.testStocklist.getsize())
       }
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-      
-          let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row]
-          return (cell)
-      }
+  
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceOrderTableViewSell") as! PlaceOrderTableViewCell
+        print(AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row])
+        let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row]
+        let components = str.components(separatedBy: " ")
+        cell.id.text = components[0]
+        cell.Name.text=components[1]
+        cell.LastPrice.text=components[2]
+        
+        return cell
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
@@ -48,6 +60,9 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     
    
         }
+    
+    
+    
     
     
 
@@ -98,11 +113,5 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     
-    @IBAction func didTapAddanother(_ sender: Any) {
-        
-        let vc = PlaceOrderViewController()
-            self.present(vc, animated: true, completion: nil)
-        
-    }
     
 }

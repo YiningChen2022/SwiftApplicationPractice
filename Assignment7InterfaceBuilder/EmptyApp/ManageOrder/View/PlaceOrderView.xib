@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceOrderViewController" customModule="EmptyApp" customModuleProvider="target">
             <connections>
-                <outlet property="quantity" destination="UzI-GF-Un4" id="5md-EY-r4X"/>
                 <outlet property="tableView" destination="9bQ-xd-zFV" id="xEI-2K-lUI"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pdH-T6-n08"/>
             </connections>
@@ -36,7 +35,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9bQ-xd-zFV">
-                    <rect key="frame" x="-7" y="137" width="414" height="260"/>
+                    <rect key="frame" x="-7" y="137" width="414" height="407"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -49,19 +48,6 @@
                         <action selector="didTapPlace:" destination="-1" eventType="touchUpInside" id="iWH-OG-sT6"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiE-x2-EbV">
-                    <rect key="frame" x="158" y="435" width="65" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-GF-Un4">
-                    <rect key="frame" x="142" y="464" width="97" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njm-tW-Ldk">
                     <rect key="frame" x="144" y="640" width="88" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,15 +55,6 @@
                     <buttonConfiguration key="configuration" style="filled" title="Close"/>
                     <connections>
                         <action selector="closewindow:" destination="-1" eventType="touchUpInside" id="xSD-0O-1eR"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-Ha-a9O">
-                    <rect key="frame" x="57" y="527" width="263" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Add Another Stock"/>
-                    <connections>
-                        <action selector="didTapAddanother:" destination="-1" eventType="touchUpInside" id="4Di-I6-YRN"/>
                     </connections>
                 </button>
             </subviews>

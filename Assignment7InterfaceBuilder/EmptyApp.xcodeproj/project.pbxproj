@@ -110,6 +110,8 @@
 		E8E55AA72739EF7E008201E4 /* ViewAllOrdersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */; };
 		E8E55AAB273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AAA273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift */; };
 		E8E55AAF273ACF78008201E4 /* ViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55AAE273ACF78008201E4 /* ViewCell.xib */; };
+		E8E55AB2273AD9E0008201E4 /* PlaceOrderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55AB1273AD9E0008201E4 /* PlaceOrderCellView.xib */; };
+		E8E55AB4273AD9F5008201E4 /* PlaceOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AB3273AD9F5008201E4 /* PlaceOrderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +220,8 @@
 		E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllOrdersView.xib; sourceTree = "<group>"; };
 		E8E55AAA273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnedStocksTableViewCell.swift; sourceTree = "<group>"; };
 		E8E55AAE273ACF78008201E4 /* ViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCell.xib; sourceTree = "<group>"; };
+		E8E55AB1273AD9E0008201E4 /* PlaceOrderCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceOrderCellView.xib; sourceTree = "<group>"; };
+		E8E55AB3273AD9F5008201E4 /* PlaceOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +526,8 @@
 		E8E55AB0273AD8DA008201E4 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				E8E55AB1273AD9E0008201E4 /* PlaceOrderCellView.xib */,
+				E8E55AB3273AD9F5008201E4 /* PlaceOrderTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				E8C46AEF27332531007680C0 /* ViewAllCategoryView.xib in Resources */,
 				E860035B27347EC500C3AC00 /* SearchByCategoryView.xib in Resources */,
 				153402AF1F939BDB00324E7D /* LaunchScreen.storyboard in Resources */,
+				E8E55AB2273AD9E0008201E4 /* PlaceOrderCellView.xib in Resources */,
 				E8C46AD727330F98007680C0 /* ViewAllCompanyView.xib in Resources */,
 				E82A4B8B2735FCA900360953 /* ViewAllOrderView.xib in Resources */,
 				E86003712734829A00C3AC00 /* SearchByFinancialRatingView.xib in Resources */,
@@ -646,6 +653,7 @@
 				E860036F2734827600C3AC00 /* SearchByLastTradePriceViewController.swift in Sources */,
 				E814C7F92731F0DF00F8E740 /* CustomButton.swift in Sources */,
 				E8C46ACB27330F29007680C0 /* UpdateDetailCompanyViewController.swift in Sources */,
+				E8E55AB4273AD9F5008201E4 /* PlaceOrderTableViewCell.swift in Sources */,
 				E8C46AED2733251E007680C0 /* ViewAllCategoryViewController.swift in Sources */,
 				E8C46AC12732E6CC007680C0 /* UpdateDetailCustomerViewController.swift in Sources */,
 				E8852D1F273437730081E8EA /* ViewController.swift in Sources */,

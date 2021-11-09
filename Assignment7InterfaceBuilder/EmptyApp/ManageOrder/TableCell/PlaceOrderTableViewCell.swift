@@ -1,5 +1,5 @@
 //
-//  ViewOwnedStocksTableViewCell.swift
+//  PlaceOrderTableViewCell.swift
 //  EmptyApp
 //
 //  Created by Yining Chen on 11/9/21.
@@ -8,26 +8,23 @@
 
 import UIKit
 
-class ViewOwnedStocksTableViewCell: UITableViewCell {
-    static let identifier="CustomeTableViewSell"
+class PlaceOrderTableViewCell: UITableViewCell {
+    static let identifier="PlaceOrderTableViewSell"
     
-    @IBOutlet weak var Date: UILabel!
-    @IBOutlet weak var Quantity: UILabel!
-    @IBOutlet weak var StockName: UILabel!
-    @IBOutlet weak var name: UILabel!
-
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var id: UILabel!
+    @IBOutlet weak var QuantityField: UITextField!
+    
+    @IBOutlet weak var LastPrice: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
 
 }
