@@ -96,4 +96,13 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
     }
+    
+    
+    @IBAction func didTapAddanother(_ sender: Any) {
+        
+        let vc = PlaceOrderViewController()
+            self.present(vc, animated: true, completion: nil)
+        
+    }
+    
 }

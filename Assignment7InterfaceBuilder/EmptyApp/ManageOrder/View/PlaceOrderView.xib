@@ -40,6 +40,15 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-b3-nH0">
+                    <rect key="frame" x="114" y="583" width="153" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Place an Order"/>
+                    <connections>
+                        <action selector="didTapPlace:" destination="-1" eventType="touchUpInside" id="iWH-OG-sT6"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiE-x2-EbV">
                     <rect key="frame" x="158" y="435" width="65" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,13 +71,13 @@
                         <action selector="closewindow:" destination="-1" eventType="touchUpInside" id="xSD-0O-1eR"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpZ-b3-nH0">
-                    <rect key="frame" x="114" y="553" width="153" height="31"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-Ha-a9O">
+                    <rect key="frame" x="112" y="534" width="153" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Place an Order"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Add Another Stock"/>
                     <connections>
-                        <action selector="didTapPlace:" destination="-1" eventType="touchUpInside" id="iWH-OG-sT6"/>
+                        <action selector="didTapAddanother:" destination="-1" eventType="touchUpInside" id="4Di-I6-YRN"/>
                     </connections>
                 </button>
             </subviews>

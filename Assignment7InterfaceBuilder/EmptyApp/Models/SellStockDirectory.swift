@@ -36,6 +36,16 @@ class SellStockDirecrtory {
     }
  
     
+    public func SellStockQuantityforCustomer(customer: Customer,stock: Stock)->Int{
+        var quantity=0
+        for sellstock in sellStockList {
+            if (sellstock.getCustomer().getid()==customer.id && sellstock.stock.id==stock.id){
+                quantity+=sellstock.quantity
+            }
+                
+        }
+        return quantity
+    }
    
     public func toString()->Array<String>{
         var str:Array<String>=[]

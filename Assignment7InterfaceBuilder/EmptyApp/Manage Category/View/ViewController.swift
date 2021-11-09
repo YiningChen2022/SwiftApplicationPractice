@@ -49,6 +49,11 @@ class ViewController: UIViewController{
         
     }
     
+    @IBAction func didTapView(_ sender: UIButton) {
+        let vc = ViewAllOrdersViewController()
+           self.present(vc, animated: true, completion: nil)
+        
+    }
     
     @IBAction func didTapCategory(_ sender: UIBarButtonItem) {
         let vc = ManageCategoryViewController()
@@ -60,6 +65,8 @@ class ViewController: UIViewController{
         let vc = ManageStockViewController()
            self.present(vc, animated: true, completion: nil)
     }
+    
+    
     
 
 }

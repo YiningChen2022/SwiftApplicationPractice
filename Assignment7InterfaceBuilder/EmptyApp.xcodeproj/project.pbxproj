@@ -106,6 +106,8 @@
 		E8E55A9F2739BB65008201E4 /* SellStockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55A9E2739BB65008201E4 /* SellStockView.xib */; };
 		E8E55AA12739BB76008201E4 /* SellStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA02739BB76008201E4 /* SellStockViewController.swift */; };
 		E8E55AA32739DA89008201E4 /* SellStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA22739DA89008201E4 /* SellStockManager.swift */; };
+		E8E55AA52739EF69008201E4 /* ViewAllOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA42739EF69008201E4 /* ViewAllOrdersViewController.swift */; };
+		E8E55AA72739EF7E008201E4 /* ViewAllOrdersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -210,6 +212,8 @@
 		E8E55A9E2739BB65008201E4 /* SellStockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellStockView.xib; sourceTree = "<group>"; };
 		E8E55AA02739BB76008201E4 /* SellStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockViewController.swift; sourceTree = "<group>"; };
 		E8E55AA22739DA89008201E4 /* SellStockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockManager.swift; sourceTree = "<group>"; };
+		E8E55AA42739EF69008201E4 /* ViewAllOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllOrdersViewController.swift; sourceTree = "<group>"; };
+		E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllOrdersView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +465,7 @@
 				E8E55A9227398AB9008201E4 /* PlaceOrderView.xib */,
 				E8E55A9A2739B398008201E4 /* ViewOwnedStocksView.xib */,
 				E8E55A9E2739BB65008201E4 /* SellStockView.xib */,
+				E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				E82A4B822735FC4800360953 /* PlaceOrderViewController.swift */,
 				E8E55A9C2739B3AD008201E4 /* ViewOwnedStocksViewController.swift */,
 				E8E55AA02739BB76008201E4 /* SellStockViewController.swift */,
+				E8E55AA42739EF69008201E4 /* ViewAllOrdersViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				E860035927347EAA00C3AC00 /* SearchByCompanyView.xib in Resources */,
 				E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */,
 				E8C46AF927333001007680C0 /* UpdateStockView.xib in Resources */,
+				E8E55AA72739EF7E008201E4 /* ViewAllOrdersView.xib in Resources */,
 				E814C81A2732257B00F8E740 /* AddCustomerView.xib in Resources */,
 				E8C46AB32732DC96007680C0 /* UpdateCustomerView.xib in Resources */,
 				E85638CC2735B4490039649E /* OrderView.xib in Resources */,
@@ -662,6 +669,7 @@
 				E814C82D27322B1B00F8E740 /* CustomerDirectory.swift in Sources */,
 				E8C46ADD2733229B007680C0 /* UpdateCategoryViewController.swift in Sources */,
 				E814C82B27322B0E00F8E740 /* Customer.swift in Sources */,
+				E8E55AA52739EF69008201E4 /* ViewAllOrdersViewController.swift in Sources */,
 				E814C83227322BCE00F8E740 /* CompanyManager.swift in Sources */,
 				E860037B27348A6000C3AC00 /* CategorySelectedViewController.swift in Sources */,
 				E814C82927322AFD00F8E740 /* CompanyDirectory.swift in Sources */,

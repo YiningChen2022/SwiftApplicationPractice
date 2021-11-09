@@ -70,6 +70,15 @@
                             </barButtonItem>
                         </items>
                     </toolbar>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-26-BZ3">
+                        <rect key="frame" x="94" y="447" width="227" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="View All Orders"/>
+                        <connections>
+                            <action selector="didTapView:" destination="Xlw-lc-eef" eventType="touchUpInside" id="dol-XK-YAy"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="XHA-iY-VXD"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,7 +86,7 @@
             <connections>
                 <outlet property="welcomeLabel" destination="xgr-EI-sPe" id="a5B-Cr-MuF"/>
             </connections>
-            <point key="canvasLocation" x="928.98550724637687" y="113.83928571428571"/>
+            <point key="canvasLocation" x="928.98550724637687" y="113.31521739130436"/>
         </viewController>
         <barButtonItem title="Item" id="xtA-BN-bEh"/>
     </objects>

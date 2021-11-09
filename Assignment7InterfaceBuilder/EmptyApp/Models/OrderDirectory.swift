@@ -53,7 +53,7 @@ class OrderDirecrtory {
         for order in orderList {
             if (order.getCustomer().getid()==customer.id && order.stock.id==stock.id){
                 totalprice+=order.getinvestedmoney()
-                print( totalprice)
+
                 quantity+=order.quantity
             }
         }
@@ -112,6 +112,15 @@ class OrderDirecrtory {
             if  order.getCustomer().id==customer.id{
                 count+=1;
             }
+        }
+        return count
+    }
+    public func getsize ()->Int{
+        var count=0;
+    
+        for order in orderList{
+     
+                count+=1;
         }
         return count
     }
