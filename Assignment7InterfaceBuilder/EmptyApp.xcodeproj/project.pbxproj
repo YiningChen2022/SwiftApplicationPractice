@@ -108,6 +108,8 @@
 		E8E55AA32739DA89008201E4 /* SellStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA22739DA89008201E4 /* SellStockManager.swift */; };
 		E8E55AA52739EF69008201E4 /* ViewAllOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AA42739EF69008201E4 /* ViewAllOrdersViewController.swift */; };
 		E8E55AA72739EF7E008201E4 /* ViewAllOrdersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */; };
+		E8E55AAB273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E55AAA273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift */; };
+		E8E55AAF273ACF78008201E4 /* ViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E55AAE273ACF78008201E4 /* ViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +216,8 @@
 		E8E55AA22739DA89008201E4 /* SellStockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockManager.swift; sourceTree = "<group>"; };
 		E8E55AA42739EF69008201E4 /* ViewAllOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllOrdersViewController.swift; sourceTree = "<group>"; };
 		E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAllOrdersView.xib; sourceTree = "<group>"; };
+		E8E55AAA273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnedStocksTableViewCell.swift; sourceTree = "<group>"; };
+		E8E55AAE273ACF78008201E4 /* ViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +454,7 @@
 		E85638C62735B3950039649E /* ManageOrder */ = {
 			isa = PBXGroup;
 			children = (
+				E8E55AB0273AD8DA008201E4 /* TableCell */,
 				E85638C82735B40E0039649E /* ViewController */,
 				E85638C72735B4080039649E /* View */,
 			);
@@ -466,6 +471,7 @@
 				E8E55A9A2739B398008201E4 /* ViewOwnedStocksView.xib */,
 				E8E55A9E2739BB65008201E4 /* SellStockView.xib */,
 				E8E55AA62739EF7E008201E4 /* ViewAllOrdersView.xib */,
+				E8E55AAE273ACF78008201E4 /* ViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 				E8E55A9C2739B3AD008201E4 /* ViewOwnedStocksViewController.swift */,
 				E8E55AA02739BB76008201E4 /* SellStockViewController.swift */,
 				E8E55AA42739EF69008201E4 /* ViewAllOrdersViewController.swift */,
+				E8E55AAA273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -510,6 +517,13 @@
 				E860037C27348F1500C3AC00 /* SearchByNameViewController.swift */,
 			);
 			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		E8E55AB0273AD8DA008201E4 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,6 +588,7 @@
 			files = (
 				E8C46ABF2732E6B4007680C0 /* UpdateDetailCustomerView.xib in Resources */,
 				E8C46AD127330F62007680C0 /* UpdateCompanyView.xib in Resources */,
+				E8E55AAF273ACF78008201E4 /* ViewCell.xib in Resources */,
 				E814C8032731F4A800F8E740 /* ManageCompanyView.xib in Resources */,
 				E860035927347EAA00C3AC00 /* SearchByCompanyView.xib in Resources */,
 				E814C8182731F8F700F8E740 /* ManageCategoryView.xib in Resources */,
@@ -644,6 +659,7 @@
 				E814C7FB2731F1CF00F8E740 /* ManageCustomerViewController.swift in Sources */,
 				E8600381273495B300C3AC00 /* Order.swift in Sources */,
 				E814C7EE2731D51A00F8E740 /* DetailViewController.swift in Sources */,
+				E8E55AAB273AC7EB008201E4 /* ViewOwnedStocksTableViewCell.swift in Sources */,
 				E8C46B012733303E007680C0 /* UpdateStockViewController.swift in Sources */,
 				E814C83027322BC400F8E740 /* CustomerManager.swift in Sources */,
 				E8E55A9927399913008201E4 /* OrderManager.swift in Sources */,

@@ -99,7 +99,7 @@ class OrderDirecrtory {
    
         for order in orderList {
            
-            str.append(order.stock.toString())
+            str.append(order.toString())
         }
         
         return str
