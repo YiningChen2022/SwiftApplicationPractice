@@ -28,8 +28,8 @@ class OrderDirecrtory {
     public func DeleteOrder(id:Int){
         for (index, value) in orderList.enumerated() {
             if value.orderid==id {
-                let price=value.stock.getlastTradePrice()
-                let quant = Double(value.quantity)
+                let price=value.stock[0].getlastTradePrice()
+                let quant = Double(value.quantity[0])
                 value.customer.setTotalInvestment(investment: -price*quant)
                 orderList.remove(at: index)
             }
@@ -40,8 +40,8 @@ class OrderDirecrtory {
     public func totalStockQuantityforCustomer(customer: Customer,stock: Stock)->Int{
         var quantity=0
         for order in orderList {
-            if (order.getCustomer().getid()==customer.id && order.stock.id==stock.id){
-                quantity+=order.quantity
+            if (order.getCustomer().getid()==customer.id && order.stock[0].id==stock.id){
+                quantity+=order.quantity[0]
             }
                 
         }
@@ -51,10 +51,10 @@ class OrderDirecrtory {
         var quantity=0
         var totalprice=0.0
         for order in orderList {
-            if (order.getCustomer().getid()==customer.id && order.stock.id==stock.id){
+            if (order.getCustomer().getid()==customer.id && order.stock[0].id==stock.id){
                 totalprice+=order.getinvestedmoney()
 
-                quantity+=order.quantity
+                quantity+=order.quantity[0]
             }
         }
         return totalprice/Double(quantity)
@@ -83,7 +83,7 @@ class OrderDirecrtory {
         var res:Array<String>=[]
         for order in orderList {
             if (order.getCustomer().getid()==customer.id){
-                str.append(order.getStock().toStringShort())
+                str.append(order.getStock()[0].toStringShort())
             }
         }
         for s in str {
@@ -131,7 +131,7 @@ class OrderDirecrtory {
         var res:Array<String>=[]
         for order in orderList {
             if (order.getCustomer().getid()==customer.id){
-                str.append(order.getStock().toStringShort())
+                str.append(order.getStock()[0].toStringShort())
             }
         }
         for s in str {

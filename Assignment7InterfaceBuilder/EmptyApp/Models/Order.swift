@@ -14,13 +14,13 @@ class Order{
         return nextUid
     }
     var  orderid: Int
-    var  stock: Stock
-    var  quantity: Int
+    var  stock: Array<Stock>
+    var  quantity: Array<Int>
     var  date:Date
     var invested: Bool
     var  customer: Customer
     var tradeinPrice: Double
-    init(stock: Stock,quantity: Int,invested: Bool,customer: Customer, tradeinPrice:Double) {
+    init(stock: Array<Stock>,quantity: Array<Int>,invested: Bool,customer: Customer, tradeinPrice:Double) {
         self.orderid=Order.generateUid()
         self.stock=stock
         self.quantity = quantity
@@ -33,10 +33,10 @@ class Order{
     public func getorderId()->Int {
         return orderid
     }
-    public func getQuantity()->Int{
+    public func getQuantity()->Array<Int>{
         return quantity
     }
-    public func setQuantity(quantity :Int){
+    public func setQuantity(quantity :Array<Int>){
         self.quantity=quantity
     }
     public func getCustomer()->Customer {
@@ -59,19 +59,19 @@ class Order{
     public func setInvested(Invested:Bool){
         self.invested=Invested
     }
-    public func getStock()->Stock {
+    public func getStock()->Array<Stock> {
         return stock
     }
-    public func setStock(stock:Stock){
+    public func setStock(stock:Array<Stock>){
         self.stock=stock
     }
     public func getinvestedmoney()->  Double{
-        return  Double(quantity)*tradeinPrice
+        return  Double(quantity[0])*tradeinPrice
     }
     
     
     
     public func toString ()->String{
-        return "\(orderid) \(stock.getName()) \(quantity) \(date)"
+        return "\(orderid) \(stock.description) \(quantity) \(date)"
     }
 }

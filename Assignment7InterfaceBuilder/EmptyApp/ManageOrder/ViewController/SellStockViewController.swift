@@ -31,12 +31,12 @@ class SellStockViewController: UIViewController {
     }
     
     @IBAction func didTapSell(_ sender: UIButton) {
-        let owned = AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+     /*   let owned = AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
         guard let quant = quantityfield.text, !quant.isEmpty, Int(quant) != nil,Int(quant)! <= owned else {
             return Alert()
         }
 
-        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
+        let stock = AppDelegate.GlobalVariable.orderedStock[0]
         let Earning = (stock?.getlastTradePrice())!*Double(quant)!
     
         let sellStock = SellStock(stock: stock!, quantity: Int(quant)!, customer: customer!,  Earning:Earning, Company: stock!.company)
@@ -49,18 +49,18 @@ class SellStockViewController: UIViewController {
             let vc = OrderViewController()
                 self.present(vc, animated: true, completion: nil)}}))
         self.present(alert,animated:true,completion: nil)
-        
+        */
        
     }
         
     public func SellOrder(sellStock:SellStock,quant:Double){
         
-        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
+     /*   let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock[0])
         let Earning = (stock?.getlastTradePrice())!*quant
         customer?.setTotalEarning(Earning: Earning)
         
         AppDelegate.GlobalVariable.SellStocklist.testSellStocklist.addSellStock(SellStock: sellStock)
-        
+        */
     }
     
     

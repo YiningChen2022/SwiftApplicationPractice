@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          public static var selectedFinacialSearch=0
          public static var selectedTradeSearch=0
          public static var selectedOrderid=0
-         public static var orderedStock=0
+         public static var orderedStock:Array<Stock>=[]
          public static var sellStockid=0
       }
     

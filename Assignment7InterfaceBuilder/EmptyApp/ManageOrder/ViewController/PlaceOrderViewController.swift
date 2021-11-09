@@ -9,6 +9,8 @@
 import UIKit
 
 class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
+     var order:Array<Stock> = []
+     var quantitylist:Array<Int> = []
     let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -40,7 +42,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceOrderTableViewSell") as! PlaceOrderTableViewCell
-        print(AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row])
+        //print(AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row])
         let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row]
         let components = str.components(separatedBy: " ")
         cell.id.text = components[0]
@@ -52,14 +54,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
-        let id=Int(selected.split(separator: " ")[0])!
-        AppDelegate.GlobalVariable.orderedStock=id
 
-    
-   
-        }
     
     
     
@@ -68,11 +63,26 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
 
     @IBAction func didTapPlace(_ sender: UIButton) {
 
-        guard let quant = quantity.text, !quant.isEmpty, Int(quant) != nil else {
-            return Alert()
-        }
+        for i in tableView.indexPathsForSelectedRows! {
+            let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[i.row]
+            let id=Int(selected.split(separator: " ")[0])!
+            let curstock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)
+           order.append(curstock!)
+            
+        
+            let cell = tableView.cellForRow(at: i)as! PlaceOrderTableViewCell
+            let quant = cell.QuantityField.text
+            guard let quant = cell.QuantityField.text, !quant.isEmpty, Int(quant) != nil, Int(quant)! > 0 else {
+                return Alert()
+            }
+            quantitylist.append(Int(quant)!)
 
-        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
+        }
+  
+        for i in 0...order.count{
+            
+        }
+  
         let investment = (stock?.getlastTradePrice())!*Double(quant)!
     
         let order = Order(stock: stock!, quantity: Int(quant)!, invested: true, customer: customer!,tradeinPrice: (stock?.getlastTradePrice())!)
@@ -84,18 +94,18 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             let vc = OrderViewController()
                 self.present(vc, animated: true, completion: nil)}}))
         self.present(alert,animated:true,completion: nil)
-        
+      */
        
     }
         
     public func placeOrder(order:Order,quant:Double){
         
-        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
+   /*     let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.orderedStock)
         let investment = (stock?.getlastTradePrice())!*quant
     
         customer?.setTotalInvestment(investment: investment)
         AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order)
-        
+        */
     }
     
     
