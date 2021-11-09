@@ -20,7 +20,10 @@ class SellStockViewController: UIViewController {
     @IBOutlet weak var quantity: UILabel!
     override func viewDidLoad() {
         stockfield.text=selectstock?.getName()
-        quantity.text=String(AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+        let orderedQuantity=AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+        let selledQuantity=AppDelegate.GlobalVariable.SellStocklist.testSellStocklist.SellStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+        let quant1 = orderedQuantity-selledQuantity
+        quantity.text=String(quant1
                         )
         AvgCost.text=String(AppDelegate.GlobalVariable.orderlist.testOrderlist.avgforCustomer(customer: customer!, stock: selectstock!))
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class SellStockViewController: UIViewController {
         let sellStock = SellStock(stock: stock!, quantity: Int(quant)!, customer: customer!,  Earning:Earning, Company: stock!.company)
    
 
-        let alert = UIAlertController(title: "Placing Order", message: "you will Earn $\(Earning)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "selling Stocks", message: "you will Earn $\(Earning)", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.SellOrder(sellStock:sellStock,quant:Double(quant)!);DispatchQueue.main.async {
