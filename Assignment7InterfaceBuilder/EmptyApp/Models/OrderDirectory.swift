@@ -28,9 +28,12 @@ class OrderDirecrtory {
     public func DeleteOrder(id:Int){
         for (index, value) in orderList.enumerated() {
             if value.orderid==id {
-                let price=value.stock[0].getlastTradePrice()
-                let quant = Double(value.quantity[0])
-                value.customer.setTotalInvestment(investment: -price*quant)
+                var investment = 0.0
+                for i in 0..<value.stock.count {
+                    investment += value.stock[i].getlastTradePrice() * Double((value.quantity[i]))
+                }
+                
+                value.customer.setTotalInvestment(investment: -investment)
                 orderList.remove(at: index)
             }
             

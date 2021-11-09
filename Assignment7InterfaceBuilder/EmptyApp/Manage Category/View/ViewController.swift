@@ -14,7 +14,23 @@ class ViewController: UIViewController{
     @IBOutlet weak var welcomeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        let customer = Customer(firstName: "Yining", lastName: "Chen", address: "41 Maple St", contactDetails: "7326680885", emailID: "yinigchen2018gmail.com")
+        AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
+       let company = Company(name: "fb", symbol: "fb", headquarter: "ca", email: "fb.com")
+        AppDelegate.GlobalVariable.companylist.testCompanylist.addCompany(Company: company)
+        
+        let category = Category(name: "Tech")
+        AppDelegate.GlobalVariable.categorylist.testCategorylist.addCategory(Category: category)
+        
+        let stock1 = Stock(name: "Fb", lastTradePrice: 100, financialRating: 9, category: category, company: company)
+        let stock2 = Stock(name: "Apple", lastTradePrice: 10, financialRating: 9, category: category, company: company)
+        AppDelegate.GlobalVariable.stocklist.testStocklist.addStock(Stock: stock1)
+        AppDelegate.GlobalVariable.stocklist.testStocklist.addStock(Stock: stock2)
+        
+        
+        
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

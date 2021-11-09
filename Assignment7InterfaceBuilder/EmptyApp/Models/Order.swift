@@ -69,9 +69,27 @@ class Order{
         return  Double(quantity[0])*tradeinPrice[0]
     }
     
+    public func StocktoString(Stocks:Array<Stock>)->  String{
+        var str=""
+        
+        for stock in Stocks{
+            let components = stock.toStringShort().components(separatedBy: " ")
+            str+=components[1]+","
+        }
+        return str
+    }
+    public func QualitytoString(quant:Array<Int>)->  String{
+        var str=""
+        
+        for q in quant{
+    
+            str+=String(q)+","
+        }
+        return str
+    }
     
     
     public func toString ()->String{
-        return "\(orderid) \(stock.description) \(quantity) \(date)"
+        return "\(orderid) \(StocktoString(Stocks: stock)) \(QualitytoString(quant:quantity)) \(date)"
     }
 }

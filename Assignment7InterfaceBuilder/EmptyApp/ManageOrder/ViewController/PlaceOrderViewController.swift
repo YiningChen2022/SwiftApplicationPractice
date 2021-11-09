@@ -63,7 +63,8 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     
 
     @IBAction func didTapPlace(_ sender: UIButton) {
-
+     
+        
         for i in tableView.indexPathsForSelectedRows! {
             let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[i.row]
             let id=Int(selected.split(separator: " ")[0])!
@@ -93,7 +94,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             let vc = OrderViewController()
                 self.present(vc, animated: true, completion: nil)}}))
         self.present(alert,animated:true,completion: nil)
-      
+        
        
     }
         
