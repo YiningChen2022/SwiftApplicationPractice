@@ -64,6 +64,6 @@ class Stock{
     
     
     public func toString ()->String{
-        return "\(id) \(name) \(company.name)  \(lastTradePrice) \(financialRating)\(category.name) "
+        return "\(id) StockName: \(name) Company: \(company.name) LastTradePrice: \(lastTradePrice) Rating: \(financialRating) Category: \(category.name) "
     }
 }

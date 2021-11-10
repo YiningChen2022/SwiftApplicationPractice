@@ -28,6 +28,6 @@ class Category{
         self.name=name
     }
     public func toString ()->String{
-        return "\(id) \(name)"
+        return "\(id) Name: \(name)"
     }
 }

@@ -66,9 +66,11 @@ public func manageCompany() {
             let  companyid: String? = readLine()
             if companyid != nil && companyid != ""{
                 let  companyid1 = Int(companyid!)
-                let curr=testcompanylist.getCompany(id: companyid1!)
+              
+                    let curr=testcompanylist.getCompany(id: companyid1!)
                 if curr != nil {
                     testcompanylist.DeleteCompany(id: curr!.id)
+                
                     print("--------------------company Deleted ---------------")
                      testcompanylist.toString()
                 }else{
@@ -79,7 +81,7 @@ public func manageCompany() {
             }
             
         case "4":
-            testcustomerlist.toString()
+            testcompanylist.toString()
         case "5":
             end=true
         default:

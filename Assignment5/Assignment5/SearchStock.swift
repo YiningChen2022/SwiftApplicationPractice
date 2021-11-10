@@ -11,7 +11,6 @@ import Foundation
 public func searchstock(){
     var end=false
     while(!end){
-        teststocklist.toString()
         print("Select options :")
         print("1.Search by Company")
         print("2.Search by Category")

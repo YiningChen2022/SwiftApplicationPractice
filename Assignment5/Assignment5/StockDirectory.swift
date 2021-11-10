@@ -68,115 +68,58 @@ class StockDirecrtory {
     }
     
 
-    public func searchByCompany(Companyid :Int)->Array<String>{
-        var str:Array<String>=[]
-        for   stock in stockList {
+    public func searchByCompany(Companyid :Int){
+        for stock in stockList {
             if stock.company.getid() == Companyid{
-                str.append(stock.toString())
-            }
-            
-        }
-        
-        return str
-    }
-    public func searchCompanygetsize (Companyid :Int)->Int{
-        var count=0;
-        for stock in stockList{
-            if stock.company.getid() == Companyid{
-            count+=1;
-                
+              print(stock.toString())
             }
         }
-        return count
     }
-    public func searchCategorygetsize (categoryid: Int)->Int{
-        var count=0;
-        for stock in stockList{
-            if stock.category.getId() == categoryid{
-            count+=1;
 
-            }
-        }
-        return count
-    }
-    public func searchByCategory(categoryid: Int)->Array<String>{
-        var str:Array<String>=[]
+    public func searchByCategory(categoryid: Int){
+    
             for   stock in stockList {
                 if stock.category.getId() == categoryid{
-                    str.append(stock.toString())
+                    print(stock.toString())
                 }
         }
-        return str
+  
     }
     
     
-    public func searchNamegetsize (name: String)->Int{
-        var count=0;
-        for stock in stockList{
-            if stock.getName() == name{
-            count+=1;
-
-            }
-        }
-        return count
-    }
-    public func searchByName(name: String)->Array<String>{
-        var str:Array<String>=[]
+    public func searchByName(name: String){
         if name == "" {
             print("please input valid value")
         }else{
             for   stock in stockList {
                 if stock.getName() == name{
-                    str.append(stock.toString())
+                    print(stock.toString())
                 }
             }
         }
-        return str
+    
     }
-    public func searchFinancialgetsize (financialRating: Int)->Int{
-        var count=0;
-        for stock in stockList{
-            if stock.getfinancialRating() >= financialRating{
-            count+=1;
 
-            }
-        }
-        return count
-    }
-    public func searchByFinancialRating(financialRating: Int)->Array<String>{
-        var str:Array<String>=[]
+    public func searchByFinancialRating(financialRating: Int){
         if financialRating>10 || financialRating<0 {
             print("please input valid value")
         }else{
             for   stock in stockList {
                 if stock.getfinancialRating() >= financialRating{
-                    str.append(stock.toString())
+                    print(stock.toString())
                 }
             }
         }
-        return str
     }
-    public func searchByLastTradePrice(lastTradePrice: Double)->Array<String>{
-        var str:Array<String>=[]
+    public func searchByLastTradePrice(lastTradePrice: Double){
         if lastTradePrice<0.00 {
             print("please input valid value")
         }else{
             for   stock in stockList {
                 if stock.getlastTradePrice() >= lastTradePrice{
-                    str.append(stock.toString())
+                    print(stock.toString())
                 }
             }
         }
-        return str
-    }
-    public func searchtradegetsize (lastTradePrice: Double)->Int{
-        var count=0;
-        for stock in stockList{
-            if stock.getlastTradePrice() >= lastTradePrice{
-            count+=1;
-
-            }
-        }
-        return count
     }
 }

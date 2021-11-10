@@ -30,7 +30,7 @@ while(!end){
         let Contactdetails : String? = readLine()
         print("Enter Customer Email: ")
         let email: String? = readLine()
-        if (firstName != "" && lastName != "" && Address != "" && Contactdetails != "" && email != ""){
+        if (firstName != "" && lastName != "" && Address != "" && Contactdetails != "" && email != "" &&  Int(Contactdetails!) != nil){
             let customer5 = Customer(firstName: firstName!, lastName: lastName!, address: Address!, contactDetails: Contactdetails!, emailID: email!)
             testcustomerlist.addCustomer(Customer: customer5)
             print("--------------------customer added---------------")
