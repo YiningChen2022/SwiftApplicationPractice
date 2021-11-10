@@ -64,7 +64,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
     @IBAction func didTapPlace(_ sender: UIButton) {
      
         if tableView.indexPathsForSelectedRows == nil{
-            Alert()
+            AlertofSelect()
         }else{
         for i in tableView.indexPathsForSelectedRows! {
             let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[i.row]
@@ -132,6 +132,13 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         self.present(alertController,animated:true,completion: nil)
     }
     
+    func AlertofSelect (){
+        
+        let alertController = UIAlertController(title:"Info",message:"Please select stocks first", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
     
     
 }
