@@ -34,9 +34,7 @@ class CompanySelectedViewController: UIViewController, UITableViewDelegate, UITa
     
     
     @IBAction func closewindow(_ sender: UIButton) {
-        let vc = ViewAllStockViewController()
-            self.present(vc, animated: true, completion: nil)
-        
+        dismiss(animated: true, completion: nil)
         
     }
     

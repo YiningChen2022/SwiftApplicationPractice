@@ -51,7 +51,6 @@ class SearchByCompanyViewController: UIViewController,UITableViewDelegate, UITab
     
 
     @IBAction func CLOSE(_ sender: UIButton) {
-        let vc = ViewAllStockViewController()
-            self.present(vc, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
