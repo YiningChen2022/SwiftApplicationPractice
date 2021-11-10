@@ -72,12 +72,5 @@ class CustomerDirecrtory {
         }
         
     }
-    public func toString()->Array<String>{
-        var str:Array<String>=[]
-        for customer in customerList {
-            str.append(customer.toString())
-        }
-        return str
-        
-    }
+
 }

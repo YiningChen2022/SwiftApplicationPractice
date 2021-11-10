@@ -61,14 +61,7 @@ class CompanyDirecrtory {
         return count
     }
     
-    public func toString()->Array<String>{
-        var str:Array<String>=[]
-        for company in companyList {
-            str.append(company.toString())
-        }
-        return str
-        
-    }
+ 
     public func toString(){
         for company in companyList {
             print (company.toString())
