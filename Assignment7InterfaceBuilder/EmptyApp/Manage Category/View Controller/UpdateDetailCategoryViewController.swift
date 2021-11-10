@@ -45,8 +45,7 @@ class UpdateDetailCategoryViewController: UIViewController {
         
         AppDelegate.GlobalVariable.categorylist.testCategorylist.UpdateCategory(id: AppDelegate.GlobalVariable.selectedCategory, name: name)
     
-        let vc = ManageCategoryViewController()
-           self.present(vc, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     

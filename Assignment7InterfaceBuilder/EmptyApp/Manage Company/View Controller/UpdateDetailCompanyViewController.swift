@@ -59,8 +59,7 @@ class UpdateDetailCompanyViewController: UIViewController {
                   return Alert()
               }
         AppDelegate.GlobalVariable.companylist.testCompanylist.UpdateCompany(id: AppDelegate.GlobalVariable.selectedCompany, symbol: symbol, headquarter: headQuarter, email: email)
-        let vc = ManageCompanyViewController()
-           self.present(vc, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     func Alert (){
         

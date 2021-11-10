@@ -92,15 +92,11 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder(order1:order);DispatchQueue.main.async {
-         /*   let vc = OrderViewController()
+           let vc = OrderViewController()
             vc.modalTransitionStyle = .crossDissolve
                 self.present(vc, animated: true, completion: nil)
           
           
-          */
-            let vc = OrderViewController()
-            vc.reloadInputViews()
-            self.dismiss(animated: true, completion: nil)
           
         }}))
         self.present(alert,animated:true,completion: nil)

@@ -36,8 +36,15 @@ class SearchByLastTradePriceViewController: UIViewController, UITableViewDelegat
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
       
         name=nameField.text ?? ""
-
-            return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchtradegetsize(lastTradePrice:Double(name)!))
+        if (Double(name) == nil){
+            print ("not valid")
+            return 0
+        }else {
+           let trade=Double(name)!
+        
+       
+            return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchtradegetsize(lastTradePrice:trade))
+        }
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       

@@ -54,6 +54,12 @@ class OrderViewController: UIViewController {
     
     
  
+    @IBAction func didTapHome(_ sender: UIButton) {
+        let vc = ViewAllOrdersViewController ()
+           self.present(vc, animated: true, completion: nil)
+        
+        
+    }
     
     
 

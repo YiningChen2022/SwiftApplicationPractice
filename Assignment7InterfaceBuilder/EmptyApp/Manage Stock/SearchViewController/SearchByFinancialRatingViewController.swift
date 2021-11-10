@@ -32,10 +32,17 @@ class SearchByFinancialRatingViewController: UIViewController, UITableViewDelega
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
       
         name=nameField.text ?? ""
-        rate=Int(name)!
+        if (Int(name) == nil){
+            print ("not valid")
+            return 0
+        }else {
+            rate=Int(name)!
+        
+       
        
       
         return AppDelegate.GlobalVariable.stocklist.testStocklist.searchFinancialgetsize(financialRating:rate)
+        }
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       

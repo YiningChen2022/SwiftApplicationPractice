@@ -90,7 +90,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-9o-02r">
-                    <rect key="frame" x="176" y="45" width="147" height="49"/>
+                    <rect key="frame" x="176" y="43" width="84" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -104,7 +104,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2q-1D-Kjq">
-                    <rect key="frame" x="147" y="577" width="121" height="31"/>
+                    <rect key="frame" x="138" y="599" width="121" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Close"/>
@@ -160,12 +160,35 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnr-lh-tKZ">
+                    <rect key="frame" x="138" y="556" width="123" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="All Orders"/>
+                    <connections>
+                        <action selector="didTapHome:" destination="-1" eventType="touchUpInside" id="U2d-k9-HPA"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <point key="canvasLocation" x="137.68115942028987" y="87.228260869565219"/>
         </view>
     </objects>
+    <designables>
+        <designable name="9Qs-8h-L6h">
+            <size key="intrinsicContentSize" width="152.33333333333334" height="31"/>
+        </designable>
+        <designable name="D32-Wx-rTS">
+            <size key="intrinsicContentSize" width="128" height="31"/>
+        </designable>
+        <designable name="Qgl-Wn-31d">
+            <size key="intrinsicContentSize" width="103.33333333333333" height="31"/>
+        </designable>
+        <designable name="a75-Su-zUG">
+            <size key="intrinsicContentSize" width="121.33333333333333" height="31"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
