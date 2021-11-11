@@ -8,22 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Assignment8_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-435" y="-324"/>
-        </scene>
-        <!--Item 2-->
+        <!--Company-->
         <scene sceneID="p8v-i9-DCU">
             <objects>
                 <viewController id="QZs-RA-rby" sceneMemberID="viewController">
@@ -42,13 +27,13 @@
                         <viewLayoutGuide key="safeArea" id="bqt-b8-Hzf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="TAD-cV-ann"/>
+                    <tabBarItem key="tabBarItem" title="Company" id="TAD-cV-ann"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43s-7c-X5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2668.1159420289855" y="330.97826086956525"/>
         </scene>
-        <!--Item 1-->
+        <!--Customer-->
         <scene sceneID="bFP-7h-xXk">
             <objects>
                 <viewController id="by7-MF-vLA" sceneMemberID="viewController">
@@ -67,11 +52,11 @@
                         <viewLayoutGuide key="safeArea" id="ked-G7-UQp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="NcZ-g5-zX1"/>
+                    <tabBarItem key="tabBarItem" title="Customer" id="NcZ-g5-zX1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="do5-IQ-Zry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666.6666666666667" y="-394.41964285714283"/>
+            <point key="canvasLocation" x="1400" y="-440"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XvL-F7-fSc">
@@ -143,7 +128,7 @@
             </objects>
             <point key="canvasLocation" x="1814.4927536231885" y="724.72826086956525"/>
         </scene>
-        <!--Item-->
+        <!--Company-->
         <scene sceneID="Drh-2H-3yj">
             <objects>
                 <viewController id="bec-E0-BIX" sceneMemberID="viewController">
@@ -151,37 +136,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View Controller 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egr-sE-CUf">
-                                <rect key="frame" x="151" y="305" width="143" height="149"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage Customer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egr-sE-CUf">
+                                <rect key="frame" x="136" y="32" width="143" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDW-mI-X0a">
+                                <rect key="frame" x="93" y="229" width="229" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8wP-sN-DLw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bxe-bn-r8U"/>
+                    <tabBarItem key="tabBarItem" title="Company" id="bxe-bn-r8U"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrb-Ya-Jte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="-1116"/>
+            <point key="canvasLocation" x="1502.8985507246377" y="-1116.0326086956522"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Stock-->
         <scene sceneID="jpz-lL-JPt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2pH-bD-9il" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="3gf-kE-VGT"/>
+                    <tabBarItem key="tabBarItem" title="Stock" id="3gf-kE-VGT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sbi-8f-l2Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lkq-mN-sbg" kind="relationship" relationship="rootViewController" id="Jgi-sl-3dz"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpT-16-3Ng" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

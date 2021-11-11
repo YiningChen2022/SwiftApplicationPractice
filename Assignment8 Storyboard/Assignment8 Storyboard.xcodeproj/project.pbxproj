@@ -26,6 +26,12 @@
 		E84709CA273D88C400B3446E /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709C9273D88C400B3446E /* StockDirectory.swift */; };
 		E84709CC273D88D100B3446E /* SellStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709CB273D88D100B3446E /* SellStock.swift */; };
 		E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709CD273D88DC00B3446E /* SellStockDirectory.swift */; };
+		E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D0273DA36300B3446E /* CustomerManager.swift */; };
+		E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D2273DA36E00B3446E /* CompanyManager.swift */; };
+		E84709D5273DA37A00B3446E /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D4273DA37A00B3446E /* StockManager.swift */; };
+		E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D6273DA39100B3446E /* CategoryManager.swift */; };
+		E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D8273DA3A100B3446E /* OrderManager.swift */; };
+		E84709DB273DA3AC00B3446E /* SellStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DA273DA3AC00B3446E /* SellStock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		E84709C9273D88C400B3446E /* StockDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
 		E84709CB273D88D100B3446E /* SellStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStock.swift; sourceTree = "<group>"; };
 		E84709CD273D88DC00B3446E /* SellStockDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockDirectory.swift; sourceTree = "<group>"; };
+		E84709D0273DA36300B3446E /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
+		E84709D2273DA36E00B3446E /* CompanyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyManager.swift; sourceTree = "<group>"; };
+		E84709D4273DA37A00B3446E /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
+		E84709D6273DA39100B3446E /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
+		E84709D8273DA3A100B3446E /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
+		E84709DA273DA3AC00B3446E /* SellStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 		E847099F273D621C00B3446E /* Assignment8 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E84709CF273DA33E00B3446E /* Manager */,
 				E84709B6273D87F200B3446E /* Models */,
 				E84709A0273D621C00B3446E /* AppDelegate.swift */,
 				E84709A2273D621C00B3446E /* SceneDelegate.swift */,
@@ -112,6 +125,19 @@
 				E84709CD273D88DC00B3446E /* SellStockDirectory.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E84709CF273DA33E00B3446E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E84709D0273DA36300B3446E /* CustomerManager.swift */,
+				E84709D2273DA36E00B3446E /* CompanyManager.swift */,
+				E84709D4273DA37A00B3446E /* StockManager.swift */,
+				E84709D6273DA39100B3446E /* CategoryManager.swift */,
+				E84709D8273DA3A100B3446E /* OrderManager.swift */,
+				E84709DA273DA3AC00B3446E /* SellStock.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,16 +216,22 @@
 				E84709CA273D88C400B3446E /* StockDirectory.swift in Sources */,
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
 				E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */,
+				E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */,
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
 				E84709C4273D88A300B3446E /* Order.swift in Sources */,
+				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
 				E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */,
+				E84709D5273DA37A00B3446E /* StockManager.swift in Sources */,
+				E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */,
+				E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */,
+				E84709DB273DA3AC00B3446E /* SellStock.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
