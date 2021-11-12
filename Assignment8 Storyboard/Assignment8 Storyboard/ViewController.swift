@@ -11,14 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      /*  let customer = Customer(firstName: "Yining", lastName: "Chen", address: "41 Maple St", contactDetails: "7326680885", emailID: "yinigchen2018gmail.com")
+       let customer = Customer(firstName: "Yining", lastName: "Chen", address: "41 Maple St", contactDetails: "7326680885", emailID: "yinigchen2018gmail.com")
            let customer1 = Customer(firstName: "keqiang", lastName: "qu", address: "41 Maple St", contactDetails: "7326680885", emailID: "qu2018gmail.com")
-           
+
            AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer1)
-           
-           
-           
            AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
+        
           let company = Company(name: "fb", symbol: "fb", headquarter: "ca", email: "fb.com")
            AppDelegate.GlobalVariable.companylist.testCompanylist.addCompany(Company: company)
            
@@ -34,8 +32,9 @@ class ViewController: UIViewController {
            AppDelegate.GlobalVariable.stocklist.testStocklist.addStock(Stock: stock3)
            AppDelegate.GlobalVariable.stocklist.testStocklist.addStock(Stock: stock4) 
         // Do any additional setup after loading the view.
-       */
+      print(AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
     }
+
 
 
 }

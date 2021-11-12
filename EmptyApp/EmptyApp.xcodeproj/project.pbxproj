@@ -32,14 +32,6 @@
 		E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDA2729E53A00AED145 /* applicationViewController.swift */; };
 		E83FABDD2729EF4200AED145 /* ManageCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */; };
 		E83FABDF272B282700AED145 /* ManageCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */; };
-		E83FABE7272B2C2B00AED145 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABE6272B2C2B00AED145 /* Category.swift */; };
-		E83FABE9272B2C3100AED145 /* CategoryDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABE8272B2C3100AED145 /* CategoryDirectory.swift */; };
-		E83FABEB272B2C3400AED145 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABEA272B2C3400AED145 /* Company.swift */; };
-		E83FABED272B2C3900AED145 /* CompanyDirecrtory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABEC272B2C3900AED145 /* CompanyDirecrtory.swift */; };
-		E83FABEF272B2C3D00AED145 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABEE272B2C3D00AED145 /* Customer.swift */; };
-		E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF0272B2C4200AED145 /* CustomerDirectory.swift */; };
-		E83FABF3272B2C4600AED145 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF2272B2C4600AED145 /* Stock.swift */; };
-		E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABF4272B2C4900AED145 /* StockDirectory.swift */; };
 		E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FABFB272B64D900AED145 /* AddViewController.swift */; };
 		E83FAC01272B75E300AED145 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83FAC00272B75E300AED145 /* CustomerManager.swift */; };
 		E88328C9272E3E4200E86E6F /* AddCustomerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88328C8272E3E4200E86E6F /* AddCustomerUIView.swift */; };
@@ -92,14 +84,6 @@
 		E83FABDA2729E53A00AED145 /* applicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applicationViewController.swift; sourceTree = "<group>"; };
 		E83FABDC2729EF4200AED145 /* ManageCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCustomerViewController.swift; sourceTree = "<group>"; };
 		E83FABDE272B282700AED145 /* ManageCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCompanyViewController.swift; sourceTree = "<group>"; };
-		E83FABE6272B2C2B00AED145 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../../../Assignment5/Assignment5/Category.swift; sourceTree = "<group>"; };
-		E83FABE8272B2C3100AED145 /* CategoryDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryDirectory.swift; path = ../../../Assignment5/Assignment5/CategoryDirectory.swift; sourceTree = "<group>"; };
-		E83FABEA272B2C3400AED145 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Company.swift; path = ../../../Assignment5/Assignment5/Company.swift; sourceTree = "<group>"; };
-		E83FABEC272B2C3900AED145 /* CompanyDirecrtory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompanyDirecrtory.swift; path = ../../../Assignment5/Assignment5/CompanyDirecrtory.swift; sourceTree = "<group>"; };
-		E83FABEE272B2C3D00AED145 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = ../../../Assignment5/Assignment5/Customer.swift; sourceTree = "<group>"; };
-		E83FABF0272B2C4200AED145 /* CustomerDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerDirectory.swift; path = ../../../Assignment5/Assignment5/CustomerDirectory.swift; sourceTree = "<group>"; };
-		E83FABF2272B2C4600AED145 /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stock.swift; path = ../../../Assignment5/Assignment5/Stock.swift; sourceTree = "<group>"; };
-		E83FABF4272B2C4900AED145 /* StockDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockDirectory.swift; sourceTree = "<group>"; };
 		E83FABFB272B64D900AED145 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E83FAC00272B75E300AED145 /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
 		E88328C8272E3E4200E86E6F /* AddCustomerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerUIView.swift; sourceTree = "<group>"; };
@@ -271,14 +255,6 @@
 		E83FABE5272B2BEA00AED145 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E83FABF2272B2C4600AED145 /* Stock.swift */,
-				E83FABF4272B2C4900AED145 /* StockDirectory.swift */,
-				E83FABE6272B2C2B00AED145 /* Category.swift */,
-				E83FABE8272B2C3100AED145 /* CategoryDirectory.swift */,
-				E83FABEA272B2C3400AED145 /* Company.swift */,
-				E83FABEC272B2C3900AED145 /* CompanyDirecrtory.swift */,
-				E83FABEE272B2C3D00AED145 /* Customer.swift */,
-				E83FABF0272B2C4200AED145 /* CustomerDirectory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,9 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E814C75D272F390100F8E740 /* seletedCategory.swift in Sources */,
-				E83FABED272B2C3900AED145 /* CompanyDirecrtory.swift in Sources */,
 				153402A51F939BDB00324E7D /* AppDelegate.swift in Sources */,
-				E83FABF5272B2C4900AED145 /* StockDirectory.swift in Sources */,
 				E800FE98272CF005009186E7 /* UpdateCustomerViewController.swift in Sources */,
 				E88328CB272E41EC00E86E6F /* UpdateCustomerUIView.swift in Sources */,
 				E88328E4272E63F800E86E6F /* AddStockUIView.swift in Sources */,
@@ -409,13 +383,10 @@
 				E800FEC6272D0572009186E7 /* CompanyManager.swift in Sources */,
 				E88328F1272E64B900E86E6F /* ManageCompanyUIView.swift in Sources */,
 				E800FEC8272D057D009186E7 /* StockManager.swift in Sources */,
-				E83FABEB272B2C3400AED145 /* Company.swift in Sources */,
 				E83FABFC272B64D900AED145 /* AddViewController.swift in Sources */,
-				E83FABF3272B2C4600AED145 /* Stock.swift in Sources */,
 				E83FABDD2729EF4200AED145 /* ManageCustomerViewController.swift in Sources */,
 				E800FE94272CE46A009186E7 /* DeleteCustomerViewController.swift in Sources */,
 				E800FECC272DC192009186E7 /* ManagerCustomerView.swift in Sources */,
-				E83FABF1272B2C4200AED145 /* CustomerDirectory.swift in Sources */,
 				E814C759272F30FD00F8E740 /* SearchByTrade.swift in Sources */,
 				E88328C9272E3E4200E86E6F /* AddCustomerUIView.swift in Sources */,
 				E88328EF272E64A000E86E6F /* UpdateCompanyDetailView.swift in Sources */,
@@ -424,14 +395,12 @@
 				E88328CF272E420C00E86E6F /* ViewCustomerUIView.swift in Sources */,
 				E800FE9A272CF0D7009186E7 /* updateDetailViewController.swift in Sources */,
 				E83FABDB2729E53A00AED145 /* applicationViewController.swift in Sources */,
-				E83FABEF272B2C3D00AED145 /* Customer.swift in Sources */,
 				E814C74F272F30A900F8E740 /* SearchByCategory.swift in Sources */,
 				E814C755272F30E400F8E740 /* SearchByFinancialRating.swift in Sources */,
 				E88328F5272E690700E86E6F /* MainPage.swift in Sources */,
 				E88328CD272E41FD00E86E6F /* DeleteCustomerUIVeiw.swift in Sources */,
 				E800FEBC272D04DB009186E7 /* AddCompanyUIView.swift in Sources */,
 				E88328D4272E625E00E86E6F /* AddCategoryUIView.swift in Sources */,
-				E83FABE9272B2C3100AED145 /* CategoryDirectory.swift in Sources */,
 				E88328D8272E629700E86E6F /* DeleteCategoryUIView.swift in Sources */,
 				E88328EA272E643F00E86E6F /* ViewStockUIView.swift in Sources */,
 				E83FAC01272B75E300AED145 /* CustomerManager.swift in Sources */,
@@ -442,7 +411,6 @@
 				E88328D6272E627900E86E6F /* UpdateCategoryUIView.swift in Sources */,
 				E800FEC2272D0522009186E7 /* ViewAllCompanyUIView.swift in Sources */,
 				E814C753272F30CB00F8E740 /* SearchByName.swift in Sources */,
-				E83FABE7272B2C2B00AED145 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

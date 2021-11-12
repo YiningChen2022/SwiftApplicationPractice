@@ -12,14 +12,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-   /* struct GlobalVariable{
+    struct GlobalVariable{
         public static var customerlist=CustomerManager()
         public static var stocklist=StockManager()
         public static var companylist=CompanyManager()
         public static var categorylist=CategoryManager()
         public static var orderlist=OrderManager()
         public static var SellStocklist=SellStockManager()
-        
         public static var selected=0
         public static var selectedCategory=0
         public static var selectedStock=0
@@ -33,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         public static var orderedStock:Array<Stock>=[]
         public static var sellStockid=0
      }
-    */
+ 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

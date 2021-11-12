@@ -31,7 +31,11 @@
 		E84709D5273DA37A00B3446E /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D4273DA37A00B3446E /* StockManager.swift */; };
 		E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D6273DA39100B3446E /* CategoryManager.swift */; };
 		E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709D8273DA3A100B3446E /* OrderManager.swift */; };
-		E84709DB273DA3AC00B3446E /* SellStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DA273DA3AC00B3446E /* SellStock.swift */; };
+		E84709DD273DA57800B3446E /* SellStockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DC273DA57800B3446E /* SellStockManager.swift */; };
+		E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */; };
+		E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E1273DAE8000B3446E /* TabBarViewController.swift */; };
+		E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */; };
+		E84709E8273DC95600B3446E /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E7273DC95600B3446E /* UpdateCustomerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +65,11 @@
 		E84709D4273DA37A00B3446E /* StockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
 		E84709D6273DA39100B3446E /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		E84709D8273DA3A100B3446E /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
-		E84709DA273DA3AC00B3446E /* SellStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStock.swift; sourceTree = "<group>"; };
+		E84709DC273DA57800B3446E /* SellStockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockManager.swift; sourceTree = "<group>"; };
+		E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerTableViewController.swift; sourceTree = "<group>"; };
+		E84709E1273DAE8000B3446E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
+		E84709E7273DC95600B3446E /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +102,11 @@
 		E847099F273D621C00B3446E /* Assignment8 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E84709DE273DA68A00B3446E /* Customer Manage */,
 				E84709CF273DA33E00B3446E /* Manager */,
 				E84709B6273D87F200B3446E /* Models */,
 				E84709A0273D621C00B3446E /* AppDelegate.swift */,
+				E84709E1273DAE8000B3446E /* TabBarViewController.swift */,
 				E84709A2273D621C00B3446E /* SceneDelegate.swift */,
 				E84709A4273D621C00B3446E /* ViewController.swift */,
 				E84709A6273D621C00B3446E /* Main.storyboard */,
@@ -135,9 +145,19 @@
 				E84709D4273DA37A00B3446E /* StockManager.swift */,
 				E84709D6273DA39100B3446E /* CategoryManager.swift */,
 				E84709D8273DA3A100B3446E /* OrderManager.swift */,
-				E84709DA273DA3AC00B3446E /* SellStock.swift */,
+				E84709DC273DA57800B3446E /* SellStockManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		E84709DE273DA68A00B3446E /* Customer Manage */ = {
+			isa = PBXGroup;
+			children = (
+				E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */,
+				E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */,
+				E84709E7273DC95600B3446E /* UpdateCustomerViewController.swift */,
+			);
+			path = "Customer Manage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +235,10 @@
 				E84709BA273D885A00B3446E /* CategoryDirectory.swift in Sources */,
 				E84709CA273D88C400B3446E /* StockDirectory.swift in Sources */,
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
+				E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */,
 				E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */,
 				E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */,
+				E84709DD273DA57800B3446E /* SellStockManager.swift in Sources */,
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
@@ -226,13 +248,15 @@
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
+				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
 				E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */,
 				E84709D5273DA37A00B3446E /* StockManager.swift in Sources */,
 				E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */,
 				E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */,
-				E84709DB273DA3AC00B3446E /* SellStock.swift in Sources */,
+				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
+				E84709E8273DC95600B3446E /* UpdateCustomerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
