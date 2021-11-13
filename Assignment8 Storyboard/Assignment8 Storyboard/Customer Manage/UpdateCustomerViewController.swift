@@ -10,6 +10,9 @@ import UIKit
 class UpdateCustomerViewController: UIViewController {
 
     override func viewDidLoad() {
+        if (AppDelegate.GlobalVariable.selected==0){
+            Alert1()
+        }else{
         let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selected)
        FirstNameField.text=customer?.getFirstName()
        LastNameField.text=customer?.getLastName()
@@ -17,7 +20,7 @@ class UpdateCustomerViewController: UIViewController {
        AddressField.text=customer?.getAddress()
        ContactField.text=customer?.getContactDetails()
         super.viewDidLoad()
-
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -54,5 +57,11 @@ class UpdateCustomerViewController: UIViewController {
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
     }
-    
+    func Alert1 (){
+        
+        let alertController = UIAlertController(title:"Info",message:"Please select a customer", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
 }

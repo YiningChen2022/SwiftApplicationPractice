@@ -38,6 +38,7 @@
 		E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */; };
 		E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730C273F4AE400E40460 /* CategoryTableViewController.swift */; };
 		E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */; };
+		E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
 		E891730C273F4AE400E40460 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
+		E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				E891730C273F4AE400E40460 /* CategoryTableViewController.swift */,
 				E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */,
+				E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */,
 			);
 			path = "Category Manage";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
+				E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */,
 				E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */,
 				E84709D5273DA37A00B3446E /* StockManager.swift in Sources */,
 				E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */,

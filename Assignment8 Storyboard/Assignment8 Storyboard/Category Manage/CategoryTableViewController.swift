@@ -104,7 +104,8 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
             let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selectedCompany=id
+            AppDelegate.GlobalVariable.selectedCategory=id
+        print(id)
 
            
            
