@@ -41,10 +41,10 @@ class AddCustomerViewController: UIViewController {
     }
     
     @IBAction func DidTapAddCustomer(_ sender: UIButton) {
-        guard let em=email.text, !em.isEmpty,
+        guard let em=email.text, !em.isEmpty,isValidEmail(email: em),
               let fn=firstName.text, !fn.isEmpty,
               let ln=lastName.text, !ln.isEmpty,
-              let contact=contactDetail.text,!contact.isEmpty, Int(contact) != nil,
+              let contact=contactDetail.text,!contact.isEmpty, Int(contact) != nil, contact.count==10,
               let addre = Address.text,!addre.isEmpty
         else{
                   return Alert()
@@ -52,8 +52,9 @@ class AddCustomerViewController: UIViewController {
         let customer = Customer(firstName: fn, lastName: ln, address: addre, contactDetails: contact, emailID: em)
         
         AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
-
         }
+
+        
   
     
     func Alert (){
@@ -62,6 +63,12 @@ class AddCustomerViewController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
+    }
+    func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
     /*

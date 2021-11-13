@@ -1,13 +1,12 @@
 //
-//  ViewCustomerTableViewController.swift
+//  CategoryTableViewController.swift
 //  Assignment8 Storyboard
 //
-//  Created by Yining Chen on 11/11/21.
+//  Created by Yining Chen on 11/12/21.
 //
 
 import UIKit
-
-class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
+class CategoryTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
   
     
 
@@ -42,17 +41,16 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return (AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
+        return (AppDelegate.GlobalVariable.categorylist.testCategorylist.getsize())
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
-        let str=AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+        let str=AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
         let components = str.components(separatedBy: " ")
-        cell.textLabel!.text = components[1]+" "+components[2]
-        cell.detailTextLabel?.text = components[3]+","+components[4]+" "+components[5]+" "+components[6]+" ,"+components[7]
+        cell.textLabel!.text = components[0]+" ."+components[1]
           return (cell)
       }
 
@@ -76,15 +74,15 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let deleteselect = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+            let deleteselect = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
             let id = Int(deleteselect.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.customerlist.testcustomerlist.DeleteCustomer(id: id)
+            AppDelegate.GlobalVariable.categorylist.testCategorylist.DeleteCategory(id: id)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
 
@@ -104,10 +102,10 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-             let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
+        let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
             let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selected=id
-        print(id)
+            AppDelegate.GlobalVariable.selectedCompany=id
+
            
            
             

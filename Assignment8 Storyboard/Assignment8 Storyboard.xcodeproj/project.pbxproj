@@ -35,6 +35,9 @@
 		E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */; };
 		E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E1273DAE8000B3446E /* TabBarViewController.swift */; };
 		E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */; };
+		E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */; };
+		E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730C273F4AE400E40460 /* CategoryTableViewController.swift */; };
+		E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerTableViewController.swift; sourceTree = "<group>"; };
 		E84709E1273DAE8000B3446E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
+		E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
+		E891730C273F4AE400E40460 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 		E847099F273D621C00B3446E /* Assignment8 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E891730B273F4AB300E40460 /* Category Manage */,
 				E84709DE273DA68A00B3446E /* Customer Manage */,
 				E84709CF273DA33E00B3446E /* Manager */,
 				E84709B6273D87F200B3446E /* Models */,
@@ -153,8 +160,18 @@
 			children = (
 				E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */,
 				E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */,
+				E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */,
 			);
 			path = "Customer Manage";
+			sourceTree = "<group>";
+		};
+		E891730B273F4AB300E40460 /* Category Manage */ = {
+			isa = PBXGroup;
+			children = (
+				E891730C273F4AE400E40460 /* CategoryTableViewController.swift */,
+				E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */,
+			);
+			path = "Category Manage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +259,7 @@
 				E84709C4273D88A300B3446E /* Order.swift in Sources */,
 				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
+				E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */,
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
@@ -253,6 +271,8 @@
 				E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */,
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
+				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
+				E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

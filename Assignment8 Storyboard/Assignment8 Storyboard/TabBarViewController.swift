@@ -22,7 +22,8 @@ class TabBarViewController: UITabBarController {
             
             let category = Category(name: "Tech")
             AppDelegate.GlobalVariable.categorylist.testCategorylist.addCategory(Category: category)
-            
+        let category1 = Category(name: "Online")
+        AppDelegate.GlobalVariable.categorylist.testCategorylist.addCategory(Category: category1)
             let stock1 = Stock(name: "Fb", lastTradePrice: 100, financialRating: 9, category: category, company: company)
             let stock2 = Stock(name: "Apple", lastTradePrice: 10, financialRating: 8, category: category, company: company)
             let stock3 = Stock(name: "Amaz", lastTradePrice: 50, financialRating: 7, category: category, company: company)
