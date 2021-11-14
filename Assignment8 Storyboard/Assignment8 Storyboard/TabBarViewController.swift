@@ -19,6 +19,9 @@ class TabBarViewController: UITabBarController {
          
            let company = Company(name: "fb", symbol: "fb", headquarter: "ca", email: "fb.com")
             AppDelegate.GlobalVariable.companylist.testCompanylist.addCompany(Company: company)
+        
+          let company1 = Company(name: "Apple", symbol: "apple", headquarter: "ca", email: "apple.com")
+           AppDelegate.GlobalVariable.companylist.testCompanylist.addCompany(Company: company1)
             
             let category = Category(name: "Tech")
             AppDelegate.GlobalVariable.categorylist.testCategorylist.addCategory(Category: category)

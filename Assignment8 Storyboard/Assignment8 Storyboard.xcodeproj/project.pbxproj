@@ -39,6 +39,12 @@
 		E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730C273F4AE400E40460 /* CategoryTableViewController.swift */; };
 		E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */; };
 		E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */; };
+		E8EE116A2741B1C8005A0DCD /* CompanyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */; };
+		E8EE116C2741B491005A0DCD /* CreateCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */; };
+		E8EE116E2741B4A1005A0DCD /* UpdateCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */; };
+		E8EE11732741B883005A0DCD /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11702741B883005A0DCD /* Apple.png */; };
+		E8EE11742741B883005A0DCD /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11712741B883005A0DCD /* fb.png */; };
+		E8EE11752741B883005A0DCD /* Amazon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11722741B883005A0DCD /* Amazon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,12 @@
 		E891730C273F4AE400E40460 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCategoryViewController.swift; sourceTree = "<group>"; };
+		E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewController.swift; sourceTree = "<group>"; };
+		E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyViewController.swift; sourceTree = "<group>"; };
+		E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCompanyViewController.swift; sourceTree = "<group>"; };
+		E8EE11702741B883005A0DCD /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple.png; sourceTree = "<group>"; };
+		E8EE11712741B883005A0DCD /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		E8EE11722741B883005A0DCD /* Amazon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amazon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,8 @@
 		E847099F273D621C00B3446E /* Assignment8 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E8EE116F2741B73A005A0DCD /* Images */,
+				E8EE11682741AFF7005A0DCD /* Company Manage */,
 				E891730B273F4AB300E40460 /* Category Manage */,
 				E84709DE273DA68A00B3446E /* Customer Manage */,
 				E84709CF273DA33E00B3446E /* Manager */,
@@ -177,6 +191,26 @@
 			path = "Category Manage";
 			sourceTree = "<group>";
 		};
+		E8EE11682741AFF7005A0DCD /* Company Manage */ = {
+			isa = PBXGroup;
+			children = (
+				E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */,
+				E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */,
+				E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */,
+			);
+			path = "Company Manage";
+			sourceTree = "<group>";
+		};
+		E8EE116F2741B73A005A0DCD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E8EE11722741B883005A0DCD /* Amazon.png */,
+				E8EE11702741B883005A0DCD /* Apple.png */,
+				E8EE11712741B883005A0DCD /* fb.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,8 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8EE11742741B883005A0DCD /* fb.png in Resources */,
+				E8EE11752741B883005A0DCD /* Amazon.png in Resources */,
 				E84709AD273D621E00B3446E /* LaunchScreen.storyboard in Resources */,
 				E84709AA273D621E00B3446E /* Assets.xcassets in Resources */,
+				E8EE11732741B883005A0DCD /* Apple.png in Resources */,
 				E84709A8273D621C00B3446E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,8 +291,10 @@
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
 				E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */,
 				E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */,
+				E8EE116C2741B491005A0DCD /* CreateCompanyViewController.swift in Sources */,
 				E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */,
 				E84709DD273DA57800B3446E /* SellStockManager.swift in Sources */,
+				E8EE116A2741B1C8005A0DCD /* CompanyTableViewController.swift in Sources */,
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
@@ -277,6 +316,7 @@
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
 				E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */,
+				E8EE116E2741B4A1005A0DCD /* UpdateCompanyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
