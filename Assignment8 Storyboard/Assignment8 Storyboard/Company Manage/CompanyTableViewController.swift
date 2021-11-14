@@ -108,20 +108,22 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
         let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
             let id=Int(selected.split(separator: " ")[0])!
             AppDelegate.GlobalVariable.selectedCompany=id
-        print(id)
-
+       
+        
+          let vc=CompanyDetailViewController()
+          vc.view.backgroundColor = .green
+          self.navigationController?.show(vc, sender:self)
            
            
             
         }
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath:IndexPath){
+      
+        let vc=CompanyDetailViewController()
+        vc.view.backgroundColor = .green
+        self.navigationController?.show(vc, sender:self)
+    }
     
 
 }
 
-extension CompanyTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func showImagePickerController(){
-        let imagePickerController=UIImagePickerController()
-        imagePickerController.delegate=self
-        present(imagePickerController,animated: true, completion: nil)
-    }
-}

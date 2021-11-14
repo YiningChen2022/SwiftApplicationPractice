@@ -45,6 +45,7 @@
 		E8EE11732741B883005A0DCD /* Apple.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11702741B883005A0DCD /* Apple.png */; };
 		E8EE11742741B883005A0DCD /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11712741B883005A0DCD /* fb.png */; };
 		E8EE11752741B883005A0DCD /* Amazon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11722741B883005A0DCD /* Amazon.png */; };
+		E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		E8EE11702741B883005A0DCD /* Apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple.png; sourceTree = "<group>"; };
 		E8EE11712741B883005A0DCD /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
 		E8EE11722741B883005A0DCD /* Amazon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amazon.png; sourceTree = "<group>"; };
+		E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */,
 				E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */,
 				E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */,
+				E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */,
 			);
 			path = "Company Manage";
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
+				E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */,
 				E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */,
 				E8EE116E2741B4A1005A0DCD /* UpdateCompanyViewController.swift in Sources */,
 			);

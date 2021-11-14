@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="3080" y="287"/>
         </scene>
-        <!--View Controller-->
+        <!--Company Detail View Controller-->
         <scene sceneID="ijT-nk-zOR">
             <objects>
-                <viewController id="JJf-gt-eLd" sceneMemberID="viewController">
+                <viewController id="JJf-gt-eLd" customClass="CompanyDetailViewController" customModule="Assignment8_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z95-wg-CHi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-8M-jgp">
+                                <rect key="frame" x="87" y="190" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9bX-Nt-MfT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8W-Nm-Fpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4611.594202898551" y="360.32608695652175"/>
+            <point key="canvasLocation" x="4529" y="337"/>
         </scene>
         <!--Create Company View Controller-->
         <scene sceneID="ApB-5W-naY">
