@@ -49,6 +49,8 @@
 		E8EE11792741C6F5005A0DCD /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11782741C6F5005A0DCD /* CustomerTableViewCell.swift */; };
 		E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */; };
 		E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */; };
+		E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11802742D09F005A0DCD /* AddStockViewController.swift */; };
+		E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		E8EE117A2741D53D005A0DCD /* empty.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty.jpeg; sourceTree = "<group>"; };
 		E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewController.swift; sourceTree = "<group>"; };
 		E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
+		E8EE11802742D09F005A0DCD /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
+		E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,8 @@
 			children = (
 				E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */,
 				E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */,
+				E8EE11802742D09F005A0DCD /* AddStockViewController.swift */,
+				E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */,
 			);
 			path = "Stock Manage";
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
+				E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */,
 				E84709C4273D88A300B3446E /* Order.swift in Sources */,
 				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
@@ -338,6 +345,7 @@
 				E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */,
 				E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */,
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
+				E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
 				E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */,
