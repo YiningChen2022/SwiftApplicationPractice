@@ -8,10 +8,33 @@
 import UIKit
 
 class StockTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
-  
     
-
+    var filteredObjects:[String]=[String]()
     var searchController = UISearchController(searchResultsController:nil)
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {return }
+        filterContentForSearchText(text)
+    }
+    func filterContentForSearchText (_ searchText:String){
+        filteredObjects=AppDelegate.GlobalVariable.stocklist.testStocklist.toString().filter({(token:String)->Bool in
+            if (searchController.searchBar.text?.isEmpty)!{
+                return true
+                
+            }else {
+                return token.lowercased().contains(searchText.lowercased())
+            }
+        })
+        tableView.reloadData()
+    }
+    func isFiltering()->Bool{
+        return searchController.isActive && !(searchController.searchBar.text?.isEmpty)!
+    }
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        let text=searchBar.text
+        filterContentForSearchText(text!)
+    }
+    
     
 
     
@@ -19,7 +42,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem=self.editButtonItem
         
-    
+        navigationItem.searchController=searchController
         searchController.searchBar.delegate=self
         searchController.searchResultsUpdater=self
         searchController.obscuresBackgroundDuringPresentation=false
@@ -38,27 +61,31 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        var res=0
+        if (isFiltering()){
+            res=filteredObjects.count
+        }else {
+            res=AppDelegate.GlobalVariable.stocklist.testStocklist.getsize()
+        }
        
-        return (AppDelegate.GlobalVariable.stocklist.testStocklist.getsize())
+        return res
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
-        let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
+        var str=""
+        if (isFiltering()){
+            str = filteredObjects[indexPath.row]
+        }else{ str=AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
+        }
         let components = str.components(separatedBy: " ")
-        cell.textLabel!.text = components[0]+" ."+components[1]
+        cell.textLabel!.text = components[0]+" . "+components[1]
+        
           return (cell)
       }
 
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {return }
-        print (text )
-    }
-    
-    
 
     
     // Override to support conditional editing of the table view.
