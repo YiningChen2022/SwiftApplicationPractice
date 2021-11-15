@@ -9,6 +9,8 @@ import UIKit
 
 class StockTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var Name: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

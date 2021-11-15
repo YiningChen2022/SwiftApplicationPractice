@@ -74,14 +74,15 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
-        let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stock") as! StockTableViewCell
+
         var str=""
         if (isFiltering()){
             str = filteredObjects[indexPath.row]
         }else{ str=AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
         }
         let components = str.components(separatedBy: " ")
-        cell.textLabel!.text = components[0]+" . "+components[1]
+        cell.Name.text = components[0]+" . "+components[1]
         
           return (cell)
       }

@@ -51,6 +51,7 @@
 		E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */; };
 		E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11802742D09F005A0DCD /* AddStockViewController.swift */; };
 		E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */; };
+		E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		E8EE11802742D09F005A0DCD /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
 		E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStockViewController.swift; sourceTree = "<group>"; };
+		E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailTableViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */,
 				E8EE11802742D09F005A0DCD /* AddStockViewController.swift */,
 				E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */,
+				E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */,
 			);
 			path = "Stock Manage";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
+				E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
 				E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
