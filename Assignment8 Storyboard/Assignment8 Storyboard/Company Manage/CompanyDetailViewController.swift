@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CompanyDetailViewController: UIViewController {
-
+class CompanyDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    var imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var comapnyLogo: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +18,29 @@ class CompanyDetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapCreate(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .photoLibrary
+                    imagePicker.allowsEditing = false
+
+                    present(imagePicker, animated: true, completion: nil)
     }
-    */
+    }
+    
+   
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true, completion: nil)
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                comapnyLogo.image = image
+                
+            }
 
+        }
+    
+    
 }
+
+    
+

@@ -46,6 +46,9 @@
 		E8EE11742741B883005A0DCD /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11712741B883005A0DCD /* fb.png */; };
 		E8EE11752741B883005A0DCD /* Amazon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11722741B883005A0DCD /* Amazon.png */; };
 		E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */; };
+		E8EE11792741C6F5005A0DCD /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11782741C6F5005A0DCD /* CustomerTableViewCell.swift */; };
+		E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */; };
+		E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,10 @@
 		E8EE11712741B883005A0DCD /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
 		E8EE11722741B883005A0DCD /* Amazon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amazon.png; sourceTree = "<group>"; };
 		E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailViewController.swift; sourceTree = "<group>"; };
+		E8EE11782741C6F5005A0DCD /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
+		E8EE117A2741D53D005A0DCD /* empty.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty.jpeg; sourceTree = "<group>"; };
+		E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewController.swift; sourceTree = "<group>"; };
+		E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +129,7 @@
 		E847099F273D621C00B3446E /* Assignment8 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E8EE117B2741E8D9005A0DCD /* Stock Manage */,
 				E8EE116F2741B73A005A0DCD /* Images */,
 				E8EE11682741AFF7005A0DCD /* Company Manage */,
 				E891730B273F4AB300E40460 /* Category Manage */,
@@ -200,6 +208,7 @@
 				E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */,
 				E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */,
 				E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */,
+				E8EE11782741C6F5005A0DCD /* CustomerTableViewCell.swift */,
 			);
 			path = "Company Manage";
 			sourceTree = "<group>";
@@ -210,8 +219,18 @@
 				E8EE11722741B883005A0DCD /* Amazon.png */,
 				E8EE11702741B883005A0DCD /* Apple.png */,
 				E8EE11712741B883005A0DCD /* fb.png */,
+				E8EE117A2741D53D005A0DCD /* empty.jpeg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		E8EE117B2741E8D9005A0DCD /* Stock Manage */ = {
+			isa = PBXGroup;
+			children = (
+				E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */,
+				E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */,
+			);
+			path = "Stock Manage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,16 +324,19 @@
 				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
 				E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */,
+				E8EE11792741C6F5005A0DCD /* CustomerTableViewCell.swift in Sources */,
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
+				E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
 				E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */,
 				E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */,
 				E84709D5273DA37A00B3446E /* StockManager.swift in Sources */,
 				E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */,
 				E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */,
+				E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */,
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,

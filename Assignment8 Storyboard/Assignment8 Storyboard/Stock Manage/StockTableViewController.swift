@@ -1,5 +1,5 @@
 //
-//  CompanyTableViewController.swift
+//  StockTableViewController.swift
 //  Assignment8 Storyboard
 //
 //  Created by Yining Chen on 11/14/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompanyTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
+class StockTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
   
     
 
@@ -40,22 +40,16 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return (AppDelegate.GlobalVariable.companylist.testCompanylist.getsize())
+        return (AppDelegate.GlobalVariable.stocklist.testStocklist.getsize())
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
-       /* let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")*/
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Company") as! CustomerTableViewCell
-
-        let str=AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+        let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
+        let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
         let components = str.components(separatedBy: " ")
-        cell.Name.text = components[0]+" "+components[1]
-        cell.Symbol.text = components[2]
-        cell.email.text=components[3]
-        cell.hq.text=components[4]
-        cell.CompanyLogo.image=UIImage(named:"fb.png")
+        cell.textLabel!.text = components[0]+" ."+components[1]
           return (cell)
       }
 
@@ -79,9 +73,9 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let deleteselect = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+            let deleteselect = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
             let id = Int(deleteselect.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.companylist.testCompanylist.DeleteCompany(id: id)
+            AppDelegate.GlobalVariable.stocklist.testStocklist.DeleteStock(id: id)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
             
@@ -107,19 +101,13 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+        let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString() [indexPath.row]
             let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selectedCompany=id
+            AppDelegate.GlobalVariable.selectedStock=id
        
 
         }
-    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath:IndexPath){
-      
-        let vc=CompanyDetailViewController()
-        vc.view.backgroundColor = .green
-        self.navigationController?.show(vc, sender:self)
-    }
-    
+
 
 }
 
