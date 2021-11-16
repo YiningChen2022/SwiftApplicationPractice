@@ -52,7 +52,7 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
         let str=AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
         let components = str.components(separatedBy: " ")
         cell.textLabel!.text = components[1]+" "+components[2]
-        cell.detailTextLabel?.text = components[3]+","+components[4]+" "+components[5]+" "+components[6]+" ,"+components[7]
+        cell.detailTextLabel?.text = components[3]+","+components[4]+","+components[5]
           return (cell)
       }
 

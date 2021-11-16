@@ -11,8 +11,8 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let customer = Customer(firstName: "Yining", lastName: "Chen", address: "41 Maple St", contactDetails: "7326680885", emailID: "yinigchen2018gmail.com")
-            let customer1 = Customer(firstName: "keqiang", lastName: "qu", address: "41 Maple St", contactDetails: "7326680885", emailID: "qu2018gmail.com")
+        let customer = Customer(firstName: "Yining", lastName: "Chen", address: "41MapleSt", contactDetails: "7326680885", emailID: "yinigchen2018gmail.com")
+            let customer1 = Customer(firstName: "keqiang", lastName: "qu", address: "41MapleSt", contactDetails: "7326680885", emailID: "qu2018gmail.com")
 
             AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer1)
             AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
