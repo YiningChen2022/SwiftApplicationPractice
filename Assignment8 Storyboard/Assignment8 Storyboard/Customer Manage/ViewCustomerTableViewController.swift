@@ -107,6 +107,7 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
              let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
             let id=Int(selected.split(separator: " ")[0])!
             AppDelegate.GlobalVariable.selected=id
+        AppDelegate.GlobalVariable.selectedOrderid=id
         print(id)
            
            
