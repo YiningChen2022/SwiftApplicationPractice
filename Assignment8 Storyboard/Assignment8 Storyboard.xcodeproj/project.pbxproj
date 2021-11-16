@@ -52,6 +52,8 @@
 		E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11802742D09F005A0DCD /* AddStockViewController.swift */; };
 		E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */; };
 		E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */; };
+		E8EE118A2743234B005A0DCD /* SearchByCompanyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11892743234B005A0DCD /* SearchByCompanyCollectionViewController.swift */; };
+		E8EE118C274323D9005A0DCD /* CompanySelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE118B274323D9005A0DCD /* CompanySelectedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		E8EE11802742D09F005A0DCD /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
 		E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStockViewController.swift; sourceTree = "<group>"; };
 		E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailTableViewViewController.swift; sourceTree = "<group>"; };
+		E8EE11892743234B005A0DCD /* SearchByCompanyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCompanyCollectionViewController.swift; sourceTree = "<group>"; };
+		E8EE118B274323D9005A0DCD /* CompanySelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 		E8EE117B2741E8D9005A0DCD /* Stock Manage */ = {
 			isa = PBXGroup;
 			children = (
+				E8EE118627432105005A0DCD /* Search  Manage */,
 				E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */,
 				E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */,
 				E8EE11802742D09F005A0DCD /* AddStockViewController.swift */,
@@ -240,6 +245,15 @@
 				E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */,
 			);
 			path = "Stock Manage";
+			sourceTree = "<group>";
+		};
+		E8EE118627432105005A0DCD /* Search  Manage */ = {
+			isa = PBXGroup;
+			children = (
+				E8EE11892743234B005A0DCD /* SearchByCompanyCollectionViewController.swift */,
+				E8EE118B274323D9005A0DCD /* CompanySelectedViewController.swift */,
+			);
+			path = "Search  Manage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 				E84709DD273DA57800B3446E /* SellStockManager.swift in Sources */,
 				E8EE116A2741B1C8005A0DCD /* CompanyTableViewController.swift in Sources */,
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
+				E8EE118A2743234B005A0DCD /* SearchByCompanyCollectionViewController.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
 				E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */,
@@ -350,6 +365,7 @@
 				E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */,
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */,
+				E8EE118C274323D9005A0DCD /* CompanySelectedViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
 				E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */,
