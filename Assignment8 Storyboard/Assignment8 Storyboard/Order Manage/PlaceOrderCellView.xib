@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SNZ-OU-xeE" customClass="PlaceOrderTableViewCell" customModule="Assignment8_Storyboard" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="409" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SNZ-OU-xeE" id="Wya-l4-yfP">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="409" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-Hq-qie">
@@ -57,7 +57,7 @@
                 <outlet property="QuantityField" destination="f4o-ua-hhF" id="lix-aw-Ms8"/>
                 <outlet property="id" destination="OOb-Hq-qie" id="tiU-cd-2Ax"/>
             </connections>
-            <point key="canvasLocation" x="60.869565217391312" y="97.767857142857139"/>
+            <point key="canvasLocation" x="57.24637681159421" y="97.767857142857139"/>
         </tableViewCell>
     </objects>
 </document>

@@ -15,6 +15,7 @@ class OrderViewController: UIViewController {
     let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         Customerfn.text=customer?.getFirstName()
         earning.text="\(customer!.getTotalEarning())"
         invest.text="\(customer!.getTotalInvestment())"

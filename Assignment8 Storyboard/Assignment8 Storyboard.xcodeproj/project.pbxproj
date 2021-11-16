@@ -64,10 +64,10 @@
 		E8EE11A5274389D2005A0DCD /* PlaceOrderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11A4274389D2005A0DCD /* PlaceOrderCellView.xib */; };
 		E8EE11A727438EE9005A0DCD /* DeleteOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11A627438EE9005A0DCD /* DeleteOrderViewController.swift */; };
 		E8EE11A92743900C005A0DCD /* ViewCustomerOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11A82743900C005A0DCD /* ViewCustomerOrderViewController.swift */; };
-		E8EE11AB274390FC005A0DCD /* SellStockViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EE11AA274390FC005A0DCD /* SellStockViewCell.xib */; };
-		E8EE11AD2743912C005A0DCD /* ViewOwnedStockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11AC2743912C005A0DCD /* ViewOwnedStockTableViewCell.swift */; };
-		E8EE11AF2743919F005A0DCD /* ViewOwnedStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11AE2743919F005A0DCD /* ViewOwnedStockViewController.swift */; };
-		E8EE11B127439260005A0DCD /* SellStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11B027439260005A0DCD /* SellStockViewController.swift */; };
+		E8EE11B32743F7B3005A0DCD /* ViewOwnStockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11B22743F7B3005A0DCD /* ViewOwnStockTableViewController.swift */; };
+		E8EE11B72743FAA5005A0DCD /* SellStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11B62743FAA5005A0DCD /* SellStockViewController.swift */; };
+		E8EE11B92743FE22005A0DCD /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11B82743FE22005A0DCD /* OrderTableViewCell.swift */; };
+		E8EE11BB2743FEC4005A0DCD /* ViewAllOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11BA2743FEC4005A0DCD /* ViewAllOrderTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,10 +131,10 @@
 		E8EE11A4274389D2005A0DCD /* PlaceOrderCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceOrderCellView.xib; sourceTree = "<group>"; };
 		E8EE11A627438EE9005A0DCD /* DeleteOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteOrderViewController.swift; sourceTree = "<group>"; };
 		E8EE11A82743900C005A0DCD /* ViewCustomerOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerOrderViewController.swift; sourceTree = "<group>"; };
-		E8EE11AA274390FC005A0DCD /* SellStockViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellStockViewCell.xib; sourceTree = "<group>"; };
-		E8EE11AC2743912C005A0DCD /* ViewOwnedStockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnedStockTableViewCell.swift; sourceTree = "<group>"; };
-		E8EE11AE2743919F005A0DCD /* ViewOwnedStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnedStockViewController.swift; sourceTree = "<group>"; };
-		E8EE11B027439260005A0DCD /* SellStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockViewController.swift; sourceTree = "<group>"; };
+		E8EE11B22743F7B3005A0DCD /* ViewOwnStockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOwnStockTableViewController.swift; sourceTree = "<group>"; };
+		E8EE11B62743FAA5005A0DCD /* SellStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockViewController.swift; sourceTree = "<group>"; };
+		E8EE11B82743FE22005A0DCD /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		E8EE11BA2743FEC4005A0DCD /* ViewAllOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllOrderTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,10 +298,10 @@
 				E8EE11A4274389D2005A0DCD /* PlaceOrderCellView.xib */,
 				E8EE11A627438EE9005A0DCD /* DeleteOrderViewController.swift */,
 				E8EE11A82743900C005A0DCD /* ViewCustomerOrderViewController.swift */,
-				E8EE11AA274390FC005A0DCD /* SellStockViewCell.xib */,
-				E8EE11AC2743912C005A0DCD /* ViewOwnedStockTableViewCell.swift */,
-				E8EE11AE2743919F005A0DCD /* ViewOwnedStockViewController.swift */,
-				E8EE11B027439260005A0DCD /* SellStockViewController.swift */,
+				E8EE11B22743F7B3005A0DCD /* ViewOwnStockTableViewController.swift */,
+				E8EE11B62743FAA5005A0DCD /* SellStockViewController.swift */,
+				E8EE11B82743FE22005A0DCD /* OrderTableViewCell.swift */,
+				E8EE11BA2743FEC4005A0DCD /* ViewAllOrderTableViewController.swift */,
 			);
 			path = "Order Manage";
 			sourceTree = "<group>";
@@ -369,7 +369,6 @@
 				E8EE11A5274389D2005A0DCD /* PlaceOrderCellView.xib in Resources */,
 				E84709AD273D621E00B3446E /* LaunchScreen.storyboard in Resources */,
 				E84709AA273D621E00B3446E /* Assets.xcassets in Resources */,
-				E8EE11AB274390FC005A0DCD /* SellStockViewCell.xib in Resources */,
 				E8EE11732741B883005A0DCD /* Apple.png in Resources */,
 				E84709A8273D621C00B3446E /* Main.storyboard in Resources */,
 			);
@@ -382,7 +381,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8EE11AF2743919F005A0DCD /* ViewOwnedStockViewController.swift in Sources */,
 				E84709A5273D621C00B3446E /* ViewController.swift in Sources */,
 				E8EE11942743724E005A0DCD /* SearchByCategoryViewController.swift in Sources */,
 				E84709BA273D885A00B3446E /* CategoryDirectory.swift in Sources */,
@@ -390,6 +388,7 @@
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
 				E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */,
 				E8EE119827437566005A0DCD /* SearchByratingViewController.swift in Sources */,
+				E8EE11B32743F7B3005A0DCD /* ViewOwnStockTableViewController.swift in Sources */,
 				E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */,
 				E8EE116C2741B491005A0DCD /* CreateCompanyViewController.swift in Sources */,
 				E8EE119227437093005A0DCD /* SearchbyCompanyidTableViewController.swift in Sources */,
@@ -400,6 +399,7 @@
 				E8EE119C27437A59005A0DCD /* SearchByPriceViewController.swift in Sources */,
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
 				E8EE118A2743234B005A0DCD /* SearchByCompanyCollectionViewController.swift in Sources */,
+				E8EE11B92743FE22005A0DCD /* OrderTableViewCell.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
 				E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */,
@@ -413,16 +413,15 @@
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */,
-				E8EE11B127439260005A0DCD /* SellStockViewController.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
 				E8EE119027436D6E005A0DCD /* StockTableViewCell.swift in Sources */,
+				E8EE11BB2743FEC4005A0DCD /* ViewAllOrderTableViewController.swift in Sources */,
 				E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */,
 				E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */,
 				E84709D5273DA37A00B3446E /* StockManager.swift in Sources */,
 				E84709D9273DA3A100B3446E /* OrderManager.swift in Sources */,
 				E84709D1273DA36300B3446E /* CustomerManager.swift in Sources */,
-				E8EE11AD2743912C005A0DCD /* ViewOwnedStockTableViewCell.swift in Sources */,
 				E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */,
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */,
@@ -431,6 +430,7 @@
 				E8EE119F27437EE0005A0DCD /* OrderViewController.swift in Sources */,
 				E8EE11A92743900C005A0DCD /* ViewCustomerOrderViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
+				E8EE11B72743FAA5005A0DCD /* SellStockViewController.swift in Sources */,
 				E8EE11A327438103005A0DCD /* PlaceOrderTableViewCell.swift in Sources */,
 				E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */,
 				E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */,

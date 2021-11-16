@@ -42,7 +42,9 @@ class DeleteOrderViewController: UIViewController,UITableViewDelegate,UITableVie
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.delete(Id:id);DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)}}))
+            self.navigationController?.popViewController(animated: true)
+            
+        }}))
         self.present(alert,animated:true,completion: nil)
         
        

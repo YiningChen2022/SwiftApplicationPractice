@@ -9,18 +9,16 @@ import UIKit
 
 class SellStockViewController: UIViewController {
 
+    
     @IBOutlet weak var quantityfield: UITextField!
-    
-    @IBOutlet weak var stockfield: UILabel!
-    
-    @IBOutlet weak var AvgCost: UILabel!
-    
-    @IBOutlet weak var quantity: UILabel!
     
     var selectstock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
     let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
+    @IBOutlet weak var stockfield: UILabel!
+
+    @IBOutlet weak var AvgCost: UILabel!
+    @IBOutlet weak var quantity: UILabel!
     override func viewDidLoad() {
-        super.viewDidLoad()
         stockfield.text=selectstock?.getName()
         let orderedQuantity=AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
         let selledQuantity=AppDelegate.GlobalVariable.SellStocklist.testSellStocklist.SellStockQuantityforCustomer(customer: customer!, stock: selectstock!)
@@ -28,31 +26,34 @@ class SellStockViewController: UIViewController {
         quantity.text=String(quant1)
         
         AvgCost.text=String(AppDelegate.GlobalVariable.orderlist.testOrderlist.avgforCustomer(customer: customer!, stock: selectstock!))
-        // Do any additional setup after loading the view.
-    }
-    
-
-    @IBAction func didTapSell(_ sender: UIButton) {
-        let owned = AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
-         guard let quant = quantityfield.text, !quant.isEmpty, Int(quant) != nil,Int(quant)! <= owned else {
-             return Alert()
-         }
-
-         let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
-         let Earning = (stock?.getlastTradePrice())!*Double(quant)!
-     
-         let sellStock = SellStock(stock: stock!, quantity: Int(quant)!, customer: customer!,  Earning:Earning, Company: stock!.company)
-    
-
-         let alert = UIAlertController(title: "selling Stocks", message: "you will Earn $\(Earning)", preferredStyle: .alert)
-
-         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-         alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.SellOrder(sellStock:sellStock,quant:Double(quant)!);DispatchQueue.main.async {
-             }}))
-         self.present(alert,animated:true,completion: nil)
-         
+        super.viewDidLoad()
         
     }
+    
+    @IBAction func didTapSell(_ sender: UIButton) {
+       let owned = AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+        guard let quant = quantityfield.text, !quant.isEmpty, Int(quant) != nil,Int(quant)! <= owned else {
+            return Alert()
+        }
+
+        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
+        let Earning = (stock?.getlastTradePrice())!*Double(quant)!
+    
+        let sellStock = SellStock(stock: stock!, quantity: Int(quant)!, customer: customer!,  Earning:Earning, Company: stock!.company)
+   
+
+        let alert = UIAlertController(title: "selling Stocks", message: "you will Earn $\(Earning)", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.SellOrder(sellStock:sellStock,quant:Double(quant)!);DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+            
+        }}))
+        self.present(alert,animated:true,completion: nil)
+        
+       
+    }
+        
     public func SellOrder(sellStock:SellStock,quant:Double){
         
         let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
@@ -64,7 +65,10 @@ class SellStockViewController: UIViewController {
         
     }
     
- 
+    
+    @IBAction func closewindow(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     func Alert (){
@@ -75,4 +79,16 @@ class SellStockViewController: UIViewController {
         self.present(alertController,animated:true,completion: nil)
     }
         
+        
+    
+    
+    
+    
+    
+    @IBAction func closeWindow(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+
 }
+

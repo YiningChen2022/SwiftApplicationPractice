@@ -1,5 +1,5 @@
 //
-//  ViewOwnedStockTableViewCell.swift
+//  OrderTableViewCell.swift
 //  Assignment8 Storyboard
 //
 //  Created by Yining Chen on 11/16/21.
@@ -7,16 +7,12 @@
 
 import UIKit
 
-class ViewOwnedStockTableViewCell: UITableViewCell {
-    static let identifier="ownstocks"
+class OrderTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var Date: UILabel!
+    @IBOutlet weak var quantities: UILabel!
+    @IBOutlet weak var stocks: UILabel!
     @IBOutlet weak var id: UILabel!
-    
-    @IBOutlet weak var naem: UILabel!
-    
-    @IBOutlet weak var rating: UILabel!
-    
-    
-    @IBOutlet weak var trade: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
