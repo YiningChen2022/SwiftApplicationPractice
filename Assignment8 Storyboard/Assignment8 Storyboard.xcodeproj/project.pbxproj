@@ -48,12 +48,16 @@
 		E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11762741C11E005A0DCD /* CompanyDetailViewController.swift */; };
 		E8EE11792741C6F5005A0DCD /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11782741C6F5005A0DCD /* CustomerTableViewCell.swift */; };
 		E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */; };
-		E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */; };
 		E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11802742D09F005A0DCD /* AddStockViewController.swift */; };
 		E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */; };
 		E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */; };
 		E8EE118A2743234B005A0DCD /* SearchByCompanyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11892743234B005A0DCD /* SearchByCompanyCollectionViewController.swift */; };
-		E8EE118C274323D9005A0DCD /* CompanySelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE118B274323D9005A0DCD /* CompanySelectedViewController.swift */; };
+		E8EE119027436D6E005A0DCD /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE118F27436D6E005A0DCD /* StockTableViewCell.swift */; };
+		E8EE119227437093005A0DCD /* SearchbyCompanyidTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE119127437093005A0DCD /* SearchbyCompanyidTableViewController.swift */; };
+		E8EE11942743724E005A0DCD /* SearchByCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11932743724E005A0DCD /* SearchByCategoryViewController.swift */; };
+		E8EE11962743726B005A0DCD /* SearchbyCategoryIdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11952743726B005A0DCD /* SearchbyCategoryIdTableViewController.swift */; };
+		E8EE119827437566005A0DCD /* SearchByratingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE119727437566005A0DCD /* SearchByratingViewController.swift */; };
+		E8EE119C27437A59005A0DCD /* SearchByPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE119B27437A59005A0DCD /* SearchByPriceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,12 +105,16 @@
 		E8EE11782741C6F5005A0DCD /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
 		E8EE117A2741D53D005A0DCD /* empty.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = empty.jpeg; sourceTree = "<group>"; };
 		E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewController.swift; sourceTree = "<group>"; };
-		E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		E8EE11802742D09F005A0DCD /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
 		E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStockViewController.swift; sourceTree = "<group>"; };
 		E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailTableViewViewController.swift; sourceTree = "<group>"; };
 		E8EE11892743234B005A0DCD /* SearchByCompanyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCompanyCollectionViewController.swift; sourceTree = "<group>"; };
-		E8EE118B274323D9005A0DCD /* CompanySelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySelectedViewController.swift; sourceTree = "<group>"; };
+		E8EE118F27436D6E005A0DCD /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
+		E8EE119127437093005A0DCD /* SearchbyCompanyidTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbyCompanyidTableViewController.swift; sourceTree = "<group>"; };
+		E8EE11932743724E005A0DCD /* SearchByCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCategoryViewController.swift; sourceTree = "<group>"; };
+		E8EE11952743726B005A0DCD /* SearchbyCategoryIdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbyCategoryIdTableViewController.swift; sourceTree = "<group>"; };
+		E8EE119727437566005A0DCD /* SearchByratingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByratingViewController.swift; sourceTree = "<group>"; };
+		E8EE119B27437A59005A0DCD /* SearchByPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByPriceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +247,6 @@
 			children = (
 				E8EE118627432105005A0DCD /* Search  Manage */,
 				E8EE117C2741E8FF005A0DCD /* StockTableViewController.swift */,
-				E8EE117E2741E945005A0DCD /* StockTableViewCell.swift */,
 				E8EE11802742D09F005A0DCD /* AddStockViewController.swift */,
 				E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */,
 				E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */,
@@ -251,7 +258,12 @@
 			isa = PBXGroup;
 			children = (
 				E8EE11892743234B005A0DCD /* SearchByCompanyCollectionViewController.swift */,
-				E8EE118B274323D9005A0DCD /* CompanySelectedViewController.swift */,
+				E8EE118F27436D6E005A0DCD /* StockTableViewCell.swift */,
+				E8EE119127437093005A0DCD /* SearchbyCompanyidTableViewController.swift */,
+				E8EE11932743724E005A0DCD /* SearchByCategoryViewController.swift */,
+				E8EE11952743726B005A0DCD /* SearchbyCategoryIdTableViewController.swift */,
+				E8EE119727437566005A0DCD /* SearchByratingViewController.swift */,
+				E8EE119B27437A59005A0DCD /* SearchByPriceViewController.swift */,
 			);
 			path = "Search  Manage";
 			sourceTree = "<group>";
@@ -331,20 +343,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84709A5273D621C00B3446E /* ViewController.swift in Sources */,
+				E8EE11942743724E005A0DCD /* SearchByCategoryViewController.swift in Sources */,
 				E84709BA273D885A00B3446E /* CategoryDirectory.swift in Sources */,
 				E84709CA273D88C400B3446E /* StockDirectory.swift in Sources */,
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
 				E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */,
+				E8EE119827437566005A0DCD /* SearchByratingViewController.swift in Sources */,
 				E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */,
 				E8EE116C2741B491005A0DCD /* CreateCompanyViewController.swift in Sources */,
+				E8EE119227437093005A0DCD /* SearchbyCompanyidTableViewController.swift in Sources */,
 				E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */,
 				E84709DD273DA57800B3446E /* SellStockManager.swift in Sources */,
 				E8EE116A2741B1C8005A0DCD /* CompanyTableViewController.swift in Sources */,
+				E8EE119C27437A59005A0DCD /* SearchByPriceViewController.swift in Sources */,
 				E84709C8273D88B900B3446E /* Stock.swift in Sources */,
 				E8EE118A2743234B005A0DCD /* SearchByCompanyCollectionViewController.swift in Sources */,
 				E84709CC273D88D100B3446E /* SellStock.swift in Sources */,
 				E84709C6273D88AF00B3446E /* OrderDirectory.swift in Sources */,
 				E8EE11812742D09F005A0DCD /* AddStockViewController.swift in Sources */,
+				E8EE11962743726B005A0DCD /* SearchbyCategoryIdTableViewController.swift in Sources */,
 				E84709C4273D88A300B3446E /* Order.swift in Sources */,
 				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
@@ -355,8 +372,8 @@
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
-				E8EE117F2741E945005A0DCD /* StockTableViewCell.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
+				E8EE119027436D6E005A0DCD /* StockTableViewCell.swift in Sources */,
 				E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */,
 				E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */,
 				E84709D5273DA37A00B3446E /* StockManager.swift in Sources */,
@@ -365,7 +382,6 @@
 				E8EE117D2741E8FF005A0DCD /* StockTableViewController.swift in Sources */,
 				E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */,
 				E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */,
-				E8EE118C274323D9005A0DCD /* CompanySelectedViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
 				E8EE11772741C11E005A0DCD /* CompanyDetailViewController.swift in Sources */,
