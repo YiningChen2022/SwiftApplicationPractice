@@ -8,21 +8,46 @@
 import UIKit
 
 class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
+    var datepicked:Date=Date()
+    
+    @IBOutlet weak var DatePick: UITextField!
+    private var DatePicker = UIDatePicker()
     var order:Array<Stock> = []
     var quantitylist:Array<Int> = []
    var tradeinprice: Array<Double> = []
    let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
     @IBOutlet weak var tableView: UITableView!
+    
+    @objc func dateChanged(datePicker:UIDatePicker){
+        let dateformater=DateFormatter()
+        dateformater.dateFormat="MM/dd/yyyy"
+        
+        DatePick.text = dateformater.string(from: DatePicker.date)
+        datepicked=DatePicker.date
+        view.endEditing(true)
+    }
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.allowsMultipleSelection = true
+        self.tableView.allowsMultipleSelectionDuringEditing = true
+        DatePicker.datePickerMode = .date
+        DatePick.inputView=DatePicker
+        DatePicker.addTarget(self, action: #selector(PlaceOrderViewController.dateChanged(datePicker:)), for : .valueChanged)
+       /* let tapGesture=UITapGestureRecognizer(target: self, action: #selector(PlaceOrderViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        */
+        DatePick.inputView=DatePicker
         let nib = UINib(nibName: "PlaceOrderCellView", bundle: nil)
         tableView.register(nib,
                                  forCellReuseIdentifier: "PlaceOrderTableViewSell")
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
-        self.tableView.allowsMultipleSelection = true
-        self.tableView.allowsMultipleSelectionDuringEditing = true
+  
 
         // Do any additional setup after loading the view.
     }
@@ -74,7 +99,10 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             
         }
         let order = Order(stock: order, quantity: quantitylist, invested: true, customer: customer!, tradeinPrice: tradeinprice)
-
+            if DatePick.text != ""{
+                
+            }
+                
         let alert = UIAlertController(title: "Placing Order", message: "you have invested $\(investment)", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
@@ -96,7 +124,10 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         }
         customer?.setTotalInvestment(investment: investment)
         AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order1)
-        
+        if(DatePick.text != ""){
+            order1.setDate(date: datepicked)
+        }
+     
     }
     
 

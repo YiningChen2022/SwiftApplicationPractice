@@ -46,10 +46,13 @@ class Order{
     }
     public func getDate()->String {
         let formatter = DateFormatter()
-        formatter.timeStyle = .medium
+        //formatter.timeStyle = .medium
         formatter.dateStyle = .long
         
         return formatter.string(from:self.date)
+    }
+    public func setDate(date: Date){
+        self.date=date
     }
    
     public func getInvested()->Bool {

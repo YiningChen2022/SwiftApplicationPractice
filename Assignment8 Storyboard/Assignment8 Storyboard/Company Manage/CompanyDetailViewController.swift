@@ -9,7 +9,8 @@ import UIKit
 
 class CompanyDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     var imagePicker = UIImagePickerController()
-    
+    let currentCompany=AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: AppDelegate.GlobalVariable.selectedCompany)
+                                            
     @IBOutlet weak var comapnyLogo: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class CompanyDetailViewController: UIViewController, UIImagePickerControllerDele
     @IBAction func didTapCreate(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
                     imagePicker.delegate = self
-                    imagePicker.sourceType = .photoLibrary
+            imagePicker.sourceType = .savedPhotosAlbum
                     imagePicker.allowsEditing = false
 
                     present(imagePicker, animated: true, completion: nil)
@@ -34,6 +35,7 @@ class CompanyDetailViewController: UIViewController, UIImagePickerControllerDele
             picker.dismiss(animated: true, completion: nil)
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 comapnyLogo.image = image
+                currentCompany?.setLogo(Logo: image)
                 
             }
 

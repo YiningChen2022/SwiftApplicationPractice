@@ -50,12 +50,15 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
         let cell = tableView.dequeueReusableCell(withIdentifier: "Company") as! CustomerTableViewCell
 
         let str=AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+        print(str)
         let components = str.components(separatedBy: " ")
         cell.Name.text = components[0]+" "+components[1]
         cell.Symbol.text = components[2]
         cell.email.text=components[3]
         cell.hq.text=components[4]
-        cell.CompanyLogo.image=UIImage(named:"fb.png")
+        var currentcompany=AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: Int(components[0])!)
+        cell.CompanyLogo.image=currentcompany?.getLogo()
+        
           return (cell)
       }
 

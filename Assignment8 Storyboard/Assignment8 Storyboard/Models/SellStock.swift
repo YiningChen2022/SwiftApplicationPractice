@@ -47,11 +47,15 @@ class SellStock{
     }
     public func getDate()->String {
         let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        formatter.dateStyle = .long
+        //formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
         
         return formatter.string(from:self.date)
     }
+    public func setDate(date: Date){
+        self.date=date
+    }
+   
    
     public func getEarning()->Double{
         return Earning

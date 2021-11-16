@@ -9,6 +9,10 @@ import UIKit
 
 class SellStockViewController: UIViewController {
 
+    var datepicked:Date=Date()
+    
+    @IBOutlet weak var DatePick: UITextField!
+    private var DatePicker = UIDatePicker()
     
     @IBOutlet weak var quantityfield: UITextField!
     
@@ -18,7 +22,27 @@ class SellStockViewController: UIViewController {
 
     @IBOutlet weak var AvgCost: UILabel!
     @IBOutlet weak var quantity: UILabel!
+    
+    
+    @objc func dateChanged(datePicker:UIDatePicker){
+        let dateformater=DateFormatter()
+        dateformater.dateFormat="MM/dd/yyyy"
+        
+        DatePick.text = dateformater.string(from: DatePicker.date)
+        datepicked=DatePicker.date
+        view.endEditing(true)
+    }
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
+    
     override func viewDidLoad() {
+        DatePicker.datePickerMode = .date
+        DatePick.inputView=DatePicker
+        DatePicker.addTarget(self, action: #selector(PlaceOrderViewController.dateChanged(datePicker:)), for : .valueChanged)
+   
+        DatePick.inputView=DatePicker
         stockfield.text=selectstock?.getName()
         let orderedQuantity=AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
         let selledQuantity=AppDelegate.GlobalVariable.SellStocklist.testSellStocklist.SellStockQuantityforCustomer(customer: customer!, stock: selectstock!)
@@ -66,10 +90,7 @@ class SellStockViewController: UIViewController {
     }
     
     
-    @IBAction func closewindow(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+   
     
     func Alert (){
         
@@ -84,10 +105,7 @@ class SellStockViewController: UIViewController {
     
     
     
-    
-    @IBAction func closeWindow(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+  
     
 
 }

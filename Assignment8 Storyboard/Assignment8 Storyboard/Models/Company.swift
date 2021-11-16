@@ -25,7 +25,7 @@ class Company {
         self.headquarter=headquarter
         self.email=email
         self.id=Company.generateUid()
-        self.logo=UIImage(named:"fb.png")!
+        self.logo=UIImage(named:"empty.jpeg")!
     }
     public func getid()->Int{
         return id
@@ -63,7 +63,7 @@ class Company {
         self.logo=Logo
     }
     public func toString ()->String{
-        return "\(id) \(name) \(symbol) \(email) \(headquarter)"
+        return "\(id) \(name) \(symbol) \(email) \(headquarter) "
     }
     public func toStringshort ()->String{
         return "\(id) \(name)"

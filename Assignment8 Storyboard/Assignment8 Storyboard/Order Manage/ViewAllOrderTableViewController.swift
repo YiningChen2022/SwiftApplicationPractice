@@ -40,7 +40,7 @@ class ViewAllOrderTableViewController: UITableViewController {
        cell.id.text = components[0]
        cell.stocks.text=components[1]
          cell.quantities.text=components[2]
-         cell.Date.text=components[3]+components[4]
+         cell.Date.text=components[3]+","+components[4]
          
          return cell
        }
