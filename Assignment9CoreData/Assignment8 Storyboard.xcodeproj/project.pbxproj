@@ -35,6 +35,8 @@
 		E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */; };
 		E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E1273DAE8000B3446E /* TabBarViewController.swift */; };
 		E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */; };
+		E87CD4FD2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E87CD4FB2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld */; };
+		E87CD4FF27485DDA00275284 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87CD4FE27485DD900275284 /* TestTableViewController.swift */; };
 		E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */; };
 		E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730C273F4AE400E40460 /* CategoryTableViewController.swift */; };
 		E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */; };
@@ -101,6 +103,8 @@
 		E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerTableViewController.swift; sourceTree = "<group>"; };
 		E84709E1273DAE8000B3446E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
+		E87CD4FC2746AD6B00275284 /* Assignment8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assignment8.xcdatamodel; sourceTree = "<group>"; };
+		E87CD4FE27485DD900275284 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
 		E891730C273F4AE400E40460 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		E847099F273D621C00B3446E /* Assignment8 Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E87CD4FA2746AD3D00275284 /* Date Model */,
 				E8EE119D27437EC7005A0DCD /* Order Manage */,
 				E8EE117B2741E8D9005A0DCD /* Stock Manage */,
 				E8EE116F2741B73A005A0DCD /* Images */,
@@ -184,6 +189,7 @@
 				E84709AB273D621E00B3446E /* LaunchScreen.storyboard */,
 				E84709AE273D621E00B3446E /* Info.plist */,
 				E84709B4273D7D1600B3446E /* MyTableViewController.swift */,
+				E87CD4FE27485DD900275284 /* TestTableViewController.swift */,
 			);
 			path = "Assignment8 Storyboard";
 			sourceTree = "<group>";
@@ -228,6 +234,14 @@
 				E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */,
 			);
 			path = "Customer Manage";
+			sourceTree = "<group>";
+		};
+		E87CD4FA2746AD3D00275284 /* Date Model */ = {
+			isa = PBXGroup;
+			children = (
+				E87CD4FB2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld */,
+			);
+			path = "Date Model";
 			sourceTree = "<group>";
 		};
 		E891730B273F4AB300E40460 /* Category Manage */ = {
@@ -410,6 +424,7 @@
 				E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */,
 				E8EE11792741C6F5005A0DCD /* CustomerTableViewCell.swift in Sources */,
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
+				E87CD4FD2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld in Sources */,
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */,
@@ -427,6 +442,7 @@
 				E8EE11832742D0B0005A0DCD /* UpdateStockViewController.swift in Sources */,
 				E84709B5273D7D1600B3446E /* MyTableViewController.swift in Sources */,
 				E8EE11A127438046005A0DCD /* PlaceOrderViewController.swift in Sources */,
+				E87CD4FF27485DDA00275284 /* TestTableViewController.swift in Sources */,
 				E8EE119F27437EE0005A0DCD /* OrderViewController.swift in Sources */,
 				E8EE11A92743900C005A0DCD /* ViewCustomerOrderViewController.swift in Sources */,
 				E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */,
@@ -652,6 +668,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E87CD4FB2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E87CD4FC2746AD6B00275284 /* Assignment8.xcdatamodel */,
+			);
+			currentVersion = E87CD4FC2746AD6B00275284 /* Assignment8.xcdatamodel */;
+			path = "Assignment8 Storyboard.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E8470995273D621C00B3446E /* Project object */;
 }
