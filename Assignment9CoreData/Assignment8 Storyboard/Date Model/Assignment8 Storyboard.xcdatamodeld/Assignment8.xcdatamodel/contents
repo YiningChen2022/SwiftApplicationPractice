@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CategoryDirectory" representedClassName="CategoryDirectory" syncable="YES" codeGenerationType="class"/>
+    <entity name="Company" representedClassName="Company" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="headQuarter" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CompanyDirectory" representedClassName="CompanyDirectory" syncable="YES" codeGenerationType="class"/>
+    <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="contactInfo" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="totalEarning" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="totalInvestment" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CustomerDirectory" representedClassName="CustomerDirectory" syncable="YES" codeGenerationType="class"/>
+    <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="quantity" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="OrderDirectory" representedClassName="OrderDirectory" syncable="YES" codeGenerationType="class"/>
+    <entity name="SellStock" representedClassName="SellStock" syncable="YES" codeGenerationType="class"/>
+    <entity name="SellStockDirectory" representedClassName="SellStockDirectory" syncable="YES" codeGenerationType="class"/>
+    <entity name="Stock" representedClassName="Stock" syncable="YES" codeGenerationType="class">
+        <attribute name="financialRating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastTradePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StockDirectory" representedClassName="StockDirectory" syncable="YES" codeGenerationType="class"/>
     <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Test" positionX="-62.614501953125" positionY="246.8901977539062" width="128" height="58"/>
+        <element name="Test" positionX="-20.76458740234375" positionY="61.18359374999994" width="128" height="58"/>
+        <element name="Category" positionX="-262.1089477539062" positionY="184.3564453125" width="128" height="44"/>
+        <element name="Stock" positionX="-196.4320068359375" positionY="50.72955322265625" width="128" height="103"/>
+        <element name="Company" positionX="-116.8221435546875" positionY="177.8357238769531" width="128" height="104"/>
+        <element name="Order" positionX="-177.7042236328125" positionY="358.5774536132812" width="128" height="73"/>
+        <element name="Customer" positionX="90.9307861328125" positionY="123.4082641601562" width="128" height="149"/>
+        <element name="SellStock" positionX="18" positionY="324" width="128" height="29"/>
+        <element name="CategoryDirectory" positionX="36" positionY="342" width="128" height="29"/>
+        <element name="CompanyDirectory" positionX="-9" positionY="297" width="128" height="29"/>
+        <element name="CustomerDirectory" positionX="0" positionY="306" width="128" height="29"/>
+        <element name="OrderDirectory" positionX="9" positionY="315" width="128" height="29"/>
+        <element name="SellStockDirectory" positionX="18" positionY="324" width="128" height="29"/>
+        <element name="StockDirectory" positionX="27" positionY="333" width="128" height="29"/>
     </elements>
 </model>
