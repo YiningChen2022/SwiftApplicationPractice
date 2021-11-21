@@ -20,8 +20,8 @@ extension StockCore {
     @NSManaged public var id: UUID?
     @NSManaged public var lastTradePrice: Double
     @NSManaged public var name: String?
-    @NSManaged public var category: CategoryCore?
-    @NSManaged public var company: CompanyCore?
+    @NSManaged public var ofCategory: CategoryCore?
+    @NSManaged public var ofCompany: CompanyCore?
 
 }
 
