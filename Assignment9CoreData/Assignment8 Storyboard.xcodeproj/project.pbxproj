@@ -35,6 +35,8 @@
 		E84709E0273DA6C400B3446E /* ViewCustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */; };
 		E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E1273DAE8000B3446E /* TabBarViewController.swift */; };
 		E84709E4273DBDBF00B3446E /* AddCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */; };
+		E8582EA32749F8D700ECC92F /* CategoryCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8582EA12749F8D700ECC92F /* CategoryCore+CoreDataClass.swift */; };
+		E8582EA42749F8D700ECC92F /* CategoryCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8582EA22749F8D700ECC92F /* CategoryCore+CoreDataProperties.swift */; };
 		E87CD4FD2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E87CD4FB2746AD6B00275284 /* Assignment8 Storyboard.xcdatamodeld */; };
 		E87CD4FF27485DDA00275284 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87CD4FE27485DD900275284 /* TestTableViewController.swift */; };
 		E891730A273F3B7200E40460 /* UpdateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */; };
@@ -103,6 +105,8 @@
 		E84709DF273DA6C400B3446E /* ViewCustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomerTableViewController.swift; sourceTree = "<group>"; };
 		E84709E1273DAE8000B3446E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E84709E3273DBDBF00B3446E /* AddCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewController.swift; sourceTree = "<group>"; };
+		E8582EA12749F8D700ECC92F /* CategoryCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E8582EA22749F8D700ECC92F /* CategoryCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E87CD4FC2746AD6B00275284 /* Assignment8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assignment8.xcdatamodel; sourceTree = "<group>"; };
 		E87CD4FE27485DD900275284 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCustomerViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				E87CD4FA2746AD3D00275284 /* Date Model */,
+				E8582EA52749F8DF00ECC92F /* Core Data Models  */,
 				E8EE119D27437EC7005A0DCD /* Order Manage */,
 				E8EE117B2741E8D9005A0DCD /* Stock Manage */,
 				E8EE116F2741B73A005A0DCD /* Images */,
@@ -234,6 +239,15 @@
 				E8917309273F3B7200E40460 /* UpdateCustomerViewController.swift */,
 			);
 			path = "Customer Manage";
+			sourceTree = "<group>";
+		};
+		E8582EA52749F8DF00ECC92F /* Core Data Models  */ = {
+			isa = PBXGroup;
+			children = (
+				E8582EA12749F8D700ECC92F /* CategoryCore+CoreDataClass.swift */,
+				E8582EA22749F8D700ECC92F /* CategoryCore+CoreDataProperties.swift */,
+			);
+			path = "Core Data Models ";
 			sourceTree = "<group>";
 		};
 		E87CD4FA2746AD3D00275284 /* Date Model */ = {
@@ -406,6 +420,7 @@
 				E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */,
 				E8EE116C2741B491005A0DCD /* CreateCompanyViewController.swift in Sources */,
 				E8EE119227437093005A0DCD /* SearchbyCompanyidTableViewController.swift in Sources */,
+				E8582EA32749F8D700ECC92F /* CategoryCore+CoreDataClass.swift in Sources */,
 				E8EE11A727438EE9005A0DCD /* DeleteOrderViewController.swift in Sources */,
 				E84709D7273DA39100B3446E /* CategoryManager.swift in Sources */,
 				E84709DD273DA57800B3446E /* SellStockManager.swift in Sources */,
@@ -428,6 +443,7 @@
 				E84709C0273D888C00B3446E /* Customer.swift in Sources */,
 				E84709CE273D88DD00B3446E /* SellStockDirectory.swift in Sources */,
 				E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */,
+				E8582EA42749F8D700ECC92F /* CategoryCore+CoreDataProperties.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
 				E8EE119027436D6E005A0DCD /* StockTableViewCell.swift in Sources */,

@@ -6,19 +6,21 @@
 //
 
 import UIKit
-
+import CoreData
 class UpdateCategoryViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let id = AppDelegate.GlobalVariable.selectedCategory
-        if (id==0){
+        if((CategoryTableViewController.choosedCategory) == nil){
             Alert1()
+            
         }else{
-            let currentCategory=AppDelegate.GlobalVariable.categorylist.testCategorylist.getCategory(id: id)
-            NameField.text=currentCategory?.getName()
-
+            NameField.text=CategoryTableViewController.choosedCategory!.name
         }
+    
+     
+        
        
     }
     
@@ -32,8 +34,12 @@ class UpdateCategoryViewController: UIViewController {
         else{
                   return Alert()
               }
-        
-        AppDelegate.GlobalVariable.categorylist.testCategorylist.UpdateCategory(id: AppDelegate.GlobalVariable.selectedCategory, name: name)
+        CategoryTableViewController.choosedCategory?.name=name
+        do{
+            try self.context.save()
+        }catch{
+            
+        }
     }
  
     

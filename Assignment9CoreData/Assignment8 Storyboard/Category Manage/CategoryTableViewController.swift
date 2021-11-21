@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CoreData
 class CategoryTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
   
-    
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
     var searchController = UISearchController(searchResultsController:nil)
-    
-
+    var items:[CategoryCore]?
+    static var choosedCategory : CategoryCore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,17 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
+        fetchCategory()
+    }
+    func fetchCategory(){
+        do {
+            self.items = try context.fetch(CategoryCore.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
 
     }
 
@@ -41,16 +53,16 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return (AppDelegate.GlobalVariable.categorylist.testCategorylist.getsize())
+        return self.items?.count ?? 0
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
-        let str=AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-        let components = str.components(separatedBy: " ")
-        cell.textLabel!.text = components[0]+" ."+components[1]
+        let Category = self.items![indexPath.row]
+        cell.textLabel?.text=Category.name
+
           return (cell)
       }
 
@@ -74,11 +86,15 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let deleteselect = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-            let id = Int(deleteselect.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.categorylist.testCategorylist.DeleteCategory(id: id)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let toRemove = self.items![indexPath.row]
+            self.context.delete(toRemove)
+            do {
+                try self.context.save()
+            }catch{
+                
+            }
+            self.fetchCategory()
+        
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -102,10 +118,9 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-            let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selectedCategory=id
-        print(id)
+        CategoryTableViewController.choosedCategory=self.items![indexPath.row]
+        
+        
 
            
            

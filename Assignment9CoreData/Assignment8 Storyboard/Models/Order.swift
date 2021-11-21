@@ -103,3 +103,4 @@ class Order{
         return "\(orderid) \(StocktoString(Stocks: stock)) \(QualitytoString(quant:quantity)) \(date)"
     }
 }
+

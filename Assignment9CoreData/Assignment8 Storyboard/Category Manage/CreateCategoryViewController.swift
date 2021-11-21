@@ -6,9 +6,10 @@
 //
 
 import UIKit
-
+import CoreData
 class CreateCategoryViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+ 
     @IBOutlet weak var NameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,16 @@ class CreateCategoryViewController: UIViewController {
         else{
                   return Alert()
               }
-        let category = Category(name: name)
-        AppDelegate.GlobalVariable.categorylist.testCategorylist.addCategory(Category: category)
+        //creat a Category object
+        let newCategoryCore = CategoryCore(context: self.context)
+        newCategoryCore.name=name
+        //save data
+        do {
+            try! self.context.save()
+            
+        }catch{
+            
+        }
 
     }
     func Alert (){
