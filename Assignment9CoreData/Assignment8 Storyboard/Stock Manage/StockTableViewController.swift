@@ -14,20 +14,27 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     public static var choosedStock: StockCore?
     let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
     
-    var filteredObjects:[String]=[String]()
+    var filtereditems:[StockCore]?
     var searchController = UISearchController(searchResultsController:nil)
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return }
-    
-       
         filterContentForSearchText(text)
     }
     func filterContentForSearchText (_ searchText:String){
-        let pred=NSPredicate(format: "name CONTAINS %@",searchText)
+        let pred=NSPredicate(format: "name CONTAINS %@",searchText.lowercased())
         request.predicate=pred
-        tableView.reloadData()
+        do {
+          
+            self.filtereditems = try context.fetch(request)
+
+            tableView.reloadData()
+        }catch {
+            
+        }
+    
     }
+    
     func isFiltering()->Bool{
         return searchController.isActive && !(searchController.searchBar.text?.isEmpty)!
     }
@@ -58,7 +65,8 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
        
          
         do {
-            self.items = try context.fetch(request)
+                self.items = try context.fetch(StockCore.fetchRequest())
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -79,12 +87,13 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var res=0
         if (isFiltering()){
-            self.items?.count ?? 0
+            res=self.filtereditems?.count ?? 0
         }else {
-            self.items?.count ?? 0
-        }
+        
+            res=self.items?.count ?? 0
+         }
        
-        return  self.items?.count ?? 0
+        return  res
     }
     
 
@@ -92,14 +101,14 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "stock") as! StockTableViewCell
 
-        //var str=""
+        var Stock1:StockCore
      
-            /* if (isFiltering()){
-            let Stock1 = self.items![indexPath.row]
+             if (isFiltering()){
+             Stock1 = self.filtereditems![indexPath.row]
         }else{
-            let Stock1 = self.items![indexPath.row]
-        }*/
-        let Stock1 = self.items![indexPath.row]
+            Stock1 = self.items![indexPath.row]
+        }
+       
         cell.Name.text=Stock1.name
           return (cell)
       }
