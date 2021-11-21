@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+import CoreData
 class UpdateStockViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
-    var selectedCompanyid=0
-    var selectedCategoryid=0
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    static var choosedCompanyForStock : CompanyCore?
+    static var choosedCategoryForStock : CategoryCore?
+    let currStock = StockTableViewController.choosedStock
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var lasttradefield: UITextField!
@@ -22,13 +24,20 @@ class UpdateStockViewController: UIViewController,UITableViewDelegate, UITableVi
     let id = AppDelegate.GlobalVariable.selectedStock
 
     override func viewDidLoad() {
+        UpdateStockViewController.choosedCompanyForStock=currStock?.ofCompany
+        UpdateStockViewController.choosedCategoryForStock=currStock?.ofCategory
         super.viewDidLoad()
-        let currentStock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)
-        nameField.text=currentStock?.getName()
-        nameField.isEnabled=false
+        if (( currStock) == nil){
+            Alert1()
+        }else{
+            nameField.text=currStock?.name
+            nameField.isEnabled=false
 
-        lasttradefield.text = currentStock?.getlastTradePrice().description
-        Ratingfield.text=currentStock?.getfinancialRating().description
+            lasttradefield.text = currStock?.lastTradePrice.description
+            Ratingfield.text=currStock?.financialRating.description
+            
+        }
+       
         
         super.viewDidLoad()
         tableView2.register(UITableViewCell.self,
@@ -46,43 +55,40 @@ class UpdateStockViewController: UIViewController,UITableViewDelegate, UITableVi
         // Do any additional setup after loading the view.
     }
     
-
+    func Alert1 (){
+        
+        let alertController = UIAlertController(title:"Info",message:"Please select a Company", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         if (tableView == tableView1){
-            return AppDelegate.GlobalVariable.companylist.testCompanylist.getsize()
+            return CompanyTableViewController.items?.count ?? 0
         }else{
-        return (AppDelegate.GlobalVariable.categorylist.testCategorylist.getsize())
+        return CategoryTableViewController.items?.count ?? 0
       }
     }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
        if (tableView == self.tableView1){
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cellCom")
-           cell.textLabel?.text = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+           let Company = CompanyTableViewController.items![indexPath.row]
+           cell.textLabel?.text = "\(Company.name!)  \(Company.email!)"
            return (cell)
        }else{
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-           cell.textLabel?.text = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
+           let Catgory1 = CategoryTableViewController.items![indexPath.row]
+           cell.textLabel?.text="\(Catgory1.name!)"
            return (cell)
        }
         
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let currentStock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)
         if (tableView == self.tableView1){
-    
-            let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
-            selectedCompanyid=Int(selected.split(separator: " ")[0])!
-            if (selectedCompanyid == 0){
-                selectedCompanyid=(currentStock?.getCompany().getid())!
-            }
-            
+            UpdateStockViewController .choosedCompanyForStock=CompanyTableViewController.items![indexPath.row]
         }else{
-            let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-            selectedCategoryid=Int(selected.split(separator: " ")[0])!
-            if selectedCategoryid == 0 {
-                selectedCategoryid = (currentStock?.getCategory().getId())!
-            }
+            UpdateStockViewController.choosedCategoryForStock=CategoryTableViewController.items![indexPath.row]
         }
     
     }
@@ -96,10 +102,17 @@ class UpdateStockViewController: UIViewController,UITableViewDelegate, UITableVi
         else{
                   return Alert()
               }
-        let company = AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: selectedCompanyid)
-        
-        let category = AppDelegate.GlobalVariable.categorylist.testCategorylist.getCategory(id: selectedCategoryid)
-        AppDelegate.GlobalVariable.stocklist.testStocklist.UpdateStock(id: AppDelegate.GlobalVariable.selectedStock, company:company , lastTradePrice: Double(lastTrade), financialRating: Int(Fincial), Category: category)
+      
+        currStock?.lastTradePrice=Double(lastTrade)!
+        currStock?.financialRating=Int64(Fincial)!
+        currStock?.ofCategory=UpdateStockViewController.choosedCategoryForStock
+        currStock?.ofCompany=UpdateStockViewController.choosedCompanyForStock
+        do{
+            try self.context.save()
+        }catch{
+            
+        }
+
     
 
         

@@ -45,7 +45,7 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
        if (tableView == self.tableviewCompany){
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cellCom")
            let Company = CompanyTableViewController.items![indexPath.row]
-           cell.textLabel?.text = "\(Company.name!)+ \(Company.email!)"
+           cell.textLabel?.text = "\(Company.name!)  \(Company.email!)"
            return (cell)
        }else{
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
@@ -78,12 +78,11 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
         newStockCore.name=name
         newStockCore.financialRating=Int64(Fincial)!
         newStockCore.lastTradePrice=Double(lastTrade)!
-        //newStockCore.company=AddStockViewController.choosedCompanyForStock
-        //newStockCore.category=AddStockViewController.choosedCategoryForStock
+        newStockCore.ofCompany=AddStockViewController.choosedCompanyForStock
+        newStockCore.ofCategory=AddStockViewController.choosedCategoryForStock
         //save data
         do {
-            //try! self.context.save()
-            
+            try! self.context.save()
         }catch{
             
         }

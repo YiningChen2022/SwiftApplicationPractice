@@ -6,9 +6,9 @@
 //
 
 import UIKit
-
+import CoreData
 class StockDetailTableViewViewController: UIViewController {
-
+    let currStock = StockTableViewController.choosedStock
     
     @IBOutlet weak var Category: UILabel!
     
@@ -22,12 +22,20 @@ class StockDetailTableViewViewController: UIViewController {
     let id = AppDelegate.GlobalVariable.selectedStock
     override func viewDidLoad() {
         super.viewDidLoad()
-        let currentStock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)
-        Name.text=currentStock?.getName()
-        tradePrice.text = currentStock?.getlastTradePrice().description
-        Rating.text = currentStock?.getfinancialRating().description
-        Company.text=currentStock?.getCompany().toStringshort()
-        Category.text=currentStock?.getCategory().toString()
+        
+           if ((currStock) == nil){
+               Alert()
+           }else{
+               Name.text=currStock!.name
+               tradePrice.text = currStock!.lastTradePrice.description
+               Rating.text=currStock!.financialRating.description
+               Company.text=currStock!.ofCompany?.name
+               Category.text=currStock!.ofCategory?.name
+               
+           }
+              
+     
+        
         
 
         // Do any additional setup after loading the view.
@@ -43,5 +51,12 @@ class StockDetailTableViewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+        func Alert (){
+        
+        let alertController = UIAlertController(title:"Info",message:"please select a stock ", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
 
 }

@@ -11,7 +11,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
     var items:[StockCore]?
-    static var choosedStock: StockCore?
+    public static var choosedStock: StockCore?
     
     var filteredObjects:[String]=[String]()
     var searchController = UISearchController(searchResultsController:nil)
@@ -44,6 +44,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchStock()
         self.navigationItem.leftBarButtonItem=self.editButtonItem
         
         navigationItem.searchController=searchController
@@ -54,21 +55,25 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
-        fetchStock()
+      
     }
     func fetchStock(){
-        do {
+       
            /* let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
             let pred=NSPredicate(format: "name CONTAINS 'Test'")
             request.predicate=pred
             */
-            self.items = try context.fetch(StockCore.fetchRequest())
+         
+            
+        do {
+            items = try context.fetch(StockCore.fetchRequest())
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }catch {
             
         }
+
 
     }
 
@@ -82,12 +87,12 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var res=0
         if (isFiltering()){
-            res=filteredObjects.count
+            self.items?.count ?? 0
         }else {
             self.items?.count ?? 0
         }
        
-        return res
+        return  self.items?.count ?? 0
     }
     
 
