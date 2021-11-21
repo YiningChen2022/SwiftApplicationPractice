@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CategoryCore" representedClassName="CategoryCore" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="stockCore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StockCore" inverseName="category" inverseEntity="StockCore"/>
     </entity>
     <entity name="CompanyCore" representedClassName="CompanyCore" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -9,6 +10,7 @@
         <attribute name="logo" optional="YES" attributeType="Transformable" customClassName="UIImage"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="symbol" optional="YES" attributeType="String"/>
+        <relationship name="stockCore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StockCore" inverseName="company" inverseEntity="StockCore"/>
     </entity>
     <entity name="CustomerCore" representedClassName="CustomerCore" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String"/>
@@ -21,21 +23,21 @@
         <attribute name="totalInvestment" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="StockCore" representedClassName="StockCore" syncable="YES">
-        <attribute name="category" optional="YES" attributeType="Transformable" customClassName="CategoryCore"/>
-        <attribute name="company" optional="YES" attributeType="Transformable" customClassName="CompanyCore"/>
         <attribute name="financialRating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lastTradePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryCore" inverseName="stockCore" inverseEntity="CategoryCore"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompanyCore" inverseName="stockCore" inverseEntity="CompanyCore"/>
     </entity>
     <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CategoryCore" positionX="-262.1089477539062" positionY="184.3564453125" width="128" height="58"/>
-        <element name="CompanyCore" positionX="-99" positionY="180" width="128" height="104"/>
-        <element name="CustomerCore" positionX="-90" positionY="216" width="128" height="149"/>
+        <element name="CategoryCore" positionX="-262.1089477539062" positionY="184.3564453125" width="128" height="73"/>
+        <element name="CompanyCore" positionX="35.76605224609375" positionY="-125.1732330322266" width="128" height="133"/>
+        <element name="CustomerCore" positionX="8.3985595703125" positionY="201.2472534179688" width="128" height="149"/>
+        <element name="StockCore" positionX="-183.6897583007812" positionY="-72.19091796875" width="128" height="133"/>
         <element name="Test" positionX="-20.76458740234375" positionY="61.18359374999994" width="128" height="58"/>
-        <element name="StockCore" positionX="-135" positionY="207" width="128" height="119"/>
     </elements>
 </model>

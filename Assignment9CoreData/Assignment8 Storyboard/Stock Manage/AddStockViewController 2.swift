@@ -23,6 +23,7 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableviewCategory: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         tableviewCategory.register(UITableViewCell.self,
                                     forCellReuseIdentifier: "cellCate")
         tableviewCategory.dataSource = self
@@ -36,20 +37,21 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         if (tableView == tableviewCompany){
-            return CompanyTableViewController.items?.count ?? 0
+           
+            return AppDelegate.GlobalVariable.CompanyItems?.count ?? 0
         }else{
-        return CategoryTableViewController.items?.count ?? 0
+            return AppDelegate.GlobalVariable.CategoryItems?.count ?? 0
       }
     }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
        if (tableView == self.tableviewCompany){
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cellCom")
-           let Company = CompanyTableViewController.items![indexPath.row]
+           let Company = AppDelegate.GlobalVariable.CompanyItems![indexPath.row]
            cell.textLabel?.text = "\(Company.name!)+ \(Company.email!)"
            return (cell)
        }else{
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-           let Catgory1 = CategoryTableViewController.items![indexPath.row]
+           let Catgory1 = AppDelegate.GlobalVariable.CategoryItems![indexPath.row]
            cell.textLabel?.text="\(Catgory1.name!)"
            return (cell)
        }
@@ -57,9 +59,9 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if (tableView == self.tableviewCompany){
-            AddStockViewController.choosedCompanyForStock=CompanyTableViewController.items![indexPath.row]
+            AddStockViewController.choosedCompanyForStock=AppDelegate.GlobalVariable.CompanyItems![indexPath.row]
         }else{
-            AddStockViewController.choosedCategoryForStock=CategoryTableViewController.items![indexPath.row]
+            AddStockViewController.choosedCategoryForStock=AppDelegate.GlobalVariable.CategoryItems![indexPath.row]
         }
     
     }
@@ -78,11 +80,11 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
         newStockCore.name=name
         newStockCore.financialRating=Int64(Fincial)!
         newStockCore.lastTradePrice=Double(lastTrade)!
-        //newStockCore.company=AddStockViewController.choosedCompanyForStock
-        //newStockCore.category=AddStockViewController.choosedCategoryForStock
+        newStockCore.company=AddStockViewController.choosedCompanyForStock
+        newStockCore.category=AddStockViewController.choosedCategoryForStock
         //save data
         do {
-            //try! self.context.save()
+            try! self.context.save()
             
         }catch{
             

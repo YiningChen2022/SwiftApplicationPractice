@@ -1,52 +1,28 @@
 //
-//  StockTableViewController.swift
+//  CategoryTableViewController.swift
 //  Assignment8 Storyboard
 //
-//  Created by Yining Chen on 11/14/21.
+//  Created by Yining Chen on 11/12/21.
 //
 
 import UIKit
 import CoreData
-class StockTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
+class CategoryTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
+  
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
-    var items:[StockCore]?
-    static var choosedStock: StockCore?
-    
-    var filteredObjects:[String]=[String]()
     var searchController = UISearchController(searchResultsController:nil)
+    var items=AppDelegate.GlobalVariable.CategoryItems
     
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {return }
-        filterContentForSearchText(text)
-    }
-    func filterContentForSearchText (_ searchText:String){
-        filteredObjects=AppDelegate.GlobalVariable.stocklist.testStocklist.toString().filter({(token:String)->Bool in
-            if (searchController.searchBar.text?.isEmpty)!{
-                return true
-                
-            }else {
-                return token.lowercased().contains(searchText.lowercased())
-            }
-        })
-        tableView.reloadData()
-    }
-    func isFiltering()->Bool{
-        return searchController.isActive && !(searchController.searchBar.text?.isEmpty)!
-    }
-    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        let text=searchBar.text
-        filterContentForSearchText(text!)
-    }
-    
-    
-
+    static var choosedCategory : CategoryCore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem=self.editButtonItem
         
-        navigationItem.searchController=searchController
+      /*  let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:nil)
+        
+        self.navigationItem.rightBarButtonItem = addButton*/
         searchController.searchBar.delegate=self
         searchController.searchResultsUpdater=self
         searchController.obscuresBackgroundDuringPresentation=false
@@ -54,15 +30,11 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
-        fetchStock()
+        fetchCategory()
     }
-    func fetchStock(){
+    func fetchCategory(){
         do {
-           /* let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
-            let pred=NSPredicate(format: "name CONTAINS 'Test'")
-            request.predicate=pred
-            */
-            self.items = try context.fetch(StockCore.fetchRequest())
+            self.items = try context.fetch(CategoryCore.fetchRequest())
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -80,33 +52,27 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var res=0
-        if (isFiltering()){
-            res=filteredObjects.count
-        }else {
-            self.items?.count ?? 0
-        }
+        // #warning Incomplete implementation, return the number of rows
        
-        return res
+        return self.items?.count ?? 0
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stock") as! StockTableViewCell
+        let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
+        let Category = self.items![indexPath.row]
+        cell.textLabel?.text=Category.name
 
-        //var str=""
-     
-            /* if (isFiltering()){
-            let Stock1 = self.items![indexPath.row]
-        }else{
-            let Stock1 = self.items![indexPath.row]
-        }*/
-        let Stock1 = self.items![indexPath.row]
-        cell.Name.text=Stock1.name
           return (cell)
       }
 
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {return }
+        print (text )
+    }
+    
+    
 
     
     // Override to support conditional editing of the table view.
@@ -120,6 +86,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            // Delete the row from the data source
             let toRemove = self.items![indexPath.row]
             self.context.delete(toRemove)
             do {
@@ -127,7 +94,9 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
             }catch{
                 
             }
-            self.fetchStock()
+            self.fetchCategory()
+        
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -150,10 +119,14 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        StockTableViewController.choosedStock=self.items![indexPath.row]
+        CategoryTableViewController.choosedCategory=self.items![indexPath.row]
+        
+        
 
+           
+           
+            
         }
-
+    
 
 }
-

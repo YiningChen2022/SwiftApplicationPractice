@@ -16,12 +16,12 @@ extension StockCore {
         return NSFetchRequest<StockCore>(entityName: "StockCore")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
-    @NSManaged public var company: CompanyCore?
-    @NSManaged public var lastTradePrice: Double
     @NSManaged public var financialRating: Int64
+    @NSManaged public var id: UUID?
+    @NSManaged public var lastTradePrice: Double
+    @NSManaged public var name: String?
     @NSManaged public var category: CategoryCore?
+    @NSManaged public var company: CompanyCore?
 
 }
 

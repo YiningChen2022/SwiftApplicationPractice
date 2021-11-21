@@ -2,7 +2,7 @@
 //  CategoryCore+CoreDataProperties.swift
 //  Assignment8 Storyboard
 //
-//  Created by Yining Chen on 11/20/21.
+//  Created by Yining Chen on 11/21/21.
 //
 //
 
@@ -17,6 +17,7 @@ extension CategoryCore {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var stockCore: StockCore?
 
 }
 
