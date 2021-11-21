@@ -12,23 +12,20 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
 
     var items:[StockCore]?
     public static var choosedStock: StockCore?
+    let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
     
     var filteredObjects:[String]=[String]()
     var searchController = UISearchController(searchResultsController:nil)
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return }
+    
+       
         filterContentForSearchText(text)
     }
     func filterContentForSearchText (_ searchText:String){
-        filteredObjects=AppDelegate.GlobalVariable.stocklist.testStocklist.toString().filter({(token:String)->Bool in
-            if (searchController.searchBar.text?.isEmpty)!{
-                return true
-                
-            }else {
-                return token.lowercased().contains(searchText.lowercased())
-            }
-        })
+        let pred=NSPredicate(format: "name CONTAINS %@",searchText)
+        request.predicate=pred
         tableView.reloadData()
     }
     func isFiltering()->Bool{
@@ -59,14 +56,9 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     }
     func fetchStock(){
        
-           /* let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
-            let pred=NSPredicate(format: "name CONTAINS 'Test'")
-            request.predicate=pred
-            */
          
-            
         do {
-            items = try context.fetch(StockCore.fetchRequest())
+            self.items = try context.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
