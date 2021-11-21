@@ -12,7 +12,7 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
     var searchController = UISearchController(searchResultsController:nil)
-    var items:[CategoryCore]?
+    public static var items:[CategoryCore]?
     static var choosedCategory : CategoryCore?
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     func fetchCategory(){
         do {
-            self.items = try context.fetch(CategoryCore.fetchRequest())
+            CategoryTableViewController.items = try context.fetch(CategoryCore.fetchRequest())
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -53,14 +53,14 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return self.items?.count ?? 0
+        return CategoryTableViewController.items?.count ?? 0
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
-        let Category = self.items![indexPath.row]
+        let Category = CategoryTableViewController.items![indexPath.row]
         cell.textLabel?.text=Category.name
 
           return (cell)
@@ -86,7 +86,7 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let toRemove = self.items![indexPath.row]
+            let toRemove = CategoryTableViewController.items![indexPath.row]
             self.context.delete(toRemove)
             do {
                 try self.context.save()
@@ -118,7 +118,7 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        CategoryTableViewController.choosedCategory=self.items![indexPath.row]
+        CategoryTableViewController.choosedCategory=CategoryTableViewController.items![indexPath.row]
         
         
 

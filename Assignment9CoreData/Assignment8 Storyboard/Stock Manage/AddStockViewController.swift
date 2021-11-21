@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+import CoreData
 class AddStockViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var selectedCompanyid=0
-    var selectedCategoryid=0
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+ 
+    static var choosedCompanyForStock : CompanyCore?
+    static var choosedCategoryForStock : CategoryCore?
     @IBOutlet weak var nameField: UITextField!
     
     @IBOutlet weak var tradeField: UITextField!
@@ -34,32 +36,30 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         if (tableView == tableviewCompany){
-            return AppDelegate.GlobalVariable.companylist.testCompanylist.getsize()
+            return CompanyTableViewController.items?.count ?? 0
         }else{
-        return (AppDelegate.GlobalVariable.categorylist.testCategorylist.getsize())
+        return CategoryTableViewController.items?.count ?? 0
       }
     }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
        if (tableView == self.tableviewCompany){
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cellCom")
-           cell.textLabel?.text = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+           let Company = CompanyTableViewController.items![indexPath.row]
+           cell.textLabel?.text = "\(Company.name!)+ \(Company.email!)"
            return (cell)
        }else{
            let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-           cell.textLabel?.text = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
+           let Catgory1 = CategoryTableViewController.items![indexPath.row]
+           cell.textLabel?.text="\(Catgory1.name!)"
            return (cell)
        }
         
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if (tableView == self.tableviewCompany){
-            let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
-            selectedCompanyid=Int(selected.split(separator: " ")[0])!
-            print(selectedCompanyid)
+            AddStockViewController.choosedCompanyForStock=CompanyTableViewController.items![indexPath.row]
         }else{
-            let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-            selectedCategoryid=Int(selected.split(separator: " ")[0])!
-            print(selectedCategoryid)
+            AddStockViewController.choosedCategoryForStock=CategoryTableViewController.items![indexPath.row]
         }
     
     }
@@ -69,15 +69,24 @@ class AddStockViewController: UIViewController, UITableViewDelegate, UITableView
         guard let name=nameField.text, !name.isEmpty,
               let lastTrade=tradeField.text, !lastTrade.isEmpty, Double(lastTrade) != nil ,Double(lastTrade)!>=0,
               let Fincial=ratingField.text, !Fincial.isEmpty, Int(Fincial) != nil,Int(Fincial)!>=1 , Int(Fincial)!<11,
-              selectedCompanyid != 0,
-              selectedCategoryid != 0
+              AddStockViewController.choosedCategoryForStock != nil,
+              AddStockViewController.choosedCompanyForStock != nil
         else{
                   return Alert()
               }
-        let currcate=AppDelegate.GlobalVariable.categorylist.testCategorylist.getCategory(id: selectedCategoryid)
-        let currcomp = AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: selectedCompanyid)
-        let Stock = Stock(name: name, lastTradePrice: Double(lastTrade)!, financialRating: Int(Fincial)!, category: currcate! , company: currcomp!)
-        AppDelegate.GlobalVariable.stocklist.testStocklist.addStock(Stock: Stock)
+        let newStockCore = StockCore(context: self.context)
+        newStockCore.name=name
+        newStockCore.financialRating=Int64(Fincial)!
+        newStockCore.lastTradePrice=Double(lastTrade)!
+        newStockCore.company=AddStockViewController.choosedCompanyForStock
+        newStockCore.category=AddStockViewController.choosedCategoryForStock
+        //save data
+        do {
+            try! self.context.save()
+            
+        }catch{
+            
+        }
 
     }
     func Alert (){

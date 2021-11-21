@@ -6,8 +6,12 @@
 //
 
 import UIKit
-
+import CoreData
 class StockTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+
+    var items:[StockCore]?
+    static var choosedStock: StockCore?
     
     var filteredObjects:[String]=[String]()
     var searchController = UISearchController(searchResultsController:nil)
@@ -50,6 +54,20 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
+        fetchStock()
+    }
+    func fetchStock(){
+        do {
+            let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
+            let pred=NSPredicate(format: "name CONTAINS 'Test'")
+            request.predicate=pred
+            self.items = try context.fetch(StockCore.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
 
     }
 
@@ -65,7 +83,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         if (isFiltering()){
             res=filteredObjects.count
         }else {
-            res=AppDelegate.GlobalVariable.stocklist.testStocklist.getsize()
+            self.items?.count ?? 0
         }
        
         return res
@@ -76,14 +94,15 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "stock") as! StockTableViewCell
 
-        var str=""
-        if (isFiltering()){
-            str = filteredObjects[indexPath.row]
-        }else{ str=AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
-        }
-        let components = str.components(separatedBy: " ")
-        cell.Name.text = components[0]+" . "+components[1]
-        
+        //var str=""
+     
+            /* if (isFiltering()){
+            let Stock1 = self.items![indexPath.row]
+        }else{
+            let Stock1 = self.items![indexPath.row]
+        }*/
+        let Stock1 = self.items![indexPath.row]
+        cell.Name.text=Stock1.name
           return (cell)
       }
 
@@ -100,13 +119,14 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            let deleteselect = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[indexPath.row]
-            let id = Int(deleteselect.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.stocklist.testStocklist.DeleteStock(id: id)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            let toRemove = self.items![indexPath.row]
+            self.context.delete(toRemove)
+            do {
+                try self.context.save()
+            }catch{
+                
+            }
+            self.fetchStock()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -129,10 +149,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString() [indexPath.row]
-            let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selectedStock=id
-       
+        StockTableViewController.choosedStock=self.items![indexPath.row]
 
         }
 

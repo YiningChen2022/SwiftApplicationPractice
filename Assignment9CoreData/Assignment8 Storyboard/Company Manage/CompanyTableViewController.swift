@@ -11,7 +11,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
   
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
-    var items:[CompanyCore]?
+    public static var items:[CompanyCore]?
     static var choosedCompany : CompanyCore?
     
     var searchController = UISearchController(searchResultsController:nil)
@@ -35,7 +35,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     }
     func fetchCompany(){
         do {
-            self.items = try context.fetch(CompanyCore.fetchRequest())
+            CompanyTableViewController.items = try context.fetch(CompanyCore.fetchRequest())
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -55,7 +55,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return self.items?.count ?? 0
+        return CompanyTableViewController.items?.count ?? 0
     }
     
 
@@ -64,7 +64,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "Company") as! CustomerTableViewCell
 
-        let Company = self.items![indexPath.row]
+        let Company = CompanyTableViewController.items![indexPath.row]
       
         cell.Name.text = Company.name
         cell.Symbol.text = Company.symbol
@@ -95,7 +95,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let toRemove = self.items![indexPath.row]
+            let toRemove = CompanyTableViewController.items![indexPath.row]
             self.context.delete(toRemove)
             do {
                 try self.context.save()
@@ -126,7 +126,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        CompanyTableViewController.choosedCompany=self.items![indexPath.row]
+        CompanyTableViewController.choosedCompany=CompanyTableViewController.items![indexPath.row]
 
         }
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath:IndexPath){
