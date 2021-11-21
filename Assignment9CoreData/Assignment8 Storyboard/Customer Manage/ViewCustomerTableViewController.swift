@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
   
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    var items:[CustomerCore]?
+    static var choosedCustomer : CustomerCore?
     
 
     var searchController = UISearchController(searchResultsController:nil)
@@ -29,9 +32,19 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
+        fetchCustomer()
+    }
+    func fetchCustomer(){
+        do {
+            self.items = try context.fetch(CustomerCore.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
 
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,17 +55,18 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return (AppDelegate.GlobalVariable.customerlist.testcustomerlist.getsize())
+        return self.items?.count ?? 0
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")
-        let str=AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
-        let components = str.components(separatedBy: " ")
-        cell.textLabel!.text = components[1]+" "+components[2]
-        cell.detailTextLabel?.text = components[3]+","+components[4]+","+components[5]
+        let Customer = self.items![indexPath.row]
+        
+        cell.textLabel!.text = "\( Customer.firstName!) \( Customer.lastName!)"
+        cell.detailTextLabel?.text = "\( Customer.contactDetails), \( Customer.emailID!), \( Customer.address!)"
+       
           return (cell)
       }
 
@@ -75,12 +89,14 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            let deleteselect = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
-            let id = Int(deleteselect.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.customerlist.testcustomerlist.DeleteCustomer(id: id)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let toRemove = self.items![indexPath.row]
+            self.context.delete(toRemove)
+            do {
+                try self.context.save()
+            }catch{
+                
+            }
+            self.fetchCustomer()
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -104,11 +120,8 @@ class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpd
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-             let selected = AppDelegate.GlobalVariable.customerlist.testcustomerlist.toString()[indexPath.row]
-            let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selected=id
-        AppDelegate.GlobalVariable.selectedOrderid=id
-        print(id)
+        ViewCustomerTableViewController.choosedCustomer=self.items![indexPath.row]
+
            
            
             

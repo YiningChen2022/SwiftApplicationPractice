@@ -6,9 +6,10 @@
 //
 
 import UIKit
-
+import CoreData
 class AddCustomerViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,9 +50,19 @@ class AddCustomerViewController: UIViewController {
         else{
                   return Alert()
               }
-        let customer = Customer(firstName: fn, lastName: ln, address: addre, contactDetails: contact, emailID: em)
-        
-        AppDelegate.GlobalVariable.customerlist.testcustomerlist.addCustomer(Customer: customer)
+        let newCustomerCore = CustomerCore(context: self.context)
+        newCustomerCore.firstName=fn
+        newCustomerCore.lastName=ln
+        newCustomerCore.contactDetails=Int64(contact)!
+        newCustomerCore.address=addre
+        newCustomerCore.emailID=em
+        //save data
+        do {
+            try! self.context.save()
+            
+        }catch{
+            
+        }
         }
 
         

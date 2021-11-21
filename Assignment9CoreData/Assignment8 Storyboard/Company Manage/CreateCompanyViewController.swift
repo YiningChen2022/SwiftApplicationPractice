@@ -6,9 +6,10 @@
 //
 
 import UIKit
-
+import CoreData
 class CreateCompanyViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+ 
     @IBOutlet weak var HeadQuarter: UITextField!
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var Symbol: UITextField!
@@ -41,12 +42,23 @@ class CreateCompanyViewController: UIViewController {
         guard let name=Name.text, !name.isEmpty,
               let symbol=Symbol.text, !symbol.isEmpty,
               let headQuarter=HeadQuarter.text, !headQuarter.isEmpty,
-              let email=Email.text,!email.isEmpty
+              let email=Email.text,!email.isEmpty,isValidEmail(email: email)
         else{
                   return Alert()
               }
-        let company = Company(name: name, symbol: symbol, headquarter: headQuarter, email: email)
-        AppDelegate.GlobalVariable.companylist.testCompanylist.addCompany(Company: company)
+        //creat a Category object
+        let newCompanyCore = CompanyCore(context: self.context)
+        newCompanyCore.name=name
+        newCompanyCore.symbol=symbol
+        newCompanyCore.headQuarter=headQuarter
+        newCompanyCore.email=email
+        //save data
+        do {
+            try! self.context.save()
+            
+        }catch{
+            
+        }
       
       
 
@@ -58,5 +70,10 @@ class CreateCompanyViewController: UIViewController {
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
     }
-    
+    func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
 }

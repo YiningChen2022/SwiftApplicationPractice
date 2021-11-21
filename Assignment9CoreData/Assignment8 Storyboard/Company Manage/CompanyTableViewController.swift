@@ -6,11 +6,14 @@
 //
 
 import UIKit
-
+import CoreData
 class CompanyTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
   
-    
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
+    var items:[CompanyCore]?
+    static var choosedCompany : CompanyCore?
+    
     var searchController = UISearchController(searchResultsController:nil)
     
 
@@ -27,6 +30,18 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
+        fetchCompany()
+
+    }
+    func fetchCompany(){
+        do {
+            self.items = try context.fetch(CompanyCore.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
 
     }
 
@@ -40,26 +55,24 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        return (AppDelegate.GlobalVariable.companylist.testCompanylist.getsize())
+        return self.items?.count ?? 0
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
-       /* let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")*/
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "Company") as! CustomerTableViewCell
 
-        let str=AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
-        print(str)
-        let components = str.components(separatedBy: " ")
-        cell.Name.text = components[0]+" "+components[1]
-        cell.Symbol.text = components[2]
-        cell.email.text=components[3]
-        cell.hq.text=components[4]
-        var currentcompany=AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: Int(components[0])!)
-        cell.CompanyLogo.image=currentcompany?.getLogo()
-        
+        let Company = self.items![indexPath.row]
+      
+        cell.Name.text = Company.name
+        cell.Symbol.text = Company.symbol
+        cell.email.text=Company.email
+        cell.hq.text=Company.headQuarter
+        cell.CompanyLogo.image=Company.logo
           return (cell)
+        
       }
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -82,11 +95,14 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let deleteselect = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
-            let id = Int(deleteselect.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.companylist.testCompanylist.DeleteCompany(id: id)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let toRemove = self.items![indexPath.row]
+            self.context.delete(toRemove)
+            do {
+                try self.context.save()
+            }catch{
+                
+            }
+            self.fetchCompany()
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -110,10 +126,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
-            let id=Int(selected.split(separator: " ")[0])!
-            AppDelegate.GlobalVariable.selectedCompany=id
-       
+        CompanyTableViewController.choosedCompany=self.items![indexPath.row]
 
         }
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath:IndexPath){

@@ -6,29 +6,27 @@
 //
 
 import UIKit
-
+import CoreData
 class UpdateCompanyViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+ let currCompany = CompanyTableViewController.choosedCompany
     override func viewDidLoad() {
         super.viewDidLoad()
-        let id = AppDelegate.GlobalVariable.selectedCompany
-
-        if (id==0){
+     
+        if ((currCompany) == nil){
             Alert1()
         }else{
-       let currentCompany=AppDelegate.GlobalVariable.companylist.testCompanylist.getCompany(id: id)
-       
-         
-         Name.text=currentCompany?.getName()
-         hq.text = currentCompany?.getHeadquarter()
-         Symbol.text=currentCompany?.getSymbol()
-         Email.text=currentCompany?.getEmail()
+           
+        Name.text=currCompany!.name
+         hq.text=currCompany!.headQuarter
+         Symbol.text=currCompany!.symbol
+         Email.text=currCompany!.email
             
         }// Do any additional setup after loading the view.
     }
     func Alert1 (){
         
-        let alertController = UIAlertController(title:"Info",message:"Please select a Category", preferredStyle:  .alert)
+        let alertController = UIAlertController(title:"Info",message:"Please select a Company", preferredStyle:  .alert)
         let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
@@ -59,11 +57,20 @@ class UpdateCompanyViewController: UIViewController {
         guard let name=Name.text, !name.isEmpty,
               let symbol=Symbol.text, !symbol.isEmpty,
               let headQuarter=hq.text, !headQuarter.isEmpty,
-              let email=Email.text,!email.isEmpty
+              let email=Email.text,!email.isEmpty,isValidEmail(email: email)
         else{
                   return Alert()
               }
-        AppDelegate.GlobalVariable.companylist.testCompanylist.UpdateCompany(id: AppDelegate.GlobalVariable.selectedCompany, symbol: symbol, headquarter: headQuarter, email: email)
+        currCompany?.name=name
+        currCompany?.headQuarter=headQuarter
+        currCompany?.symbol=symbol
+        currCompany?.email=email
+        
+        do{
+            try self.context.save()
+        }catch{
+            
+        }
 
     }
     func Alert (){
@@ -72,5 +79,11 @@ class UpdateCompanyViewController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController,animated:true,completion: nil)
+    }
+    func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
 }
