@@ -9,7 +9,7 @@ import UIKit
 
 
 class SearchByCompanyViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+    static var choosedCompany : CompanyCore?
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +22,20 @@ class SearchByCompanyViewController: UIViewController,UITableViewDelegate, UITab
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
-        return (AppDelegate.GlobalVariable.companylist.testCompanylist.getsize())
+        return CompanyTableViewController.items?.count ?? 0
                    
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
+       let Company = CompanyTableViewController.items![indexPath.row]
+       cell.textLabel?.text = "\(Company.name!) \(Company.email!)"
           return (cell)
       }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.companylist.testCompanylist.toString()[indexPath.row]
-        let id=Int(selected.split(separator: " ")[0])!
-        AppDelegate.GlobalVariable.selectedCompanytoSearch=id
+        SearchByCompanyViewController.choosedCompany=CompanyTableViewController.items![indexPath.row]
      
     }
     

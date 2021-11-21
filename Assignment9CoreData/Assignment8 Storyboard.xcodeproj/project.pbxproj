@@ -119,12 +119,12 @@
 		E891730C273F4AE400E40460 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCategoryViewController.swift; sourceTree = "<group>"; };
-		E8C4D638274AF38E004C4A6D /* StockCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataClass.swift"; path = "Assignment8 Storyboard/Core Data Models /StockCore+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E8C4D639274AF38E004C4A6D /* StockCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataProperties.swift"; path = "Assignment8 Storyboard/Core Data Models /StockCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E8C4D63A274AF38E004C4A6D /* CategoryCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CategoryCore+CoreDataClass.swift"; path = "Assignment8 Storyboard/Core Data Models /CategoryCore+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E8C4D63B274AF38E004C4A6D /* CategoryCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CategoryCore+CoreDataProperties.swift"; path = "Assignment8 Storyboard/Core Data Models /CategoryCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E8C4D63C274AF38E004C4A6D /* CompanyCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CompanyCore+CoreDataClass.swift"; path = "Assignment8 Storyboard/Core Data Models /CompanyCore+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E8C4D63D274AF38E004C4A6D /* CompanyCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CompanyCore+CoreDataProperties.swift"; path = "Assignment8 Storyboard/Core Data Models /CompanyCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E8C4D638274AF38E004C4A6D /* StockCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E8C4D639274AF38E004C4A6D /* StockCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E8C4D63A274AF38E004C4A6D /* CategoryCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E8C4D63B274AF38E004C4A6D /* CategoryCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E8C4D63C274AF38E004C4A6D /* CompanyCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E8C4D63D274AF38E004C4A6D /* CompanyCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewController.swift; sourceTree = "<group>"; };
 		E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyViewController.swift; sourceTree = "<group>"; };
 		E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCompanyViewController.swift; sourceTree = "<group>"; };
@@ -171,12 +171,6 @@
 		E8470994273D621C00B3446E = {
 			isa = PBXGroup;
 			children = (
-				E8C4D638274AF38E004C4A6D /* StockCore+CoreDataClass.swift */,
-				E8C4D639274AF38E004C4A6D /* StockCore+CoreDataProperties.swift */,
-				E8C4D63A274AF38E004C4A6D /* CategoryCore+CoreDataClass.swift */,
-				E8C4D63B274AF38E004C4A6D /* CategoryCore+CoreDataProperties.swift */,
-				E8C4D63C274AF38E004C4A6D /* CompanyCore+CoreDataClass.swift */,
-				E8C4D63D274AF38E004C4A6D /* CompanyCore+CoreDataProperties.swift */,
 				E847099F273D621C00B3446E /* Assignment8 Storyboard */,
 				E847099E273D621C00B3446E /* Products */,
 			);
@@ -262,6 +256,12 @@
 		E8582EA52749F8DF00ECC92F /* Core Data Models  */ = {
 			isa = PBXGroup;
 			children = (
+				E8C4D63D274AF38E004C4A6D /* CompanyCore+CoreDataProperties.swift */,
+				E8C4D63C274AF38E004C4A6D /* CompanyCore+CoreDataClass.swift */,
+				E8C4D63B274AF38E004C4A6D /* CategoryCore+CoreDataProperties.swift */,
+				E8C4D63A274AF38E004C4A6D /* CategoryCore+CoreDataClass.swift */,
+				E8C4D639274AF38E004C4A6D /* StockCore+CoreDataProperties.swift */,
+				E8C4D638274AF38E004C4A6D /* StockCore+CoreDataClass.swift */,
 				E8582EB3274A0CCF00ECC92F /* CustomerCore+CoreDataProperties.swift */,
 				E8582EB2274A0CCF00ECC92F /* CustomerCore+CoreDataClass.swift */,
 			);
