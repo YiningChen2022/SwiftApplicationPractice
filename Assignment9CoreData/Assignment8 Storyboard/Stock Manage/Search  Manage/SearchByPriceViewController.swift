@@ -42,8 +42,8 @@ class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITable
         do{
             
         let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
-           print(price)
-            let pred=NSPredicate(format: "lastTradePrice >=  %d", price)
+        
+            let pred=NSPredicate(format: "lastTradePrice >= %d", price)
             
         request.predicate=pred
             
