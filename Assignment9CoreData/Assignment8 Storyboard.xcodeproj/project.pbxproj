@@ -43,6 +43,8 @@
 		E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730C273F4AE400E40460 /* CategoryTableViewController.swift */; };
 		E891730F273F4D8500E40460 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */; };
 		E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */; };
+		E8D064EB274B277100A9C48B /* CompanyCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D064E9274B277100A9C48B /* CompanyCore+CoreDataClass.swift */; };
+		E8D064EC274B277100A9C48B /* CompanyCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D064EA274B277100A9C48B /* CompanyCore+CoreDataProperties.swift */; };
 		E8EE116A2741B1C8005A0DCD /* CompanyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */; };
 		E8EE116C2741B491005A0DCD /* CreateCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */; };
 		E8EE116E2741B4A1005A0DCD /* UpdateCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */; };
@@ -113,6 +115,8 @@
 		E891730C273F4AE400E40460 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E891730E273F4D8500E40460 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		E8917310273F4EA500E40460 /* UpdateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCategoryViewController.swift; sourceTree = "<group>"; };
+		E8D064E9274B277100A9C48B /* CompanyCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E8D064EA274B277100A9C48B /* CompanyCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E8EE11692741B1C8005A0DCD /* CompanyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewController.swift; sourceTree = "<group>"; };
 		E8EE116B2741B491005A0DCD /* CreateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyViewController.swift; sourceTree = "<group>"; };
 		E8EE116D2741B4A1005A0DCD /* UpdateCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCompanyViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 		E8582EA52749F8DF00ECC92F /* Core Data Models  */ = {
 			isa = PBXGroup;
 			children = (
+				E8D064E9274B277100A9C48B /* CompanyCore+CoreDataClass.swift */,
+				E8D064EA274B277100A9C48B /* CompanyCore+CoreDataProperties.swift */,
 				E8582EB3274A0CCF00ECC92F /* CustomerCore+CoreDataProperties.swift */,
 				E8582EB2274A0CCF00ECC92F /* CustomerCore+CoreDataClass.swift */,
 			);
@@ -437,6 +443,7 @@
 				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
 				E8582EB5274A0CCF00ECC92F /* CustomerCore+CoreDataProperties.swift in Sources */,
+				E8D064EB274B277100A9C48B /* CompanyCore+CoreDataClass.swift in Sources */,
 				E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */,
 				E8EE11792741C6F5005A0DCD /* CustomerTableViewCell.swift in Sources */,
 				E84709BE273D887B00B3446E /* CompanyDirectory.swift in Sources */,
@@ -446,6 +453,7 @@
 				E8EE118527431C84005A0DCD /* StockDetailTableViewViewController.swift in Sources */,
 				E84709E2273DAE8000B3446E /* TabBarViewController.swift in Sources */,
 				E84709C2273D889700B3446E /* CustomerDirectory.swift in Sources */,
+				E8D064EC274B277100A9C48B /* CompanyCore+CoreDataProperties.swift in Sources */,
 				E8EE119027436D6E005A0DCD /* StockTableViewCell.swift in Sources */,
 				E8EE11BB2743FEC4005A0DCD /* ViewAllOrderTableViewController.swift in Sources */,
 				E8917311273F4EA500E40460 /* UpdateCategoryViewController.swift in Sources */,
