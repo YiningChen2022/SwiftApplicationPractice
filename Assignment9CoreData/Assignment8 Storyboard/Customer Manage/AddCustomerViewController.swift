@@ -56,6 +56,7 @@ class AddCustomerViewController: UIViewController {
         newCustomerCore.contactDetails=Int64(contact)!
         newCustomerCore.address=addre
         newCustomerCore.emailID=em
+        
         //save data
         do {
             try! self.context.save()

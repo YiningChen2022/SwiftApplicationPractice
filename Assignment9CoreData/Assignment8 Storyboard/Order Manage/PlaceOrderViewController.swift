@@ -6,17 +6,18 @@
 //
 
 import UIKit
-
+import CoreData
 class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+
     var datepicked:Date=Date()
     
     @IBOutlet weak var DatePick: UITextField!
     private var DatePicker = UIDatePicker()
-    var order:Array<Stock> = []
+    var order:Array<StockCore> = []
     var quantitylist:Array<Int> = []
    var tradeinprice: Array<Double> = []
-   let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
+   let customer = ViewCustomerTableViewController.choosedCustomer
     @IBOutlet weak var tableView: UITableView!
     
     @objc func dateChanged(datePicker:UIDatePicker){
@@ -37,39 +38,32 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         DatePicker.datePickerMode = .date
         DatePick.inputView=DatePicker
         DatePicker.addTarget(self, action: #selector(PlaceOrderViewController.dateChanged(datePicker:)), for : .valueChanged)
-       /* let tapGesture=UITapGestureRecognizer(target: self, action: #selector(PlaceOrderViewController.viewTapped(gestureRecognizer:)))
-        view.addGestureRecognizer(tapGesture)
-        */
+       
         DatePick.inputView=DatePicker
         let nib = UINib(nibName: "PlaceOrderCellView", bundle: nil)
         tableView.register(nib,
                                  forCellReuseIdentifier: "PlaceOrderTableViewSell")
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
-  
-
-        // Do any additional setup after loading the view.
+        
     }
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
-        return (AppDelegate.GlobalVariable.stocklist.testStocklist.getsize())
+        return  StockTableViewController.items?.count ?? 0
       }
   
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceOrderTableViewSell") as! PlaceOrderTableViewCell
-        //print(AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row])
-        let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row]
-        
-        let components = str.components(separatedBy: " ")
-   
-        
-        cell.id.text = components[0]
-        cell.Name.text=components[1]
-        cell.LastPrice.text=components[2]
+       
+     
+       
+        let Stock1 = StockTableViewController.items![indexPath.row]
+        cell.id.text = Stock1.id?.description
+        cell.Name.text=Stock1.name
+        cell.LastPrice.text=Stock1.lastTradePrice.description
         
         return cell
         
@@ -80,11 +74,9 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             AlertofSelect()
         }else{
         for i in tableView.indexPathsForSelectedRows! {
-            let selected = AppDelegate.GlobalVariable.stocklist.testStocklist.toString()[i.row]
-            let id=Int(selected.split(separator: " ")[0])!
-            let curstock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: id)
-           order.append(curstock!)
-            tradeinprice.append(Double(curstock!.lastTradePrice))
+            var currstock=StockTableViewController.items![i.row]
+            order.append(currstock)
+            tradeinprice.append(Double(currstock.lastTradePrice))
         
             let cell = tableView.cellForRow(at: i)as! PlaceOrderTableViewCell
             let quant = cell.QuantityField.text
@@ -93,20 +85,17 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             }
             quantitylist.append(Int(quant)!)
         }
-        var investment = 0.0
-        for i in 0..<order.count {
-            investment += order[i].getlastTradePrice() * Double((quantitylist[i]))
-            
-        }
-        let order = Order(stock: order, quantity: quantitylist, invested: true, customer: customer!, tradeinPrice: tradeinprice)
-            if DatePick.text != ""{
+     
+            var investment = 0.0
+            for i in 0..<order.count {
+                investment += order[i].lastTradePrice * Double((quantitylist[i]))
                 
             }
                 
         let alert = UIAlertController(title: "Placing Order", message: "you have invested $\(investment)", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder(order1:order);DispatchQueue.main.async {
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.placeOrder();DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
           
         }}))
@@ -117,15 +106,24 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         
         
     }
-    public func placeOrder(order1:Order){
+    public func placeOrder(){
         var investment = 0.0
         for i in 0..<order.count {
-            investment += order[i].getlastTradePrice() * Double((quantitylist[i]))
+            investment += order[i].lastTradePrice * Double((quantitylist[i]))
+            
         }
-        customer?.setTotalInvestment(investment: investment)
-        AppDelegate.GlobalVariable.orderlist.testOrderlist.addOrder(Order: order1)
+        let newOrderCore = OrderCore(context: self.context)
+        newOrderCore.quantity=quantitylist
+        newOrderCore.tradeinPrice=tradeinprice
+        newOrderCore.invested=true
+        for i in 0..<order.count {
+            newOrderCore.addToOfStock(order[i])
+            
+        }
+        newOrderCore.addToOfCustomer(customer!) 
+       
         if(DatePick.text != ""){
-            order1.setDate(date: datepicked)
+            newOrderCore.date=datepicked
         }
      
     }

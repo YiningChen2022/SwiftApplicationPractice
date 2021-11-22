@@ -6,17 +6,13 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewAllOrderTableViewController: UITableViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    public static var items=AppDelegate.GlobalVariable.OrderCoreitems
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+   
     }
 
     // MARK: - Table view data source
@@ -28,75 +24,22 @@ class ViewAllOrderTableViewController: UITableViewController {
     //Table View
     override func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
       
-        return (AppDelegate.GlobalVariable.orderlist.testOrderlist.getsize())
+        return ViewAllOrderTableViewController.items?.count ?? 0
       }
 
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // #warning Incomplete implementation, return the number of rows
         let cell = tableView.dequeueReusableCell(withIdentifier: "order") as! OrderTableViewCell
         
-         let str=AppDelegate.GlobalVariable.orderlist.testOrderlist.toString()[indexPath.row]
-         let components = str.components(separatedBy: " ")
-       cell.id.text = components[0]
-       cell.stocks.text=components[1]
-         cell.quantities.text=components[2]
-         cell.Date.text=components[3]+","+components[4]
+       let Order = ViewAllOrderTableViewController.items![indexPath.row]
+     
+       cell.id.text = Order.id?.description
+       cell.stocks.text=Order.ofStock?.description
+       cell.quantities.text=Order.quantity?.description
+       cell.Date.text=Order.date?.description
          
          return cell
        }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

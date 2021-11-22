@@ -6,31 +6,25 @@
 //
 
 import UIKit
-
+import CoreData
 class OrderViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    let currCustomer = ViewCustomerTableViewController.choosedCustomer
     @IBOutlet weak var invest: UILabel!
     @IBOutlet weak var earning: UILabel!
     @IBOutlet weak var Customerfn: UILabel!
-    let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        Customerfn.text=customer?.getFirstName()
-        earning.text="\(customer!.getTotalEarning())"
-        invest.text="\(customer!.getTotalInvestment())"
+        Customerfn.text=currCustomer!.firstName
+        
+        earning.text=currCustomer!.totalEarning.description
+        invest.text=currCustomer!.totalInvestment.description
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
