@@ -20,7 +20,9 @@ class OrderViewController: UIViewController {
         Customerfn.text=currCustomer!.firstName
         
         earning.text=currCustomer!.totalEarning.description
+       
         invest.text=currCustomer!.totalInvestment.description
+       
         // Do any additional setup after loading the view.
     }
     

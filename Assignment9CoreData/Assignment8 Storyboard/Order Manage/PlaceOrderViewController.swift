@@ -61,7 +61,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
      
        
         let Stock1 = StockTableViewController.items![indexPath.row]
-        cell.id.text = Stock1.id?.description
+        cell.id.text = Stock1.financialRating.description
         cell.Name.text=Stock1.name
         cell.LastPrice.text=Stock1.lastTradePrice.description
         
@@ -73,8 +73,9 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         if tableView.indexPathsForSelectedRows == nil{
             AlertofSelect()
         }else{
+        //loop throught the selected rows
         for i in tableView.indexPathsForSelectedRows! {
-            var currstock=StockTableViewController.items![i.row]
+            let currstock=StockTableViewController.items![i.row]
             order.append(currstock)
             tradeinprice.append(Double(currstock.lastTradePrice))
         
@@ -85,6 +86,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             }
             quantitylist.append(Int(quant)!)
         }
+        
      
             var investment = 0.0
             for i in 0..<order.count {
@@ -107,11 +109,13 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         
     }
     public func placeOrder(){
+        //Calculating the total investment
         var investment = 0.0
         for i in 0..<order.count {
             investment += order[i].lastTradePrice * Double((quantitylist[i]))
             
         }
+        //Create a Order Object
         let newOrderCore = OrderCore(context: self.context)
         newOrderCore.quantity=quantitylist
         newOrderCore.tradeinPrice=tradeinprice
@@ -120,12 +124,19 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             newOrderCore.addToOfStock(order[i])
             
         }
-        newOrderCore.addToOfCustomer(customer!) 
-       
         if(DatePick.text != ""){
             newOrderCore.date=datepicked
+        }else {
+            newOrderCore.date=Date()
         }
-     
+        newOrderCore.addToOfCustomer(customer!)
+        customer!.totalInvestment=investment
+        do {
+            try! self.context.save()
+            
+        }catch{
+            
+        }
     }
     
 
