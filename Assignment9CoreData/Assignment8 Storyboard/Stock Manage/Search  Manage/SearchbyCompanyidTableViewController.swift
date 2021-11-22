@@ -19,8 +19,7 @@ class SearchbyCompanyidTableViewController: UITableViewController {
             
         let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
         let currCompany=SearchByCompanyViewController.choosedCompany
-            let pred=NSPredicate(format: "ofCompany.name CONTAINS %@", currCompany!.name!)
-            
+            let pred=NSPredicate(format: "ofCompany.name CONTAINS[cd] %@", currCompany!.name!)
         request.predicate=pred
             
             self.items = try context.fetch(request)
@@ -45,6 +44,7 @@ class SearchbyCompanyidTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+     
         return items?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
@@ -52,7 +52,7 @@ class SearchbyCompanyidTableViewController: UITableViewController {
         
          let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StockTableViewCell
 
-        var Stock=items![indexPath.row]
+        let Stock=items![indexPath.row]
          
        
         cell.Name.text = Stock.name

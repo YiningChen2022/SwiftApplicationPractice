@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchByCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    static var choosedCategory : CategoryCore?
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +21,19 @@ class SearchByCategoryViewController: UIViewController, UITableViewDelegate, UIT
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
-        return (AppDelegate.GlobalVariable.categorylist.testCategorylist.getsize())
+        return CategoryTableViewController.items?.count ?? 0
+
                    
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
+       let Category = CategoryTableViewController.items![indexPath.row]
+       cell.textLabel?.text = "\(Category.name!)"
           return (cell)
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let selected = AppDelegate.GlobalVariable.categorylist.testCategorylist.toString()[indexPath.row]
-        let id=Int(selected.split(separator: " ")[0])!
-        AppDelegate.GlobalVariable.selectedCategorySearch=id
+        SearchByCategoryViewController.choosedCategory=CategoryTableViewController.items![indexPath.row]
 
     }
     
