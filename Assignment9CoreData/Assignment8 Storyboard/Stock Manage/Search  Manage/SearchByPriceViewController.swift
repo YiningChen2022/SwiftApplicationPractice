@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+import CoreData
 class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var name=""
-    
+    var price=0.0
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    var items:[StockCore]?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameField: UITextField!
     override func viewDidLoad() {
@@ -20,6 +22,14 @@ class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITable
     
     @IBAction func didTapSearch(_ sender: Any) {
         
+          name=nameField.text ?? ""
+          if (Double(name) == nil){
+              print ("not valid")
+           
+          }else {
+             price=Double(name)!
+              fetchStockbyPrice()
+          }
         DispatchQueue.main.async {
             self.tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: "cell")
@@ -28,26 +38,40 @@ class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITable
         }
         
     }
+    func fetchStockbyPrice(){
+        do{
+            
+        let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
+           print(price)
+            let pred=NSPredicate(format: "lastTradePrice >=  %d", price)
+            
+        request.predicate=pred
+            
+            self.items = try context.fetch(request)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
+
+
+    }
     
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
-      
-        name=nameField.text ?? ""
-        if (Double(name) == nil){
-            print ("not valid")
-            return 0
-        }else {
-           let trade=Double(name)!
-        
+
        
-            return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchtradegetsize(lastTradePrice:trade))
-        }
+            return items?.count ?? 0
+        
       }
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
           let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-       cell.textLabel?.text = AppDelegate.GlobalVariable.stocklist.testStocklist.searchByLastTradePrice(lastTradePrice: Double(name)!)[indexPath.row]
-       
+       let Stock = items![indexPath.row]
+        
+       cell.textLabel?.text = "\(Stock.name!) \(Stock.lastTradePrice)"
           return (cell)
       }
     
