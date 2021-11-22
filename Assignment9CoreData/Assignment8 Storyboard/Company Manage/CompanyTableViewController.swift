@@ -11,7 +11,7 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
   
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
-    public static var items:[CompanyCore]?
+    public static var items=AppDelegate.GlobalVariable.CompanyCoreitems
     static var choosedCompany : CompanyCore?
     
     var searchController = UISearchController(searchResultsController:nil)

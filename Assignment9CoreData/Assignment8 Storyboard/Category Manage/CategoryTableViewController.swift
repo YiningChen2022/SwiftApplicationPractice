@@ -12,7 +12,7 @@ class CategoryTableViewController: UITableViewController, UISearchResultsUpdatin
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
     var searchController = UISearchController(searchResultsController:nil)
-    public static var items:[CategoryCore]?
+    public static var items=AppDelegate.GlobalVariable.CategoryCoreitems
     static var choosedCategory : CategoryCore?
     
     override func viewDidLoad() {

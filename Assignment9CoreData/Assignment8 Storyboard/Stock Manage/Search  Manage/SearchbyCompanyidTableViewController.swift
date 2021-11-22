@@ -6,18 +6,35 @@
 //
 
 import UIKit
-
+import CoreData
 class SearchbyCompanyidTableViewController: UITableViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    var items:[StockCore]?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fetchStockbyCompany()
     }
+    func fetchStockbyCompany(){
+        do{
+            
+        let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
+        let currCompany=SearchByCompanyViewController.choosedCompany
+            let pred=NSPredicate(format: "ofCompany.name CONTAINS %@", currCompany!.name!)
+            
+        request.predicate=pred
+            
+            self.items = try context.fetch(request)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
+
+
+    }
+
 
     // MARK: - Table view data source
 
@@ -28,77 +45,23 @@ class SearchbyCompanyidTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (AppDelegate.GlobalVariable.stocklist.testStocklist.searchCompanygetsize(Companyid:AppDelegate.GlobalVariable.selectedCompanytoSearch))
+        return items?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
        
         
          let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StockTableViewCell
 
-         let str = AppDelegate.GlobalVariable.stocklist.testStocklist.searchByCompany(Companyid: AppDelegate.GlobalVariable.selectedCompanytoSearch)[indexPath.row]
+        var Stock=items![indexPath.row]
          
-         let components = str.components(separatedBy: " ")
-         cell.Name.text = components[0]+" "+components[1]
-         cell.Company.text = components[2]
-         cell.pricce.text=components[3]
-         cell.rating.text=components[4]
-         cell.Category.text=components[5]
+       
+        cell.Name.text = Stock.name
+        cell.Company.text = Stock.ofCompany?.name!
+        cell.pricce.text=Stock.lastTradePrice.description
+        cell.rating.text=Stock.financialRating.description
+        cell.Category.text=Stock.ofCategory?.name!
            return (cell)
        }
      
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

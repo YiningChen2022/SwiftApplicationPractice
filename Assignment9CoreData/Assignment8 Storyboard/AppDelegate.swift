@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     struct GlobalVariable{
+        
+        public static var CategoryCoreitems:[CategoryCore]?
+        public static var CompanyCoreitems:[CompanyCore]?
+        public static var CustomerCoreitems:[CustomerCore]?
+        public static var StockCoreitems:[StockCore]?
+        
+        
         public static var customerlist=CustomerManager()
         public static var stocklist=StockManager()
         public static var companylist=CompanyManager()

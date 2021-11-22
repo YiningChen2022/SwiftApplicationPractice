@@ -10,7 +10,7 @@ import CoreData
 class ViewCustomerTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
   
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
-    var items:[CustomerCore]?
+    var items=AppDelegate.GlobalVariable.CustomerCoreitems
     static var choosedCustomer : CustomerCore?
     
 

@@ -10,7 +10,7 @@ import CoreData
 class StockTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
-    var items:[StockCore]?
+    public static var items=AppDelegate.GlobalVariable.StockCoreitems
     public static var choosedStock: StockCore?
     let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
     
@@ -22,7 +22,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         filterContentForSearchText(text)
     }
     func filterContentForSearchText (_ searchText:String){
-        let pred=NSPredicate(format: "name CONTAINS %@",searchText.lowercased())
+        let pred=NSPredicate(format: "name contains[cd] %@",searchText.lowercased())
         request.predicate=pred
         do {
           
@@ -65,7 +65,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
        
          
         do {
-                self.items = try context.fetch(StockCore.fetchRequest())
+            StockTableViewController.items = try context.fetch(StockCore.fetchRequest())
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -90,7 +90,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
             res=self.filtereditems?.count ?? 0
         }else {
         
-            res=self.items?.count ?? 0
+            res=StockTableViewController.items?.count ?? 0
          }
        
         return  res
@@ -106,7 +106,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
              if (isFiltering()){
              Stock1 = self.filtereditems![indexPath.row]
         }else{
-            Stock1 = self.items![indexPath.row]
+            Stock1 = StockTableViewController.items![indexPath.row]
         }
        
         cell.Name.text=Stock1.name
@@ -126,7 +126,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let toRemove = self.items![indexPath.row]
+            let toRemove = StockTableViewController.items![indexPath.row]
             self.context.delete(toRemove)
             do {
                 try self.context.save()
@@ -156,7 +156,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        StockTableViewController.choosedStock=self.items![indexPath.row]
+        StockTableViewController.choosedStock=StockTableViewController.items![indexPath.row]
 
         }
 
