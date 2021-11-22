@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var name=""
-    var price=0.0
+    var price:Double=0.0
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
     var items:[StockCore]?
     @IBOutlet weak var tableView: UITableView!
@@ -19,8 +19,27 @@ class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITable
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func didTapSearch(_ sender: Any) {
+    func fetchStockbyPrice(){
+        do{
+            
+        let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
+        
+            let pred=NSPredicate(format: "lastTradePrice >= %f", price)
+            
+        request.predicate=pred
+            
+            self.items = try context.fetch(request)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }catch {
+            
+        }
+
+
+    }
+    @IBAction func didTapSearch(_ sender: UIButton) {
         
           name=nameField.text ?? ""
           if (Double(name) == nil){
@@ -38,31 +57,12 @@ class SearchByPriceViewController:UIViewController, UITableViewDelegate, UITable
         }
         
     }
-    func fetchStockbyPrice(){
-        do{
-            
-        let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
-        
-            let pred=NSPredicate(format: "lastTradePrice >= %d", price)
-            
-        request.predicate=pred
-            
-            self.items = try context.fetch(request)
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }catch {
-            
-        }
-
-
-    }
+   
     
     //Table View
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
 
-       
+       print(items?.count ?? 0)
             return items?.count ?? 0
         
       }
