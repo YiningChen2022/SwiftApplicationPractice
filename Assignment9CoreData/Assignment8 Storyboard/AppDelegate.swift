@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         public static var CustomerCoreitems:[CustomerCore]?
         public static var StockCoreitems:[StockCore]?
         public static var OrderCoreitems:[OrderCore]?
+        public static var selectedStockToSell:StockCore?
+        
         
         public static var customerlist=CustomerManager()
         public static var stocklist=StockManager()

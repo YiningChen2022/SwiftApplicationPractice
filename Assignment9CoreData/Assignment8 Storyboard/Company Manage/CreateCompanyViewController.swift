@@ -46,7 +46,7 @@ class CreateCompanyViewController: UIViewController {
         else{
                   return Alert()
               }
-        //creat a Category object
+        //creat a Company object
         let newCompanyCore = CompanyCore(context: self.context)
         newCompanyCore.name=name
         newCompanyCore.symbol=symbol
@@ -54,7 +54,7 @@ class CreateCompanyViewController: UIViewController {
         newCompanyCore.email=email
         //save data
         do {
-            try! self.context.save()
+            try self.context.save()
             
         }catch{
             

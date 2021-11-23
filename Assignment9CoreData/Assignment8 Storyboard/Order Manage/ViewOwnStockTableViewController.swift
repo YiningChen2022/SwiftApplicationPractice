@@ -10,31 +10,56 @@ import CoreData
 class ViewOwnStockTableViewController: UITableViewController {
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
       let customer = ViewCustomerTableViewController.choosedCustomer
-      var items:[OrderCore]?
+      var items:[StockCore]?
+    let orderlist=ViewAllOrderTableViewController.items
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchOrderbyStock()
+       
+        fetchStockByCustomer()
       
     }
-    func fetchOrderbyStock(){
-        do{
-            
-        let request = OrderCore.fetchRequest() as NSFetchRequest<OrderCore>
+    func fetchStockByCustomer(){
+      
+        var stockarr:Array<StockCore>=[]
+        var res:Array<String>=[]
         
-            let pred=NSPredicate(format: "ofStock.name CONTAINS[cd] %@", customer!.firstName!)
-        request.predicate=pred
-            
-            self.items = try context.fetch(request)
-            
-            DispatchQueue.main.async {
-               // self.tableView.reloadData()
+        for order in orderlist!{
+            for item in order.ofCustomer!.allObjects as! [CustomerCore] {
+                if (item.isEqual(customer)){
+                    for item in order.ofStock!.allObjects as! [StockCore] {
+                        stockarr.append(item)
+                    }
+                }
             }
+            for s in stockarr{
+                if !res.contains(s.name!){
+                    res.append(s.name!)
+                    
+                }
+            }
+        }
+        print(res.description)
+       do{
+           var predList=[NSPredicate]()
+           let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
+           for str in res{
+               let pred=NSPredicate(format: "name CONTAINS[cd] %@", str )
+               predList.append(pred)
+           
+           }
+           let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.or, subpredicates: predList)
+           request.predicate=andPredicate
+           self.items = try context.fetch(request)
+               DispatchQueue.main.async {
+                   self.tableView.reloadData()
+               
+           }
+       
+          
         }catch {
             
         }
-
-
+       
     }
     // MARK: - Table view data source
 
@@ -45,7 +70,7 @@ class ViewOwnStockTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (AppDelegate.GlobalVariable.orderlist.testOrderlist.getsizeofStock(customer: customer!))
+        return self.items?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
@@ -54,25 +79,20 @@ class ViewOwnStockTableViewController: UITableViewController {
         let id=Int(selected.split(separator: " ")[0])!
         AppDelegate.GlobalVariable.sellStockid=id
         
-        
-       /* DispatchQueue.main.async {
-            let vc = SellStockViewController()
-               self.present(vc, animated: true, completion: nil)
-           }
-        */
+ 
    
         }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
       
-       /* let cell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier: "Cell")*/
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: "stock") as! StockTableViewCell
-
-        let str=AppDelegate.GlobalVariable.stocklist.testStocklist.toStringShort()[indexPath.row]
-        let components = str.components(separatedBy: " ")
-        cell.Name .text = components[0]+" "+components[1]
-        cell.pricce.text=components[2]
-        cell.rating.text=components[3]
+        let Stock1 = StockTableViewController.items![indexPath.row]
+        
+       
+        cell.Name .text = Stock1.name
+        cell.pricce.text=Stock1.lastTradePrice.description
+        cell.rating.text=Stock1.financialRating.description
 
           return (cell)
       }

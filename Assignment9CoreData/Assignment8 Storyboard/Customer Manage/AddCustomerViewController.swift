@@ -59,7 +59,7 @@ class AddCustomerViewController: UIViewController {
         
         //save data
         do {
-            try! self.context.save()
+            try self.context.save()
             
         }catch{
             

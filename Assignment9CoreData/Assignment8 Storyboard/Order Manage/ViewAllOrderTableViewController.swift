@@ -65,7 +65,7 @@ class ViewAllOrderTableViewController: UITableViewController {
        cell.id.text = str
        cell.stocks.text=stockarr.description
        cell.quantities.text=Order.quantity?.description
-       cell.Date.text=Order.date!.description
+       cell.Date.text=Order.date?.description
          
          return cell
        }

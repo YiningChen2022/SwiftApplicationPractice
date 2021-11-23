@@ -130,7 +130,8 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
             newOrderCore.date=Date()
         }
         newOrderCore.addToOfCustomer(customer!)
-        customer!.totalInvestment=investment
+        let total=customer!.totalInvestment
+        customer!.totalInvestment=total+investment
         do {
             try! self.context.save()
             

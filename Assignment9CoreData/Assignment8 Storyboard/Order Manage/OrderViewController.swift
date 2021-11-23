@@ -10,10 +10,11 @@ import CoreData
 class OrderViewController: UIViewController {
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
     let currCustomer = ViewCustomerTableViewController.choosedCustomer
+    
     @IBOutlet weak var invest: UILabel!
     @IBOutlet weak var earning: UILabel!
     @IBOutlet weak var Customerfn: UILabel!
- 
+   
     override func viewDidLoad() {
         super.viewDidLoad()
        
