@@ -14,6 +14,8 @@ class ViewAllOrderTableViewController: UITableViewController {
     public static var items=AppDelegate.GlobalVariable.OrderCoreitems
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem=self.editButtonItem
+        
         fetchOrder()
     }
     
@@ -25,7 +27,7 @@ class ViewAllOrderTableViewController: UITableViewController {
         do {
             ViewAllOrderTableViewController.items = try context.fetch(OrderCore.fetchRequest())
             DispatchQueue.main.async {
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }catch {
             
@@ -76,22 +78,28 @@ class ViewAllOrderTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
       
-        let selected = ViewAllOrderTableViewController.items! [indexPath.row]
-     
-        let alert = UIAlertController(title: "Are you sure?", message: "Delete this Order", preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.delete(selected: selected);DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
-            
-        }}))
-        self.present(alert,animated:true,completion: nil)
+      
+       
         
        
     }
-    public func delete(selected: OrderCore){
-           //if order been deleted, deleted the invested money as well
-           self.context.delete(selected)
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let toRemove = ViewAllOrderTableViewController.items![indexPath.row]
+            self.context.delete(toRemove)
+            do {
+                try self.context.save()
+            }catch{
+                
+            }
+            self.fetchOrder()
+        
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
     
 
