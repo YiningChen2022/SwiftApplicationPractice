@@ -133,7 +133,7 @@ class PlaceOrderViewController: UIViewController,UITableViewDelegate, UITableVie
         let total=customer!.totalInvestment
         customer!.totalInvestment=total+investment
         do {
-            try! self.context.save()
+            try self.context.save()
             
         }catch{
             

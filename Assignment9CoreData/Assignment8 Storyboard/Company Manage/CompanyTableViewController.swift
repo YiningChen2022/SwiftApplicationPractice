@@ -92,6 +92,12 @@ class CompanyTableViewController: UITableViewController, UISearchResultsUpdating
 
     
     // Override to support editing the table view.
+    
+    
+    @IBAction func refresh(_ sender: UIBarButtonItem) {
+        self.tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
