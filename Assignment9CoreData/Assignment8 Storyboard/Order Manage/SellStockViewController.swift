@@ -38,9 +38,18 @@ class SellStockViewController: UIViewController {
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
     }
-    
+    func fetchSellStockCore(){
+        do {
+            SellStockViewController.items = try context.fetch(SellStockCore.fetchRequest())
+      
+        }catch {
+            
+        }
+
+    }
     
     override func viewDidLoad() {
+        fetchSellStockCore()
         DatePicker.datePickerMode = .date
         DatePick.inputView=DatePicker
         DatePicker.addTarget(self, action: #selector(PlaceOrderViewController.dateChanged(datePicker:)), for : .valueChanged)
@@ -69,8 +78,10 @@ class SellStockViewController: UIViewController {
         
     //calculate the already selled stock quantity
         var selledQuantity=0
-        
-      /*  for selledStock in SellStockViewController.items!{
+        if (SellStockViewController.items == nil){
+            
+        }else{
+        for selledStock in SellStockViewController.items!{
             for currcustomer in selledStock.ofCustomer!.allObjects as! [CustomerCore] {
                 if (currcustomer.isEqual(customer)){
                     for  currStock in selledStock.ofStock!.allObjects
@@ -83,12 +94,13 @@ class SellStockViewController: UIViewController {
                 }
             }
         }
+        }
         
         
         let quant1 = orderedQuantity-selledQuantity
         quantity.text=String(quant1)
         
-       */
+       
        /* AvgCost.text=String(AppDelegate.GlobalVariable.orderlist.testOrderlist.avgforCustomer(customer: customer!, stock: selectstock!))*/
         super.viewDidLoad()
         

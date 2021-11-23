@@ -20,7 +20,7 @@ class SearchbyCategoryIdTableViewController: UITableViewController {
             
         let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
             let currCatgeory=SearchByCategoryViewController.choosedCategory
-            let pred=NSPredicate(format: "ofCompany.name CONTAINS %@", currCatgeory!.name!)
+            let pred=NSPredicate(format: "ofCategory.name CONTAINS %@", currCatgeory!.name!)
             
         request.predicate=pred
             

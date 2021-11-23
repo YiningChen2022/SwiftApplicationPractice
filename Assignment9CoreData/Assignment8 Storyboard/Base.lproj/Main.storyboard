@@ -992,7 +992,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngY-Z7-fZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="-325"/>
+            <point key="canvasLocation" x="751" y="-117"/>
         </scene>
         <!--View Customer Table View Controller-->
         <scene sceneID="ksb-QY-TvT">
@@ -2153,11 +2153,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Bcd-U4-k1W">
-                        <barButtonItem key="rightBarButtonItem" title="Order" id="UrU-1m-NNl">
-                            <connections>
-                                <segue destination="qPV-9z-1GH" kind="show" id="Zdy-oM-9Nd"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Order" id="UrU-1m-NNl">
+                                <connections>
+                                    <segue destination="qPV-9z-1GH" kind="show" id="Zdy-oM-9Nd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Refresh" id="LBl-bF-3ls">
+                                <connections>
+                                    <action selector="refres:" destination="cU9-A6-0E5" id="K9Q-O1-njI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y9-ai-O3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2181,7 +2188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAX-3U-LzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.88405797101461" y="-801.35869565217399"/>
+            <point key="canvasLocation" x="752" y="-870"/>
         </scene>
         <!--Order-->
         <scene sceneID="w8I-Ii-zH7">

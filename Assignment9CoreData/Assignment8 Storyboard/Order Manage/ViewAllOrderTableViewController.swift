@@ -17,6 +17,10 @@ class ViewAllOrderTableViewController: UITableViewController {
         fetchOrder()
     }
     
+    @IBAction func refres(_ sender: Any) {
+        self.tableView.reloadData()
+    }
+    
     func fetchOrder(){
         do {
             ViewAllOrderTableViewController.items = try context.fetch(OrderCore.fetchRequest())
