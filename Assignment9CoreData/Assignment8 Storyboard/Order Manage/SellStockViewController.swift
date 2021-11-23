@@ -6,18 +6,21 @@
 //
 
 import UIKit
-
+import CoreData
 class SellStockViewController: UIViewController {
-
+    var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+    public static var items=AppDelegate.GlobalVariable.SellStockCoreitmes
     var datepicked:Date=Date()
-    
+    var quan=0
     @IBOutlet weak var DatePick: UITextField!
     private var DatePicker = UIDatePicker()
     
     @IBOutlet weak var quantityfield: UITextField!
     
-    var selectstock=AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
-    let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
+    var selectstock=AppDelegate.GlobalVariable.selectedStockToSell
+    let customer = ViewCustomerTableViewController.choosedCustomer
+    var orderlist=ViewAllOrderTableViewController.items
+    
     @IBOutlet weak var stockfield: UILabel!
 
     @IBOutlet weak var AvgCost: UILabel!
@@ -43,33 +46,70 @@ class SellStockViewController: UIViewController {
         DatePicker.addTarget(self, action: #selector(PlaceOrderViewController.dateChanged(datePicker:)), for : .valueChanged)
    
         DatePick.inputView=DatePicker
-        stockfield.text=selectstock?.getName()
-        let orderedQuantity=AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
-        let selledQuantity=AppDelegate.GlobalVariable.SellStocklist.testSellStocklist.SellStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+        stockfield.text=selectstock?.name
+        //Calculating the total quantity for this stock
+     
+        for order in orderlist! {
+            for currcustomer in order.ofCustomer!.allObjects as! [CustomerCore] {
+                if (currcustomer.isEqual(customer)){
+                    var index=0
+                    for  currStock in order.ofStock!.allObjects
+                            as![StockCore]{
+                        
+                        if (currStock == selectstock){
+                            quan+=order.quantity![index]
+                        }
+                        index+=1
+                    }
+                }
+            }
+        }
+        let orderedQuantity=quan
+        quantity.text=String(orderedQuantity)
+        
+    //calculate the already selled stock quantity
+        var selledQuantity=0
+        
+      /*  for selledStock in SellStockViewController.items!{
+            for currcustomer in selledStock.ofCustomer!.allObjects as! [CustomerCore] {
+                if (currcustomer.isEqual(customer)){
+                    for  currStock in selledStock.ofStock!.allObjects
+                            as![StockCore]{
+                        if (currStock == selectstock){
+                            selledQuantity+=Int(selledStock.quantity)
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        
         let quant1 = orderedQuantity-selledQuantity
         quantity.text=String(quant1)
         
-        AvgCost.text=String(AppDelegate.GlobalVariable.orderlist.testOrderlist.avgforCustomer(customer: customer!, stock: selectstock!))
+       */
+       /* AvgCost.text=String(AppDelegate.GlobalVariable.orderlist.testOrderlist.avgforCustomer(customer: customer!, stock: selectstock!))*/
         super.viewDidLoad()
         
     }
     
     @IBAction func didTapSell(_ sender: UIButton) {
-       let owned = AppDelegate.GlobalVariable.orderlist.testOrderlist.totalStockQuantityforCustomer(customer: customer!, stock: selectstock!)
+       
+      let owned = quan
         guard let quant = quantityfield.text, !quant.isEmpty, Int(quant) != nil,Int(quant)! <= owned else {
             return Alert()
         }
 
-        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
-        let Earning = (stock?.getlastTradePrice())!*Double(quant)!
+     
+        let Earning = selectstock!.lastTradePrice*Double(quant)!
     
-        let sellStock = SellStock(stock: stock!, quantity: Int(quant)!, customer: customer!,  Earning:Earning, Company: stock!.company)
-   
+    
 
         let alert = UIAlertController(title: "selling Stocks", message: "you will Earn $\(Earning)", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.SellOrder(sellStock:sellStock,quant:Double(quant)!);DispatchQueue.main.async {
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {_ in self.SellOrder(quant:Double(quant)!);DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
             
         }}))
@@ -78,15 +118,30 @@ class SellStockViewController: UIViewController {
        
     }
         
-    public func SellOrder(sellStock:SellStock,quant:Double){
-        
-        let stock = AppDelegate.GlobalVariable.stocklist.testStocklist.getStock(id: AppDelegate.GlobalVariable.sellStockid)
-        let Earning = ((stock?.getlastTradePrice())!)*Double(quant)
+    public func SellOrder(quant:Double){
+        let newSellStockCore = SellStockCore(context: self.context)
+        let Earning = selectstock!.lastTradePrice*quant
     
-        customer?.setTotalEarning(Earning: Earning)
+    
+        newSellStockCore.quantity=Int64(quant)
+        newSellStockCore.earning=Earning
+        newSellStockCore.addToOfStock(selectstock!)
+        newSellStockCore.addToOfCustomer(customer!)
+        if(DatePick.text != ""){
+            newSellStockCore.date=datepicked
+        }else {
+            newSellStockCore.date=Date()
+        }
+        let total=customer!.totalEarning
+        customer!.totalEarning=total+Earning
         
-        AppDelegate.GlobalVariable.SellStocklist.testSellStocklist.addSellStock(SellStock: sellStock)
-        
+
+        do {
+            try! self.context.save()
+            
+        }catch{
+            
+        }
     }
     
     

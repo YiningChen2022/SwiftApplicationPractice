@@ -73,13 +73,9 @@ class ViewOwnStockTableViewController: UITableViewController {
         return self.items?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let customer = AppDelegate.GlobalVariable.customerlist.testcustomerlist.getCustomer(id: AppDelegate.GlobalVariable.selectedOrderid)
-         
-        let selected = AppDelegate.GlobalVariable.orderlist.testOrderlist.toStringStock(customer: customer!)[indexPath.row]
-        let id=Int(selected.split(separator: " ")[0])!
-        AppDelegate.GlobalVariable.sellStockid=id
-        
- 
+      
+        AppDelegate.GlobalVariable.selectedStockToSell=self.items! [indexPath.row]
+    
    
         }
     
