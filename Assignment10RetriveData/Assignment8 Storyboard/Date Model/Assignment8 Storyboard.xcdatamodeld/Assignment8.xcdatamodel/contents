@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoryCore" representedClassName="CategoryCore" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="stockCore" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StockCore" inverseName="ofCategory" inverseEntity="StockCore"/>
+    </entity>
+    <entity name="CompanyCore" representedClassName="CompanyCore" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="headQuarter" optional="YES" attributeType="String"/>
+        <attribute name="logo" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="UIImage"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+        <relationship name="sellStockCore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SellStockCore" inverseName="ofCompany" inverseEntity="SellStockCore"/>
+        <relationship name="stockCore" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StockCore" inverseName="ofCompany" inverseEntity="StockCore"/>
+    </entity>
+    <entity name="CustomerCore" representedClassName="CustomerCore" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="contactDetails" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="emailID" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="totalEarning" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="totalInvestment" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="orderCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderCore" inverseName="ofCustomer" inverseEntity="OrderCore"/>
+        <relationship name="sellStockCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SellStockCore" inverseName="ofCustomer" inverseEntity="SellStockCore"/>
+    </entity>
+    <entity name="OrderCore" representedClassName="OrderCore" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="invested" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Int]"/>
+        <attribute name="tradeinPrice" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Double]"/>
+        <relationship name="ofCustomer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CustomerCore" inverseName="orderCore" inverseEntity="CustomerCore"/>
+        <relationship name="ofStock" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StockCore" inverseName="orderCore" inverseEntity="StockCore"/>
+    </entity>
+    <entity name="SellStockCore" representedClassName="SellStockCore" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="earning" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofCompany" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompanyCore" inverseName="sellStockCore" inverseEntity="CompanyCore"/>
+        <relationship name="ofCustomer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CustomerCore" inverseName="sellStockCore" inverseEntity="CustomerCore"/>
+        <relationship name="ofStock" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StockCore" inverseName="sellStockCore" inverseEntity="StockCore"/>
+    </entity>
+    <entity name="StockCore" representedClassName="StockCore" syncable="YES" codeGenerationType="class">
+        <attribute name="financialRating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastTradePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="ofCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryCore" inverseName="stockCore" inverseEntity="CategoryCore"/>
+        <relationship name="ofCompany" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompanyCore" inverseName="stockCore" inverseEntity="CompanyCore"/>
+        <relationship name="orderCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderCore" inverseName="ofStock" inverseEntity="OrderCore"/>
+        <relationship name="sellStockCore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SellStockCore" inverseName="ofStock" inverseEntity="SellStockCore"/>
+    </entity>
+    <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CategoryCore" positionX="-462.8524780273438" positionY="-31.12490844726562" width="128" height="73"/>
+        <element name="CompanyCore" positionX="35.76605224609375" positionY="-125.1732330322266" width="128" height="134"/>
+        <element name="CustomerCore" positionX="-163.1046142578125" positionY="294.0849609375001" width="128" height="179"/>
+        <element name="OrderCore" positionX="-450.00146484375" positionY="130.7337951660156" width="128" height="148"/>
+        <element name="StockCore" positionX="-195.5390014648437" positionY="-84.47311401367188" width="128" height="149"/>
+        <element name="Test" positionX="212.6888427734374" positionY="82.61352539062494" width="128" height="58"/>
+        <element name="SellStockCore" positionX="21.69696044921875" positionY="143.6004638671875" width="128" height="134"/>
+    </elements>
+</model>
