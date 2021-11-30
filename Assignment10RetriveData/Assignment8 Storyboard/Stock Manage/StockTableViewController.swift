@@ -7,17 +7,29 @@
 
 import UIKit
 import CoreData
-class StockTableViewController: UITableViewController, UISearchResultsUpdating,UISearchBarDelegate {
+class StockTableViewController: UITableViewController{
+ 
+    
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
     public static var items=AppDelegate.GlobalVariable.StockCoreitems
     public static var choosedStock: StockCore?
     let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
     
-    var filtereditems:[StockCore]?
+    
+   //var filtereditems:[StockCore]?
     var searchController = UISearchController(searchResultsController:nil)
     
-    func updateSearchResults(for searchController: UISearchController) {
+    var listOfStock=[StockDetail](){
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.navigationItem.title="\(self.listOfStock.count) stock Count"
+            }
+        }
+    }
+    
+ /*   func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return }
         filterContentForSearchText(text)
     }
@@ -35,14 +47,15 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     
     }
     
-    func isFiltering()->Bool{
+  */
+ /*   func isFiltering()->Bool{
         return searchController.isActive && !(searchController.searchBar.text?.isEmpty)!
     }
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         let text=searchBar.text
         filterContentForSearchText(text!)
     }
-    
+    */
     
 
     
@@ -53,7 +66,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         
         navigationItem.searchController=searchController
         searchController.searchBar.delegate=self
-        searchController.searchResultsUpdater=self
+       
         searchController.obscuresBackgroundDuringPresentation=false
         searchController.searchBar.placeholder="Enter your search"
         self.definesPresentationContext=true
@@ -85,15 +98,16 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var res=0
-        if (isFiltering()){
+       // var res=0
+      /*  if (isFiltering()){
             res=self.filtereditems?.count ?? 0
         }else {
         
             res=StockTableViewController.items?.count ?? 0
          }
-       
-        return  res
+       */
+        
+        return  listOfStock.count
     }
     
 
@@ -103,13 +117,16 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
 
         var Stock1:StockCore
      
-             if (isFiltering()){
+     /*        if (isFiltering()){
              Stock1 = self.filtereditems![indexPath.row]
         }else{
             Stock1 = StockTableViewController.items![indexPath.row]
         }
-       
-        cell.Name.text=Stock1.name
+       */
+        let stock=listOfStock[indexPath.row]
+        
+        cell.Name.text=stock.name
+        
           return (cell)
       }
 
@@ -161,5 +178,22 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
         }
 
 
+}
+
+extension StockTableViewController :UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchBarText = searchBar.text else{
+            return
+        }
+        let stockRequest = StockRequest(stockCode: searchBarText)
+        stockRequest.getStocks{[weak self] result in
+            switch result {
+            case .failure(let error):
+                print (error)
+            case .success(let stocks):
+                self?.listOfStock=stocks
+            }
+        }
+    }
 }
 

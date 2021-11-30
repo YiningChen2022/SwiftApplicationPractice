@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E83C13BF2755B16400281137 /* StockPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C13BE2755B16400281137 /* StockPolygon.swift */; };
+		E83C13C12755BAA800281137 /* Stockrequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C13C02755BAA800281137 /* Stockrequest.swift */; };
 		E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709A0273D621C00B3446E /* AppDelegate.swift */; };
 		E84709A3273D621C00B3446E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709A2273D621C00B3446E /* SceneDelegate.swift */; };
 		E84709A5273D621C00B3446E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709A4273D621C00B3446E /* ViewController.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E83C13BE2755B16400281137 /* StockPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPolygon.swift; sourceTree = "<group>"; };
+		E83C13C02755BAA800281137 /* Stockrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stockrequest.swift; sourceTree = "<group>"; };
 		E847099D273D621C00B3446E /* Assignment8 Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment8 Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84709A0273D621C00B3446E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84709A2273D621C00B3446E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				E8EE11802742D09F005A0DCD /* AddStockViewController.swift */,
 				E8EE11822742D0B0005A0DCD /* UpdateStockViewController.swift */,
 				E8EE118427431C84005A0DCD /* StockDetailTableViewViewController.swift */,
+				E83C13BE2755B16400281137 /* StockPolygon.swift */,
+				E83C13C02755BAA800281137 /* Stockrequest.swift */,
 			);
 			path = "Stock Manage";
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 			files = (
 				E84709A5273D621C00B3446E /* ViewController.swift in Sources */,
 				E8EE11942743724E005A0DCD /* SearchByCategoryViewController.swift in Sources */,
+				E83C13C12755BAA800281137 /* Stockrequest.swift in Sources */,
 				E84709BA273D885A00B3446E /* CategoryDirectory.swift in Sources */,
 				E84709CA273D88C400B3446E /* StockDirectory.swift in Sources */,
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
@@ -434,6 +441,7 @@
 				E8EE11962743726B005A0DCD /* SearchbyCategoryIdTableViewController.swift in Sources */,
 				E84709C4273D88A300B3446E /* Order.swift in Sources */,
 				E84709D3273DA36E00B3446E /* CompanyManager.swift in Sources */,
+				E83C13BF2755B16400281137 /* StockPolygon.swift in Sources */,
 				E84709BC273D886A00B3446E /* Company.swift in Sources */,
 				E8D064EB274B277100A9C48B /* CompanyCore+CoreDataClass.swift in Sources */,
 				E891730D273F4AE400E40460 /* CategoryTableViewController.swift in Sources */,
