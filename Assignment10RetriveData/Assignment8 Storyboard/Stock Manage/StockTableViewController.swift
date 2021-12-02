@@ -20,7 +20,7 @@ class StockTableViewController: UITableViewController{
    //var filtereditems:[StockCore]?
     var searchController = UISearchController(searchResultsController:nil)
     
-    var listOfStock=[GroupResult](){
+    var listOfStock=[resultsDetail](){
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()

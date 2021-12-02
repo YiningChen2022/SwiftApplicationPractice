@@ -9,13 +9,13 @@ import Foundation
 
 
 
-struct Stocks:Decodable{
-    var Stocks:[GroupResult]
+struct StocksResult:Decodable{
+    var results:[resultsDetail]
 }
 
 
 
-struct GroupResult: Decodable{
+struct resultsDetail: Decodable{
     var T:String
     var c:Double
 }

@@ -21,7 +21,7 @@ struct StockRequest{
         guard let resourceURL = URL(string: resourceString) else{fatalError()}
         self.resourceURL=resourceURL
     }
-    func getStocks (completion: @escaping(Result<[GroupResult],StockError>)->Void){
+    func getStocks (completion: @escaping(Result<[resultsDetail],StockError>)->Void){
         let dataTask = URLSession.shared.dataTask(with: resourceURL){
             data, _, _ in
             guard let jsonData = data else {
@@ -30,9 +30,9 @@ struct StockRequest{
             }
             do {
                 let decoder = JSONDecoder()
-                let StockResponse = try decoder.decode(Stocks.self, from: jsonData)
+                let StockResponse = try decoder.decode(StocksResult.self, from: jsonData)
                
-                let StockDetails = StockResponse.Stocks
+                let StockDetails = StockResponse.results
                 completion(.success(StockDetails))
             }catch{
                 completion(.failure(.cannotProcessData))
