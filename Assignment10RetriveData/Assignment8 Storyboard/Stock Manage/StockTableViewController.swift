@@ -20,7 +20,7 @@ class StockTableViewController: UITableViewController{
    //var filtereditems:[StockCore]?
     var searchController = UISearchController(searchResultsController:nil)
     
-    var listOfStock=[StockDetail](){
+    var listOfStock=[GroupResult](){
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -72,6 +72,15 @@ class StockTableViewController: UITableViewController{
         self.definesPresentationContext=true
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
+        let stockRequest = StockRequest()
+        stockRequest.getStocks(){[weak self] result in
+            switch result {
+            case .failure(let error):
+                print (error)
+            case .success(let stocks):
+                self?.listOfStock=stocks
+            }
+        }
       
     }
     func fetchStock(){
@@ -106,7 +115,7 @@ class StockTableViewController: UITableViewController{
             res=StockTableViewController.items?.count ?? 0
          }
        */
-        
+        //print(listOfStock.count)
         return  listOfStock.count
     }
     
@@ -125,7 +134,7 @@ class StockTableViewController: UITableViewController{
        */
         let stock=listOfStock[indexPath.row]
         
-        cell.Name.text=stock.name
+        cell.Name.text=stock.T
         
           return (cell)
       }
@@ -185,7 +194,7 @@ extension StockTableViewController :UISearchBarDelegate{
         guard let searchBarText = searchBar.text else{
             return
         }
-        let stockRequest = StockRequest(stockCode: searchBarText)
+        let stockRequest = StockRequest()
         stockRequest.getStocks{[weak self] result in
             switch result {
             case .failure(let error):

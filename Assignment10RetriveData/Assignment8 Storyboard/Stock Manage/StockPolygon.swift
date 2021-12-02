@@ -7,17 +7,15 @@
 
 import Foundation
 
-struct StockResults:Decodable{
-    var result:Stocks
-}
+
 
 struct Stocks:Decodable{
-    var Stocks:[StockDetail]
+    var Stocks:[GroupResult]
 }
 
-struct StockDetail:Decodable{
-    var name:String
-}
-struct DataInfo: Decodable{
-    var iso:String
+
+
+struct GroupResult: Decodable{
+    var T:String
+    var c:Double
 }
