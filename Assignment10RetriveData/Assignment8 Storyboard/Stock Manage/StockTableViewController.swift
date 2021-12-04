@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 class StockTableViewController: UITableViewController{
  
-    
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
     public static var items=AppDelegate.GlobalVariable.StockCoreitems
@@ -17,19 +16,19 @@ class StockTableViewController: UITableViewController{
     let request = StockCore.fetchRequest() as NSFetchRequest<StockCore>
     
     
-   //var filtereditems:[StockCore]?
+   var filtereditems:[StockCore]?
     var searchController = UISearchController(searchResultsController:nil)
     
     var listOfStock=[resultsDetail](){
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.navigationItem.title="\(self.listOfStock.count) stock Count"
+                //self.navigationItem.title="\(self.listOfStock.count) stock Count"
             }
         }
     }
     
- /*   func updateSearchResults(for searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return }
         filterContentForSearchText(text)
     }
@@ -47,15 +46,15 @@ class StockTableViewController: UITableViewController{
     
     }
     
-  */
- /*   func isFiltering()->Bool{
+  
+    func isFiltering()->Bool{
         return searchController.isActive && !(searchController.searchBar.text?.isEmpty)!
     }
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         let text=searchBar.text
         filterContentForSearchText(text!)
     }
-    */
+    
     
 
     
@@ -107,16 +106,17 @@ class StockTableViewController: UITableViewController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // var res=0
-      /*  if (isFiltering()){
+        var res=0
+        if (isFiltering()){
             res=self.filtereditems?.count ?? 0
         }else {
         
             res=StockTableViewController.items?.count ?? 0
          }
-       */
+       
         //print(listOfStock.count)
-        return  listOfStock.count
+        //return  listOfStock.count
+        return res
     }
     
 
@@ -126,16 +126,17 @@ class StockTableViewController: UITableViewController{
 
         var Stock1:StockCore
      
-     /*        if (isFiltering()){
+             if (isFiltering()){
              Stock1 = self.filtereditems![indexPath.row]
         }else{
             Stock1 = StockTableViewController.items![indexPath.row]
         }
-       */
-        let stock=listOfStock[indexPath.row]
+       
+            /* let stock=listOfStock[indexPath.row]
         
         cell.Name.text=stock.T
-        
+        */
+        cell.Name.text=Stock1.name
           return (cell)
       }
 
