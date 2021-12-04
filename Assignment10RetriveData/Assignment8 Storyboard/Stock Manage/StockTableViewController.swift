@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-class StockTableViewController: UITableViewController{
+class StockTableViewController: UITableViewController,UISearchBarDelegate {
  
     var context: NSManagedObjectContext=(UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
 
@@ -23,12 +23,14 @@ class StockTableViewController: UITableViewController{
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+               
+               // self.addtoCoreData()
                 //self.navigationItem.title="\(self.listOfStock.count) stock Count"
             }
         }
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
+  /*  func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return }
         filterContentForSearchText(text)
     }
@@ -45,8 +47,29 @@ class StockTableViewController: UITableViewController{
         }
     
     }
+   */
+    func addtoCoreData(){
+        for index in 0..<listOfStock.count{
+            let newStockCore = StockCore(context: self.context)
+            print(self.listOfStock[index].T)
+            newStockCore.name=listOfStock[index].T
+            newStockCore.financialRating=Int64(9)
+            newStockCore.lastTradePrice=Double(listOfStock[index].c)
+            newStockCore.ofCompany=AddStockViewController.choosedCompanyForStock
+            newStockCore.ofCategory=AddStockViewController.choosedCategoryForStock
+            //save data
+            do {
+                try! self.context.save()
+                
+            }catch{
+                
+            }
+        }
+        
+    }
     
-  
+    
+  /*
     func isFiltering()->Bool{
         return searchController.isActive && !(searchController.searchBar.text?.isEmpty)!
     }
@@ -55,11 +78,12 @@ class StockTableViewController: UITableViewController{
         filterContentForSearchText(text!)
     }
     
-    
+    */
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         fetchStock()
         self.navigationItem.leftBarButtonItem=self.editButtonItem
         
@@ -80,6 +104,7 @@ class StockTableViewController: UITableViewController{
                 self?.listOfStock=stocks
             }
         }
+       
       
     }
     func fetchStock(){
@@ -107,15 +132,16 @@ class StockTableViewController: UITableViewController{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var res=0
-        if (isFiltering()){
+       /* if (isFiltering()){
             res=self.filtereditems?.count ?? 0
         }else {
         
             res=StockTableViewController.items?.count ?? 0
          }
-       
+       */
+        res=StockTableViewController.items?.count ?? 0
         //print(listOfStock.count)
-        //return  listOfStock.count
+      //  return  listOfStock.count
         return res
     }
     
@@ -124,18 +150,19 @@ class StockTableViewController: UITableViewController{
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "stock") as! StockTableViewCell
 
-        var Stock1:StockCore
+      /*  var Stock1:StockCore
      
              if (isFiltering()){
              Stock1 = self.filtereditems![indexPath.row]
         }else{
             Stock1 = StockTableViewController.items![indexPath.row]
         }
-       
-            /* let stock=listOfStock[indexPath.row]
+       */
+         var Stock1 = StockTableViewController.items![indexPath.row]
+             //let stock=listOfStock[indexPath.row]
         
-        cell.Name.text=stock.T
-        */
+       // cell.Name.text=stock.T
+        
         cell.Name.text=Stock1.name
           return (cell)
       }
@@ -190,7 +217,7 @@ class StockTableViewController: UITableViewController{
 
 }
 
-extension StockTableViewController :UISearchBarDelegate{
+/*extension StockTableViewController :UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else{
             return
@@ -205,5 +232,5 @@ extension StockTableViewController :UISearchBarDelegate{
             }
         }
     }
-}
+}*/
 
