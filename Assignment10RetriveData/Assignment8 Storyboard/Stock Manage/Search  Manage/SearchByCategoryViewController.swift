@@ -34,10 +34,7 @@ class SearchByCategoryViewController: UIViewController, UITableViewDelegate, UIT
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         SearchByCategoryViewController.choosedCategory=CategoryTableViewController.items![indexPath.row]
-        DispatchQueue.main.async {
-            let vc = SearchbyCategoryIdTableViewController()
-                      self.present(vc, animated: true, completion: nil)
-        }
+       
         
 
     }
