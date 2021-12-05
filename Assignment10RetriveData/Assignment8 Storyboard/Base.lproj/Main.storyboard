@@ -323,19 +323,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foz-Km-RPz">
-                                <rect key="frame" x="160.33333333333334" y="31" width="93.333333333333343" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Tr-Xb-TeL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Foz-Km-RPz" firstAttribute="top" secondItem="7Tr-Xb-TeL" secondAttribute="top" constant="31" id="ERA-45-YqK"/>
-                            <constraint firstItem="Foz-Km-RPz" firstAttribute="centerX" secondItem="RHk-uI-cCX" secondAttribute="centerX" id="HQc-iz-ILw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f78-px-0Qa"/>
                     <connections>
@@ -2379,29 +2369,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-ZB-Q5v">
-                                <rect key="frame" x="20" y="55" width="374" height="500"/>
+                                <rect key="frame" x="20" y="49" width="374" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="wAS-1n-dTn"/>
+                                    <constraint firstAttribute="height" constant="300" id="eiJ-3z-YaX"/>
                                 </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pi6-ns-CDe">
-                                <rect key="frame" x="131" y="8" width="153" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaE-yP-OxV">
+                                <rect key="frame" x="50" y="413" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Select"/>
                                 <connections>
-                                    <action selector="didselet:" destination="gaG-wr-2B6" eventType="touchUpInside" id="As3-ex-34M"/>
-                                    <segue destination="kUQ-Rm-eAu" kind="show" id="b9N-WW-sxA"/>
+                                    <segue destination="kUQ-Rm-eAu" kind="show" id="lev-G8-uU7"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F7h-od-Ags"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gY2-ZB-Q5v" firstAttribute="top" secondItem="Pi6-ns-CDe" secondAttribute="bottom" constant="15" id="Ei0-6B-3WU"/>
-                            <constraint firstItem="F7h-od-Ags" firstAttribute="trailing" secondItem="gY2-ZB-Q5v" secondAttribute="trailing" constant="20" id="Zse-zL-xuh"/>
-                            <constraint firstItem="gY2-ZB-Q5v" firstAttribute="leading" secondItem="F7h-od-Ags" secondAttribute="leading" constant="20" id="hx8-5W-q3i"/>
+                            <constraint firstItem="gY2-ZB-Q5v" firstAttribute="leading" secondItem="F7h-od-Ags" secondAttribute="leading" constant="20" id="I8k-Eh-TbL"/>
+                            <constraint firstItem="F7h-od-Ags" firstAttribute="trailing" secondItem="ZaE-yP-OxV" secondAttribute="trailing" constant="50" id="L9v-I6-epk"/>
+                            <constraint firstItem="ZaE-yP-OxV" firstAttribute="leading" secondItem="F7h-od-Ags" secondAttribute="leading" constant="50" id="OOF-pU-04I"/>
+                            <constraint firstItem="F7h-od-Ags" firstAttribute="trailing" secondItem="gY2-ZB-Q5v" secondAttribute="trailing" constant="20" id="XWR-mk-xoq"/>
+                            <constraint firstItem="ZaE-yP-OxV" firstAttribute="top" secondItem="gY2-ZB-Q5v" secondAttribute="bottom" constant="64" id="a0d-ck-3yA"/>
+                            <constraint firstItem="ZaE-yP-OxV" firstAttribute="centerX" secondItem="zfo-ii-XBz" secondAttribute="centerX" id="p81-VS-4UH"/>
+                            <constraint firstItem="gY2-ZB-Q5v" firstAttribute="top" secondItem="F7h-od-Ags" secondAttribute="top" constant="49" id="rWP-xi-Ehc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jy7-V7-UKV"/>
@@ -2411,7 +2403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbW-aE-m9M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708.69565217391312" y="1187.771739130435"/>
+            <point key="canvasLocation" x="-728.98550724637687" y="1230.9782608695652"/>
         </scene>
         <!--Searchby Category Id Table View Controller-->
         <scene sceneID="KkT-Cg-vzl">

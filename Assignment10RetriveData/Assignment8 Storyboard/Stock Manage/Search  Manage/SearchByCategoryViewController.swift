@@ -19,6 +19,7 @@ class SearchByCategoryViewController: UIViewController, UITableViewDelegate, UIT
         // Do any additional setup after loading the view.
     }
     //Table View
+    @IBOutlet weak var SelectButton: UIButton!
     func tableView(_ tableView: UITableView,numberOfRowsInSection section:Int)->Int{
         
         return CategoryTableViewController.items?.count ?? 0
