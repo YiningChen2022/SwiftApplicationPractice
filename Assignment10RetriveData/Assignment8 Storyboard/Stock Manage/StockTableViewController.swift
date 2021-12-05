@@ -7,9 +7,9 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     var listOfStock=[resultsDetail](){
         didSet{
             DispatchQueue.main.async {
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
                
-               // self.addtoCoreData()
+                //self.addtoCoreData()
                 //self.navigationItem.title="\(self.listOfStock.count) stock Count"
             }
         }
@@ -20,10 +20,12 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
              let newStockCore = StockCore(context: self.context)
              print(self.listOfStock[index].T)
              newStockCore.name=listOfStock[index].T
-             newStockCore.financialRating=Int64(9)
+             newStockCore.financialRating=Int64(Int.random(in: 0..<10))
              newStockCore.lastTradePrice=Double(listOfStock[index].c)
-             newStockCore.ofCompany=AddStockViewController.choosedCompanyForStock
-             newStockCore.ofCategory=AddStockViewController.choosedCategoryForStock
+             
+             newStockCore.ofCompany=CompanyTableViewController.items![Int.random(in: 0..<CompanyTableViewController.items!.count)]
+             AddStockViewController.choosedCompanyForStock
+             newStockCore.ofCategory=CategoryTableViewController.items![Int.random(in: 0..<CategoryTableViewController.items!.count)]
              //save data
              do {
                  try! self.context.save()
@@ -72,6 +74,7 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //addtoCoreData()
         fetchStock()
         self.navigationItem.leftBarButtonItem=self.editButtonItem
         
@@ -196,5 +199,10 @@ class StockTableViewController: UITableViewController, UISearchResultsUpdating,U
 
 }
 
-
+extension Double {
+    func round(to places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
 

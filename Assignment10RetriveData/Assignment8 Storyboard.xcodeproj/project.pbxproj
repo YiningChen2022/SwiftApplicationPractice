@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E81C4A29275C6ABF0002D633 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81C4A28275C6ABF0002D633 /* Reachability.swift */; };
 		E83C13BF2755B16400281137 /* StockPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C13BE2755B16400281137 /* StockPolygon.swift */; };
 		E83C13C12755BAA800281137 /* Stockrequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C13C02755BAA800281137 /* Stockrequest.swift */; };
 		E84709A1273D621C00B3446E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84709A0273D621C00B3446E /* AppDelegate.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E81C4A28275C6ABF0002D633 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E83C13BE2755B16400281137 /* StockPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPolygon.swift; sourceTree = "<group>"; };
 		E83C13C02755BAA800281137 /* Stockrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stockrequest.swift; sourceTree = "<group>"; };
 		E847099D273D621C00B3446E /* Assignment8 Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment8 Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 				E84709AE273D621E00B3446E /* Info.plist */,
 				E84709B4273D7D1600B3446E /* MyTableViewController.swift */,
 				E87CD4FE27485DD900275284 /* TestTableViewController.swift */,
+				E81C4A28275C6ABF0002D633 /* Reachability.swift */,
 			);
 			path = "Assignment8 Storyboard";
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				E84709A5273D621C00B3446E /* ViewController.swift in Sources */,
 				E8EE11942743724E005A0DCD /* SearchByCategoryViewController.swift in Sources */,
 				E83C13C12755BAA800281137 /* Stockrequest.swift in Sources */,
+				E81C4A29275C6ABF0002D633 /* Reachability.swift in Sources */,
 				E84709BA273D885A00B3446E /* CategoryDirectory.swift in Sources */,
 				E84709CA273D88C400B3446E /* StockDirectory.swift in Sources */,
 				E84709B8273D884400B3446E /* Category.swift in Sources */,
