@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+import FirebaseStorage
+
+final class StorageManage{
+    static let shared=StorageManage()
+    private init(){}
+    private let storage = Storage.storage()
+     
+}

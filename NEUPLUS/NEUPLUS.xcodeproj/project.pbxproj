@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EB038D2882C67D186FFDFA3 /* Pods_NEUPLUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17EB699B28A9050D71669CD /* Pods_NEUPLUS.framework */; };
 		E8CB71DD275E6E0900E14B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CB71DC275E6E0900E14B38 /* AppDelegate.swift */; };
 		E8CB71DF275E6E0900E14B38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CB71DE275E6E0900E14B38 /* SceneDelegate.swift */; };
 		E8CB71E1275E6E0900E14B38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CB71E0275E6E0900E14B38 /* HomeViewController.swift */; };
@@ -20,11 +21,16 @@
 		E8EA01C4275E7449008B74ED /* ViewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01C3275E7449008B74ED /* ViewPostViewController.swift */; };
 		E8EA01C6275E7459008B74ED /* CreateNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01C5275E7459008B74ED /* CreateNewPostViewController.swift */; };
 		E8EA01C8275E751A008B74ED /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01C7275E751A008B74ED /* DatabaseManager.swift */; };
-		E8EA01CA275E7528008B74ED /* AutoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01C9275E7527008B74ED /* AutoManager.swift */; };
+		E8EA01CA275E7528008B74ED /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01C9275E7527008B74ED /* AuthManager.swift */; };
 		E8EA01CC275E7534008B74ED /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01CB275E7534008B74ED /* StorageManager.swift */; };
+		E8EA01CE275E9E15008B74ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8EA01CD275E9E15008B74ED /* GoogleService-Info.plist */; };
+		E8EA01D0275EA5AB008B74ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01CF275EA5AB008B74ED /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3495071CECF38248CB818C /* Pods-NEUPLUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUPLUS.debug.xcconfig"; path = "Target Support Files/Pods-NEUPLUS/Pods-NEUPLUS.debug.xcconfig"; sourceTree = "<group>"; };
+		293628C06800D06B9ED3806B /* Pods-NEUPLUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEUPLUS.release.xcconfig"; path = "Target Support Files/Pods-NEUPLUS/Pods-NEUPLUS.release.xcconfig"; sourceTree = "<group>"; };
+		C17EB699B28A9050D71669CD /* Pods_NEUPLUS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEUPLUS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CB71D9275E6E0900E14B38 /* NEUPLUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEUPLUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CB71DC275E6E0900E14B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8CB71DE275E6E0900E14B38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +46,10 @@
 		E8EA01C3275E7449008B74ED /* ViewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostViewController.swift; sourceTree = "<group>"; };
 		E8EA01C5275E7459008B74ED /* CreateNewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPostViewController.swift; sourceTree = "<group>"; };
 		E8EA01C7275E751A008B74ED /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		E8EA01C9275E7527008B74ED /* AutoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoManager.swift; sourceTree = "<group>"; };
+		E8EA01C9275E7527008B74ED /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E8EA01CB275E7534008B74ED /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E8EA01CD275E9E15008B74ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8EA01CF275EA5AB008B74ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB038D2882C67D186FFDFA3 /* Pods_NEUPLUS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48A28864D17432E1F3B85FDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C17EB699B28A9050D71669CD /* Pods_NEUPLUS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		511DA6DCC347989175D0AF05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A3495071CECF38248CB818C /* Pods-NEUPLUS.debug.xcconfig */,
+				293628C06800D06B9ED3806B /* Pods-NEUPLUS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E8CB71D0275E6E0900E14B38 = {
 			isa = PBXGroup;
 			children = (
 				E8CB71DB275E6E0900E14B38 /* NEUPLUS */,
 				E8CB71DA275E6E0900E14B38 /* Products */,
+				511DA6DCC347989175D0AF05 /* Pods */,
+				48A28864D17432E1F3B85FDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +115,7 @@
 		E8EA01B6275E72C7008B74ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E8EA01CF275EA5AB008B74ED /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +146,7 @@
 		E8EA01B9275E7300008B74ED /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				E8EA01CD275E9E15008B74ED /* GoogleService-Info.plist */,
 				E8CB71E5275E6E0B00E14B38 /* Assets.xcassets */,
 				E8CB71DC275E6E0900E14B38 /* AppDelegate.swift */,
 				E8CB71DE275E6E0900E14B38 /* SceneDelegate.swift */,
@@ -128,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E8EA01C7275E751A008B74ED /* DatabaseManager.swift */,
-				E8EA01C9275E7527008B74ED /* AutoManager.swift */,
+				E8EA01C9275E7527008B74ED /* AuthManager.swift */,
 				E8EA01CB275E7534008B74ED /* StorageManager.swift */,
 			);
 			path = Managers;
@@ -141,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8CB71ED275E6E0B00E14B38 /* Build configuration list for PBXNativeTarget "NEUPLUS" */;
 			buildPhases = (
+				2B2D8DA05277DFFBBF05122B /* [CP] Check Pods Manifest.lock */,
 				E8CB71D5275E6E0900E14B38 /* Sources */,
 				E8CB71D6275E6E0900E14B38 /* Frameworks */,
 				E8CB71D7275E6E0900E14B38 /* Resources */,
+				82CCF442C68262773F029842 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8CB71E9275E6E0B00E14B38 /* LaunchScreen.storyboard in Resources */,
+				E8EA01CE275E9E15008B74ED /* GoogleService-Info.plist in Resources */,
 				E8CB71E6275E6E0B00E14B38 /* Assets.xcassets in Resources */,
 				E8CB71E4275E6E0900E14B38 /* Main.storyboard in Resources */,
 			);
@@ -200,11 +233,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B2D8DA05277DFFBBF05122B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NEUPLUS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82CCF442C68262773F029842 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NEUPLUS/Pods-NEUPLUS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NEUPLUS/Pods-NEUPLUS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NEUPLUS/Pods-NEUPLUS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E8CB71D5275E6E0900E14B38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8EA01D0275EA5AB008B74ED /* User.swift in Sources */,
 				E8EA01C0275E741F008B74ED /* SignUpViewController.swift in Sources */,
 				E8CB71E1275E6E0900E14B38 /* HomeViewController.swift in Sources */,
 				E8EA01C8275E751A008B74ED /* DatabaseManager.swift in Sources */,
@@ -213,7 +289,7 @@
 				E8CB71DD275E6E0900E14B38 /* AppDelegate.swift in Sources */,
 				E8EA01BC275E738E008B74ED /* ProfileViewController.swift in Sources */,
 				E8EA01C6275E7459008B74ED /* CreateNewPostViewController.swift in Sources */,
-				E8EA01CA275E7528008B74ED /* AutoManager.swift in Sources */,
+				E8EA01CA275E7528008B74ED /* AuthManager.swift in Sources */,
 				E8EA01BE275E740D008B74ED /* SignInViewController.swift in Sources */,
 				E8CB71DF275E6E0900E14B38 /* SceneDelegate.swift in Sources */,
 				E8EA01C4275E7449008B74ED /* ViewPostViewController.swift in Sources */,
@@ -360,6 +436,7 @@
 		};
 		E8CB71EE275E6E0B00E14B38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A3495071CECF38248CB818C /* Pods-NEUPLUS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -389,6 +466,7 @@
 		};
 		E8CB71EF275E6E0B00E14B38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 293628C06800D06B9ED3806B /* Pods-NEUPLUS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
