@@ -7,8 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UITabBarController {
-    
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var emaillTextField: UITextField!
     
@@ -50,15 +49,10 @@ class SignUpViewController: UITabBarController {
                         return
                     }
                     DispatchQueue.main.async {
-                        let vc=HomeViewController()
+                        let vc=HomePageUITabBarController()
                         vc.modalPresentationStyle = .fullScreen
                         self?.present(vc,animated: true)
-                        
                     }
-                    
-                    
-                    
-                    
                 }
             }else{
                 print("Failed to Create account")
@@ -69,4 +63,5 @@ class SignUpViewController: UITabBarController {
         
     }
     
+
 }

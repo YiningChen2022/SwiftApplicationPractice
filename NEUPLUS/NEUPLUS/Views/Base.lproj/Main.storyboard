@@ -9,35 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="sfn-96-4xc">
-            <objects>
-                <viewController id="1Hf-OA-ihO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3j0-ed-91I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDh-k8-P3e">
-                                <rect key="frame" x="223" y="312" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="APu-aA-MpE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="1M3-Tx-H0g"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3ag-nZ-Hby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3343" y="-405"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="NEUPLUS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -56,7 +30,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign in"/>
                                 <connections>
-                                    <segue destination="1Hf-OA-ihO" kind="show" id="mRq-ME-sFS"/>
+                                    <segue destination="bRG-Jq-vSQ" kind="show" id="eu4-Bt-2rH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJd-no-70H">
@@ -65,7 +39,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
                                 <connections>
-                                    <segue destination="tFr-Eh-G4n" kind="show" id="Rb9-Gw-G8u"/>
+                                    <segue destination="tFr-Eh-G4n" kind="show" id="IHE-es-niy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,8 +47,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2258" y="-485"/>
+            <point key="canvasLocation" x="-2699" y="-508"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Gka-Gy-vcr">
@@ -137,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9D9-8f-Fb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1493" y="417"/>
+            <point key="canvasLocation" x="-1930" y="-419"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="T0Z-TE-9cR">
@@ -193,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="1871" y="-910"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home PageUI Tab Bar Controller-->
         <scene sceneID="wCx-HI-MVl">
             <objects>
-                <tabBarController id="OeG-2H-pD3" sceneMemberID="viewController">
+                <tabBarController id="OeG-2H-pD3" customClass="HomePageUITabBarController" customModule="NEUPLUS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="TfP-Km-XXx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g53-um-MhR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -234,7 +209,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
                                 <connections>
-                                    <action selector="DidTapSignUp:" destination="tFr-Eh-G4n" eventType="touchUpInside" id="e3G-9p-LEo"/>
+                                    <action selector="DidTapSignUp:" destination="tFr-Eh-G4n" eventType="touchUpInside" id="dwZ-yM-leG"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-He-EPW">
@@ -271,7 +246,7 @@
                                     <segment title="Visiter"/>
                                 </segments>
                                 <connections>
-                                    <action selector="didChange:" destination="tFr-Eh-G4n" eventType="valueChanged" id="Jlf-GA-k30"/>
+                                    <action selector="didChange:" destination="tFr-Eh-G4n" eventType="valueChanged" id="OKP-65-nvp"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUm-9O-qIs">
@@ -289,14 +264,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="aJg-fJ-kV6"/>
                     <connections>
-                        <outlet property="NameTextField" destination="rRe-He-EPW" id="bKX-1d-p3S"/>
-                        <outlet property="emaillTextField" destination="V8H-JY-PZd" id="CPl-rZ-BcC"/>
-                        <outlet property="passwordTextField" destination="8nE-ZO-tmZ" id="BM9-eb-Sfa"/>
+                        <outlet property="NameTextField" destination="rRe-He-EPW" id="oJA-Jo-4Iw"/>
+                        <outlet property="emaillTextField" destination="V8H-JY-PZd" id="che-Vu-maH"/>
+                        <outlet property="passwordTextField" destination="8nE-ZO-tmZ" id="dg7-2F-DVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2Y-jX-bpV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3445" y="445"/>
+            <point key="canvasLocation" x="-2468" y="247"/>
         </scene>
         <!--Home-->
         <scene sceneID="ACq-Sx-APU">
@@ -338,7 +313,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rb9-Gw-G8u"/>
+        <segue reference="QGP-iA-Sry"/>
+        <segue reference="Kjl-kS-uL3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="image-asset" width="833" height="833"/>

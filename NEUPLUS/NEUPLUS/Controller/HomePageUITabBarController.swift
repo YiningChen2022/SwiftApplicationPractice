@@ -1,5 +1,5 @@
 //
-//  PostViewController.swift
+//  HomePageUITabBarController.swift
 //  NEUPLUS
 //
 //  Created by Yining Chen on 12/6/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostViewController: UITabBarController {
+class HomePageUITabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
