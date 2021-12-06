@@ -25,6 +25,8 @@
 		E8EA01CC275E7534008B74ED /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01CB275E7534008B74ED /* StorageManager.swift */; };
 		E8EA01CE275E9E15008B74ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8EA01CD275E9E15008B74ED /* GoogleService-Info.plist */; };
 		E8EA01D0275EA5AB008B74ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01CF275EA5AB008B74ED /* User.swift */; };
+		E8EA01D2275EA5CB008B74ED /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01D1275EA5CB008B74ED /* Profile.swift */; };
+		E8EA01D4275EA5D5008B74ED /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA01D3275EA5D5008B74ED /* BlogPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E8EA01CB275E7534008B74ED /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E8EA01CD275E9E15008B74ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8EA01CF275EA5AB008B74ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E8EA01D1275EA5CB008B74ED /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		E8EA01D3275EA5D5008B74ED /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				E8EA01CF275EA5AB008B74ED /* User.swift */,
+				E8EA01D1275EA5CB008B74ED /* Profile.swift */,
+				E8EA01D3275EA5D5008B74ED /* BlogPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,9 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8EA01D4275EA5D5008B74ED /* BlogPost.swift in Sources */,
 				E8EA01D0275EA5AB008B74ED /* User.swift in Sources */,
 				E8EA01C0275E741F008B74ED /* SignUpViewController.swift in Sources */,
 				E8CB71E1275E6E0900E14B38 /* HomeViewController.swift in Sources */,
+				E8EA01D2275EA5CB008B74ED /* Profile.swift in Sources */,
 				E8EA01C8275E751A008B74ED /* DatabaseManager.swift in Sources */,
 				E8EA01CC275E7534008B74ED /* StorageManager.swift in Sources */,
 				E8EA01C2275E7431008B74ED /* PostViewController.swift in Sources */,

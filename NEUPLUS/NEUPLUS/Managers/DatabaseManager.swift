@@ -13,25 +13,25 @@ final class DatabaseManage{
     private init(){}
     private let database = Firestore.firestore()
      //add user to data
-    public func insertUser( user:String, completion:@escaping([String])->Void){
+    public func insertUser( user:User, completion:@escaping(Bool)->Void){
         
         
     }
     
     //query all blog posts
-    public func getAllPosts(with post:String, user:String, completion:@escaping([String])->Void){
+    public func getAllPosts(with blogPost:BlogPost, user:User, completion:@escaping([BlogPost])->Void){
         
         
     }
     
     //query blog post of one user
-    public func getPostForUser(with post:String, user:String, completion:@escaping(Bool)->Void){
+    public func getPostForUser( for user:User, completion:@escaping([BlogPost])->Void){
         
         
     }
     
     //post blog post
-    public func insertBlogPost(with post:String, user:String, completion:@escaping(Bool)->Void){
+    public func insertBlogPost(blogPost:BlogPost, user:User, completion:@escaping(Bool)->Void){
         
         
     }
