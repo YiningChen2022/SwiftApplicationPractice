@@ -14,7 +14,6 @@
 		E881C5EE276007ED00555A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E881C5EC276007ED00555A0F /* Main.storyboard */; };
 		E881C5F0276007EF00555A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E881C5EF276007EF00555A0F /* Assets.xcassets */; };
 		E881C5F3276007EF00555A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E881C5F1276007EF00555A0F /* LaunchScreen.storyboard */; };
-		E881C5FC2760084E00555A0F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E881C5FB2760084E00555A0F /* StoreKit.framework */; };
 		E881C603276009BA00555A0F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C602276009BA00555A0F /* ProfileViewController.swift */; };
 		E881C605276009E300555A0F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C604276009E300555A0F /* TabBarViewController.swift */; };
 		E881C60727600A0500555A0F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C60627600A0500555A0F /* SignInViewController.swift */; };
@@ -38,7 +37,6 @@
 		E881C5EF276007EF00555A0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E881C5F2276007EF00555A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E881C5F4276007EF00555A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E881C5FB2760084E00555A0F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E881C602276009BA00555A0F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E881C604276009E300555A0F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E881C60627600A0500555A0F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E881C5FC2760084E00555A0F /* StoreKit.framework in Frameworks */,
 				4E34CCC0710422906F41978C /* Pods_NEU_PLUS_thoughts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +68,6 @@
 				20F40D67DA8B21B554479E69 /* Pods-NEU_PLUS_thoughts.debug.xcconfig */,
 				786D1612C8BEA1005BB432CA /* Pods-NEU_PLUS_thoughts.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,7 +105,6 @@
 		E881C5FA2760084E00555A0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E881C5FB2760084E00555A0F /* StoreKit.framework */,
 				EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */,
 			);
 			name = Frameworks;
