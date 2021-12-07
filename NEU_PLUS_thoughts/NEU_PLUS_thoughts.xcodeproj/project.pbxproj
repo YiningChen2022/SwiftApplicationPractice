@@ -24,6 +24,7 @@
 		E881C61127600A7300555A0F /* DatebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61027600A7300555A0F /* DatebaseManager.swift */; };
 		E881C61327600A8400555A0F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61227600A8400555A0F /* AuthManager.swift */; };
 		E881C61527600A9100555A0F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61427600A9100555A0F /* StorageManager.swift */; };
+		E881C619276011D700555A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E881C618276011D700555A0F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E881C61027600A7300555A0F /* DatebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatebaseManager.swift; sourceTree = "<group>"; };
 		E881C61227600A8400555A0F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E881C61427600A9100555A0F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E881C618276011D700555A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEU_PLUS_thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,8 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				E881C5E6276007ED00555A0F /* AppDelegate.swift */,
-				E881C5E8276007ED00555A0F /* SceneDelegate.swift */,
 				E881C5EF276007EF00555A0F /* Assets.xcassets */,
+				E881C5E8276007ED00555A0F /* SceneDelegate.swift */,
+				E881C618276011D700555A0F /* GoogleService-Info.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E881C5F3276007EF00555A0F /* LaunchScreen.storyboard in Resources */,
+				E881C619276011D700555A0F /* GoogleService-Info.plist in Resources */,
 				E881C5F0276007EF00555A0F /* Assets.xcassets in Resources */,
 				E881C5EE276007ED00555A0F /* Main.storyboard in Resources */,
 			);
