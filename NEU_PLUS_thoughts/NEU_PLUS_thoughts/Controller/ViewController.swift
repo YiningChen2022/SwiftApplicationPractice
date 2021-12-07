@@ -15,5 +15,19 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func DIDtapButton(_ sender: Any) {
+        let vc: UIViewController
+        if AuthManager.shared.isSignedIn{
+            vc=(storyboard?.instantiateViewController(withIdentifier: "Home") as? TabBarViewController)!
+            
+        }else {
+            vc=(storyboard?.instantiateViewController(withIdentifier: "SignIn") as? SignInViewController)!
+            }
+        vc.modalPresentationStyle = .fullScreen 
+        present (vc, animated:true)
+    }
+    
+        
+    
 }
 

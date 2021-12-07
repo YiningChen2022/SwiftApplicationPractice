@@ -25,6 +25,8 @@
 		E881C61327600A8400555A0F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61227600A8400555A0F /* AuthManager.swift */; };
 		E881C61527600A9100555A0F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61427600A9100555A0F /* StorageManager.swift */; };
 		E881C619276011D700555A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E881C618276011D700555A0F /* GoogleService-Info.plist */; };
+		E881C61B27601A2E00555A0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61A27601A2E00555A0F /* User.swift */; };
+		E881C61D27601A3B00555A0F /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61C27601A3B00555A0F /* BlogPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		E881C61227600A8400555A0F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		E881C61427600A9100555A0F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E881C618276011D700555A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E881C61A27601A2E00555A0F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E881C61C27601A3B00555A0F /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
 		EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEU_PLUS_thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,8 @@
 		E881C5FD2760090D00555A0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E881C61A27601A2E00555A0F /* User.swift */,
+				E881C61C27601A3B00555A0F /* BlogPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,12 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E881C61D27601A3B00555A0F /* BlogPost.swift in Sources */,
 				E881C5EB276007ED00555A0F /* ViewController.swift in Sources */,
 				E881C61327600A8400555A0F /* AuthManager.swift in Sources */,
 				E881C60927600A1200555A0F /* SignUpViewController.swift in Sources */,
 				E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */,
 				E881C60727600A0500555A0F /* SignInViewController.swift in Sources */,
 				E881C60D27600A3E00555A0F /* CreateNewPsotViewController.swift in Sources */,
+				E881C61B27601A2E00555A0F /* User.swift in Sources */,
 				E881C603276009BA00555A0F /* ProfileViewController.swift in Sources */,
 				E881C60F27600A5E00555A0F /* IAPManager.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
