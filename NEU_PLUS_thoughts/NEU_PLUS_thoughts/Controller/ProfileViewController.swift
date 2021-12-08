@@ -7,16 +7,35 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.myTitle.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text=data.myTitle[indexPath.row]
+       // cell.imageView =
+        return cell.imageView=
+        
+    }
+
+ 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableview.register(UITableViewCell.self,
+                                    forCellReuseIdentifier: "cell")
+        tableview.dataSource = self
+        tableview.delegate = self
         // Do any additional setup after loading the view.
     }
     
 
-
+    @IBOutlet weak var tableview: UITableView!
+    
     @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
         let sheet = UIAlertController(title: "Sign Out", message: nil,preferredStyle: .actionSheet)
         sheet.addAction(UIAlertAction(title:"cancel", style: .cancel, handler: nil))
@@ -29,7 +48,7 @@ class ProfileViewController: UIViewController {
                         
                         UserDefaults.standard.set(nil, forKey:"email")
                         UserDefaults.standard.set(nil, forKey:"name")
-                        let vc=self?.storyboard?.instantiateViewController(withIdentifier: "SignIn") as? SignInViewController
+                        let vc=self?.storyboard?.instantiateViewController(withIdentifier: "Welcome") as? ViewController
                         vc!.modalPresentationStyle = .fullScreen
                         self?.present (vc!, animated:true,completion:nil)
                     }
