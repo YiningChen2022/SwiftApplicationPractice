@@ -24,11 +24,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.imageView?.image=data.icons[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        DispatchQueue.main.async {
+            let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPostList") as? ViewPostlistTableViewController
+            //vc!.title=self.posts[indexPath.row].title
+            vc!.modalPresentationStyle = .fullScreen
+            self.present (vc!, animated:true)
+        }
+        
+    }
 
  
     
 
     override func viewDidLoad() {
+      
         super.viewDidLoad()
         tableview.register(UITableViewCell.self,
                                     forCellReuseIdentifier: "cell")
