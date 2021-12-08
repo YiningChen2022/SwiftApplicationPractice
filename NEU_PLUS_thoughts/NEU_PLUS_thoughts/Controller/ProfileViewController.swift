@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var UserName: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.myTitle.count
     }
@@ -16,9 +17,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text=data.myTitle[indexPath.row]
-       // cell.imageView =
-        return cell.imageView=
-        
+   
+        cell.imageView?.image=data.icons[indexPath.row]
+        return cell
     }
 
  
@@ -30,6 +31,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                                     forCellReuseIdentifier: "cell")
         tableview.dataSource = self
         tableview.delegate = self
+        guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
+            return
+        }
+        UserName.text=currentUserEmail
+        
         // Do any additional setup after loading the view.
     }
     

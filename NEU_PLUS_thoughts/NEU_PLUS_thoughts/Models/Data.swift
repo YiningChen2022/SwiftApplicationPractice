@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 
 class data{
     
     
     public static var myTitle:[String]=["Posts","Friends","Settings"]
+    
+    public static var icons:[UIImage]=[UIImage(named:"posts")!,UIImage(named:"Friends")!,UIImage(named:"Setting")!]
 }
