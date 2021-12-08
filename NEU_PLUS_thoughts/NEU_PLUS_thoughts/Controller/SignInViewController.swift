@@ -26,6 +26,20 @@ class SignInViewController: UIViewController {
         else {
             return
         }
+        
+        AuthManager.shared.signIn(email: email, password: password){[ weak self] success in
+            guard  success  else{
+                return
+            }
+            
+            UserDefaults.standard.set(email, forKey:"email")
+            DispatchQueue.main.async {
+               
+                let vc=self?.storyboard?.instantiateViewController(withIdentifier: "Home") as? TabBarViewController
+                vc!.modalPresentationStyle = .fullScreen
+                self?.present (vc!, animated:true)
+            }
+        }
     }
     
 }

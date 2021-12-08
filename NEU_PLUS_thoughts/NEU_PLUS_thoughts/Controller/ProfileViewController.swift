@@ -16,14 +16,29 @@ class ProfileViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
+        let sheet = UIAlertController(title: "Sign Out", message: nil,preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title:"cancel", style: .cancel, handler: nil))
+        sheet.addAction(UIAlertAction(title:"Sign Out", style: .destructive, handler: { _ in
+            AuthManager.shared.signOut{
+                [ weak self]
+               
+                success in if success{
+                    DispatchQueue.main.async {
+                        
+                        UserDefaults.standard.set(nil, forKey:"email")
+                        UserDefaults.standard.set(nil, forKey:"name")
+                        let vc=self?.storyboard?.instantiateViewController(withIdentifier: "SignIn") as? SignInViewController
+                        vc!.modalPresentationStyle = .fullScreen
+                        self?.present (vc!, animated:true,completion:nil)
+                    }
+                }
+            }
+            
+        }))
+        present(sheet, animated: true)
+        
+      
     }
-    */
-
 }
