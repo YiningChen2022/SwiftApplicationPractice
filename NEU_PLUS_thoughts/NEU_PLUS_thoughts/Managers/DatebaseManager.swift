@@ -14,7 +14,22 @@ final class DatabaseManager{
     private init(){}
     
     //post Blog
-    public func insertBlogPost(post:BlogPost, user:User, completion:@escaping(Bool)->Void ){
+    public func insertBlogPost(post:BlogPost, email:String, completion:@escaping(Bool)->Void ){
+        let userEmail=email
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+        let data = ["id": post.identifier,
+            "title": post.title,
+                    "body": post.text,
+                    "created": post.timestamp,
+                    "type" :post.type,
+                    "headerImageUrl": post.headerImageUrl?.absoluteString]
+        
+        
+        database.collection("users").document(documentId).setData(data){
+            error in completion(error == nil)
+        }
+        
         
     }
     

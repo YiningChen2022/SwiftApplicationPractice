@@ -13,5 +13,6 @@ struct BlogPost{
     let timestamp: TimeInterval
     let headerImageUrl: URL?
     let text:String
+    let type:String
     
 }

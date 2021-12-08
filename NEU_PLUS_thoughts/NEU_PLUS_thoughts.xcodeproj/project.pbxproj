@@ -29,6 +29,7 @@
 		E881C61D27601A3B00555A0F /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61C27601A3B00555A0F /* BlogPost.swift */; };
 		E881C61F2760442F00555A0F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C61E2760442F00555A0F /* Data.swift */; };
 		E881C6232760896A00555A0F /* ViewPostlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C6222760896A00555A0F /* ViewPostlistTableViewController.swift */; };
+		E881C62527615C1000555A0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62427615C1000555A0F /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		E881C61C27601A3B00555A0F /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
 		E881C61E2760442F00555A0F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E881C6222760896A00555A0F /* ViewPostlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostlistTableViewController.swift; sourceTree = "<group>"; };
+		E881C62427615C1000555A0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEU_PLUS_thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				E881C60A27600A3200555A0F /* ViewPostViewController.swift */,
 				E881C60C27600A3E00555A0F /* CreateNewPsotViewController.swift */,
 				E881C6222760896A00555A0F /* ViewPostlistTableViewController.swift */,
+				E881C62427615C1000555A0F /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				E881C5EB276007ED00555A0F /* ViewController.swift in Sources */,
 				E881C61327600A8400555A0F /* AuthManager.swift in Sources */,
 				E881C60927600A1200555A0F /* SignUpViewController.swift in Sources */,
+				E881C62527615C1000555A0F /* HomeViewController.swift in Sources */,
 				E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */,
 				E881C60727600A0500555A0F /* SignInViewController.swift in Sources */,
 				E881C60D27600A3E00555A0F /* CreateNewPsotViewController.swift in Sources */,

@@ -34,11 +34,36 @@ final class StorageManager{
             }
         
     }
-    public func uploadBlogHeaderImage(blogPost:BlogPost,image:UIImage?,
+    public func uploadBlogHeaderImage(email:String, image:UIImage, postid:String,
                                               completion:@escaping(Bool)->Void){
+       
+        let path = email.replacingOccurrences(of: "@", with: "_")
+            .replacingOccurrences(of: ".", with: "_")
+        guard let pngDate = image.pngData()else {
+            return
+        }
+        
+        container.reference(withPath: "posts_headers/\(path)/\(postid).png")
+            .putData(pngDate, metadata: nil){
+                metadata,error in
+                guard metadata != nil,error == nil else{
+                   completion(false)
+                    return
+                }
+                completion(true)
+            }
              
          }
-    public func downLoadUrlForPostHeader( blogPost:BlogPost ,completion:@escaping(URL?)->Void){
+    public func downLoadUrlForPostHeader( email:String,
+                                          postid:String
+                                          ,completion:@escaping(URL?)->Void){
+        let emailComponent = email.replacingOccurrences(of: "@", with: "_")
+            .replacingOccurrences(of: ".", with: "_")
+     
+        
+        container.reference(withPath: "posts_headers/\(emailComponent )/\(postid).png").downloadURL{
+            url, _ in completion(url)
+        }
         
     }
     public func downLoadUrlForPorfilePic(path:String ,completion:@escaping(URL?)->Void){
