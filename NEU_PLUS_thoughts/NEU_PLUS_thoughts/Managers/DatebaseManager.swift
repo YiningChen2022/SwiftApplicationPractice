@@ -41,7 +41,7 @@ final class DatabaseManager{
     }
     //get Profile
     public func getUser(email:String, completion:@escaping(User?)->Void){
-      /*  let documentId=email
+        let documentId=email
             .replacingOccurrences(of: ".", with: "_")
             .replacingOccurrences(of: "@", with: "_")
         database
@@ -49,21 +49,34 @@ final class DatabaseManager{
             .document(documentId)
             .getDocument { snapshot, error in
                 guard let data = snapshot?.data() as? [String:String], let name = data["name"],error == nil else{
-                  
                     return
                 }
-
-                
-            
                 let ref = data["profile_photo"]//ref
-                
-                
-                 
-               // let user = User(name:name, email:email, profulePictureUrl: ref)
-                    
+                let user = User(name:name, email:email, profulePictureRef: ref)
                     completion(user)
               
-                */
-           // }
+                
+            }
     }
+    
+    public func updateProfilePhoto(email:String, completion:@escaping(Bool)->Void){
+        //us email for the uniqu key
+        let path = email.replacingOccurrences(of: "@", with: "_")
+            .replacingOccurrences(of: ".", with: "_")
+        let photoReference="profile_pictures/\(path)/photo.png"
+        
+        //create a reference
+        let dbRef=database.collection("users")
+            .document(path)
+        //update latest value
+        dbRef.getDocument {
+            snapshot, error in guard var data=snapshot?.data(), error == nil else {
+                return
+            }
+          data["profile_photo"] = photoReference
+            dbRef.setData(data) {error in completion(error == nil)}
+        }
+        
+    }
+    
 }

@@ -8,7 +8,10 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+    var currentEmail:String?
+    @IBOutlet weak var Useremail: UILabel!
+    private var user:User?
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var UserName: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.myTitle.count
@@ -34,9 +37,84 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
             return
         }
-        UserName.text=currentUserEmail
+        currentEmail=currentUserEmail
+        Useremail.text=currentUserEmail
+        fetchProgileData(email: currentUserEmail)
+        profileImage.isUserInteractionEnabled=true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProfilePhoto))
+        profileImage.addGestureRecognizer(tap)
+        if let ref=user?.profulePictureRef{
+            StorageManager.shared.downLoadUrlForPorfilePic(path: ref){
+                url in
+                guard let url=url else {
+                    return
+                }
+                let task = URLSession.shared.dataTask(with: url){
+                    data, _, _ in guard let data=data else{
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.profileImage.image=UIImage(data
+                                                   :data )
+                    }
+                }
+                task.resume()
+            }
+            
+            
+        }
+        
+        //UserName.text=currentUserEmail
         
         // Do any additional setup after loading the view.
+    }
+    public func fetchPicture(profulePictureRef: String){
+        StorageManager.shared.downLoadUrlForPorfilePic(path: profulePictureRef){
+            url in
+            guard let url=url else {
+                return
+            }
+            let task = URLSession.shared.dataTask(with: url){
+                data, _, _ in guard let data=data else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.profileImage.image=UIImage(data
+                                               :data )
+                }
+            }
+            task.resume()
+        }
+        
+        
+    }
+    
+    @objc private func didTapProfilePhoto(){
+        guard let myEmail = UserDefaults.standard.string(forKey: "email"),myEmail == currentEmail else{
+            return
+        }
+   
+        let picker  = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker,animated: true)
+        
+    }
+    private func fetchProgileData(email:String){
+        DatabaseManager.shared.getUser(email: email){
+            [weak self] user in
+            guard let user = user else{
+                return
+            }
+            self?.user = user
+            
+            DispatchQueue.main.async {
+               self!.UserName.text=user.name
+                self!.fetchPicture(profulePictureRef: user.profulePictureRef!)
+            }
+          
+        }
     }
     
 
@@ -65,5 +143,34 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         present(sheet, animated: true)
         
       
+    }
+}
+
+extension ProfileViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[.editedImage] as? UIImage else{
+            return
+        }
+        StorageManager.shared.uploadUserProfilePicture(email: currentEmail!, image: image){[weak self]
+            success in
+            guard let strongSelf = self else{
+                return
+            }
+            if success {
+                DatabaseManager.shared.updateProfilePhoto(email:strongSelf .currentEmail!){ updated in
+                    guard updated else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        strongSelf.fetchProgileData(email: strongSelf.currentEmail!)
+                    }
+                }
+            }
+            
+        }
     }
 }

@@ -253,8 +253,15 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1P-QP-V4g">
+                                <rect key="frame" x="202" y="188" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAn-GJ-6HJ">
-                                <rect key="frame" x="195" y="143" width="182" height="56"/>
+                                <rect key="frame" x="202" y="115" width="182" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -273,6 +280,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="UserName" destination="nAn-GJ-6HJ" id="4fS-A5-Yg7"/>
+                        <outlet property="Useremail" destination="Q1P-QP-V4g" id="z2U-vT-pgh"/>
+                        <outlet property="profileImage" destination="0Xo-XY-Ycf" id="k9M-9P-t4n"/>
                         <outlet property="tableview" destination="hRD-o7-8Nj" id="3nj-7V-zn1"/>
                     </connections>
                 </viewController>
