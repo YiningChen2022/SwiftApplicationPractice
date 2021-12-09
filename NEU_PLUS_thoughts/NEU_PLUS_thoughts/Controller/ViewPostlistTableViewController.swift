@@ -10,9 +10,6 @@ import UIKit
 class ViewPostlistTableViewController: UITableViewController {
     var currentEmail:String?
     private var user:User?
-    
- 
-    
     private var posts:[BlogPost]=[]
     private func fetchPosts(){
         guard let email = currentEmail else {

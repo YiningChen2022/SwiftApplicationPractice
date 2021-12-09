@@ -18,30 +18,43 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        //let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell") as! ProfileTableViewCell
         cell.textLabel?.text=data.myTitle[indexPath.row]
-   
+       
         cell.imageView?.image=data.icons[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        DispatchQueue.main.async {
-            let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPostList") as? ViewPostlistTableViewController
-            //vc!.title=self.posts[indexPath.row].title
-            vc!.modalPresentationStyle = .fullScreen
-            self.present (vc!, animated:true)
-        }
+        if data.myTitle[indexPath.row]=="Posts"{
+            DispatchQueue.main.async {
+                let vc=self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? NavigationViewController
+                //vc!.title=self.posts[indexPath.row].title
+                vc!.modalPresentationStyle = .fullScreen
+                self.present (vc!, animated:true)
+            }
+        }else if data.myTitle[indexPath.row]=="Settings"{
+            print("click settings")
+        }else if data.myTitle[indexPath.row]=="Friends"{
+            print("click Friends")}
+       
         
     }
 
- 
+    @IBAction func didClickexplore(_ sender: Any) {
+        
+        
+    }
+    
     
 
     override func viewDidLoad() {
       
         super.viewDidLoad()
-        tableview.register(UITableViewCell.self,
-                                    forCellReuseIdentifier: "cell")
+        //tableview.register(UITableViewCell.self,
+          //                          forCellReuseIdentifier: "cell")
         tableview.dataSource = self
         tableview.delegate = self
         guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
