@@ -86,13 +86,16 @@ class ViewPostlistTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
-              DispatchQueue.main.async {
+       
+             DispatchQueue.main.async {
             let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
-            vc!.title=self.posts[indexPath.row].title
-            vc!.modalPresentationStyle = .fullScreen
+                 ViewPostViewController.init(post:self.posts[indexPath.row])
+            //vc!.title=self.posts[indexPath.row].title
+           
             self.present (vc!, animated:true)
              
         }
+        
     }
         
 
