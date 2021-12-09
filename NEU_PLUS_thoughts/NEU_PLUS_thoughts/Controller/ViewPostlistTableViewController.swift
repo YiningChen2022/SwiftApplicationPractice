@@ -34,11 +34,7 @@ class ViewPostlistTableViewController: UITableViewController {
         fetchUser(email:currentEmail!)
         fetchPosts()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
     }
     
     //fetch User
@@ -52,8 +48,9 @@ class ViewPostlistTableViewController: UITableViewController {
             self?.user = user
         }
     }
+   
     // MARK: - Table view data source
-
+  
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -69,18 +66,32 @@ class ViewPostlistTableViewController: UITableViewController {
         let post=posts[indexPath.row]
         let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text=post.title
-
-        // Configure the cell...
+        cell.detailTextLabel?.text=post.type
+        cell.imageView?.image=data.icons[0]
+        if let url=post.headerImageUrl{
+            let task = URLSession.shared.dataTask(with: url){
+                [weak self] data, _, _ in
+                guard let data = data else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    cell.imageView?.image=UIImage(data: data)
+                }
+            
+        }
+            task.resume()
+        }
 
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
-        DispatchQueue.main.async {
+              DispatchQueue.main.async {
             let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
             vc!.title=self.posts[indexPath.row].title
             vc!.modalPresentationStyle = .fullScreen
             self.present (vc!, animated:true)
+             
         }
     }
         

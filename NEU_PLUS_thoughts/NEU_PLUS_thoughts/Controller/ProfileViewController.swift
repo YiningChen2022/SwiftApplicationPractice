@@ -29,12 +29,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if data.myTitle[indexPath.row]=="Posts"{
-            DispatchQueue.main.async {
+            /*DispatchQueue.main.async {
                 let vc=self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? NavigationViewController
                 //vc!.title=self.posts[indexPath.row].title
                 vc!.modalPresentationStyle = .fullScreen
                 self.present (vc!, animated:true)
-            }
+             
+            }*/
         }else if data.myTitle[indexPath.row]=="Settings"{
             print("click settings")
         }else if data.myTitle[indexPath.row]=="Friends"{

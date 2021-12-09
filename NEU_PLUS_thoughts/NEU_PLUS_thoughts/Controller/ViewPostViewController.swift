@@ -8,7 +8,15 @@
 import UIKit
 
 class ViewPostViewController: UIViewController {
-
+    private let post: BlogPost
+    init (post:BlogPost){
+        self.post=post
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
