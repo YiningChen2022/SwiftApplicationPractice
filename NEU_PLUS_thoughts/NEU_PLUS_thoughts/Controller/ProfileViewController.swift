@@ -121,7 +121,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             
             DispatchQueue.main.async {
                self!.UserName.text=user.name
-                self!.fetchPicture(profulePictureRef: user.profulePictureRef!)
+                self!.fetchPicture(profulePictureRef: user.profulePictureRef ?? "")
             }
           
         }
