@@ -15,12 +15,14 @@ class ViewPostlistTableViewController: UITableViewController {
     
     private var posts:[BlogPost]=[]
     private func fetchPosts(){
-        guard let email = user?.email else {
+        guard let email = currentEmail else {
             return
         }
+        print("Fetching Posts")
         
         DatabaseManager.shared.getPostForUser(for: email){[weak self]
             posts in self?.posts = posts
+            print(posts.count)
             DispatchQueue.main.async{
                 self?.tableView.reloadData()
             }
@@ -31,7 +33,8 @@ class ViewPostlistTableViewController: UITableViewController {
         guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
             return
         }
-        fetchUser(email:currentUserEmail)
+        currentEmail=currentUserEmail
+        fetchUser(email:currentEmail!)
         fetchPosts()
 
         // Uncomment the following line to preserve selection between presentations
@@ -67,7 +70,7 @@ class ViewPostlistTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text=post.title
 
         // Configure the cell...
