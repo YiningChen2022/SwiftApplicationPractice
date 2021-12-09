@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wal-Rj-G19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6675" y="175"/>
+            <point key="canvasLocation" x="7625" y="210"/>
         </scene>
         <!--Moments-->
         <scene sceneID="fA1-ez-G5I">
@@ -577,6 +577,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCT-iF-kkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1850.7246376811595" y="-266.51785714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eYI-1s-eWq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k6f-4x-HF2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XZh-Mu-j07">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4fi-mz-wqw" kind="relationship" relationship="rootViewController" id="boD-FV-NXS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LqD-Jw-wPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6732" y="202"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

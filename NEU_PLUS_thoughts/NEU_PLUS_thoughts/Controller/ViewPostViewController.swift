@@ -13,10 +13,10 @@ class ViewPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleField.text=post.title
+        //titleField.text=post.title
         // Do any additional setup after loading the view.
     }
-    var post:BlogPost
+    private let post:BlogPost
     
     
     init(post:BlogPost){
