@@ -18,17 +18,21 @@ final class DatabaseManager{
         let userEmail=email
             .replacingOccurrences(of: ".", with: "_")
             .replacingOccurrences(of: "@", with: "_")
-        let data = ["id": post.identifier,
+        let data :[String:Any] = ["id": post.identifier,
             "title": post.title,
                     "body": post.text,
                     "created": post.timestamp,
                     "type" :post.type,
-                    "headerImageUrl": post.headerImageUrl?.absoluteString]
+                    "headerImageUrl": post.headerImageUrl?.absoluteString ?? ""]
         
         
-        database.collection("users").document(documentId).setData(data){
-            error in completion(error == nil)
-        }
+        database.collection("users").document(userEmail).collection("posts")
+            .document(post.identifier)
+            .setData(data){
+                error in completion(error == nil)
+            }
+           
+          
         
         
     }
@@ -37,7 +41,45 @@ final class DatabaseManager{
     public func getAllPosts( completion:@escaping([BlogPost])->Void ){
     }
     //getPost for one user
-    public func getPostForUser(for user:User, completion:@escaping([BlogPost])->Void ){
+    public func getPostForUser(for email:String, completion:@escaping([BlogPost])->Void ){
+        //first get the user
+        let userEmail=email
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+        //get all documents
+        //gives dictionary for each doc
+        database.collection("users")
+            .document(userEmail)
+            .collection("posts")
+            .getDocuments{
+                snapshot, error in guard let documents = snapshot?.documents.compactMap({$0.data()}),
+                error == nil else {
+                    return
+                }
+                
+                let posts :[BlogPost] = documents.compactMap({
+                    dictionary in
+                    guard let id=dictionary["id"] as?String,
+                          let title=dictionary["title"] as? String,
+                          let body=dictionary["body"] as? String,
+                          let created=dictionary["created"] as? TimeInterval,
+                          let type=dictionary["type"] as? String,
+                          let headerImageUrl=dictionary["headerImageUrl"] as? String else {
+                              print("invalid post fetch conversion")
+                              return nil
+                          }
+                          
+                         
+                            
+                    let post = BlogPost(identifier: id, title: title, timestamp: created, headerImageUrl: URL(string:headerImageUrl), text: body, type: type)
+                    return post
+                    
+                })
+                completion(posts)
+               
+                
+            }
+        
     }
     
     //insert User

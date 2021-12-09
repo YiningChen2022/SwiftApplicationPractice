@@ -8,14 +8,31 @@
 import UIKit
 
 class ViewPostlistTableViewController: UITableViewController {
-
+    var currentEmail:String?
+    private var user:User?
+    
+ 
     
     private var posts:[BlogPost]=[]
     private func fetchPosts(){
+        guard let email = user?.email else {
+            return
+        }
         
+        DatabaseManager.shared.getPostForUser(for: email){[weak self]
+            posts in self?.posts = posts
+            DispatchQueue.main.async{
+                self?.tableView.reloadData()
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
+            return
+        }
+        fetchUser(email:currentUserEmail)
+        fetchPosts()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,7 +40,18 @@ class ViewPostlistTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    //fetch User
+    private func fetchUser(email:String){
+        DatabaseManager.shared.getUser(email: email){
+            
+            [weak self] user in
+            guard let user = user else{
+                return
+            }
+            self?.user = user
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,6 +68,7 @@ class ViewPostlistTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        cell.textLabel?.text=post.title
 
         // Configure the cell...
 

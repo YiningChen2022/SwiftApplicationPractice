@@ -40,6 +40,10 @@ class CreateNewPsotViewController: UIViewController {
               !body.trimmingCharacters(in: .whitespaces).isEmpty,
               let  headerImage=selectedHeaderImage
         ,let email = UserDefaults.standard.string(forKey: "email") else{
+            let alert = UIAlertController(title:"Enter Post Details", message:"Please enter a title, body and select a image to continue", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style:  .cancel, handler: nil))
+            present(alert,animated: true)
+            
             return
         }
         let postId = UUID().uuidString
@@ -51,21 +55,32 @@ class CreateNewPsotViewController: UIViewController {
             }
             StorageManager.shared.downLoadUrlForPostHeader(email: email, postid: postId){
                 url in guard let headerUrl = url else {
+                    print ("Failed to upload url for Header")
                     return
                 }
-            
-            
-        
         
         // insert of post into DB
         
-        let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: "")
+        let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: "Flea Market")
                 
+                DatabaseManager.shared.insertBlogPost(
+                    post:post, email:email){[ weak self]
+                    posted in guard posted else {
+                        print("Failed to post new Blog Article")
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        let vc=self?.storyboard?.instantiateViewController(withIdentifier: "Home") as? TabBarViewController
+                        vc!.modalPresentationStyle = .fullScreen
+                        self?.present (vc!, animated:true)
+                    }
+                    }
+                }
             }
         }
     }
     
-}
+
 extension  CreateNewPsotViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
