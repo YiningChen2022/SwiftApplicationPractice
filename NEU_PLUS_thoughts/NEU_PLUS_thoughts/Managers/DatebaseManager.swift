@@ -42,7 +42,7 @@ final class DatabaseManager{
         //get all users
         //from each user, get's there posts
         var result:[BlogPost]=[]
-        database.collection("user")
+        database.collection("users")
             .getDocuments{ [ weak self]
                 snapshot, error in
                 guard let documents=snapshot?.documents.compactMap({$0.data()}),
@@ -58,8 +58,11 @@ final class DatabaseManager{
                 }
                 
                 let group = DispatchGroup()
+                
                 for email in emails{
+                    group.enter()
                     self?.getPostForUser(for: email){
+                     
                         userPosts in
                         defer{
                             group.leave()

@@ -440,25 +440,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s2-0G-BmI">
-                                                    <rect key="frame" x="20" y="11" width="33" height="21"/>
+                                                    <rect key="frame" x="88" y="12" width="117" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GK2-yC-tRi">
-                                                    <rect key="frame" x="70" y="11" width="34" height="21"/>
+                                                    <rect key="frame" x="280" y="10" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gq5-y6-2Yr">
-                                                    <rect key="frame" x="208" y="5" width="70" height="33"/>
+                                                    <rect key="frame" x="10" y="5" width="70" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9C1-Le-Jic">
-                                                    <rect key="frame" x="143" y="11" width="59" height="22"/>
+                                                    <rect key="frame" x="213" y="9" width="59" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -469,7 +469,7 @@
                                         <connections>
                                             <outlet property="postimage" destination="gq5-y6-2Yr" id="Vo0-sB-oXU"/>
                                             <outlet property="timefirld" destination="GK2-yC-tRi" id="98D-I6-AWG"/>
-                                            <outlet property="titlefield" destination="KYO-PG-FeO" id="SBl-yI-hz9"/>
+                                            <outlet property="titleFirld" destination="0s2-0G-BmI" id="Oqj-fX-6a5"/>
                                             <outlet property="type" destination="9C1-Le-Jic" id="LdQ-Vw-Ttr"/>
                                         </connections>
                                     </tableViewCell>

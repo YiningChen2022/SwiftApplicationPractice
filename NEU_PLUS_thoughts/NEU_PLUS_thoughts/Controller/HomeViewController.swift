@@ -13,14 +13,16 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(posts.count)
-        return 1
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let post=posts[indexPath.row]
+        let post=posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "home") as! HomePostTableViewCell
-        cell.timefirld.text="1"
-        cell.type.text="1"
+        //cell.timefirld.text=post.timestamp.description
+        cell.type.text=post.type
+        //cell.titleFirld.text=post.title
+        
         //cell.postimage.image=
             // cell.detailTextLabel?.text=post.type
         //cell.imageView?.image=data.icons[0]
@@ -38,7 +40,8 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
             task.resume()
         }
-*/
+        */
+
         return cell
     }
     //Fetch All Posts from user
