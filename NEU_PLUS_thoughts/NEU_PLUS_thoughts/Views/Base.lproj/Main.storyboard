@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820.28985507246387" y="-123.21428571428571"/>
+            <point key="canvasLocation" x="-313" y="-133"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="wPW-jT-Ste">
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k89-aX-Ko9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4615.9420289855079" y="247.76785714285714"/>
+            <point key="canvasLocation" x="4781" y="287"/>
         </scene>
         <!--Posts-->
         <scene sceneID="LJx-Qy-UhL">
@@ -403,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wal-Rj-G19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6602.898550724638" y="204.91071428571428"/>
+            <point key="canvasLocation" x="6851" y="192"/>
         </scene>
         <!--Moments-->
         <scene sceneID="fA1-ez-G5I">
@@ -523,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFN-6N-pXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3960.8695652173915" y="-350.22321428571428"/>
+            <point key="canvasLocation" x="4228" y="-348"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="P9O-iT-G8b">
@@ -585,7 +585,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Hi-Sz-FgG"/>
+        <segue reference="aQI-ce-JgI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="image-asset" width="833" height="833"/>

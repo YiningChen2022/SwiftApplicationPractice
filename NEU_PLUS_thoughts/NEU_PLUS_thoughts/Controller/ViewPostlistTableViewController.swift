@@ -128,6 +128,7 @@ class ViewPostlistTableViewController: UITableViewController {
         let indexPath = tableView.indexPathForSelectedRow
         let detailViewController = segue.destination as! ViewPostViewController
         detailViewController.email = currentEmail
+        //let index = indexPath?.row
         detailViewController.currpost=posts[indexPath!.row]
         
     
