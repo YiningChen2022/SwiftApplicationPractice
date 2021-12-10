@@ -7,11 +7,57 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+    private var posts:[BlogPost]=[]
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post=posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewPostCell") as! ViewPostListTableViewCell
+        cell.title.text=post.title
+        cell.type.text=post.type
+        cell.postimage.image=data.icons[0]
+            // cell.detailTextLabel?.text=post.type
+        //cell.imageView?.image=data.icons[0]
+        if let url=post.headerImageUrl{
+            let task = URLSession.shared.dataTask(with: url){
+                [weak self] data, _, _ in
+                guard let data = data else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    print("fetching image")
+                    cell.postimage.image=UIImage(data: data)
+                }
+            
+        }
+            task.resume()
+        }
 
+        return cell
+    }
+    //Fetch All Posts from user
+    private func fetchAllPosts(){
+        
+        print("Fetching home feed")
+        
+        DatabaseManager.shared.getAllPosts{[weak self] posts in self?.posts = posts
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+            
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.delegate = self
+        fetchAllPosts()
         // Do any additional setup after loading the view.
     }
     
