@@ -19,14 +19,15 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "home") as! HomePostTableViewCell
-        //cell.timefirld.text=post.timestamp.description
+        let time=getDateFromTimeStamp(timeStamp: post.timestamp)
+        cell.timefirld.text=time
         cell.type.text=post.type
-        //cell.titleFirld.text=post.title
+        cell.titleFirld.text=post.title
         
         //cell.postimage.image=
             // cell.detailTextLabel?.text=post.type
-        //cell.imageView?.image=data.icons[0]
-       /* if let url=post.headerImageUrl{
+            //cell.imageView?.image=data.icons[0]
+       if let url=post.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
                 [weak self] data, _, _ in
                 guard let data = data else{
@@ -40,10 +41,22 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
             task.resume()
         }
-        */
+        
 
         return cell
     }
+    func getDateFromTimeStamp(timeStamp : Double) -> String {
+
+            let date = NSDate(timeIntervalSince1970: timeStamp / 1000)
+            
+            let dayTimePeriodFormatter = DateFormatter()
+            dayTimePeriodFormatter.dateFormat = "dd MMM YY, hh:mm a"
+         // UnComment below to get only time
+        //  dayTimePeriodFormatter.dateFormat = "hh:mm a"
+
+            let dateString = dayTimePeriodFormatter.string(from: date as Date)
+            return dateString
+        }
     //Fetch All Posts from user
     private func fetchAllPosts(){
         
