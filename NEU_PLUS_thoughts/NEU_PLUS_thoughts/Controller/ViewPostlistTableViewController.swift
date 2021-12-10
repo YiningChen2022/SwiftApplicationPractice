@@ -64,10 +64,15 @@ class ViewPostlistTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
-        let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text=post.title
-        cell.detailTextLabel?.text=post.type
-        cell.imageView?.image=data.icons[0]
+        /*let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+         
+        */
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewPostCell") as! ViewPostListTableViewCell
+        cell.title.text=post.title
+        cell.type.text=post.type
+        cell.postimage.image=data.icons[0]
+            // cell.detailTextLabel?.text=post.type
+        //cell.imageView?.image=data.icons[0]
         if let url=post.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
                 [weak self] data, _, _ in
@@ -76,7 +81,7 @@ class ViewPostlistTableViewController: UITableViewController {
                 }
                 DispatchQueue.main.async {
                     print("fetching image")
-                    cell.imageView?.image=UIImage(data: data)
+                    cell.postimage.image=UIImage(data: data)
                 }
             
         }
@@ -87,19 +92,23 @@ class ViewPostlistTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
-      
+         ViewPostViewController(post: posts[indexPath.row])
+     
+        /*DispatchQueue.main.async {
+            self.present(vc, animated:true)
+        }*/
        //var vc=(self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController)!
         
         //self.present (vc, animated:true)
         //navigationController?.pushViewController(vc, animated: true)
-        DispatchQueue.main.async { [self] in
+        /*DispatchQueue.main.async { [self] in
             let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
                  ViewPostViewController(post: posts[indexPath.row])
             
            
             self.present (vc!, animated:true)
              
-        }
+        }*/
         
     }
         

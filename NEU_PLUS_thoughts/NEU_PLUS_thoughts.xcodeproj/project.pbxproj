@@ -32,6 +32,7 @@
 		E881C62527615C1000555A0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62427615C1000555A0F /* HomeViewController.swift */; };
 		E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C6272761970E00555A0F /* ProfileTableViewCell.swift */; };
 		E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62B27626EB000555A0F /* NavigationViewController.swift */; };
+		E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		E881C62427615C1000555A0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E881C6272761970E00555A0F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E881C62B27626EB000555A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostListTableViewCell.swift; sourceTree = "<group>"; };
 		EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEU_PLUS_thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				E881C6272761970E00555A0F /* ProfileTableViewCell.swift */,
+				E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */,
 				E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */,
 				E881C60727600A0500555A0F /* SignInViewController.swift in Sources */,
+				E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */,
 				E881C60D27600A3E00555A0F /* CreateNewPsotViewController.swift in Sources */,
 				E881C61B27601A2E00555A0F /* User.swift in Sources */,
 				E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */,
