@@ -33,6 +33,7 @@
 		E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C6272761970E00555A0F /* ProfileTableViewCell.swift */; };
 		E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62B27626EB000555A0F /* NavigationViewController.swift */; };
 		E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */; };
+		E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		E881C6272761970E00555A0F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E881C62B27626EB000555A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostListTableViewCell.swift; sourceTree = "<group>"; };
+		E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 		EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEU_PLUS_thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 			children = (
 				E881C6272761970E00555A0F /* ProfileTableViewCell.swift */,
 				E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */,
+				E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				E881C61B27601A2E00555A0F /* User.swift in Sources */,
 				E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */,
 				E881C603276009BA00555A0F /* ProfileViewController.swift in Sources */,
+				E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */,
 				E881C60F27600A5E00555A0F /* IAPManager.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
 				E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */,

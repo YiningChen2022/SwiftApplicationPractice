@@ -12,18 +12,19 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        posts.count
+        print(posts.count)
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post=posts[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewPostCell") as! ViewPostListTableViewCell
-        cell.title.text=post.title
-        cell.type.text=post.type
-        cell.postimage.image=data.icons[0]
+        //let post=posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "home") as! HomePostTableViewCell
+        cell.timefirld.text="1"
+        cell.type.text="1"
+        //cell.postimage.image=
             // cell.detailTextLabel?.text=post.type
         //cell.imageView?.image=data.icons[0]
-        if let url=post.headerImageUrl{
+       /* if let url=post.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
                 [weak self] data, _, _ in
                 guard let data = data else{
@@ -37,7 +38,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
             task.resume()
         }
-
+*/
         return cell
     }
     //Fetch All Posts from user
