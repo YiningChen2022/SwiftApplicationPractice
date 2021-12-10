@@ -10,13 +10,15 @@ import UIKit
 class ViewPostViewController: UIViewController {
    
     @IBOutlet weak var titleField: UILabel!
-    
+    var email: String!
+    var currpost: BlogPost!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleField.text=post.title
+        titleField.text=email
         // Do any additional setup after loading the view.
     }
-    private let post:BlogPost
+   /* private let post:BlogPost
     
     
     init(post:BlogPost){
@@ -26,6 +28,7 @@ class ViewPostViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    */
 
     /*
     // MARK: - Navigation

@@ -92,7 +92,11 @@ class ViewPostlistTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
-         ViewPostViewController(post: posts[indexPath.row])
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
+        // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+        vc!.email=currentEmail
+        vc?.currpost=posts[indexPath.row]
+         //ViewPostViewController(post: posts[indexPath.row])
      
         /*DispatchQueue.main.async {
             self.present(vc, animated:true)
@@ -112,7 +116,7 @@ class ViewPostlistTableViewController: UITableViewController {
         
     }
         
-
+   
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
