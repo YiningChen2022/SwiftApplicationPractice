@@ -33,7 +33,7 @@ class ViewPostlistTableViewController: UITableViewController {
         currentEmail=currentUserEmail
         fetchUser(email:currentEmail!)
         fetchPosts()
-       // ViewPostViewController(post:posts[indexPath.row])
+      
        
     }
     
@@ -75,6 +75,7 @@ class ViewPostlistTableViewController: UITableViewController {
                     return
                 }
                 DispatchQueue.main.async {
+                    print("fetching image")
                     cell.imageView?.image=UIImage(data: data)
                 }
             
@@ -87,18 +88,18 @@ class ViewPostlistTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
       
-       var vc=(self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController)!
-        //vc(post:posts[indexPath.row])
-        self.present (vc, animated:true)
-        navigationController?.pushViewController(vc, animated: true)
-            /* DispatchQueue.main.async {
+       //var vc=(self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController)!
+        
+        //self.present (vc, animated:true)
+        //navigationController?.pushViewController(vc, animated: true)
+        DispatchQueue.main.async { [self] in
             let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
-                
-            //vc!.title=self.posts[indexPath.row].title
+                 ViewPostViewController(post: posts[indexPath.row])
+            
            
             self.present (vc!, animated:true)
              
-        }*/
+        }
         
     }
         
