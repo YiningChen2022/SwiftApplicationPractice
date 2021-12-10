@@ -13,9 +13,15 @@ class ViewPostViewController: UIViewController {
     var email: String!
     var currpost: BlogPost!
 
+    @IBOutlet weak var body: UILabel!
+    @IBOutlet weak var type: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleField.text=email
+        print(email)
+        titleField.text=currpost.title
+        type.text=currpost.type
+        body.text=currpost.text
+        
         // Do any additional setup after loading the view.
     }
    /* private let post:BlogPost

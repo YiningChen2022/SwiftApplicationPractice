@@ -92,10 +92,19 @@ class ViewPostlistTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
+        self.performSegue(withIdentifier:"SegueId", sender: self)
+   
+      /*  let vc=self.storyboard?.instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
         // Pass on the data to the Detail ViewController by setting it's indexPathRow value
-        vc!.email=currentEmail
+        vc?.email=currentEmail!
+        if segue.identifier == "SegueId"{
+            
+        }
+       
+        let vc = instantiateViewController(withIdentifier: "ViewPost") as? ViewPostViewController
+        print(currentEmail!)
         vc?.currpost=posts[indexPath.row]
+       */
          //ViewPostViewController(post: posts[indexPath.row])
      
         /*DispatchQueue.main.async {
@@ -115,8 +124,15 @@ class ViewPostlistTableViewController: UITableViewController {
         }*/
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = tableView.indexPathForSelectedRow
+        let detailViewController = segue.destination as! ViewPostViewController
+        detailViewController.email = currentEmail
+        detailViewController.currpost=posts[indexPath!.row]
         
+    
    
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

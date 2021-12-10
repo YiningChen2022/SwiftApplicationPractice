@@ -326,7 +326,7 @@
                                     <outlet property="postimage" destination="Isi-oS-pCb" id="zGR-Sx-wx3"/>
                                     <outlet property="title" destination="kzw-bz-xwN" id="nx2-gg-9ha"/>
                                     <outlet property="type" destination="EDl-j8-QQS" id="pUy-aA-nVh"/>
-                                    <segue destination="4fi-mz-wqw" kind="push" id="05f-nk-hzF"/>
+                                    <segue destination="4fi-mz-wqw" kind="push" identifier="SegueId" id="05f-nk-hzF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -366,28 +366,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccC-DN-esW">
-                                <rect key="frame" x="51" y="465" width="74" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="paragraph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS8-v0-0M6">
-                                <rect key="frame" x="91" y="510" width="221" height="188"/>
+                                <rect key="frame" x="51" y="465" width="312" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-rL-6gE">
-                                <rect key="frame" x="174" y="151" width="33" height="21"/>
+                                <rect key="frame" x="174" y="151" width="158" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eD-sl-8zp">
-                                <rect key="frame" x="169" y="240" width="38" height="21"/>
+                                <rect key="frame" x="169" y="240" width="143" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -403,12 +396,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="Smw-LN-9ox"/>
                     <connections>
+                        <outlet property="body" destination="ccC-DN-esW" id="LNJ-NV-GlC"/>
                         <outlet property="titleField" destination="WhY-rL-6gE" id="gwK-Sc-jJd"/>
+                        <outlet property="type" destination="2eD-sl-8zp" id="Cq6-m3-BmP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wal-Rj-G19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6604" y="205"/>
+            <point key="canvasLocation" x="6602.898550724638" y="204.91071428571428"/>
         </scene>
         <!--Moments-->
         <scene sceneID="fA1-ez-G5I">
