@@ -13,28 +13,33 @@ class ViewPostViewController: UIViewController {
     var email: String!
     var currpost: BlogPost!
 
+    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var type: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(email)
+        
         titleField.text=currpost.title
         type.text=currpost.type
         body.text=currpost.text
         
+        if let url=currpost.headerImageUrl{
+            let task = URLSession.shared.dataTask(with: url){
+                [weak self] data, _, _ in
+                guard let data = data else{
+                    return
+                }
+                DispatchQueue.main.async {
+                    print("fetching image")
+                    self!.postImage.image=UIImage(data: data)
+                }
+            
+        }
+            task.resume()
+        }
         // Do any additional setup after loading the view.
     }
-   /* private let post:BlogPost
-    
-    
-    init(post:BlogPost){
-        self.post=post
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    */
+  
 
     /*
     // MARK: - Navigation
