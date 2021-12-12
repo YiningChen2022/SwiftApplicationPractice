@@ -77,7 +77,14 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         fetchAllPosts()
         // Do any additional setup after loading the view.
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = tableView.indexPathForSelectedRow
+        print(posts[indexPath!.row].title)
+        let detailViewController = segue.destination as! ViewPostViewController
+        //detailViewController.email = currentEmail
+
+        detailViewController.currpost=posts[indexPath!.row]
+    }
 
     /*
     // MARK: - Navigation

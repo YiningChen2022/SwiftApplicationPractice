@@ -397,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wal-Rj-G19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6850.7246376811599" y="191.51785714285714"/>
+            <point key="canvasLocation" x="7000" y="-147"/>
         </scene>
         <!--Moments-->
         <scene sceneID="fA1-ez-G5I">
@@ -471,6 +471,7 @@
                                             <outlet property="timefirld" destination="GK2-yC-tRi" id="98D-I6-AWG"/>
                                             <outlet property="titleFirld" destination="0s2-0G-BmI" id="Oqj-fX-6a5"/>
                                             <outlet property="type" destination="9C1-Le-Jic" id="LdQ-Vw-Ttr"/>
+                                            <segue destination="4fi-mz-wqw" kind="show" id="NtJ-Jd-pYS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -563,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFN-6N-pXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4228" y="-348"/>
+            <point key="canvasLocation" x="4419" y="-647"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="P9O-iT-G8b">
@@ -626,6 +627,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aQI-ce-JgI"/>
+        <segue reference="NtJ-Jd-pYS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="image-asset" width="833" height="833"/>
