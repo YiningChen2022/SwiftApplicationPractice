@@ -10,6 +10,7 @@ import UIKit
 class CreateNewPsotViewController: UIViewController {
 
     private var selectedHeaderImage: UIImage?
+    var type:String?
     @IBOutlet weak var titleField: UITextField!
     
     @IBOutlet weak var postTextField: UITextView!
@@ -22,7 +23,18 @@ class CreateNewPsotViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //
+    
 
+    @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 0){
+            type = "Campus Life"
+        }else if sender.selectedSegmentIndex == 1 {
+            type = "Flea Market"
+        }else if sender.selectedSegmentIndex == 2 {
+            type = "Entertainment"
+        }
+    }
     
    
     @objc private func didTapHeader(){
@@ -61,7 +73,7 @@ class CreateNewPsotViewController: UIViewController {
         
         // insert of post into DB
         
-        let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: "Flea Market")
+                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type!)
                 
                 DatabaseManager.shared.insertBlogPost(
                     post:post, email:email){[ weak self]
