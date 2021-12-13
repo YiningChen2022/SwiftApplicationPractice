@@ -48,15 +48,13 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     func getDateFromTimeStamp(timeStamp : Double) -> String {
 
-            let date = NSDate(timeIntervalSince1970: timeStamp / 1000)
-            
-            let dayTimePeriodFormatter = DateFormatter()
-            dayTimePeriodFormatter.dateFormat = "dd MMM YY, hh:mm a"
-         // UnComment below to get only time
-        //  dayTimePeriodFormatter.dateFormat = "hh:mm a"
-
-            let dateString = dayTimePeriodFormatter.string(from: date as Date)
-            return dateString
+        let date = Date(timeIntervalSince1970:timeStamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST") //
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+            return strDate
         }
     //Fetch All Posts from user
     private func fetchAllPosts(){
