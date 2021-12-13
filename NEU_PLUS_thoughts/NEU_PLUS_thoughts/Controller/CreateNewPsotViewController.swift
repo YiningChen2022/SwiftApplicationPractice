@@ -10,9 +10,10 @@ import UIKit
 class CreateNewPsotViewController: UIViewController {
 
     private var selectedHeaderImage: UIImage?
-    var type:String?
+    var type="Campus Life"
     @IBOutlet weak var titleField: UITextField!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var postTextField: UITextView!
     @IBOutlet weak var postImage: UIImageView!
     override func viewDidLoad() {
@@ -20,7 +21,7 @@ class CreateNewPsotViewController: UIViewController {
         postImage.isUserInteractionEnabled=true
         let tap = UITapGestureRecognizer(target: self, action:#selector(didTapHeader))
         postImage.addGestureRecognizer(tap)
-
+        spinner.hidesWhenStopped=true
         // Do any additional setup after loading the view.
     }
     //
@@ -47,6 +48,7 @@ class CreateNewPsotViewController: UIViewController {
     }
 
     @IBAction func didTapPosts(_ sender: Any) {
+        spinner.startAnimating()
         guard let title = titleField.text, !title.trimmingCharacters(in:  .whitespaces).isEmpty,
               let body = postTextField.text,
               !body.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -73,7 +75,7 @@ class CreateNewPsotViewController: UIViewController {
         
         // insert of post into DB
         
-                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type!)
+                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type)
                 
                 DatabaseManager.shared.insertBlogPost(
                     post:post, email:email){[ weak self]

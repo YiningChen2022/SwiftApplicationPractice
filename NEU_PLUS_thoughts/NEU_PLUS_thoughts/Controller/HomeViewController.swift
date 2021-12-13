@@ -11,11 +11,17 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     private var posts:[BlogPost]=[]
     @IBOutlet weak var tableView: UITableView!
     
+
+    @IBOutlet weak var todayDate: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(posts.count)
         return posts.count
     }
-    
+    private static let formatter: DateFormatter = {
+          let formatter = DateFormatter()
+          formatter.dateFormat = "MMM d, h:mm a"
+          return formatter
+      }()
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "home") as! HomePostTableViewCell
@@ -56,6 +62,16 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         let strDate = dateFormatter.string(from: date)
             return strDate
         }
+    func getDateFromTimeStamptoday(timeStamp : Double) -> String {
+
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST") //
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "MMM d, h:mm a" //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+            return strDate
+        }
     //Fetch All Posts from user
     private func fetchAllPosts(){
         
@@ -74,6 +90,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         fetchAllPosts()
+        todayDate.text=getDateFromTimeStamptoday(timeStamp: Date().timeIntervalSince1970)
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,6 +101,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         //detailViewController.email = currentEmail
 
         detailViewController.currpost=posts[indexPath!.row]
+            
         }
     }
 

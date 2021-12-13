@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewPostlistTableViewController: UITableViewController {
+class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpdating,UISearchBarDelegate {
+   
+    var searchController = UISearchController()
+    
+    var filteredposts=[BlogPost]()
     var currentEmail:String?
     private var user:User?
     private var posts:[BlogPost]=[]
@@ -33,8 +37,24 @@ class ViewPostlistTableViewController: UITableViewController {
         currentEmail=currentUserEmail
         fetchUser(email:currentEmail!)
         fetchPosts()
+        initSearchController()
       
        
+    }
+    func  initSearchController(){
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater=self
+        searchController.obscuresBackgroundDuringPresentation=false
+        searchController.searchBar.enablesReturnKeyAutomatically=false
+        searchController.searchBar.returnKeyType=UIReturnKeyType.done
+        definesPresentationContext=true
+        navigationItem.searchController=searchController
+        navigationItem.hidesSearchBarWhenScrolling=false
+        searchController.searchBar.scopeButtonTitles = ["All","Campus Life", "Flea Market" ,"Entertainment"]
+        searchController.searchBar.delegate=self
+        
+        
+        
     }
     
     //fetch User
@@ -58,19 +78,34 @@ class ViewPostlistTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (searchController.isActive){
+            return filteredposts.count
+        }
         return posts.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post=posts[indexPath.row]
+        //let post=posts[indexPath.row]
         /*let cell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
          
         */
+     
+        let post:BlogPost!
+        if (searchController.isActive){
+            post = filteredposts[indexPath.row]
+        }
+        else{
+            post = posts[indexPath.row]
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewPostCell") as! ViewPostListTableViewCell
         cell.title.text=post.title
         cell.type.text=post.type
         cell.postimage.image=data.icons[0]
+        
+        
+        
             // cell.detailTextLabel?.text=post.type
         //cell.imageView?.image=data.icons[0]
         if let url=post.headerImageUrl{
@@ -103,6 +138,30 @@ class ViewPostlistTableViewController: UITableViewController {
 
         detailViewController.currpost=posts[indexPath!.row]
     }
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar=searchController.searchBar
+        let scopeButton=searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        let searchText=searchBar.text!
+        
+        filterForSearchTextandScopeButton(searchText: searchText, scopeButton:scopeButton)
+    }
+    func filterForSearchTextandScopeButton(searchText:String,scopeButton:String="All"){
+        filteredposts=posts.filter{
+            posttype in
+            let scopeMatch=(scopeButton == "All" || posttype.type.lowercased().contains(scopeButton.lowercased()))
+            if (searchController.searchBar.text != ""){
+                let searchTextMatch = posttype.title.lowercased().contains(searchText.lowercased())
+                return scopeMatch && searchTextMatch
+            }
+            else{
+                return scopeMatch
+            }
+            
+            
+        }
+        tableView.reloadData()
+    }
+    
    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = tableView.indexPathForSelectedRow
         let detailViewController = segue.destination as! ViewPostViewController

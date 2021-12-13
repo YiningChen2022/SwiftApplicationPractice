@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E34CCC0710422906F41978C /* Pods_NEU_PLUS_thoughts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */; };
+		E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E82282767A3900053947F /* DiscoverViewController.swift */; };
 		E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C5E6276007ED00555A0F /* AppDelegate.swift */; };
 		E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C5E8276007ED00555A0F /* SceneDelegate.swift */; };
 		E881C5EB276007ED00555A0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C5EA276007ED00555A0F /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		20F40D67DA8B21B554479E69 /* Pods-NEU_PLUS_thoughts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.debug.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.debug.xcconfig"; sourceTree = "<group>"; };
 		786D1612C8BEA1005BB432CA /* Pods-NEU_PLUS_thoughts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.release.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.release.xcconfig"; sourceTree = "<group>"; };
+		E85E82282767A3900053947F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E881C5E3276007ED00555A0F /* NEU_PLUS_thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEU_PLUS_thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E881C5E6276007ED00555A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E881C5E8276007ED00555A0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				E881C6222760896A00555A0F /* ViewPostlistTableViewController.swift */,
 				E881C62427615C1000555A0F /* HomeViewController.swift */,
 				E881C62B27626EB000555A0F /* NavigationViewController.swift */,
+				E85E82282767A3900053947F /* DiscoverViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				E881C603276009BA00555A0F /* ProfileViewController.swift in Sources */,
 				E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */,
 				E881C60F27600A5E00555A0F /* IAPManager.swift in Sources */,
+				E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
 				E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */,
 				E881C60B27600A3200555A0F /* ViewPostViewController.swift in Sources */,
