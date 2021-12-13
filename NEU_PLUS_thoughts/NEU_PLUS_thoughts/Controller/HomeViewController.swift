@@ -21,6 +21,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "home") as! HomePostTableViewCell
         let time=getDateFromTimeStamp(timeStamp: post.timestamp)
         cell.timefirld.text=time
+        print(time)
         cell.type.text=post.type
         cell.titleFirld.text=post.title
         
@@ -78,12 +79,14 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "homepageSegue"){
         let indexPath = tableView.indexPathForSelectedRow
-        print(posts[indexPath!.row].title)
+      
         let detailViewController = segue.destination as! ViewPostViewController
         //detailViewController.email = currentEmail
 
         detailViewController.currpost=posts[indexPath!.row]
+        }
     }
 
     /*

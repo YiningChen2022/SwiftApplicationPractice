@@ -475,7 +475,7 @@
                                             <outlet property="timefirld" destination="GK2-yC-tRi" id="98D-I6-AWG"/>
                                             <outlet property="titleFirld" destination="0s2-0G-BmI" id="Oqj-fX-6a5"/>
                                             <outlet property="type" destination="9C1-Le-Jic" id="LdQ-Vw-Ttr"/>
-                                            <segue destination="4fi-mz-wqw" kind="show" id="NtJ-Jd-pYS"/>
+                                            <segue destination="4fi-mz-wqw" kind="show" identifier="homepageSegue" id="NtJ-Jd-pYS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
