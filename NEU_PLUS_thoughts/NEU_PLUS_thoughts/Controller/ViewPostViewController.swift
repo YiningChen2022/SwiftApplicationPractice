@@ -31,7 +31,7 @@ class ViewPostViewController: UIViewController {
                 }
                 DispatchQueue.main.async {
                     print("fetching image")
-                    self!.postImage.image=UIImage(data: data)
+                    self?.postImage.image=UIImage(data: data)
                 }
             
         }
