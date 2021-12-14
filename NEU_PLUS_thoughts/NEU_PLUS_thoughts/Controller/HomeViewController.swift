@@ -35,24 +35,9 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         cell.titleFirld.text=post.title
          currentUserEmail=UserDefaults.standard.string(forKey:"email") 
        
-        cell.userfield.text=currentUserEmail
+        cell.userfield.text=post.postUser
         
-      /*  private func fetchProgileData(email:String){
-            DatabaseManager.shared.getUser(email: email){
-                [weak self] user in
-                guard let user = user else{
-                    return
-                }
-                self?.user = user
-                
-                DispatchQueue.main.async {
-                   self!.UserName.text=user.name
-                    self!.fetchPicture(profulePictureRef: user.profulePictureRef ?? "")
-                }
-              
-            }
-        }
-        */
+     
         //cell.postimage.image=
             // cell.detailTextLabel?.text=post.type
             //cell.imageView?.image=data.icons[0]
@@ -100,6 +85,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         print("Fetching home feed")
         
         DatabaseManager.shared.getAllPosts{[weak self] posts in self?.posts = posts
+            self?.posts = posts.sorted{ $0.timestamp > $1.timestamp }
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
