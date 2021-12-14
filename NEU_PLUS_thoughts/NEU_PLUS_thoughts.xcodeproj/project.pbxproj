@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E34CCC0710422906F41978C /* Pods_NEU_PLUS_thoughts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8BABFECC3C85E830E3B3BD /* Pods_NEU_PLUS_thoughts.framework */; };
 		E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E82282767A3900053947F /* DiscoverViewController.swift */; };
+		E85E822B276945F20053947F /* ViewInCampusLifeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */; };
+		E85E822D276949A00053947F /* CampuslifeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */; };
 		E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C5E6276007ED00555A0F /* AppDelegate.swift */; };
 		E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C5E8276007ED00555A0F /* SceneDelegate.swift */; };
 		E881C5EB276007ED00555A0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C5EA276007ED00555A0F /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 		20F40D67DA8B21B554479E69 /* Pods-NEU_PLUS_thoughts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.debug.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.debug.xcconfig"; sourceTree = "<group>"; };
 		786D1612C8BEA1005BB432CA /* Pods-NEU_PLUS_thoughts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.release.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.release.xcconfig"; sourceTree = "<group>"; };
 		E85E82282767A3900053947F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInCampusLifeTableViewController.swift; sourceTree = "<group>"; };
+		E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampuslifeTableViewCell.swift; sourceTree = "<group>"; };
 		E881C5E3276007ED00555A0F /* NEU_PLUS_thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEU_PLUS_thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E881C5E6276007ED00555A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E881C5E8276007ED00555A0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				E881C62427615C1000555A0F /* HomeViewController.swift */,
 				E881C62B27626EB000555A0F /* NavigationViewController.swift */,
 				E85E82282767A3900053947F /* DiscoverViewController.swift */,
+				E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				E881C6272761970E00555A0F /* ProfileTableViewCell.swift */,
 				E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */,
 				E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */,
+				E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -340,7 +346,9 @@
 				E881C60B27600A3200555A0F /* ViewPostViewController.swift in Sources */,
 				E881C61127600A7300555A0F /* DatebaseManager.swift in Sources */,
 				E881C61527600A9100555A0F /* StorageManager.swift in Sources */,
+				E85E822B276945F20053947F /* ViewInCampusLifeTableViewController.swift in Sources */,
 				E881C61F2760442F00555A0F /* Data.swift in Sources */,
+				E85E822D276949A00053947F /* CampuslifeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
