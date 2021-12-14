@@ -21,7 +21,10 @@ class ViewPostViewController: UIViewController {
         
         titleField.text=currpost.title
         type.text=currpost.type
+      
         body.text=currpost.text
+        body.numberOfLines=10
+        //body.sizeToFit()
         
         if let url=currpost.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
