@@ -401,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wal-Rj-G19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7745" y="-198"/>
+            <point key="canvasLocation" x="5339" y="1225"/>
         </scene>
         <!--Moments-->
         <scene sceneID="fA1-ez-G5I">
@@ -686,11 +686,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CampusLife" id="Vew-3u-haF" customClass="CampuslifeTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CampusLife" id="Vew-3u-haF" customClass="CampuslifeTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vew-3u-haF" id="guj-6E-hyU">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WS-gT-UzC">
@@ -733,6 +733,7 @@
                                     <outlet property="titlefield" destination="8WS-gT-UzC" id="NRc-4d-mgj"/>
                                     <outlet property="typefield" destination="Wr1-hD-SKP" id="9fp-5k-e4g"/>
                                     <outlet property="userNameField" destination="RgY-PZ-5Kz" id="YnE-G2-sLB"/>
+                                    <segue destination="4fi-mz-wqw" kind="push" identifier="campuslife" id="cbP-UF-ZgX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -745,7 +746,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlB-bw-Vre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3656.521739130435" y="692.41071428571422"/>
+            <point key="canvasLocation" x="4212" y="1226"/>
         </scene>
         <!--Profile-->
         <scene sceneID="I5H-f2-KoB">
@@ -808,7 +809,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="aQI-ce-JgI"/>
-        <segue reference="05f-nk-hzF"/>
+        <segue reference="cbP-UF-ZgX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Campus" width="820" height="820"/>

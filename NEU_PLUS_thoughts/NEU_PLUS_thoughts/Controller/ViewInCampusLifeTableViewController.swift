@@ -21,13 +21,14 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
         print("Fetching home feed")
         
         DatabaseManager.shared.getAllPosts{[weak self] posts in self?.posts = posts
-            self?.posts = posts.sorted{ $0.timestamp > $1.timestamp }
+            
             self?.posts=posts.filter{
                 posttype in
                 let scopeMatch=( posttype.type.lowercased().contains("Campus Life".lowercased()))
 
                     return scopeMatch
                 }
+            self?.posts = posts.sorted{ $0.timestamp > $1.timestamp }
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
@@ -65,7 +66,7 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
         definesPresentationContext=true
         navigationItem.searchController=searchController
         navigationItem.hidesSearchBarWhenScrolling=false
-        searchController.searchBar.scopeButtonTitles = ["All","Campus Life", "Flea Market" ,"Entertainment"]
+        searchController.searchBar.scopeButtonTitles = ["All","roommate", "Airport" ,"apt","house"]
         searchController.searchBar.delegate=self
         
         
@@ -154,7 +155,7 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
     func filterForSearchTextandScopeButton(searchText:String,scopeButton:String="All"){
         filteredposts=posts.filter{
             posttype in
-            let scopeMatch=(scopeButton == "All" || posttype.type.lowercased().contains(scopeButton.lowercased()))
+            let scopeMatch=(scopeButton == "All" || posttype.text.lowercased().contains(scopeButton.lowercased())||posttype.title.lowercased().contains(scopeButton.lowercased()))
             if (searchController.searchBar.text != ""){
                 let searchTextMatch = posttype.title.lowercased().contains(searchText.lowercased())
                 return scopeMatch && searchTextMatch
@@ -167,4 +168,26 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
         }
         tableView.reloadData()
     }
+    //segue to detail post view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "campuslife"){
+        
+                let indexPath = tableView.indexPathForSelectedRow
+                print(posts[indexPath!.row].title)
+                let detailViewController = segue.destination as! ViewPostViewController
+                detailViewController.email = currentEmail
+
+                let post:BlogPost!
+                if (searchController.isActive){
+                    post = filteredposts[indexPath!.row]
+                }
+                else{
+                    post = posts[indexPath!.row]
+                }
+                detailViewController.currpost=post
+            }
+        }
+    
+
 }

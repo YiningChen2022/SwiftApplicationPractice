@@ -137,7 +137,14 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
         let detailViewController = segue.destination as! ViewPostViewController
         detailViewController.email = currentEmail
 
-        detailViewController.currpost=posts[indexPath!.row]
+        let post:BlogPost!
+        if (searchController.isActive){
+            post = filteredposts[indexPath!.row]
+        }
+        else{
+            post = posts[indexPath!.row]
+        }
+        detailViewController.currpost=post
     }
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar=searchController.searchBar
