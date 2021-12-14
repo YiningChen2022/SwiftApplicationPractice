@@ -23,6 +23,7 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
         
         DatabaseManager.shared.getPostForUser(for: email){[weak self]
             posts in self?.posts = posts
+            self?.posts = posts.sorted{ $0.timestamp > $1.timestamp }
             print(posts.count)
             DispatchQueue.main.async{
                 self?.tableView.reloadData()
