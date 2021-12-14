@@ -33,7 +33,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     //init the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(posts.count)
+
         return posts.count
     }
     
