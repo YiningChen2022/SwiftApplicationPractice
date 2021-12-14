@@ -458,7 +458,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9C1-Le-Jic">
-                                                    <rect key="frame" x="80" y="41" width="110" height="36"/>
+                                                    <rect key="frame" x="80" y="17" width="110" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -475,6 +475,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t43-Ir-nXq">
+                                                    <rect key="frame" x="80" y="50" width="36" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -482,6 +489,7 @@
                                             <outlet property="timefirld" destination="GK2-yC-tRi" id="98D-I6-AWG"/>
                                             <outlet property="titleFirld" destination="0s2-0G-BmI" id="Oqj-fX-6a5"/>
                                             <outlet property="type" destination="9C1-Le-Jic" id="LdQ-Vw-Ttr"/>
+                                            <outlet property="userfield" destination="t43-Ir-nXq" id="7wJ-t5-P5C"/>
                                             <segue destination="4fi-mz-wqw" kind="show" identifier="homepageSegue" id="NtJ-Jd-pYS"/>
                                         </connections>
                                     </tableViewCell>
@@ -637,24 +645,36 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Entertainment" image="Enter"/>
+                                <connections>
+                                    <segue destination="HRN-ry-9fa" kind="show" id="fnw-32-X93"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wE-lj-J3r">
                                 <rect key="frame" x="219" y="146" width="178" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Flea Market" image="Flea Market"/>
+                                <connections>
+                                    <segue destination="HRN-ry-9fa" kind="show" id="YMg-Gx-hDC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e5-1p-xE7">
                                 <rect key="frame" x="20" y="157" width="178" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Campus life" image="Campus"/>
+                                <connections>
+                                    <segue destination="HRN-ry-9fa" kind="show" id="Idp-A2-aID"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbz-mG-p8s">
                                 <rect key="frame" x="219" y="320" width="178" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Tech" image="Tech"/>
+                                <connections>
+                                    <segue destination="HRN-ry-9fa" kind="show" id="UjR-3s-C1i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jVa-YI-Zb2"/>
@@ -689,10 +709,11 @@
                             <outlet property="delegate" destination="HRN-ry-9fa" id="X4g-0X-ZBy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="bqI-dI-Jsb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OlB-bw-Vre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3609" y="751"/>
+            <point key="canvasLocation" x="3862" y="751"/>
         </scene>
         <!--Profile-->
         <scene sceneID="I5H-f2-KoB">
@@ -754,6 +775,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="UjR-3s-C1i"/>
         <segue reference="aQI-ce-JgI"/>
         <segue reference="NtJ-Jd-pYS"/>
     </inferredMetricsTieBreakers>

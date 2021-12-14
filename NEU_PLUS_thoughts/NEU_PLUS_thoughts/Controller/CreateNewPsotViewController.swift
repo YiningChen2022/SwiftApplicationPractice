@@ -12,7 +12,7 @@ class CreateNewPsotViewController: UIViewController {
     private var selectedHeaderImage: UIImage?
     var type="Campus Life"
     @IBOutlet weak var titleField: UITextField!
-    
+    var user:User?
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var postTextField: UITextView!
     @IBOutlet weak var postImage: UIImageView!
@@ -22,6 +22,11 @@ class CreateNewPsotViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action:#selector(didTapHeader))
         postImage.addGestureRecognizer(tap)
         spinner.hidesWhenStopped=true
+        guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
+            return
+        }
+        fetchProgileData(email:currentUserEmail)
+        
         // Do any additional setup after loading the view.
     }
     //
@@ -46,6 +51,18 @@ class CreateNewPsotViewController: UIViewController {
         
         
     }
+    private func fetchProgileData(email:String){
+        DatabaseManager.shared.getUser(email: email){
+            [weak self] user in
+            guard let user = user else{
+                return
+            }
+            self?.user = user
+            
+           
+        }
+    }
+    
 
     @IBAction func didTapPosts(_ sender: Any) {
         spinner.startAnimating()
@@ -67,15 +84,15 @@ class CreateNewPsotViewController: UIViewController {
             guard success else {
                 return
             }
-            StorageManager.shared.downLoadUrlForPostHeader(email: email, postid: postId){
+            StorageManager.shared.downLoadUrlForPostHeader(email: email, postid: postId){ [self]
                 url in guard let headerUrl = url else {
                     print ("Failed to upload url for Header")
                     return
                 }
         
         // insert of post into DB
-        
-                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type)
+              
+                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type, postUser: self.user?.name)
                 
                 DatabaseManager.shared.insertBlogPost(
                     post:post, email:email){[ weak self]

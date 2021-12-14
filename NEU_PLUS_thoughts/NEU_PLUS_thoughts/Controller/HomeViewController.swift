@@ -10,8 +10,9 @@ import UIKit
 class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     private var posts:[BlogPost]=[]
     @IBOutlet weak var tableView: UITableView!
-    
+    var  currentUserEmail:String?
 
+    @IBOutlet weak var curruser: UILabel!
     @IBOutlet weak var todayDate: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(posts.count)
@@ -22,6 +23,8 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
           formatter.dateFormat = "MMM d, h:mm a"
           return formatter
       }()
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "home") as! HomePostTableViewCell
@@ -30,7 +33,26 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         print(time)
         cell.type.text=post.type
         cell.titleFirld.text=post.title
+         currentUserEmail=UserDefaults.standard.string(forKey:"email") 
+       
+        cell.userfield.text=currentUserEmail
         
+      /*  private func fetchProgileData(email:String){
+            DatabaseManager.shared.getUser(email: email){
+                [weak self] user in
+                guard let user = user else{
+                    return
+                }
+                self?.user = user
+                
+                DispatchQueue.main.async {
+                   self!.UserName.text=user.name
+                    self!.fetchPicture(profulePictureRef: user.profulePictureRef ?? "")
+                }
+              
+            }
+        }
+        */
         //cell.postimage.image=
             // cell.detailTextLabel?.text=post.type
             //cell.imageView?.image=data.icons[0]
@@ -87,6 +109,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         tableView.dataSource = self
         tableView.delegate = self
         fetchAllPosts()

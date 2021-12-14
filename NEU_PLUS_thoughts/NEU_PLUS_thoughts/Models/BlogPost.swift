@@ -14,5 +14,6 @@ struct BlogPost{
     let headerImageUrl: URL?
     let text:String
     let type:String
+    let postUser:String?
     
 }

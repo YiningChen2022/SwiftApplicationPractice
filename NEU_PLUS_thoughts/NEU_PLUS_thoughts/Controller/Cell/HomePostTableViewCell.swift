@@ -13,6 +13,8 @@ class HomePostTableViewCell: UITableViewCell {
     @IBOutlet weak var postimage: UIImageView!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var timefirld: UILabel!
+    
+    @IBOutlet weak var userfield: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
