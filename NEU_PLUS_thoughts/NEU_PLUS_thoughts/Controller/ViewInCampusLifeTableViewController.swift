@@ -22,6 +22,12 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
         
         DatabaseManager.shared.getAllPosts{[weak self] posts in self?.posts = posts
             self?.posts = posts.sorted{ $0.timestamp > $1.timestamp }
+            self?.posts=posts.filter{
+                posttype in
+                let scopeMatch=( posttype.type.lowercased().contains("Campus Life".lowercased()))
+
+                    return scopeMatch
+                }
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
