@@ -55,7 +55,7 @@ class ViewEntertainmentTableViewController: UITableViewController ,UISearchResul
         definesPresentationContext=true
         navigationItem.searchController=searchController
         navigationItem.hidesSearchBarWhenScrolling=false
-        searchController.searchBar.scopeButtonTitles = ["All","TextBook", "Car" ,"furniture","second hand"]
+        searchController.searchBar.scopeButtonTitles = ["All","Game", "trip" ,"Movie","Spots"]
         searchController.searchBar.delegate=self
         
         
@@ -118,16 +118,16 @@ class ViewEntertainmentTableViewController: UITableViewController ,UISearchResul
             post = posts[indexPath.row]
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "fleamarket") as! FleaMarketTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ent") as! EntertainmentTableViewCell
         let time=getDateFromTimeStamp(timeStamp: post.timestamp)
         //cell.timefirld.text=time
-        cell.fleaTime.text = time
-        cell.fleaType.text=post.type
-        cell.FleaTitle.text=post.title
-        cell.fleauser.text=post.postUser
+        cell.enttime.text = time
+        cell.enttype.text=post.type
+        cell.enttitle.text=post.title
+        cell.EntUser.text=post.postUser
         //cell.imageView?.layer.cornerRadius = 4;
 
-        cell.fleaimage?.image=data.icons[0]
+        cell.entimageview?.image=data.icons[0]
         if let url=post.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
                 [weak self] data, _, _ in
@@ -137,7 +137,7 @@ class ViewEntertainmentTableViewController: UITableViewController ,UISearchResul
                 DispatchQueue.main.async {
                     print("fetching image")
                     
-                    cell.fleaimage?.image=UIImage(data: data)
+                    cell.entimageview?.image=UIImage(data: data)
                 }
             
         }

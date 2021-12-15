@@ -698,16 +698,16 @@
             </objects>
             <point key="canvasLocation" x="2808.6956521739135" y="750.66964285714278"/>
         </scene>
-        <!--Table View Controller-->
+        <!--View Entertainment Table View Controller-->
         <scene sceneID="9GA-i6-O58">
             <objects>
-                <tableViewController id="fwI-2r-qMc" sceneMemberID="viewController">
+                <tableViewController id="fwI-2r-qMc" customClass="ViewEntertainmentTableViewController" customModule="NEU_PLUS_thoughts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lin-of-q6z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="SZV-WG-Egx" customClass="EntertainmentTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ent" rowHeight="120" id="SZV-WG-Egx" customClass="EntertainmentTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SZV-WG-Egx" id="2LD-YE-kZN">
