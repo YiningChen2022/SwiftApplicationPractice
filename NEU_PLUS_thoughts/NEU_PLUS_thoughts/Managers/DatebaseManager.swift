@@ -180,5 +180,10 @@ final class DatabaseManager{
         }
         
     }
+    public func removePost (Postid:String){
+         database.collection("posts").document(Postid).delete()
+        
+        
+    }
     
 }

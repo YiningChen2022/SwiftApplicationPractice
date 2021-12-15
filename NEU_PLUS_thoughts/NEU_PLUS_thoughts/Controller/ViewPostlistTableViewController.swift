@@ -6,9 +6,9 @@
 //
 
 import UIKit
-
+import FirebaseFirestore
 class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpdating,UISearchBarDelegate {
-   
+    let db = Firestore.firestore()
     var searchController = UISearchController()
     
     var filteredposts=[BlogPost]()
@@ -32,6 +32,8 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem=self.editButtonItem
+        
         guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
             return
         }
@@ -169,6 +171,17 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
         }
         tableView.reloadData()
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let toRemove = posts[indexPath.row]
+            DatabaseManager.shared.removePost(Postid: toRemove.identifier)
+          
+            fetchPosts()
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
     
    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = tableView.indexPathForSelectedRow
