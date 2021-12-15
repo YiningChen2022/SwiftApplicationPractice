@@ -35,6 +35,10 @@
 		E881C62527615C1000555A0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62427615C1000555A0F /* HomeViewController.swift */; };
 		E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C6272761970E00555A0F /* ProfileTableViewCell.swift */; };
 		E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62B27626EB000555A0F /* NavigationViewController.swift */; };
+		E8ADDFB5276A88F300CE1141 /* ViewFleaMarketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */; };
+		E8ADDFB7276A895300CE1141 /* FleaMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFB6276A895300CE1141 /* FleaMarketTableViewCell.swift */; };
+		E8ADDFB9276A8E2C00CE1141 /* EntertainmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFB8276A8E2C00CE1141 /* EntertainmentTableViewCell.swift */; };
+		E8ADDFBB276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */; };
 		E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */; };
 		E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +76,10 @@
 		E881C62427615C1000555A0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E881C6272761970E00555A0F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E881C62B27626EB000555A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFleaMarketTableViewController.swift; sourceTree = "<group>"; };
+		E8ADDFB6276A895300CE1141 /* FleaMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleaMarketTableViewCell.swift; sourceTree = "<group>"; };
+		E8ADDFB8276A8E2C00CE1141 /* EntertainmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertainmentTableViewCell.swift; sourceTree = "<group>"; };
+		E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntertainmentTableViewController.swift; sourceTree = "<group>"; };
 		E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostListTableViewCell.swift; sourceTree = "<group>"; };
 		E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +170,8 @@
 				E881C62B27626EB000555A0F /* NavigationViewController.swift */,
 				E85E82282767A3900053947F /* DiscoverViewController.swift */,
 				E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */,
+				E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */,
+				E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +214,8 @@
 				E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */,
 				E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */,
 				E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */,
+				E8ADDFB6276A895300CE1141 /* FleaMarketTableViewCell.swift */,
+				E8ADDFB8276A8E2C00CE1141 /* EntertainmentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -325,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E881C61D27601A3B00555A0F /* BlogPost.swift in Sources */,
+				E8ADDFB7276A895300CE1141 /* FleaMarketTableViewCell.swift in Sources */,
 				E881C6232760896A00555A0F /* ViewPostlistTableViewController.swift in Sources */,
 				E881C5EB276007ED00555A0F /* ViewController.swift in Sources */,
 				E881C61327600A8400555A0F /* AuthManager.swift in Sources */,
@@ -343,9 +356,12 @@
 				E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
 				E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */,
+				E8ADDFBB276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift in Sources */,
 				E881C60B27600A3200555A0F /* ViewPostViewController.swift in Sources */,
 				E881C61127600A7300555A0F /* DatebaseManager.swift in Sources */,
 				E881C61527600A9100555A0F /* StorageManager.swift in Sources */,
+				E8ADDFB5276A88F300CE1141 /* ViewFleaMarketTableViewController.swift in Sources */,
+				E8ADDFB9276A8E2C00CE1141 /* EntertainmentTableViewCell.swift in Sources */,
 				E85E822B276945F20053947F /* ViewInCampusLifeTableViewController.swift in Sources */,
 				E881C61F2760442F00555A0F /* Data.swift in Sources */,
 				E85E822D276949A00053947F /* CampuslifeTableViewCell.swift in Sources */,

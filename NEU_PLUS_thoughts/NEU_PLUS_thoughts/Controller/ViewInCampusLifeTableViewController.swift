@@ -28,7 +28,7 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
 
                     return scopeMatch
                 }
-            self?.posts = posts.sorted{ $0.timestamp > $1.timestamp }
+            self?.posts = (self?.posts.sorted{ $0.timestamp > $1.timestamp })!
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
