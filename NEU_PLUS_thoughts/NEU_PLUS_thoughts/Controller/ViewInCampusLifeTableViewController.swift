@@ -117,7 +117,8 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
         cell.typefield.text=post.type
         cell.titlefield.text=post.title
         cell.userNameField.text=post.postUser
-        
+        cell.imageView?.layer.cornerRadius = 4;
+        //cell.imageView?.layer.masksToBounds = YES;
         
             // cell.detailTextLabel?.text=post.type
         //cell.imageView?.image=data.icons[0]
@@ -129,6 +130,7 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
                 }
                 DispatchQueue.main.async {
                     print("fetching image")
+                    
                     cell.imageView?.image=UIImage(data: data)
                 }
             
