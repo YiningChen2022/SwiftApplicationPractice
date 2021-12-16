@@ -9,6 +9,7 @@ import UIKit
 
 class CreateNewPsotViewController: UIViewController {
 
+    @IBOutlet weak var backg: UIImageView!
     private var selectedHeaderImage: UIImage?
     var type="Campus Life"
     @IBOutlet weak var titleField: UITextField!
@@ -18,6 +19,13 @@ class CreateNewPsotViewController: UIViewController {
     @IBOutlet weak var postImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backg.layer.shadowColor = UIColor.black.cgColor
+        backg.layer.shadowRadius = 3.0
+        backg.layer.shadowOpacity = 1.0
+        backg.layer.shadowOffset = CGSize(width: 4, height: 4)
+        backg.layer.masksToBounds = false
+        backg.layer.cornerRadius = 30
+        backg.clipsToBounds = true
         postImage.isUserInteractionEnabled=true
         let tap = UITapGestureRecognizer(target: self, action:#selector(didTapHeader))
         postImage.addGestureRecognizer(tap)

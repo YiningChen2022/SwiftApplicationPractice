@@ -6,13 +6,26 @@
 //
 
 import UIKit
-
+import AVFoundation
 class DiscoverViewController: UIViewController {
 
+    @IBOutlet weak var FleaiMAGE: UIImageView!
+    
+    @IBOutlet weak var compusimage: UIImageView!
+    
+    
+    @IBOutlet weak var entimage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        compusimage.layer.cornerRadius = 30
+        compusimage.clipsToBounds = true
+       
+        
+        FleaiMAGE.layer.cornerRadius = 30
+        FleaiMAGE.clipsToBounds = true
+        
+        entimage.layer.cornerRadius = 30
+        entimage.clipsToBounds = true
     }
     
 
@@ -26,4 +39,12 @@ class DiscoverViewController: UIViewController {
     }
     */
 
+}
+extension NSAttributedString{
+    static func makeHyperlink(for path:String, as substring:String)->NSAttributedString{
+        let nsString = NSString(string:string)
+        let substringRange=NSMutableAttributedString(string: string)
+        attributedString.addAttributes(.link,value:path, range: substringRange)
+        return attributedSubstring(from: <#T##NSRange#>)
+    }
 }

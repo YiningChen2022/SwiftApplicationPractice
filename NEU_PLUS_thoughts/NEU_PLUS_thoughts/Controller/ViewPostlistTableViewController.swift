@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpdating,UISearchBarDelegate {
-    let db = Firestore.firestore()
+ 
     var searchController = UISearchController()
     
     var filteredposts=[BlogPost]()

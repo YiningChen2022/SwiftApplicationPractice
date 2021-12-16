@@ -13,15 +13,21 @@ class ViewPostViewController: UIViewController {
     var email: String!
     var currpost: BlogPost!
 
+  
+    
+    @IBOutlet weak var postusername: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var type: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         titleField.text=currpost.title
         type.text=currpost.type
-      
+        postusername.text=currpost.postUser
+        
+        postImage.layer.cornerRadius = 30
+        postImage.clipsToBounds = true
         body.text=currpost.text
         body.numberOfLines=10
         //body.sizeToFit()

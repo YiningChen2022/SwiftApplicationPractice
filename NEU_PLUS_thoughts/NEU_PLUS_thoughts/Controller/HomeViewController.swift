@@ -36,6 +36,11 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
 
         return posts.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
+     
+        
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post=posts[indexPath.row]
@@ -100,6 +105,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         tableView.delegate = self
         fetchAllPosts()
         todayDate.text=getDateFromTimeStamptoday(timeStamp: Date().timeIntervalSince1970)
+
      
     }
     //segue to detail post view

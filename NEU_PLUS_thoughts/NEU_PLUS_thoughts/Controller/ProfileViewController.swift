@@ -8,6 +8,9 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var backg: UIImageView!
+    
     var currentEmail:String?
     @IBOutlet weak var Useremail: UILabel!
     private var user:User?
@@ -58,6 +61,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
           //                          forCellReuseIdentifier: "cell")
         tableview.dataSource = self
         tableview.delegate = self
+        profileImage.layer.cornerRadius = 30
+        profileImage.clipsToBounds = true
+        backg.layer.cornerRadius=30
+        backg.clipsToBounds = true
         guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
             return
         }
