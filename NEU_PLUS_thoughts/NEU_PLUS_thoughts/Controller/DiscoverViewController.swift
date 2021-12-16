@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Foundation
 class DiscoverViewController: UIViewController {
 
     @IBOutlet weak var FleaiMAGE: UIImageView!
@@ -40,11 +41,4 @@ class DiscoverViewController: UIViewController {
     */
 
 }
-extension NSAttributedString{
-    static func makeHyperlink(for path:String, as substring:String)->NSAttributedString{
-        let nsString = NSString(string:string)
-        let substringRange=NSMutableAttributedString(string: string)
-        attributedString.addAttributes(.link,value:path, range: substringRange)
-        return attributedSubstring(from: <#T##NSRange#>)
-    }
-}
+
