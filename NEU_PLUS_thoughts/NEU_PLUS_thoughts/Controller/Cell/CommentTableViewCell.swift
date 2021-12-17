@@ -9,7 +9,7 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var commentuser: UIImageView!
+
     @IBOutlet weak var User: UILabel!
     
     @IBOutlet weak var commenttime: UILabel!

@@ -206,5 +206,17 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+           
+               
+                let detailViewController = segue.destination as! ViewCommentsTableViewController
+                detailViewController.comments=comments
+
+                
+              
+            
+        }
 
 }
