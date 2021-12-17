@@ -44,6 +44,8 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     @IBAction func didTapRefresh(_ sender: Any) {
         fetchAllPosts()
+        todayDate.text=getDateFromTimeStamptoday(timeStamp: Date().timeIntervalSince1970)
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,8 +68,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
        
         cell.userfield.text=post.postUser
         
-        cell.postimage.layer.cornerRadius = 30
-        cell.postimage.clipsToBounds = true
+       
 //fetching image
        if let url=post.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){

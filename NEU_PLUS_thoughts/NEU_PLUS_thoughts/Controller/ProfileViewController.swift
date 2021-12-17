@@ -28,10 +28,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.imageView?.image=data.icons[indexPath.row]
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         if data.myTitle[indexPath.row]=="Posts"{
-           
+            /*DispatchQueue.main.async {
+                let vc=self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? NavigationViewController
+                //vc!.title=self.posts[indexPath.row].title
+                vc!.modalPresentationStyle = .fullScreen
+                self.present (vc!, animated:true)
+             
+            }*/
         }else if data.myTitle[indexPath.row]=="Settings"{
             print("click settings")
         }else if data.myTitle[indexPath.row]=="Friends"{
@@ -40,11 +45,18 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
 
+    @IBAction func didClickexplore(_ sender: Any) {
+        
+        
+    }
+    
+    
 
     override func viewDidLoad() {
       
         super.viewDidLoad()
-        
+        //tableview.register(UITableViewCell.self,
+          //                          forCellReuseIdentifier: "cell")
         tableview.dataSource = self
         tableview.delegate = self
         profileImage.layer.cornerRadius = 30

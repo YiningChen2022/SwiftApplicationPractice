@@ -19,7 +19,7 @@ class FleaMarketTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        fleaimage.layer.cornerRadius = 30
+        fleaimage.layer.cornerRadius = 25
         fleaimage.clipsToBounds = true
     }
 

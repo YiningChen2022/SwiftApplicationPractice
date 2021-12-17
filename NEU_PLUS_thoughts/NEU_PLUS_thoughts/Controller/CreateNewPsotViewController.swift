@@ -124,12 +124,15 @@ class CreateNewPsotViewController: UIViewController {
     
 
 extension  CreateNewPsotViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.originalImage] as? UIImage else{
+        guard let image = info[.editedImage] as? UIImage else{
             return }
          selectedHeaderImage = image
             postImage.image = image

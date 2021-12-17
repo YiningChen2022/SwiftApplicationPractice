@@ -16,7 +16,7 @@ class ViewPostListTableViewCell: UITableViewCell {
     @IBOutlet weak var type: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        postimage.layer.cornerRadius = 30
+        postimage.layer.cornerRadius = 25
         postimage.clipsToBounds = true
         // Initialization code
     }

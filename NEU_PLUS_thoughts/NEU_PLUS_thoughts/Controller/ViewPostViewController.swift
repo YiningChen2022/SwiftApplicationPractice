@@ -43,7 +43,7 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
             cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text=currpost.postUser
+            cell.textLabel?.text="By: \(currpost.postUser!)"
             cell.selectionStyle = .none
             cell.textLabel?.font=UIFont(name:"Menlo", size:18)
             return cell
@@ -57,12 +57,18 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
             cell.textLabel?.numberOfLines = 0
-   
+            cell.textLabel?.font=UIFont(name:"Menlo", size:18)
             if (!comments.isEmpty){
-                let sentence="There are \(comments.count) comments! \n See the lastest commment below : \n \(comments[0].commentEmail) :  \(comments[0].body)"
+                let sentence="There are \(comments.count) comments \n See the lastest commment below : \n \(comments[0].commentEmail) :  \(comments[0].body)"
                 cell.textLabel?.text = sentence
             cell.selectionStyle = .none
-                cell.textLabel?.font=UIFont(name:"Menlo", size:18)
+               
+            }
+            else{
+                cell.textLabel?.text = "0 comment"
+          
+            
+                
             }
             return cell
         default:

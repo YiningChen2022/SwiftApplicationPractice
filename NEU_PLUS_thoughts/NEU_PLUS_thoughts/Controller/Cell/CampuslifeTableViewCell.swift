@@ -12,7 +12,7 @@ class CampuslifeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        imageview.layer.cornerRadius = 30
+        imageview.layer.cornerRadius = 25
         imageview.clipsToBounds = true
     }
     @IBOutlet weak var timefield: UILabel!

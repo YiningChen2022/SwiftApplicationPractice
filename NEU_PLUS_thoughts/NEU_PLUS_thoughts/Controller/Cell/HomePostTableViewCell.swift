@@ -17,7 +17,7 @@ class HomePostTableViewCell: UITableViewCell {
     @IBOutlet weak var userfield: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        postimage.layer.cornerRadius = 30
+        postimage.layer.cornerRadius = 25
         postimage.clipsToBounds = true
         // Initialization code
     }
