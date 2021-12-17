@@ -18,8 +18,17 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         passwordField.isSecureTextEntry=true
+        passwordField.textContentType = .oneTimeCode
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func passwordDone(_ sender: UITextField) {
+        passwordField.resignFirstResponder()
+        
     }
     
     @IBAction func didTapEye(_ sender: UIButton) {
@@ -32,25 +41,16 @@ class SignUpViewController: UIViewController {
         }
         
     }
+  
     
     
-    @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
-        
-        if sender.selectedSegmentIndex == 0 {
-            type="Student"
-        }else if sender.selectedSegmentIndex == 1 {
-            type="Alumi"
-        }else if sender.selectedSegmentIndex == 2 {
-            type="Visiter"
-        }
-    }
+  
     
     @IBAction func didTapSignUp(_ sender: UIButton) {
-        guard let email = emailField.text, !email.isEmpty,
+        guard let email = emailField.text, !email.isEmpty,isValidEmail(email: email),
               let password = passwordField.text, !password.isEmpty,
-              let name=nameField.text,!name.isEmpty  ,
-              let type1=type else {
-                  return
+              let name=nameField.text,!name.isEmpty  else {
+                  return Alert ()
               }
         
         AuthManager.shared.signUp(email: email, password: password){[weak self]
@@ -64,7 +64,7 @@ class SignUpViewController: UIViewController {
                     }
                     UserDefaults.standard.set(email, forKey:"email")
                     UserDefaults.standard.set(name, forKey:"name")
-                   // UserDefaults.standard.set(type1, forKey:"type")
+                   
                     DispatchQueue.main.async {
                         
                         let vc=self?.storyboard?.instantiateViewController(withIdentifier: "Home") as? TabBarViewController
@@ -79,5 +79,17 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    func Alert (){
+        
+        let alertController = UIAlertController(title:"Info",message:"Wrong Input, Please try Again", preferredStyle:  .alert)
+        let OKAction = UIAlertAction(title: "OK", style:  .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController,animated:true,completion: nil)
+    }
+    func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
 }

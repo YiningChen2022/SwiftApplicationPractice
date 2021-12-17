@@ -19,6 +19,8 @@ class CreateNewPsotViewController: UIViewController {
     @IBOutlet weak var postImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         backg.layer.shadowColor = UIColor.black.cgColor
         backg.layer.shadowRadius = 3.0
         backg.layer.shadowOpacity = 1.0
@@ -55,6 +57,7 @@ class CreateNewPsotViewController: UIViewController {
         let picker=UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
+        picker.allowsEditing = true
         present (picker, animated: true)
         
         

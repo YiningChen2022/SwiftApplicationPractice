@@ -28,15 +28,16 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text=currpost.title
+            cell.textLabel?.font=UIFont(name:"Menlo", size:25)
             cell.selectionStyle = .none
-            cell.textLabel?.font = .systemFont(ofSize: 25, weight:. bold)
+            
             return cell
         case 1:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text="Category: \(currpost.type)"
-            cell.textLabel?.font = .systemFont(ofSize: 18)
+            cell.textLabel?.font=UIFont(name:"Menlo", size:18)
             cell.selectionStyle = .none
             return cell
         case 2:
@@ -44,14 +45,14 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text=currpost.postUser
             cell.selectionStyle = .none
-            cell.textLabel?.font = .systemFont(ofSize: 18)
+            cell.textLabel?.font=UIFont(name:"Menlo", size:18)
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text=currpost.text
             cell.selectionStyle = .none
-            cell.textLabel?.font = .systemFont(ofSize: 18)
+            cell.textLabel?.font=UIFont(name:"Menlo", size:18)
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
@@ -61,7 +62,7 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
                 let sentence="There are \(comments.count) comments! \n See the lastest commment below : \n \(comments[0].commentEmail) :  \(comments[0].body)"
                 cell.textLabel?.text = sentence
             cell.selectionStyle = .none
-            cell.textLabel?.font = .systemFont(ofSize: 18)
+                cell.textLabel?.font=UIFont(name:"Menlo", size:18)
             }
             return cell
         default:
