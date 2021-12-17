@@ -10,7 +10,7 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     var type:String?
-
+    var isSecure=true
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
@@ -18,9 +18,21 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordField.isSecureTextEntry=true
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func didTapEye(_ sender: UIButton) {
+        if isSecure{
+            isSecure=false
+            passwordField.isSecureTextEntry=false
+        }else{
+            isSecure=true
+            passwordField.isSecureTextEntry=true
+        }
+        
+    }
+    
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         

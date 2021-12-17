@@ -9,17 +9,28 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    var secure=true
     @IBOutlet weak var emialField: UITextField!
     
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        password.isSecureTextEntry=true
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func clickviewpassword(_ sender: UIButton) {
+        if secure{
+            secure=false
+            password.isSecureTextEntry=false
+        }else{
+            secure=true
+            password.isSecureTextEntry=true
+        }
+        
+    }
+    
     @IBAction func didTapSignIn(_ sender: UIButton) {
         guard let email = emialField.text, !email.isEmpty,
               let password = password.text, !password.isEmpty
