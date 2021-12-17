@@ -8,8 +8,9 @@
 import UIKit
 
 class ViewEntertainmentTableViewController: UITableViewController ,UISearchResultsUpdating,UISearchBarDelegate{
+    
+    
     var searchController = UISearchController()
-
     var filteredposts=[BlogPost]()
     var currentEmail:String?
     private var user:User?
