@@ -16,7 +16,8 @@ struct BlogPost{
     let type:String
     let postUser:String?
     let postUserEmail:String?
- 
+    let postLikes:Int?
+    let postViews:Int?
     
     
     

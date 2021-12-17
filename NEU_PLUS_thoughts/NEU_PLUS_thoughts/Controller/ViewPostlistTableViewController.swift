@@ -135,7 +135,7 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = tableView.indexPathForSelectedRow
-        if (segue.identifier == "detail"){
+      
         let detailViewController = segue.destination as! ViewPostViewController
         detailViewController.email = currentEmail
 
@@ -147,7 +147,7 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
             post = posts[indexPath!.row]
         }
         detailViewController.currpost=post
-        }
+        
     }
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar=searchController.searchBar

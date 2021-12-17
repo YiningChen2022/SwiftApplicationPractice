@@ -9,6 +9,11 @@ import UIKit
 
 class ViewPostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
+    
+    @IBOutlet weak var buttonLikes: UIButton!
+    @IBOutlet weak var likesfield: UILabel!
+    
+    @IBOutlet weak var viewfield: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var currcomment=""
     var email: String!
@@ -98,8 +103,43 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
  
-   
+    //handling likes
+    @IBAction func didTapLike(_ sender: UIButton) {
+        insertLikes()
+        buttonLikes.tintColor = .red
+        likesfield.text = (currpost.postLikes!+1).description
         
+    }
+    
+        
+    //insert likes
+    func insertLikes(){
+        let updatedlikes = currpost.postLikes!+1
+        DatabaseManager.shared.updatePost(Postid: currpost.identifier, Useremail: currpost.postUserEmail ?? "", postLikes: updatedlikes){
+            [ weak self]
+            commented  in guard commented else {
+                print("Failed to insert comment")
+                return
+            }
+         
+            
+        }
+       
+    }
+    //insert views
+    func insertViews(){
+        let updatedView = currpost.postViews!+1
+        DatabaseManager.shared.updatePostView(Postid: currpost.identifier, Useremail: currpost.postUserEmail ?? "", postViews: updatedView){
+            [ weak self]
+            commented  in guard commented else {
+                print("Failed to insert views")
+                return
+            }
+         
+            
+        }
+       
+    }
         
     
   
@@ -108,13 +148,14 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        insertViews()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "basicStyle")
-       
+        viewfield.text=(currpost.postViews!+1).description
         postImage.layer.cornerRadius = 30
         postImage.clipsToBounds = true
         fetchcomments()
-  
-        
+        likesfield.text=currpost.postLikes!.description
+        print(currpost.postLikes!.description)
         if let url=currpost.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
                 [weak self] data, _, _ in
@@ -138,20 +179,7 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
         showAlert()
         
     }
-    //fetch all comments
-    private func fetchcomments(){
-        DatabaseManager.shared.getCommentForPosts(for: currpost.postUserEmail ?? "", for: currpost.identifier){[weak self]
-            comments in self?.comments = comments
-            self?.comments = comments.sorted{ $0.Date > $1.Date }
-            
-            DispatchQueue.main.async{
-                self!.tableView.reloadData()
-            }
-        }
-        
-    }
-    
-   
+
     
     func showAlert(){
         let alert = UIAlertController(
@@ -177,7 +205,6 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
                 return
             }
             self.currcomment=(comment)
-            print(comment)
             self.insertComment()
             self.fetchcomments()
             
@@ -203,6 +230,20 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
             
         }
     }
+    //fetch all comments
+    private func fetchcomments(){
+        DatabaseManager.shared.getCommentForPosts(for: currpost.postUserEmail ?? "", for: currpost.identifier){[weak self]
+            comments in self?.comments = comments
+            self?.comments = comments.sorted{ $0.Date > $1.Date }
+            
+            DispatchQueue.main.async{
+                self!.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+   
     
     /*
     // MARK: - Navigation
@@ -214,10 +255,7 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-           
-               
+       
                 let detailViewController = segue.destination as! ViewCommentsTableViewController
                 detailViewController.comments=comments
 

@@ -25,7 +25,9 @@ final class DatabaseManager{
                     "type" :post.type,
                     "userName":post.postUser ?? "",
                     "headerImageUrl": post.headerImageUrl?.absoluteString ?? "",
-                                  "postUserEmail":post.postUserEmail ?? ""]
+                                  "postUserEmail":post.postUserEmail ?? "",
+                                  "postLikes":post.postLikes ?? 0,
+                                  "postViews":post.postViews ?? 0 ]
         
                     
         
@@ -171,7 +173,9 @@ final class DatabaseManager{
                           let type=dictionary["type"] as? String,
                           let userName=dictionary["userName"] as? String?,
                           let headerImageUrl=dictionary["headerImageUrl"] as? String,
-                    let postuserEmail=dictionary["postUserEmail"] as? String?
+                    let postuserEmail=dictionary["postUserEmail"] as? String?,
+                            let postlikes=dictionary["postLikes"] as? Int?,
+                          let postViews = dictionary["postViews"] as? Int?
                     else {
                               print("invalid post fetch conversion")
                               return nil
@@ -179,7 +183,7 @@ final class DatabaseManager{
                           
                          
                             
-                    let post = BlogPost(identifier: id, title: title, timestamp: created, headerImageUrl: URL(string:headerImageUrl), text: body, type: type, postUser: userName, postUserEmail: postuserEmail)
+                    let post = BlogPost(identifier: id, title: title, timestamp: created, headerImageUrl: URL(string:headerImageUrl), text: body, type: type, postUser: userName, postUserEmail: postuserEmail, postLikes: postlikes,postViews: postViews)
                     return post
                     
                 })
@@ -262,5 +266,46 @@ final class DatabaseManager{
         
         
     }
+    
+    public func updatePost (Postid:String,Useremail:String, postLikes:Int, completion:@escaping(Bool)->()){
+        let documentId=Useremail
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+         database.collection("users")
+            .document(documentId)
+            .collection("posts")
+            .document(Postid).updateData([
+                "postLikes": postLikes
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+        
+        
+    }
+    
+    public func updatePostView (Postid:String,Useremail:String, postViews:Int, completion:@escaping(Bool)->()){
+        let documentId=Useremail
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+         database.collection("users")
+            .document(documentId)
+            .collection("posts")
+            .document(Postid).updateData([
+                "postViews": postViews
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("View successfully updated")
+                }
+            }
+        
+        
+    }
+   
     
 }

@@ -103,7 +103,7 @@ class CreateNewPsotViewController: UIViewController {
         
         // insert of post into DB
               
-                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type, postUser: self.user?.name, postUserEmail: self.user?.email)
+                let post=BlogPost(identifier:postId, title: title, timestamp: Date().timeIntervalSince1970, headerImageUrl:headerUrl, text: body, type: self.type, postUser: self.user?.name, postUserEmail: self.user?.email,postLikes: 0,postViews: 0)
                 
                 DatabaseManager.shared.insertBlogPost(
                     post:post, email:email){[ weak self]

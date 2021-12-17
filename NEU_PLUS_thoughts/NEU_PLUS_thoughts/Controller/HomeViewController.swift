@@ -64,6 +64,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             cell.type.textColor = .systemGreen
         }
         cell.titleFirld.text=post.title
+        cell.titleFirld.numberOfLines = 0
          currentUserEmail=UserDefaults.standard.string(forKey:"email") 
        
         cell.userfield.text=post.postUser
@@ -101,7 +102,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
    
     //Fetch All Posts from user
-    private func fetchAllPosts(){
+    public func fetchAllPosts(){
         
         print("Fetching home feed")
         
