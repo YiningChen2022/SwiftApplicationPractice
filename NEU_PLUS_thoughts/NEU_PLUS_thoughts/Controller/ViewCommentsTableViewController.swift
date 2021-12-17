@@ -37,7 +37,7 @@ class ViewCommentsTableViewController: UITableViewController {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentcell") as! CommentTableViewCell
             cell.textLabel?.numberOfLines = 0
-        let comment= comments[indexPath.row]
+        let comment = comments[indexPath.row]
         let time=getDateFromTimeStamp(timeStamp:comment.Date)
         cell.commenttime.text=time
         cell.User.text=comment.commentEmail
