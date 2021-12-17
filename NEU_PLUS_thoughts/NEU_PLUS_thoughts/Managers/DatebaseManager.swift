@@ -24,7 +24,9 @@ final class DatabaseManager{
                     "created": post.timestamp,
                     "type" :post.type,
                     "userName":post.postUser ?? "",
-                    "headerImageUrl": post.headerImageUrl?.absoluteString ?? ""]
+                    "headerImageUrl": post.headerImageUrl?.absoluteString ?? "",
+                                  "postUserEmail":post.postUserEmail ?? ""]
+        
                     
         
         
@@ -34,11 +36,70 @@ final class DatabaseManager{
             .setData(data){
                 error in completion(error == nil)
             }
-           
-          
-        
+    }
+    
+    //insert comment to post
+    public func insertComments(email:String,postid:String, comments:Comments,completion:@escaping(Bool)->Void ){
+        let userEmail=email
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+        let data :[String:Any] = ["id": comments.id,
+                                  "body": comments.body,
+                                  "created": comments.Date,
+                                  "commentedPostid" :comments.commentedPostid,
+                                  "commentedEmailid":comments.commentEmail]
+                    
+        database.collection("users").document(userEmail).collection("posts")
+            .document(postid)
+            .collection("comments")
+            .document(comments.id)
+            .setData(data){
+                error in completion(error == nil)
+            }
+    }
+    
+    //getComment for one post
+    public func getCommentForPosts(for email:String, for postid:String, completion:@escaping([Comments])->Void ){
+        //first get the user
+        let userEmail=email
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+        //get all documents
+        //gives dictionary for each doc
+        database.collection("users")
+            .document(userEmail)
+            .collection("posts").document(postid).collection("comments")
+            .getDocuments{
+                snapshot, error in guard let documents = snapshot?.documents.compactMap({$0.data()}),
+                error == nil else {
+                    return
+                }
+                
+                let comments :[Comments] = documents.compactMap({
+                    dictionary in
+                    guard let id=dictionary["id"] as?String,
+                          let body=dictionary["body"] as? String,
+                          let commentedEmailid=dictionary["commentedEmailid"] as? String,
+                          let created=dictionary["created"] as? TimeInterval,
+                          let commentedPostid=dictionary["commentedPostid"]as? String
+                          else {
+                              print("invalid comment fetch conversion")
+                              return nil
+                          }
+                          
+                         
+                        let comment = Comments(id: id, body: body, Date: created, commentedPostid: commentedPostid, commentEmail: commentedEmailid)
+                   
+                    return  comment
+                    
+                })
+                completion(comments)
+               
+                
+            }
         
     }
+    
     
     //get AllPost
     public func getAllPosts( completion:@escaping([BlogPost])->Void ){
@@ -109,14 +170,16 @@ final class DatabaseManager{
                           let created=dictionary["created"] as? TimeInterval,
                           let type=dictionary["type"] as? String,
                           let userName=dictionary["userName"] as? String?,
-                          let headerImageUrl=dictionary["headerImageUrl"] as? String else {
+                          let headerImageUrl=dictionary["headerImageUrl"] as? String,
+                    let postuserEmail=dictionary["postUserEmail"] as? String?
+                    else {
                               print("invalid post fetch conversion")
                               return nil
                           }
                           
                          
                             
-                    let post = BlogPost(identifier: id, title: title, timestamp: created, headerImageUrl: URL(string:headerImageUrl), text: body, type: type, postUser: userName)
+                    let post = BlogPost(identifier: id, title: title, timestamp: created, headerImageUrl: URL(string:headerImageUrl), text: body, type: type, postUser: userName, postUserEmail: postuserEmail)
                     return post
                     
                 })
@@ -156,10 +219,9 @@ final class DatabaseManager{
                 let ref = data["profile_photo"]//ref
                 let user = User(name:name, email:email, profulePictureRef: ref)
                     completion(user)
-              
-                
             }
     }
+    
     
     public func updateProfilePhoto(email:String, completion:@escaping(Bool)->Void){
         //us email for the uniqu key
@@ -180,8 +242,23 @@ final class DatabaseManager{
         }
         
     }
-    public func removePost (Postid:String){
-         database.collection("posts").document(Postid).delete()
+    public func removePost (Postid:String,Useremail:String, completion:@escaping(Bool)->()){
+        let documentId=Useremail
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+         database.collection("users")
+            .document(documentId)
+            .collection("posts")
+            .document(Postid).delete(){
+                error in
+                if let error = error{
+                    print("erroring in deleting the post")
+                    completion(false)
+                }else{
+                    print("success deleted the post")
+                    completion(true)
+                }
+            }
         
         
     }

@@ -15,5 +15,9 @@ struct BlogPost{
     let text:String
     let type:String
     let postUser:String?
+    let postUserEmail:String?
+ 
+    
+    
     
 }

@@ -35,6 +35,9 @@
 		E881C62527615C1000555A0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62427615C1000555A0F /* HomeViewController.swift */; };
 		E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C6272761970E00555A0F /* ProfileTableViewCell.swift */; };
 		E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881C62B27626EB000555A0F /* NavigationViewController.swift */; };
+		E8A5A29D276BB39F0010EC4B /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5A29C276BB39F0010EC4B /* Comments.swift */; };
+		E8A5A29F276C018F0010EC4B /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5A29E276C018F0010EC4B /* CommentTableViewCell.swift */; };
+		E8A5A2A1276C12060010EC4B /* ViewCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5A2A0276C12060010EC4B /* ViewCommentsTableViewController.swift */; };
 		E8ADDFB5276A88F300CE1141 /* ViewFleaMarketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */; };
 		E8ADDFB7276A895300CE1141 /* FleaMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFB6276A895300CE1141 /* FleaMarketTableViewCell.swift */; };
 		E8ADDFB9276A8E2C00CE1141 /* EntertainmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADDFB8276A8E2C00CE1141 /* EntertainmentTableViewCell.swift */; };
@@ -76,6 +79,9 @@
 		E881C62427615C1000555A0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E881C6272761970E00555A0F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E881C62B27626EB000555A0F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		E8A5A29C276BB39F0010EC4B /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		E8A5A29E276C018F0010EC4B /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		E8A5A2A0276C12060010EC4B /* ViewCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommentsTableViewController.swift; sourceTree = "<group>"; };
 		E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFleaMarketTableViewController.swift; sourceTree = "<group>"; };
 		E8ADDFB6276A895300CE1141 /* FleaMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleaMarketTableViewCell.swift; sourceTree = "<group>"; };
 		E8ADDFB8276A8E2C00CE1141 /* EntertainmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertainmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				E881C61A27601A2E00555A0F /* User.swift */,
 				E881C61C27601A3B00555A0F /* BlogPost.swift */,
 				E881C61E2760442F00555A0F /* Data.swift */,
+				E8A5A29C276BB39F0010EC4B /* Comments.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +179,7 @@
 				E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */,
 				E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */,
 				E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */,
+				E8A5A2A0276C12060010EC4B /* ViewCommentsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 				E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */,
 				E8ADDFB6276A895300CE1141 /* FleaMarketTableViewCell.swift */,
 				E8ADDFB8276A8E2C00CE1141 /* EntertainmentTableViewCell.swift */,
+				E8A5A29E276C018F0010EC4B /* CommentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -344,9 +353,11 @@
 				E881C60927600A1200555A0F /* SignUpViewController.swift in Sources */,
 				E881C62527615C1000555A0F /* HomeViewController.swift in Sources */,
 				E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */,
+				E8A5A2A1276C12060010EC4B /* ViewCommentsTableViewController.swift in Sources */,
 				E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */,
 				E881C60727600A0500555A0F /* SignInViewController.swift in Sources */,
 				E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */,
+				E8A5A29D276BB39F0010EC4B /* Comments.swift in Sources */,
 				E881C60D27600A3E00555A0F /* CreateNewPsotViewController.swift in Sources */,
 				E881C61B27601A2E00555A0F /* User.swift in Sources */,
 				E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */,
@@ -356,6 +367,7 @@
 				E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
 				E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */,
+				E8A5A29F276C018F0010EC4B /* CommentTableViewCell.swift in Sources */,
 				E8ADDFBB276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift in Sources */,
 				E881C60B27600A3200555A0F /* ViewPostViewController.swift in Sources */,
 				E881C61127600A7300555A0F /* DatebaseManager.swift in Sources */,

@@ -7,30 +7,106 @@
 
 import UIKit
 
-class ViewPostViewController: UIViewController {
-   
-    @IBOutlet weak var titleField: UILabel!
+class ViewPostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+    @IBOutlet weak var tableView: UITableView!
+    var currcomment=""
     var email: String!
     var currpost: BlogPost!
-
-  
-    
-    @IBOutlet weak var postusername: UILabel!
+    private var comments:[Comments]=[]
     @IBOutlet weak var postImage: UIImageView!
-    @IBOutlet weak var body: UILabel!
-    @IBOutlet weak var type: UILabel!
+    //post table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5 //title, type, author, text, comment
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let index = indexPath.row
+   
+        switch index{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text=currpost.title
+            cell.selectionStyle = .none
+            cell.textLabel?.font = .systemFont(ofSize: 25, weight:. bold)
+            return cell
+        case 1:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text="Category: \(currpost.type)"
+            cell.textLabel?.font = .systemFont(ofSize: 18)
+            cell.selectionStyle = .none
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text=currpost.postUser
+            cell.selectionStyle = .none
+            cell.textLabel?.font = .systemFont(ofSize: 18)
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text=currpost.text
+            cell.selectionStyle = .none
+            cell.textLabel?.font = .systemFont(ofSize: 18)
+            return cell
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+            cell.textLabel?.numberOfLines = 0
+   
+            if (!comments.isEmpty){
+                let sentence="There are \(comments.count) comments! \n See the lastest commment below : \n \(comments[0].commentEmail) :  \(comments[0].body)"
+                cell.textLabel?.text = sentence
+            cell.selectionStyle = .none
+            cell.textLabel?.font = .systemFont(ofSize: 18)
+            }
+            return cell
+        default:
+            fatalError()
+        }
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let index = indexPath.row
+        
+        switch index{
+        case 0:
+          return 70
+            
+        case 1:
+            return UITableView.automaticDimension
+        
+        case 2:
+            return UITableView.automaticDimension
+        case 3:
+            return UITableView.automaticDimension
+        case 4:
+            return UITableView.automaticDimension
+        default:
+            fatalError()
+        }
+        
+    }
+ 
+   
+        
+        
+    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        titleField.text=currpost.title
-        type.text=currpost.type
-        postusername.text=currpost.postUser
-        
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "basicStyle")
+       
         postImage.layer.cornerRadius = 30
         postImage.clipsToBounds = true
-        body.text=currpost.text
-        body.numberOfLines=10
-        //body.sizeToFit()
+        fetchcomments()
+  
         
         if let url=currpost.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){
@@ -49,7 +125,78 @@ class ViewPostViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
   
-
+    
+    //comment handling
+    @IBAction func didTapComment(_ sender: Any) {
+        showAlert()
+        
+    }
+    //fetch all comments
+    private func fetchcomments(){
+        DatabaseManager.shared.getCommentForPosts(for: currpost.postUserEmail ?? "", for: currpost.identifier){[weak self]
+            comments in self?.comments = comments
+            self?.comments = comments.sorted{ $0.Date > $1.Date }
+            
+            DispatchQueue.main.async{
+                self!.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+   
+    
+    func showAlert(){
+        let alert = UIAlertController(
+            title:"Comment", message: "Please leave your comment",
+            preferredStyle: .alert
+        
+        )
+        alert.addTextField{
+            field in
+            field.placeholder="Comment"
+            field.returnKeyType = .next
+        }
+        alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler:nil))
+        alert.addAction(UIAlertAction(title:"Continue", style: .default,handler:{ _ in
+            
+            guard let fields = alert.textFields,fields.count==1 else{
+                return
+            }
+            let commentfield = fields[0]
+            guard let  comment=commentfield.text, !comment.isEmpty
+            else{
+                print("empty comment")
+                return
+            }
+            self.currcomment=(comment)
+            print(comment)
+            self.insertComment()
+            self.fetchcomments()
+            
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    
+    
+    func insertComment(){
+       
+        let curruseremail = UserDefaults.standard.string(forKey: "email")
+        let commentid=UUID().uuidString
+        let comment=Comments(id: commentid, body: currcomment, Date: Date().timeIntervalSince1970, commentedPostid: currpost.identifier, commentEmail: currpost.postUserEmail ?? "")
+        DatabaseManager.shared.insertComments(email: curruseremail!, postid: currpost.identifier, comments: comment ){
+            [ weak self]
+            commented  in guard commented else {
+                print("Failed to insert comment")
+                return
+            }
+           
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

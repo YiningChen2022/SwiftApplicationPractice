@@ -174,9 +174,15 @@ class ViewPostlistTableViewController: UITableViewController,UISearchResultsUpda
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let toRemove = posts[indexPath.row]
-            DatabaseManager.shared.removePost(Postid: toRemove.identifier)
+            DatabaseManager.shared.removePost(Postid: toRemove.identifier, Useremail: user!.email){
+                success in if success{
+                    self.fetchPosts()
+                }else{
+                    print ("delete unsucessful")
+                }
+            }
           
-            fetchPosts()
+        
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
