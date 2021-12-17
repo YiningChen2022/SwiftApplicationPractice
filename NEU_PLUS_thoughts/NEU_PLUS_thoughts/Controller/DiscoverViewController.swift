@@ -10,10 +10,12 @@ import AVFoundation
 import Foundation
 class DiscoverViewController: UIViewController {
 
+    @IBOutlet weak var HelathButton: UIButton!
     @IBOutlet weak var FleaiMAGE: UIImageView!
     
     @IBOutlet weak var compusimage: UIImageView!
     
+    @IBOutlet weak var myneubutton: UIButton!
     
     @IBOutlet weak var entimage: UIImageView!
     override func viewDidLoad() {
@@ -27,9 +29,36 @@ class DiscoverViewController: UIViewController {
         
         entimage.layer.cornerRadius = 30
         entimage.clipsToBounds = true
+        
+        
+        myneubutton.backgroundColor = .clear
+        myneubutton.layer.cornerRadius = 15
+        myneubutton.layer.borderWidth = 3
+        myneubutton.layer.borderColor = UIColor.systemPink.cgColor
+        
+        
+        HelathButton.backgroundColor = .clear
+        HelathButton.layer.cornerRadius = 15
+        HelathButton.layer.borderWidth = 3
+        HelathButton.layer.borderColor = UIColor.systemPink.cgColor
+        
+        
     }
     
+    
+    @IBAction func didTapHealth(_ sender: UIButton) {
+        if let url = URL(string: "https://www.northeastern.edu/uhcs/") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    
 
+    @IBAction func didTapopen(_ sender: UIButton) {
+        if let url = URL(string: "https://my.northeastern.edu/") {
+            UIApplication.shared.open(url)
+        }
+    }
     /*
     // MARK: - Navigation
 

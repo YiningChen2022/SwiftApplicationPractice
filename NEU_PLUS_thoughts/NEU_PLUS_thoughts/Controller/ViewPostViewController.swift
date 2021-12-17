@@ -185,8 +185,8 @@ class ViewPostViewController: UIViewController, UITableViewDataSource, UITableVi
        
         let curruseremail = UserDefaults.standard.string(forKey: "email")
         let commentid=UUID().uuidString
-        let comment=Comments(id: commentid, body: currcomment, Date: Date().timeIntervalSince1970, commentedPostid: currpost.identifier, commentEmail: currpost.postUserEmail ?? "")
-        DatabaseManager.shared.insertComments(email: curruseremail!, postid: currpost.identifier, comments: comment ){
+        let comment=Comments(id: commentid, body: currcomment, Date: Date().timeIntervalSince1970, commentedPostid: currpost.identifier, commentEmail: curruseremail!)
+        DatabaseManager.shared.insertComments(email: currpost.postUserEmail ?? "", postid: currpost.identifier, comments: comment ){
             [ weak self]
             commented  in guard commented else {
                 print("Failed to insert comment")
