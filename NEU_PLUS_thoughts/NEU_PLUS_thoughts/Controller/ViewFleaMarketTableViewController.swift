@@ -125,6 +125,7 @@ class ViewFleaMarketTableViewController: UITableViewController ,UISearchResultsU
         cell.fleaType.text=post.type
         cell.FleaTitle.text=post.title
         cell.fleauser.text=post.postUser
+        cell.FleaTitle.numberOfLines = 0
         //cell.imageView?.layer.cornerRadius = 4;
 
         cell.fleaimage?.image=data.icons[0]

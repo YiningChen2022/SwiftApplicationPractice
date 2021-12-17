@@ -125,9 +125,9 @@ class ViewEntertainmentTableViewController: UITableViewController ,UISearchResul
         cell.enttime.text = time
         cell.enttype.text=post.type
         cell.enttitle.text=post.title
+        cell.enttitle.numberOfLines = 0
         cell.EntUser.text=post.postUser
-        //cell.imageView?.layer.cornerRadius = 4;
-
+       
         cell.entimageview?.image=data.icons[0]
         if let url=post.headerImageUrl{
             let task = URLSession.shared.dataTask(with: url){

@@ -116,6 +116,7 @@ class ViewInCampusLifeTableViewController: UITableViewController,UISearchResults
         cell.timefield.text = time
         cell.typefield.text=post.type
         cell.titlefield.text=post.title
+        cell.titlefield.numberOfLines = 0
         cell.userNameField.text=post.postUser
     
         //cell.imageView?.layer.masksToBounds = YES;

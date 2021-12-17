@@ -42,6 +42,7 @@ class ViewCommentsTableViewController: UITableViewController {
         cell.commenttime.text=time
         cell.User.text=comment.commentEmail
         cell.commenttext.text=comment.body
+        cell.commenttext.numberOfLines = 0
         //cell.subtitle.text = comments[indexPath.row].commentEmail
             cell.selectionStyle = .none
             cell.textLabel?.font = .systemFont(ofSize: 18)
