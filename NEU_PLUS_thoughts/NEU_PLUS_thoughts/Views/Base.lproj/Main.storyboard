@@ -27,9 +27,11 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ay-YP-jyQ">
-                                <rect key="frame" x="99" y="487" width="207" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ay-YP-jyQ">
+                                <rect key="frame" x="92" y="415" width="230" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="8KO-xr-Uyc"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Explore" cornerStyle="small">
                                     <color key="baseForegroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -48,14 +50,16 @@
                             <constraint firstAttribute="bottom" secondItem="WIr-uC-UzU" secondAttribute="bottom" id="5oY-TW-1r3"/>
                             <constraint firstItem="WIr-uC-UzU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-104" id="J8E-8K-fmE"/>
                             <constraint firstItem="WIr-uC-UzU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-14" id="Nbi-VD-RZy"/>
+                            <constraint firstItem="5Ay-YP-jyQ" firstAttribute="top" secondItem="yH5-wf-N6X" secondAttribute="bottom" constant="117" id="OJF-L5-0g5"/>
                             <constraint firstItem="yH5-wf-N6X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="VVe-Fo-QMI"/>
+                            <constraint firstItem="5Ay-YP-jyQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cmN-Az-NE1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3WZ-Jk-WdD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2501" y="617"/>
+            <point key="canvasLocation" x="-2501.449275362319" y="616.74107142857144"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="wPW-jT-Ste">
