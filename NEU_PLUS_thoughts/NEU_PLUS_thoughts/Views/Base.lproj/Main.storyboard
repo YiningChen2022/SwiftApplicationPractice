@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,14 +21,14 @@
                                 <rect key="frame" x="-104" y="-14" width="596" height="910"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEU PLUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yH5-wf-N6X">
-                                <rect key="frame" x="98.5" y="244" width="217" height="54"/>
+                                <rect key="frame" x="98.5" y="200" width="217" height="54"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ay-YP-jyQ">
-                                <rect key="frame" x="92" y="415" width="230" height="31"/>
+                                <rect key="frame" x="92" y="371" width="230" height="34.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="8KO-xr-Uyc"/>
                                 </constraints>
@@ -70,14 +70,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-asset" translatesAutoresizingMaskIntoConstraints="NO" id="XYB-OS-kDP">
-                                <rect key="frame" x="107" y="215" width="200" height="200"/>
+                                <rect key="frame" x="107" y="171" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="adi-QN-9Q4"/>
                                     <constraint firstAttribute="height" constant="200" id="jAe-cH-W47"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hck-sU-lM3">
-                                <rect key="frame" x="170.5" y="143" width="73" height="30"/>
+                                <rect key="frame" x="170.5" y="99" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -282,7 +282,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileTableViewCell" rowHeight="54" id="Kau-9y-6Rt" customClass="ProfileTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="54"/>
+                                        <rect key="frame" x="0.0" y="50" width="374" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kau-9y-6Rt" id="DZZ-Qh-3mr" customClass="ProfileTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
@@ -355,10 +355,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ViewPostCell" rowHeight="88" id="EyC-W6-57s" customClass="ViewPostListTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="88"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EyC-W6-57s" id="W52-HZ-8gd">
-                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDl-j8-QQS">
@@ -438,7 +438,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentcell" id="KnQ-bO-Xma">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KnQ-bO-Xma" id="csE-2b-Pot">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -505,7 +505,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentcell" id="h68-N6-2R8" customClass="CommentTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h68-N6-2R8" id="1fe-YH-dpe">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -581,7 +581,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="26" reuseIdentifier="home" rowHeight="120" id="jHt-be-lMP" customClass="HomePostTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jHt-be-lMP" id="KYO-PG-FeO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -935,10 +935,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ent" rowHeight="120" id="SZV-WG-Egx" customClass="EntertainmentTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SZV-WG-Egx" id="2LD-YE-kZN">
-                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0k-CZ-uvI">
@@ -1006,10 +1006,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="120" reuseIdentifier="fleamarket" id="QwZ-rZ-sO0" customClass="FleaMarketTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QwZ-rZ-sO0" id="Umz-0K-lHB">
-                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69B-8O-q2s">
@@ -1077,10 +1077,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="88" reuseIdentifier="CampusLife" id="Vew-3u-haF" customClass="CampuslifeTableViewCell" customModule="NEU_PLUS_thoughts" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vew-3u-haF" id="guj-6E-hyU">
-                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgY-PZ-5Kz">
@@ -1146,7 +1146,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="qo4-t9-dOc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aix-kq-ths">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1168,7 +1168,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="nPQ-jk-D81"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Wa0-J9-1Up">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1193,7 +1193,7 @@
                     <tabBarItem key="tabBarItem" title="Discover" image="plus.viewfinder" catalog="system" id="hpD-kP-Es6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="ayf-ym-NmY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <navigationBarAppearance key="standardAppearance">
                             <textAttributes key="titleTextAttributes">
@@ -1212,18 +1212,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZN3-oc-XHJ"/>
+        <segue reference="jn8-dR-UPJ"/>
         <segue reference="9Hi-Sz-FgG"/>
-        <segue reference="EXz-Qc-aAj"/>
+        <segue reference="plq-ah-RXM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="White-Textured-Background" width="630" height="420"/>
         <image name="\" width="128" height="128"/>
         <image name="background" width="1440" height="1024"/>
-        <image name="eye.slash.fill" catalog="system" width="128" height="82"/>
+        <image name="eye.slash.fill" catalog="system" width="128" height="96"/>
         <image name="eyes" catalog="system" width="128" height="99"/>
-        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="id0405g-northeastern-university-06_blog" width="700" height="467"/>
         <image name="image-asset" width="833" height="833"/>
         <image name="pensel" width="256" height="256"/>

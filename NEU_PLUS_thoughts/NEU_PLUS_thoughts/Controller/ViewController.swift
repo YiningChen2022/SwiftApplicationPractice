@@ -1,4 +1,4 @@
-//
+
 //  ViewController.swift
 //  NEU_PLUS_thoughts
 //
@@ -31,4 +31,3 @@ class ViewController: UIViewController{
         
     
 }
-
