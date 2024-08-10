@@ -55,8 +55,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
       
         super.viewDidLoad()
-        //tableview.register(UITableViewCell.self,
-          //                          forCellReuseIdentifier: "cell")
+
         tableview.dataSource = self
         tableview.delegate = self
         profileImage.layer.cornerRadius = 30
@@ -66,13 +65,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let currentUserEmail=UserDefaults.standard.string(forKey:"email") else {
             return
         }
+
         currentEmail=currentUserEmail
         Useremail.text=currentUserEmail
         fetchProgileData(email: currentUserEmail)
         profileImage.isUserInteractionEnabled=true
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProfilePhoto))
         profileImage.addGestureRecognizer(tap)
-        if let ref=user?.profulePictureRef{
+        /*if let ref=user?.profulePictureRef{
             StorageManager.shared.downLoadUrlForPorfilePic(path: ref){
                 url in
                 guard let url=url else {
@@ -84,7 +84,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                     }
                     DispatchQueue.main.async {
                         self.profileImage.image=UIImage(data
-                                                   :data )
+                    :data )
                     }
                 }
                 task.resume()
@@ -92,8 +92,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             
             
         }
-        
-        //UserName.text=currentUserEmail
+        */
         
         // Do any additional setup after loading the view.
     }
@@ -137,11 +136,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             self?.user = user
-            
+            print("am i here? ")
             DispatchQueue.main.async {
                self!.UserName.text=user.name
                 self!.fetchPicture(profulePictureRef: user.profulePictureRef ?? "")
             }
+            print("am i here?222")
           
         }
     }
