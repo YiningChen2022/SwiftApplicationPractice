@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import Purchases
+import RevenueCat
+
 final class IAPManager{
     static let shared = IAPManager()
     
