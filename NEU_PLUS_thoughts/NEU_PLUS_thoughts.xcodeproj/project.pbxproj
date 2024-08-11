@@ -55,6 +55,10 @@
 		E8AE9EB82C619C7B0090A723 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E8AE9EB72C619C7B0090A723 /* FirebaseFirestore */; };
 		E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */; };
 		E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */; };
+		E8EC9EE92C691A8D00AC92E9 /* ToDoListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC9EE82C691A8D00AC92E9 /* ToDoListViewViewController.swift */; };
+		E8EC9EED2C69241700AC92E9 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = E8EC9EEC2C69241700AC92E9 /* SwiftFormat */; };
+		E8EC9EEF2C69241700AC92E9 /* SwiftFormatConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = E8EC9EEE2C69241700AC92E9 /* SwiftFormatConfiguration */; };
+		E8EC9EF12C69241700AC92E9 /* swift-format in Frameworks */ = {isa = PBXBuildFile; productRef = E8EC9EF02C69241700AC92E9 /* swift-format */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +103,7 @@
 		E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntertainmentTableViewController.swift; sourceTree = "<group>"; };
 		E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostListTableViewCell.swift; sourceTree = "<group>"; };
 		E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
+		E8EC9EE82C691A8D00AC92E9 /* ToDoListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +113,16 @@
 			files = (
 				E8AE9EA62C619C150090A723 /* RevenueCatUI in Frameworks */,
 				E8AE9EB82C619C7B0090A723 /* FirebaseFirestore in Frameworks */,
+				E8EC9EEF2C69241700AC92E9 /* SwiftFormatConfiguration in Frameworks */,
 				E8AE9EAA2C619C330090A723 /* FirebaseAnalytics in Frameworks */,
 				E8AE9EAC2C619C330090A723 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				E8AE9EA22C619C150090A723 /* ReceiptParser in Frameworks */,
 				E8AE9EB62C619C530090A723 /* FirebaseStorage in Frameworks */,
+				E8EC9EED2C69241700AC92E9 /* SwiftFormat in Frameworks */,
 				4E66BA1DDFED34410797D82B /* Pods_NEU_PLUS_thoughts.framework in Frameworks */,
 				E8AE9EA42C619C150090A723 /* RevenueCat in Frameworks */,
 				E8AE9EB42C619C4C0090A723 /* FirebaseAuth in Frameworks */,
+				E8EC9EF12C69241700AC92E9 /* swift-format in Frameworks */,
 				E8AE9EB22C619C330090A723 /* FirebaseAppDistribution-Beta in Frameworks */,
 				E8AE9EB02C619C330090A723 /* FirebaseAppCheck in Frameworks */,
 				E8AE9EAE2C619C330090A723 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
@@ -203,6 +211,7 @@
 				E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */,
 				E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */,
 				E8A5A2A0276C12060010EC4B /* ViewCommentsTableViewController.swift */,
+				E8EC9EE82C691A8D00AC92E9 /* ToDoListViewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 				E881C5DF276007ED00555A0F /* Sources */,
 				E881C5E0276007ED00555A0F /* Frameworks */,
 				E881C5E1276007ED00555A0F /* Resources */,
+				E8EC9EEA2C6922FF00AC92E9 /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -280,6 +290,9 @@
 				E8AE9EB32C619C4C0090A723 /* FirebaseAuth */,
 				E8AE9EB52C619C530090A723 /* FirebaseStorage */,
 				E8AE9EB72C619C7B0090A723 /* FirebaseFirestore */,
+				E8EC9EEC2C69241700AC92E9 /* SwiftFormat */,
+				E8EC9EEE2C69241700AC92E9 /* SwiftFormatConfiguration */,
+				E8EC9EF02C69241700AC92E9 /* swift-format */,
 			);
 			productName = NEU_PLUS_thoughts;
 			productReference = E881C5E3276007ED00555A0F /* NEU_PLUS_thoughts.app */;
@@ -312,6 +325,7 @@
 			packageReferences = (
 				E839E5142C618A87008AFF0A /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 				E839E51D2C618AD6008AFF0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E8EC9EEB2C69241700AC92E9 /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
 			productRefGroup = E881C5E4276007ED00555A0F /* Products */;
 			projectDirPath = "";
@@ -359,6 +373,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E8EC9EEA2C6922FF00AC92E9 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -375,6 +407,7 @@
 				E881C62527615C1000555A0F /* HomeViewController.swift in Sources */,
 				E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */,
 				E8A5A2A1276C12060010EC4B /* ViewCommentsTableViewController.swift in Sources */,
+				E8EC9EE92C691A8D00AC92E9 /* ToDoListViewViewController.swift in Sources */,
 				E881C6282761970F00555A0F /* ProfileTableViewCell.swift in Sources */,
 				E881C60727600A0500555A0F /* SignInViewController.swift in Sources */,
 				E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */,
@@ -558,7 +591,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,7 +624,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,6 +676,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 11.0.0;
+			};
+		};
+		E8EC9EEB2C69241700AC92E9 /* XCRemoteSwiftPackageReference "swift-format" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-format";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 510.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -702,6 +743,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E839E51D2C618AD6008AFF0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		E8EC9EEC2C69241700AC92E9 /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8EC9EEB2C69241700AC92E9 /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormat;
+		};
+		E8EC9EEE2C69241700AC92E9 /* SwiftFormatConfiguration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8EC9EEB2C69241700AC92E9 /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormatConfiguration;
+		};
+		E8EC9EF02C69241700AC92E9 /* swift-format */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8EC9EEB2C69241700AC92E9 /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = "swift-format";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
