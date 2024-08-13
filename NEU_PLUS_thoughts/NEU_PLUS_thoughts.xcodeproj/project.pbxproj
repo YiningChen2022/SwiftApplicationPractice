@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E66BA1DDFED34410797D82B /* Pods_NEU_PLUS_thoughts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE959630DBE56EB84380400 /* Pods_NEU_PLUS_thoughts.framework */; };
 		E81FD1D52C6171A60065DC8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81FD1D42C6171A60065DC8A /* Assets.xcassets */; };
+		E83B966B2C6AE41900AD70A6 /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */; };
+		E83B966D2C6AE42F00AD70A6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B966C2C6AE42F00AD70A6 /* TaskViewController.swift */; };
 		E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E82282767A3900053947F /* DiscoverViewController.swift */; };
 		E85E822B276945F20053947F /* ViewInCampusLifeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */; };
 		E85E822D276949A00053947F /* CampuslifeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */; };
@@ -67,6 +69,8 @@
 		BB370F9CC20F79FD1A850503 /* Pods-NEU_PLUS_thoughts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.debug.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.debug.xcconfig"; sourceTree = "<group>"; };
 		E81FD1D42C6171A60065DC8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E839E5082C618725008AFF0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
+		E83B966C2C6AE42F00AD70A6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		E85E82282767A3900053947F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInCampusLifeTableViewController.swift; sourceTree = "<group>"; };
 		E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampuslifeTableViewCell.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				E8ADDFB4276A88F300CE1141 /* ViewFleaMarketTableViewController.swift */,
 				E8A5A2A0276C12060010EC4B /* ViewCommentsTableViewController.swift */,
 				E8EC9EE82C691A8D00AC92E9 /* ToDoListViewViewController.swift */,
+				E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */,
+				E83B966C2C6AE42F00AD70A6 /* TaskViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,9 +426,11 @@
 				E881C60F27600A5E00555A0F /* IAPManager.swift in Sources */,
 				E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
+				E83B966D2C6AE42F00AD70A6 /* TaskViewController.swift in Sources */,
 				E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */,
 				E8A5A29F276C018F0010EC4B /* CommentTableViewCell.swift in Sources */,
 				E8ADDFBB276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift in Sources */,
+				E83B966B2C6AE41900AD70A6 /* EntryListViewController.swift in Sources */,
 				E881C60B27600A3200555A0F /* ViewPostViewController.swift in Sources */,
 				E881C61127600A7300555A0F /* DatebaseManager.swift in Sources */,
 				E881C61527600A9100555A0F /* StorageManager.swift in Sources */,
