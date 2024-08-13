@@ -1219,13 +1219,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Do List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFz-Dm-mbH">
-                                <rect key="frame" x="43" y="80" width="150" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PH2-Hc-vF3">
                                 <rect key="frame" x="-2" y="159" width="418" height="727"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1247,15 +1240,55 @@
                         <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="0.25" height="0.25"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jrk-25-5W5">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="VTz-DO-lhF"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="VTz-DO-lhF">
+                            <connections>
+                                <action selector="toDoListAddButton:" destination="WI7-KC-7aO" id="ZqU-EE-Jf3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="toDoListtableView" destination="PH2-Hc-vF3" id="tJR-RU-Amm"/>
+                        <outlet property="tableView" destination="PH2-Hc-vF3" id="9De-o8-vbQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQk-aH-Yod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="586.95652173913049" y="2637.7232142857142"/>
+        </scene>
+        <!--Entry List View Controller-->
+        <scene sceneID="0tH-Yu-9yp">
+            <objects>
+                <viewController storyboardIdentifier="entryList" id="s0C-0b-8aX" customClass="EntryListViewController" customModule="NEU_PLUS_thoughts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kg5-Rl-7z6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVL-gI-IXS">
+                                <rect key="frame" x="20" y="68" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bXn-Jo-MLx"/>
+                                    <constraint firstAttribute="height" constant="150" id="dzr-pZ-5Lh"/>
+                                    <constraint firstAttribute="width" constant="150" id="fG2-GB-Ccv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GSJ-U9-cWE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GSJ-U9-cWE" firstAttribute="bottom" secondItem="VVL-gI-IXS" secondAttribute="bottom" constant="20" id="02b-0j-nSS"/>
+                            <constraint firstItem="VVL-gI-IXS" firstAttribute="leading" secondItem="GSJ-U9-cWE" secondAttribute="leading" constant="20" id="ZM2-9g-3eD"/>
+                            <constraint firstItem="VVL-gI-IXS" firstAttribute="top" secondItem="GSJ-U9-cWE" secondAttribute="top" constant="20" id="a41-jL-bMR"/>
+                            <constraint firstItem="GSJ-U9-cWE" firstAttribute="trailing" secondItem="VVL-gI-IXS" secondAttribute="trailing" constant="20" id="hQ4-5J-fi8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="field" destination="VVL-gI-IXS" id="V8N-DM-2X5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jN-2u-R5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="2688"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rhH-ws-yGh">
@@ -1278,11 +1311,26 @@
             </objects>
             <point key="canvasLocation" x="-323.1884057971015" y="2637.7232142857142"/>
         </scene>
+        <!--Task View Controller-->
+        <scene sceneID="8ai-Hv-zBe">
+            <objects>
+                <viewController storyboardIdentifier="task" id="kV6-H1-SXJ" customClass="TaskViewController" customModule="NEU_PLUS_thoughts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QPA-Qb-iig">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Qw3-3C-Rgb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djx-Om-wqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2290" y="2892"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jn8-dR-UPJ"/>
         <segue reference="9Hi-Sz-FgG"/>
-        <segue reference="05f-nk-hzF"/>
+        <segue reference="NtJ-Jd-pYS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="White-Textured-Background" width="630" height="420"/>

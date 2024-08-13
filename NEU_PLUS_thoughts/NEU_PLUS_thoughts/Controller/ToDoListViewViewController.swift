@@ -7,33 +7,38 @@
 
 import UIKit
 
-class ToDoListViewViewController: UIViewController {
-    
-    @IBOutlet weak var toDoListtableView: UITableView!
+class ToDoListViewViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+    @IBOutlet weak var tableView: UITableView!
     var tasks = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // get all current saved task
-    }
-}
 
+    override func viewDidLoad() {    super.viewDidLoad()
+        self.title = "To Do List"
+        tableView.dataSource = self
+        tableView.delegate = self
  
-extension ViewController: UITableViewDelegate{
+    }
+    //init the table view
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return tasks.count
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
     }
-}
-
-extension ViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection: Int)-> Int {
-        return tasks.count
-    }
-    func tableView (_ tableView: <#T##UITableView#>, cellForRowAt indexPath: IndexPath)-> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withReuseIdentifier: "toDoListCell ", for: <#T##IndexPath#>)
-        cell.textLabel?.text = tasks[indexPath.row]
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let task=tasks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "toDoListCell") as! HomePostTableViewCell
         return cell
-        }
     }
-
+    
+    @IBAction func toDoListAddButton(_ sender: UIBarButtonItem) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "entryList") as! EntryListViewController
+        vc.title = "New Task"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
