@@ -15,7 +15,6 @@ class ToDoListViewViewController: UIViewController , UITableViewDataSource, UITa
         self.title = "To Do List"
         tableView.dataSource = self
         tableView.delegate = self
- 
     }
     //init the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
