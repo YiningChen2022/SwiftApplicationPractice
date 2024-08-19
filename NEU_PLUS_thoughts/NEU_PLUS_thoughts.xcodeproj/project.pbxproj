@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E66BA1DDFED34410797D82B /* Pods_NEU_PLUS_thoughts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE959630DBE56EB84380400 /* Pods_NEU_PLUS_thoughts.framework */; };
+		E813BDD22C72D0B2003C05AF /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813BDD12C72D0B2003C05AF /* TodoListView.swift */; };
 		E81FD1D52C6171A60065DC8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81FD1D42C6171A60065DC8A /* Assets.xcassets */; };
 		E83B966B2C6AE41900AD70A6 /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */; };
 		E83B966D2C6AE42F00AD70A6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B966C2C6AE42F00AD70A6 /* TaskViewController.swift */; };
@@ -67,6 +68,7 @@
 		293EEE45B951CEB8369FF910 /* Pods-NEU_PLUS_thoughts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.release.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.release.xcconfig"; sourceTree = "<group>"; };
 		6CE959630DBE56EB84380400 /* Pods_NEU_PLUS_thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEU_PLUS_thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB370F9CC20F79FD1A850503 /* Pods-NEU_PLUS_thoughts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEU_PLUS_thoughts.debug.xcconfig"; path = "Target Support Files/Pods-NEU_PLUS_thoughts/Pods-NEU_PLUS_thoughts.debug.xcconfig"; sourceTree = "<group>"; };
+		E813BDD12C72D0B2003C05AF /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		E81FD1D42C6171A60065DC8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E839E5082C618725008AFF0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				E881C5EC276007ED00555A0F /* Main.storyboard */,
 				E881C5F1276007EF00555A0F /* LaunchScreen.storyboard */,
+				E813BDD12C72D0B2003C05AF /* TodoListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				E881C60727600A0500555A0F /* SignInViewController.swift in Sources */,
 				E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */,
 				E8A5A29D276BB39F0010EC4B /* Comments.swift in Sources */,
+				E813BDD22C72D0B2003C05AF /* TodoListView.swift in Sources */,
 				E881C60D27600A3E00555A0F /* CreateNewPsotViewController.swift in Sources */,
 				E881C61B27601A2E00555A0F /* User.swift in Sources */,
 				E881C62C27626EB000555A0F /* NavigationViewController.swift in Sources */,
