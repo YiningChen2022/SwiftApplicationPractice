@@ -12,6 +12,10 @@
 		E81FD1D52C6171A60065DC8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81FD1D42C6171A60065DC8A /* Assets.xcassets */; };
 		E83B966B2C6AE41900AD70A6 /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */; };
 		E83B966D2C6AE42F00AD70A6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B966C2C6AE42F00AD70A6 /* TaskViewController.swift */; };
+		E84842CB2C74158100616196 /* ToDoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84842CA2C74158100616196 /* ToDoListViewViewModel.swift */; };
+		E84842CD2C74160D00616196 /* ToDoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84842CC2C74160D00616196 /* ToDoListItemView.swift */; };
+		E84842CF2C74187100616196 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84842CE2C74187100616196 /* NewItemView.swift */; };
+		E84842D12C74193000616196 /* NewItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84842D02C74193000616196 /* NewItemViewModel.swift */; };
 		E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E82282767A3900053947F /* DiscoverViewController.swift */; };
 		E85E822B276945F20053947F /* ViewInCampusLifeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */; };
 		E85E822D276949A00053947F /* CampuslifeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */; };
@@ -73,6 +77,10 @@
 		E839E5082C618725008AFF0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E83B966A2C6AE41900AD70A6 /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
 		E83B966C2C6AE42F00AD70A6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		E84842CA2C74158100616196 /* ToDoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewModel.swift; sourceTree = "<group>"; };
+		E84842CC2C74160D00616196 /* ToDoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemView.swift; sourceTree = "<group>"; };
+		E84842CE2C74187100616196 /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
+		E84842D02C74193000616196 /* NewItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewModel.swift; sourceTree = "<group>"; };
 		E85E82282767A3900053947F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E85E822A276945F20053947F /* ViewInCampusLifeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInCampusLifeTableViewController.swift; sourceTree = "<group>"; };
 		E85E822C276949A00053947F /* CampuslifeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampuslifeTableViewCell.swift; sourceTree = "<group>"; };
@@ -230,6 +238,10 @@
 				E881C5EC276007ED00555A0F /* Main.storyboard */,
 				E881C5F1276007EF00555A0F /* LaunchScreen.storyboard */,
 				E813BDD12C72D0B2003C05AF /* TodoListView.swift */,
+				E84842CA2C74158100616196 /* ToDoListViewViewModel.swift */,
+				E84842CC2C74160D00616196 /* ToDoListItemView.swift */,
+				E84842CE2C74187100616196 /* NewItemView.swift */,
+				E84842D02C74193000616196 /* NewItemViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84842CF2C74187100616196 /* NewItemView.swift in Sources */,
 				E881C61D27601A3B00555A0F /* BlogPost.swift in Sources */,
 				E8ADDFB7276A895300CE1141 /* FleaMarketTableViewCell.swift in Sources */,
 				E881C6232760896A00555A0F /* ViewPostlistTableViewController.swift in Sources */,
@@ -428,12 +441,14 @@
 				E881C603276009BA00555A0F /* ProfileViewController.swift in Sources */,
 				E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */,
 				E881C60F27600A5E00555A0F /* IAPManager.swift in Sources */,
+				E84842D12C74193000616196 /* NewItemViewModel.swift in Sources */,
 				E85E82292767A3900053947F /* DiscoverViewController.swift in Sources */,
 				E881C605276009E300555A0F /* TabBarViewController.swift in Sources */,
 				E83B966D2C6AE42F00AD70A6 /* TaskViewController.swift in Sources */,
 				E881C5E9276007ED00555A0F /* SceneDelegate.swift in Sources */,
 				E8A5A29F276C018F0010EC4B /* CommentTableViewCell.swift in Sources */,
 				E8ADDFBB276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift in Sources */,
+				E84842CB2C74158100616196 /* ToDoListViewViewModel.swift in Sources */,
 				E83B966B2C6AE41900AD70A6 /* EntryListViewController.swift in Sources */,
 				E881C60B27600A3200555A0F /* ViewPostViewController.swift in Sources */,
 				E881C61127600A7300555A0F /* DatebaseManager.swift in Sources */,
@@ -441,6 +456,7 @@
 				E8ADDFB5276A88F300CE1141 /* ViewFleaMarketTableViewController.swift in Sources */,
 				E8ADDFB9276A8E2C00CE1141 /* EntertainmentTableViewCell.swift in Sources */,
 				E85E822B276945F20053947F /* ViewInCampusLifeTableViewController.swift in Sources */,
+				E84842CD2C74160D00616196 /* ToDoListItemView.swift in Sources */,
 				E881C61F2760442F00555A0F /* Data.swift in Sources */,
 				E85E822D276949A00053947F /* CampuslifeTableViewCell.swift in Sources */,
 			);
