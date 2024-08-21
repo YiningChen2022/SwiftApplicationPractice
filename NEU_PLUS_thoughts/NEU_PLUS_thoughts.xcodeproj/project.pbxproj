@@ -62,6 +62,7 @@
 		E8AE9EB82C619C7B0090A723 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E8AE9EB72C619C7B0090A723 /* FirebaseFirestore */; };
 		E8D1655D2762ED4800B651C2 /* ViewPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */; };
 		E8D1655F2763166D00B651C2 /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */; };
+		E8D6E5CF2C756EDC009959D6 /* ToDoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6E5CE2C756EDC009959D6 /* ToDoListItem.swift */; };
 		E8EC9EE92C691A8D00AC92E9 /* ToDoListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC9EE82C691A8D00AC92E9 /* ToDoListViewViewController.swift */; };
 		E8EC9EED2C69241700AC92E9 /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = E8EC9EEC2C69241700AC92E9 /* SwiftFormat */; };
 		E8EC9EEF2C69241700AC92E9 /* SwiftFormatConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = E8EC9EEE2C69241700AC92E9 /* SwiftFormatConfiguration */; };
@@ -117,6 +118,7 @@
 		E8ADDFBA276A8E4800CE1141 /* ViewEntertainmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEntertainmentTableViewController.swift; sourceTree = "<group>"; };
 		E8D1655C2762ED4800B651C2 /* ViewPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostListTableViewCell.swift; sourceTree = "<group>"; };
 		E8D1655E2763166D00B651C2 /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
+		E8D6E5CE2C756EDC009959D6 /* ToDoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItem.swift; sourceTree = "<group>"; };
 		E8EC9EE82C691A8D00AC92E9 /* ToDoListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 				E881C61C27601A3B00555A0F /* BlogPost.swift */,
 				E881C61E2760442F00555A0F /* Data.swift */,
 				E8A5A29C276BB39F0010EC4B /* Comments.swift */,
+				E8D6E5CE2C756EDC009959D6 /* ToDoListItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				E881C5EB276007ED00555A0F /* ViewController.swift in Sources */,
 				E881C61327600A8400555A0F /* AuthManager.swift in Sources */,
 				E881C60927600A1200555A0F /* SignUpViewController.swift in Sources */,
+				E8D6E5CF2C756EDC009959D6 /* ToDoListItem.swift in Sources */,
 				E881C62527615C1000555A0F /* HomeViewController.swift in Sources */,
 				E881C5E7276007ED00555A0F /* AppDelegate.swift in Sources */,
 				E8A5A2A1276C12060010EC4B /* ViewCommentsTableViewController.swift in Sources */,
